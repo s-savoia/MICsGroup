@@ -1,7 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="admin_master.master.cs" Inherits="admin_admin_master" %>
 
 
-<%-- This page was coded by HIDEMI NAWATA  this is a text--%>
+<%-- This page was coded by HIDEMI NAWATA  This is conflicting Message--%>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
