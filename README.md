@@ -1,4 +1,4 @@
 MICsGroup
 =========
 
-An ASP.NET-based website for MICs Group Hospitals
+An ASP.NET-based website for MICs Group Hospitals.
