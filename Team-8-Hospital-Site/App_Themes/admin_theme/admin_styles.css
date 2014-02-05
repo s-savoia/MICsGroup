@@ -1,2 +1,248 @@
-﻿body {
+﻿@charset "utf-8";
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+	CSS RESET
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+a { 
+	overflow: hidden; 
+	text-decoration:none;
+}
+a:link {
+	text-decoration:none;
+	color:#000;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}	
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*--get rid of space-- */
+.img {
+	vertical-align: bottom
+}
+/* Reset input[type="search"] */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+}
+input[type="search"]:focus {
+  outline-offset: -2px;
+}
+input[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+/* Important- fixing an overlapping issue about a menu control */
+div 
+{
+    z-index: 9999; 
+}
+/* - - - - - - - - - end reset - - - - - - - - - */
+
+/* - - - - - - - - - general setting - - - - - - - - - */
+.wrapper
+{
+    width:1024px;
+    margin:0 auto;
+}
+.floatL
+{
+    float: left;
+}
+
+.clearfix{
+	display:block;
+}
+a:link {
+	text-decoration:none;
+	color:#000;
+}
+a:visited {
+	color:#000;
+}
+.button
+{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+body
+{
+    font-family:Tahoma, sans-serif;   
+}
+/* - - - - - - - - - header - - - - - - - - - */
+header
+{
+    padding:15px 35px 15px 35px;
+    width:954px;
+    height:100px;
+    border-bottom:2px dotted #22BCB9;
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(left,  #ffffff 1%, #ffffff 17%, #29b5b3 99%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(1%,#ffffff), color-stop(17%,#ffffff), color-stop(99%,#29b5b3)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  #ffffff 1%,#ffffff 17%,#29b5b3 99%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  #ffffff 1%,#ffffff 17%,#29b5b3 99%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  #ffffff 1%,#ffffff 17%,#29b5b3 99%); /* IE10+ */
+    background: linear-gradient(to right,  #ffffff 1%,#ffffff 17%,#29b5b3 99%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#29b5b3',GradientType=1 ); /* IE6-9 */
+}
+.floatLogo
+{
+    float: left;
+    border-right: solid 1px #22BCB9;
+    padding-right:25px;
+}
+.floatTitle
+{
+    float: left;
+    padding-left:25px;
+    padding-top:10px;
+    vertical-align:bottom;
+}
+.floatName
+{
+    font-family:Tahoma;
+    float: right;
+    padding:0 20px;
+    border-right: solid 1px #ffffff;
+    color:#ffffff;
+    font-weight:300;
+}
+
+.floatView
+{
+    font-family:Tahoma;
+    float: right;
+    padding:0 20px;
+    border-right: solid 1px #ffffff;
+    color:#ffffff;
+    font-weight:300;
+}
+.floatStatus
+{
+    font-family:Tahoma;
+    float: right;
+    padding-left:20px;
+    color:#ffffff;
+    font-weight:300;
+}
+.floatSearch
+{
+    float: right;
+    padding-bottom:5px;
+}
+/* - - - - - - - - - nav - - - - - - - - - */
+nav
+{
+    float:left;
+    padding:15px 35px;
+}
+.navStyleHead
+{
+    width:195px;
+    height:35px;
+    background-color:#22BCB9;
+    text-align:left;
+    padding-top:5px;
+    padding-left:15px;
+    color:#ffffff;
+    font-weight:500;
+    font-size:14px;
+}
+.navStyle
+{
+    width:195px;
+    height:28px;
+    background-color:#C7ECEF;
+    text-align:left;
+    padding-top:12px;
+    padding-left:15px;
+    color:#666666;
+    font-weight:500;
+    font-size:14px;
+}
+.navTitle
+{
+    position:relative;
+    top:-10px;
+}
+
+/* - - - - - - - - - content - - - - - - - - - */
+section
+{
+    float:left;
+    padding:15px 35px 0 0;
+}
+.contentHead
+{
+    width:695px;
+    height:32px;
+    padding:5px 0 0 10px;
+    background-color:#22BCB9;
+    color:#ffffff;
+    font-size:14px;
+}
+.contentTitle
+{
+    position:relative;
+    top:-10px;
+}
+.contentMain
+{
+    border:3px solid #22BCB9;
+    padding:15px 20px;
+}
+/* - - - - - - - - - footer - - - - - - - - - */
+footer
+{
+    font-family:"Tahoma", sans-serif;
+    font-size:12px;
+    color:#666666;
+    width:954px;
+    height:20px;
+    background-color:#B0B0B0;
+    padding:5px 35px 0 35px;
+    margin:0 auto;
+    float:left;
+    text-align:center;
+    border-top:solid 3px #8CC63F;
 }
