@@ -87,8 +87,8 @@
                             <asp:Image ID="img_swash" runat="server" ImageUrl="~/admin/img/swash.png" />
                             <asp:Label ID="lbl_content" runat="server" Text="CONTENT" CssClass="navTitle" />
                         </li><%-- navStyleHead --%>
-                         <asp:Menu ID="mnu_main" runat="server" DataSourceID="sds_main" StaticMenuItemStyle-CssClass="navStyle" DynamicMenuItemStyle-CssClass="navStyle" ForeColor="#666666" StaticEnableDefaultPopOutImage="false" />
-                        <%--StaticBottomSeparatorImageUrl="~/admin/img/border.png" does not work --%>
+                         <asp:Menu ID="mnu_main" runat="server" DataSourceID="sds_main" StaticMenuItemStyle-CssClass="navStyle" DynamicMenuItemStyle-CssClass="navStyle" ForeColor="#666666" StaticEnableDefaultPopOutImage="false" StaticBottomSeparatorImageUrl="img/border.png" />
+                        <%--I fixed the border issue. hahahaha --%>
                         <asp:SiteMapDataSource ID="sds_main" runat="server" ShowStartingNode="false" />
 
                         <%-- User Menu --%>
