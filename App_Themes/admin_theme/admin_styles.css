@@ -171,8 +171,9 @@ header
     padding-bottom:5px;
 }
 /* - - - - - - - - - nav - - - - - - - - - */
-nav
+#sidebar
 {
+    width:210px;
     float:left;
     padding:15px 35px;
 }
@@ -207,14 +208,15 @@ nav
 }
 
 /* - - - - - - - - - content - - - - - - - - - */
-section
+#content
 {
+    width:709px;
     float:left;
     padding:15px 35px 0 0;
 }
 .contentHead
 {
-    width:695px;
+    
     height:32px;
     padding:5px 0 0 10px;
     background-color:#22BCB9;

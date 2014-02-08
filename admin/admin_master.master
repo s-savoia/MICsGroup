@@ -27,6 +27,8 @@
     <%-- meta data --%>
     <meta name="keywords" content="MICS group, hospital, CMS" />
     <meta name="description" content="MICS group hospital admin website" />
+    <meta name="author" content="MICs Group of Health Services">
+    <%-- meta data viewport --%>
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
 </head>
 
