@@ -3,5 +3,6 @@
 <%-- This page was coded by HIDEMI NAWATA (HTML5 + CSS3) --%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="content_main" Runat="Server">
-    <asp:SiteMapPath ID="smp_main" runat="server" PathSeparator="|" />
+    <asp:Label ID="lbl_test" runat="server" Text="This is test" />
+
 </asp:Content>

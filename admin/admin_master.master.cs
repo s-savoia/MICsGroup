@@ -7,8 +7,9 @@ using System.Web.UI.WebControls;
 
 public partial class admin_admin_master : System.Web.UI.MasterPage
 {
-    protected void Page_Load(object sender, EventArgs e)
+    protected void subClick(object sender, EventArgs e)
     {
-
+        Response.Redirect("admin_login.aspx");
+        //change an link to the home later
     }
 }

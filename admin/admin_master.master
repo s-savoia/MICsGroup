@@ -4,15 +4,17 @@
 <!DOCTYPE html>
 <%-- style sheet --%>
 <link href="../App_Themes/admin_theme/admin_styles.css" rel="stylesheet" />
+<%-- stylesheet for media queries --%>
+<link href="../App_Themes/admin_theme/mediaqueries.css" rel="stylesheet" type="text/css">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Admin Master Page</title>
-    <%-- media queries --%>
+    <%-- media queries and shiv --%>
     <!--[if lt IE 9]>
-      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-      <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-    <![endif]-->
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        <![endif]-->
     <!--[if IE 9]>
 	    <link rel="stylesheet" type="text/css" media="all" href="css/ie9.css"/>
 	    <![endif]-->
@@ -22,13 +24,17 @@
     <!--[if IE 7]>
 	    <link rel="stylesheet" type="text/css" media="all" href="css/ie7.css"/>
 	    <![endif]-->
+    <%-- meta data --%>
+    <meta name="keywords" content="MICS group, hospital, CMS" />
+    <meta name="description" content="MICS group hospital admin website" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
 </head>
 
 <body>
     <form id="form1" runat="server">
         <div class="wrapper">
 <%------------------------------------------ header starts ------------------------------------------%>
-            <header>
+            <header id="header">
                 <div class="clearfix">
                     <div class="floatLogo">
                         <asp:Image ID="img_logo" runat="server" ImageUrl="~/admin/img/logo.png" />
@@ -61,12 +67,13 @@
                     </div><%-- floatView --%>
                     <div class="floatName">
                         <%--Login Name--%>
-                        <asp:LoginName ID="LoginName1" runat="server" FormatString="Welcome, {0}!" />
+                        <asp:LoginName ID="lgn_main" runat="server" FormatString="Welcome, {0}!" />
                     </div><%-- floatName --%>
                     <br /><br />
                     <div class="floatSearch">
                         <%-- 2 buttons --%>
-                        <asp:Button ID="btn_site" runat="server" Text="Visit Site" BackColor="#ffffff" ForeColor="#08659F" BorderStyle="None" Width="80px" Height="25px" Font-Bold="true" CssClass="button" /> 
+                        <asp:Button ID="btn_site" runat="server" Text="Visit Site" BackColor="#ffffff" ForeColor="#08659F" BorderStyle="None" Width="80px" Height="25px" Font-Bold="true" CssClass="button" OnClick="subClick" />
+                        
                     </div><%-- floatSearch --%>
                     <br /><br />
                     <div class="floatSearch">
@@ -80,15 +87,14 @@
 <%----------------------------------------- sidebar starts -----------------------------------------%>
 
             <div class="clearfix">
-                <nav>
+                <nav id="sidebar">
                     <ul>
                         <%-- Content Menu --%>
                         <li class="navStyleHead">
                             <asp:Image ID="img_swash" runat="server" ImageUrl="~/admin/img/swash.png" />
                             <asp:Label ID="lbl_content" runat="server" Text="CONTENT" CssClass="navTitle" />
                         </li><%-- navStyleHead --%>
-                         <asp:Menu ID="mnu_main" runat="server" DataSourceID="sds_main" StaticMenuItemStyle-CssClass="navStyle" DynamicMenuItemStyle-CssClass="navStyle" ForeColor="#666666" StaticEnableDefaultPopOutImage="false" StaticBottomSeparatorImageUrl="img/border.png" />
-                        <%--I fixed the border issue. hahahaha --%>
+                         <asp:Menu ID="mnu_main" runat="server" DataSourceID="sds_main" StaticMenuItemStyle-CssClass="navStyle" DynamicMenuItemStyle-CssClass="navStyle" ForeColor="#666666" StaticEnableDefaultPopOutImage="false" StaticBottomSeparatorImageUrl="img/border.png" DynamicBottomSeparatorImageUrl="img/border.png" />
                         <asp:SiteMapDataSource ID="sds_main" runat="server" ShowStartingNode="false" />
 
                         <%-- User Menu --%>
@@ -98,8 +104,8 @@
                         </li><%-- navStyleHead --%>                     
                         <asp:Menu ID="mnu_user" runat="server" StaticMenuItemStyle-CssClass="navStyle" ForeColor="#666666" StaticEnableDefaultPopOutImage="false">
                             <Items>
-                                <asp:MenuItem Text="All Users" NavigateUrl="#" />
-                                <asp:MenuItem Text="Add Users" NavigateUrl="#" />
+                                <asp:MenuItem Text="All Users" NavigateUrl="#" SeparatorImageUrl="img/border.png" />
+                                <asp:MenuItem Text="Add Users" NavigateUrl="#" SeparatorImageUrl="img/border.png" />
                             </Items>
                         </asp:Menu>
                     </ul>                  
@@ -108,13 +114,14 @@
 
 <%----------------------------------------- content starts -----------------------------------------%>
                 <%-- content --%>
-                <section>
+                <section id="content">
                     <div class="contentHead">
                         <asp:Image ID="img_swash3" runat="server" ImageUrl="~/admin/img/swash.png" />
                         <asp:Label ID="lbl_content2" runat="server" Text="CONTENT" CssClass="contentTitle" />
                     </div><%-- contentHead --%>
-                    <div class="contentMain">                
-                    <asp:ContentPlaceHolder id="content_main" runat="server">      
+                    <div class="contentMain">
+                    <asp:SiteMapPath ID="smp_main" runat="server" PathSeparator="|" />                                   
+                    <asp:ContentPlaceHolder id="content_main" runat="server" >      
                     </asp:ContentPlaceHolder>
                     </div><%-- contentMain --%>
                 </section>
@@ -125,7 +132,7 @@
 <%------------------------------------------ footer starts ------------------------------------------%>
 
             <%-- footer --%>
-            <footer>
+            <footer id="footer">
                 <asp:Label ID="lbl_footer" runat="server" Text="© copyright 2014 MICs Group of Health Services all rights reserved" />     
             </footer>
 
