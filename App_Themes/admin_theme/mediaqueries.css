@@ -1,58 +1,88 @@
 ﻿@charset "utf-8";
-
-img
-    {
-        max-width:100%;
-        height:auto;
-        width:auto\9; /*ie8*/
-    }
-
-@media screen and (max-width: 1000px) {
-    .wrapper {
-        width: 95%;
-    }
-    #header {
-        width:95%;
-    }
-    #content {
-        width: 65%;
-        padding:1% 3.5% 0 0;
-    }
-    #sidebar{
-        width: 21%;
-        padding:1.5% 3.5%;
-    }
-
-    .floatLogo
-    {
-        position:static;
-        padding-right:2.5%;
-    }
+body {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -o-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
-@media screen and (max-width: 768px) {
-    #header {
+/* Desktop */
+@media screen and (max-width: 1024px)
+{
+    .wrapper
+    {
         width:95%;
+        overflow:hidden;
+    }
+    img
+    {
+        max-width: 100%;
         height: auto;
+        width: auto\9; /*ie8*/
     }
-    #content {
-        width: 65%;
-        padding:1% 3.5% 0 0;
+    #header
+    {
+        width:92%;
+        padding:1.5% 3.5%;
+        border:1px solid green;
     }
- 
-    #sidebar {
-        width: 21%;
+    #sidebar
+    {
+        width:20%;
         padding:1.5% 3.5%;
     }
+    .navStyleHead
+    {
+        width:93%;
+        padding:1.5% 3.5%;
+        font-size:0.875em;
+    }
+    .navStyle
+    {
+        width:93%;
+        padding:1.5% 3.5%;
+        font-size:0.875em;
+    }
+    #content
+    {
+        width:68%;
+        padding:1.5% 3.5% 0 0;
+    }
+    #footer
+    {
+        width:95%;
+    }
+
 }
 
-html {
-        -webkit-text-size-adjust: none;
+/* Tablet */
+@media screen and (max-width: 768px)
+{
+    .wrapper
+    {
+        overflow:hidden;
+        
     }
- 
-    #main-nav a {
-        font-size: 90%;
-        padding: 10px 8px;
+    #header
+    {
+         border:1px dashed red;
     }
- 
+
+
 }
+/* Smartphone */
+@media screen and (max-width: 480px)
+{
+    .wrapper
+    {
+        overflow:hidden;
+    }
+    #header
+    {
+        border:1px dashed blue;
+    }
+
+}
+
+

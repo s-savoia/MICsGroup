@@ -112,7 +112,7 @@ body
 /* - - - - - - - - - header - - - - - - - - - */
 header
 {
-    padding:15px 35px 15px 35px;
+    padding:15px 35px;
     width:954px;
     height:100px;
     border-bottom:2px dotted #22BCB9;
@@ -130,6 +130,9 @@ header
     float: left;
     border-right: solid 1px #22BCB9;
     padding-right:25px;
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /*ie8*/
 }
 .floatTitle
 {
@@ -137,6 +140,9 @@ header
     padding-left:25px;
     padding-top:10px;
     vertical-align:bottom;
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /*ie8*/
 }
 .floatName
 {
