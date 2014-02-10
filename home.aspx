@@ -1,8 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="home.aspx.cs" Inherits="_home" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="home.aspx.cs" Inherits="home" %>
+
 
 <!DOCTYPE html>
 
-<link href="App_Themes/public_theme/home_style.css" rel="stylesheet"/>
+<link href="App_Themes/SkinFile/home_style.css" rel="stylesheet"/>
 <link href="App_Themes/SkinFile/media_phone.css" rel="stylesheet" media="only screen (max-device-width: 320px)" />
 
 <%--<link href="App_Themes/SkinFile/media_tablet.css" rel="stylesheet" media="screen and (min-width:768px)" />--%>
@@ -193,3 +194,20 @@
     </form>
 </body>
 </html>
+
+
+
+<%--<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    
+    </div>
+    </form>
+</body>
+</html>--%>
