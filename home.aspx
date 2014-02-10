@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="home.aspx.cs" Inherits="home" %>
 
-
+<!-- This page is coded by CLAUDIA REINOZA -->
 <!DOCTYPE html>
 
 <link href="App_Themes/public_theme/home_style.css" rel="stylesheet"/>
