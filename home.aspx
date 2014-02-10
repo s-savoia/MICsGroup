@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 
-<link href="App_Themes/SkinFile/home_style.css" rel="stylesheet"/>
+<link href="App_Themes/public_theme/home_style.css" rel="stylesheet"/>
 <link href="App_Themes/SkinFile/media_phone.css" rel="stylesheet" media="only screen (max-device-width: 320px)" />
 
 <%--<link href="App_Themes/SkinFile/media_tablet.css" rel="stylesheet" media="screen and (min-width:768px)" />--%>
