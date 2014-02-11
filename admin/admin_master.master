@@ -39,7 +39,7 @@
             <header id="header">
                 <div class="clearfix">
                     <div class="floatLogo">
-                        <asp:Image ID="img_logo" runat="server" CssClass="img" ImageUrl="~/admin/img/logo.png" />
+                        <asp:Image ID="img_logo" runat="server" ImageUrl="~/admin/img/logo.png" />
                     </div><%-- floatLogo --%>
                     <div class="floatTitle">
                         <asp:Image ID="img_title" runat="server" CssClass="img" ImageUrl="~/admin/img/title.png" />
@@ -79,7 +79,7 @@
                     </div><%-- floatSearch --%>
                     <br /><br />
                     <div class="floatSearch">
-                        <asp:TextBox ID="txt_search" runat="server" Width="170px" Height="20px" CssClass="search" />
+                        <asp:TextBox ID="txt_search" runat="server" Width="170px" Height="20px" />
                         <asp:Button ID="btn_search" runat="server" Text="Search" BackColor="#ffffff" ForeColor="#08659F" BorderStyle="None" Width="80px" Height="25px" Font-Bold="true" CssClass="button" />
                     </div><%-- floatSearch --%>                   
                 </div><%--clear fix --%>
@@ -93,10 +93,10 @@
                     <ul>
                         <%-- Content Menu --%>
                         <li class="navStyleHead">
-                            <asp:Image ID="img_swash" runat="server" ImageUrl="~/admin/img/swash.png" CssClass="img" />
+                            <asp:Image ID="img_swash" runat="server" ImageUrl="~/admin/img/swash.png" />
                             <asp:Label ID="lbl_content" runat="server" Text="CONTENT" CssClass="navTitle" />
-                        </li><%-- navStyleHead --%>
-                         <asp:Menu ID="mnu_main" runat="server" DataSourceID="sds_main" StaticMenuItemStyle-CssClass="navStyle" DynamicMenuItemStyle-CssClass="navStyle" ForeColor="#666666" StaticEnableDefaultPopOutImage="false" StaticBottomSeparatorImageUrl="img/border.png" CssClass="img" DynamicBottomSeparatorImageUrl="img/border.png" />
+                        </li><%-- navStyleHead  --%>
+                         <asp:Menu ID="mnu_main" runat="server" DataSourceID="sds_main" StaticMenuItemStyle-CssClass="navStyle" DynamicMenuItemStyle-CssClass="navStyle" ForeColor="#666666" StaticEnableDefaultPopOutImage="false" StaticBottomSeparatorImageUrl="img/border.png" DynamicBottomSeparatorImageUrl="img/border.png" />
                         <asp:SiteMapDataSource ID="sds_main" runat="server" ShowStartingNode="false" />
 
                         <%-- User Menu --%>
@@ -104,7 +104,7 @@
                             <asp:Image ID="img_swash2" runat="server" ImageUrl="~/admin/img/swash.png" />
                             <asp:Label ID="lbl_users" runat="server" Text="USERS" CssClass="navTitle" />
                         </li><%-- navStyleHead --%>                     
-                        <asp:Menu ID="mnu_user" runat="server" StaticMenuItemStyle-CssClass="navStyle" ForeColor="#666666" StaticEnableDefaultPopOutImage="false" CssClass="img">
+                        <asp:Menu ID="mnu_user" runat="server" StaticMenuItemStyle-CssClass="navStyle" ForeColor="#666666" StaticEnableDefaultPopOutImage="false">
                             <Items>
                                 <asp:MenuItem Text="All Users" NavigateUrl="#" SeparatorImageUrl="img/border.png" />
                                 <asp:MenuItem Text="Add Users" NavigateUrl="#" SeparatorImageUrl="img/border.png" />
