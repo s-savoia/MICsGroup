@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<!-- This page is coded by Hidemi Nawata -->
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
     <siteMapNode url="~/admin_master.aspx" title="Admin Home"  description="Admin Home Page"><!--root node-->
       
