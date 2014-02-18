@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <!--CODE BY CLAUDIA-->
+  
+    <siteMapNode url="" title=""  description="Main Navegation">
+        <siteMapNode url="~/home.aspx" title="Home"  description="Home"/>
+
+      <siteMapNode url="~/about.aspx" title="About Us">
+        <siteMapNode url="~/news.aspx" title="News &amp; Events " />
+        <siteMapNode url="~/location.aspx" title="Location" />
+        <siteMapNode url="~/newsletters.aspx" title="Newsletters" />
+        <siteMapNode url="~/vision.aspx" title="Vision" />
+        <siteMapNode url="~/strategy.aspx" title="Strategy &amp; Plans" />
+        <siteMapNode url="~/board.aspx" title="Board of Directors" />
+        <siteMapNode url="~/quality.aspx" title="Quality &amp; Risk Management" />
+      </siteMapNode>
+
+        <siteMapNode url="~/patients.aspx" title="Patients &amp; Families" >
+          <siteMapNode url="~/patients1.aspx" title="Chat with a Nurse"  />
+          <siteMapNode url="~/symtom.aspx" title="Symtom Checker" /> 
+          <siteMapNode url="~/rights.aspx" title="Patients Rights &amp; Responsibility" />
+        </siteMapNode>
+
+      <siteMapNode url="~/services.aspx" title="Services"  description="Sevices">
+        <siteMapNode url="~/bill.aspx" title="Bill Payment" />
+        <siteMapNode url="~/appointment.aspx" title="Book an Appointment" />
+        <siteMapNode url="~/fservice.aspx" title="Find a Service"/>
+        <siteMapNode url="~/sservice.aspx" title="Specialty Services" />
+      </siteMapNode>
+
+      <siteMapNode url="~/careers.aspx" title="Careers" >
+        <siteMapNode url="~/careers1.aspx" title="Jobs Postings" />
+        <siteMapNode url="~/careers2.aspx" title="Careers Application" />
+        <siteMapNode url="~/careers3.aspx" title="Volunteer Application" />
+      </siteMapNode>
+
+      <siteMapNode url="~/contact.aspx" title="Contact Us" >
+      </siteMapNode> 
+
+       
+    </siteMapNode>
+</siteMap>

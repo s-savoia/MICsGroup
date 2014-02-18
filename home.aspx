@@ -3,14 +3,11 @@
 <!-- This page is coded by CLAUDIA REINOZA -->
 <!DOCTYPE html>
 
-<link href="App_Themes/public_theme/home_style.css" rel="stylesheet"/>
-<link href="App_Themes/SkinFile/media_phone.css" rel="stylesheet" media="only screen (max-device-width: 320px)" />
-
-<%--<link href="App_Themes/SkinFile/media_tablet.css" rel="stylesheet" media="screen and (min-width:768px)" />--%>
+<link href="App_Themes/public_theme/home_style.css" rel="stylesheet" media="all" />
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title></title>
+    <title>HOME</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -19,8 +16,9 @@
             <header>
                 <div class="logo">
                     <asp:Image CssClass="img" runat="server" ID="logo" ImageUrl="~/img/logo.png" />
-                    <h1><asp:Label ID="labl_hospital" runat="server">
-                        Group of Health Services
+                    <h1>
+                        <asp:Label ID="labl_hospital" runat="server">
+                        MICs Group of Health Services
                         </asp:Label></h1>
                     <p>
                         <asp:Label ID="lbl_group" runat="server">
@@ -32,30 +30,30 @@
                         </asp:Label>
                     </p>
                 </div>
+
                 <div class="box_head">
-                <div class="log">
-                    <asp:LinkButton ID="btn" Text="Log in" runat="server" Target="_self" DescriptionUrl="~/home.aspx" />
-                </div>
-
-                <div class="reg">
-                    <asp:LinkButton ID="btn_reg" Text="Register" runat="server" Target="_self" DescriptionUrl="~/home.aspx" />
-                </div>
-
-                <div class="access">
-                    <asp:Image ImageUrl="~/img/access.png" runat="server" ID="img_acc" CssClass="a_img" />
-                    <asp:LinkButton ID="btn_access" Text="Accessibility" DescriptionUrl="~/home.aspx" runat="server" />
-                </div>
-
-                <div class="donate">
-                    <%--<asp:Button ID="btn_donate1" Text="Donate Now" runat="server" class="button"/>--%>
-                    <asp:LinkButton ID="btn_donate" Text="Donate Now" DescriptionUrl="~/home.aspx" runat="server" />
-                </div>
+                    <div class="log">
+                        <asp:LinkButton ID="btn" Text="Log in" runat="server" Target="_self" DescriptionUrl="~/home.aspx" />
                     </div>
+
+                    <div class="reg">
+                        <asp:LinkButton ID="btn_reg" Text="Register" runat="server" Target="_self" DescriptionUrl="~/home.aspx" />
+                    </div>
+
+                    <div class="access">
+                        <asp:Image ImageUrl="~/img/access.png" runat="server" ID="img_acc" CssClass="a_img" />
+                        <asp:LinkButton ID="btn_access" Text="Accessibility" DescriptionUrl="~/home.aspx" runat="server" />
+                    </div>
+
+                    <div class="donate">
+                        <asp:LinkButton ID="btn_donate" Text="Donate Now" DescriptionUrl="~/home.aspx" runat="server" />
+                    </div>
+                </div>
             </header>
 
             <nav>
                 <asp:SiteMapDataSource ID="sds_menu" runat="server" />
-                <asp:Menu ID="menu_nav" DataSourceID="sds_menu" StaticDisplayLevels="2" Orientation="Horizontal" runat="server" DynamicMenuItemStyle-BackColor="#8cc63f"  DisappearAfter="500" DynamicVerticalOffset="2" StaticEnableDefaultPopOutImage="false" DynamicHoverStyle-CssClass="DynamicHoverStyle" CssClass="menu" > 
+                <asp:Menu ID="menu_nav" DataSourceID="sds_menu" StaticDisplayLevels="2" Orientation="Horizontal" runat="server"  DynamicMenuItemStyle-BackColor="#8cc63f" DisappearAfter="500" DynamicVerticalOffset="5" StaticEnableDefaultPopOutImage="false" DynamicHoverStyle-CssClass="DynamicHoverStyle" CssClass="menu">
                     <%--CssClass="menu_"--%>
                     <StaticMenuItemStyle ItemSpacing="100" />
 
@@ -69,11 +67,6 @@
                     </Items>
                 </asp:Menu>
             </nav>
-
-            <%--nav features--%>
-            <%--end features--%>
-
-
 
             <div class="slider">
                 <asp:Label runat="server" ID="Label1" />
@@ -159,31 +152,57 @@
 
             <div class="footer">
                 <div class="box_l">
-                    <p>
-                        <asp:HyperLink ID="HyperLink7" Text="Site map" runat="server"/></p>
-                    <p>
 
-                        <asp:HyperLink ID="HyperLink6" Text="Privacy &amp; Confidentiality" runat="server"  />
-                    </p>
-                    <p>
-                        <asp:HyperLink ID="HyperLink8" Text="Copyright &amp; terms of use" runat="server" /></p>
-                    
-
-                </div>
-
-                <div class="box_c">
-
-                    <asp:Image ID="partner" runat="server" ImageUrl="~/img/partners.png" CssClass="partner" />
-                </div>
-
-                <div class="box_r">
                     <p>
                         <asp:ImageButton ID="btn_fb" runat="server" ImageUrl="~/img/L2.png" />
                         <asp:ImageButton ID="btn_li" runat="server" ImageUrl="~/img/L3.png" />
                         <asp:ImageButton ID="btn_tw" runat="server" ImageUrl="~/img/L4.png" />
                         <asp:ImageButton ID="btn_you" runat="server" ImageUrl="~/img/L5.png" />
-                        </p>
+                    </p>
 
+                </div>
+
+                <div class="box_c">
+                    <p><strong>
+                        <asp:Literal runat="server" ID="literal" Text="PARTNERS" /></strong></p>                      
+                            <p><asp:HyperLink ID="HyperLink9" Text="Health Canada" runat="server" />
+                    </p>
+                    <p>
+                        <asp:HyperLink ID="HyperLink10" Text="Ontario College of Physicians and Surgeons" runat="server" />
+                    </p>
+                    <p>
+                        <asp:HyperLink ID="HyperLink11" Text="The Ontario Hospital Association" runat="server" />
+                    </p>
+                    <p>
+
+                        <asp:HyperLink ID="HyperLink12" Text="Ontario Ministry of Health and Long Term Care" runat="server" />
+                    </p>
+                    <p>
+                        <asp:HyperLink ID="HyperLink13" Text="Porcupine Health Unit" runat="server" />
+                    </p>
+                    <p>
+                        <asp:HyperLink ID="HyperLink14" Text="Timmins and District Hospital" runat="server" />
+                    </p>
+                    <p>
+                    <asp:HyperLink ID="HyperLink15" Text="Ontario Ministry of Health and Long Term Care" runat="server" />
+                    </p>
+                    <p>
+                        <asp:HyperLink ID="HyperLink16" Text="Town of Cochrane" runat="server" />
+                    </p>
+                    <p>
+                        <asp:HyperLink ID="HyperLink17" Text="Town of Iroquois Falls" runat="server" />
+                    </p>
+                    <p>
+                        <asp:HyperLink ID="HyperLink18" Text="Town of Matheson" runat="server" />
+                    </p>
+
+                </div>
+
+                <div class="box_r">
+                    <p><asp:HyperLink ID="HyperLink7" Text="Site map" runat="server" /></p>
+                    <p><asp:HyperLink ID="HyperLink6" Text="Privacy &amp; Confidentiality" runat="server" /></p>
+                    <p><asp:HyperLink ID="HyperLink8" Text="Copyright &amp; terms of use" runat="server" /></p>
+              
                 </div>
 
 
@@ -194,20 +213,3 @@
     </form>
 </body>
 </html>
-
-
-
-<%--<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
-    </div>
-    </form>
-</body>
-</html>--%>
