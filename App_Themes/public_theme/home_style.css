@@ -1462,6 +1462,7 @@ nav {
 }
 
 /*********   480px  ***********/
+
 @media screen and (max-width:480px) {
     .wraper {
         width: 100%;
@@ -1911,6 +1912,7 @@ nav {
                 text-decoration: underline;
             }
 }
+
 
 /*********   320px  ***********/
 @media screen and (max-width:320px) {
