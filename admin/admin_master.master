@@ -122,7 +122,7 @@
                         <asp:Label ID="lbl_content2" runat="server" Text="CONTENT" CssClass="contentTitle" />
                     </div><%-- contentHead --%>
                     <div class="contentMain">
-                    <asp:SiteMapPath ID="smp_main" runat="server" PathSeparator="|" />                                   
+                    <%--<asp:SiteMapPath ID="smp_main" runat="server" PathSeparator="|" /> --%>                                  
                     <asp:ContentPlaceHolder id="content_main" runat="server" >      
                     </asp:ContentPlaceHolder>
                     </div><%-- contentMain --%>
