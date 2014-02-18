@@ -9,6 +9,8 @@
 <head id="Head1" runat="server">
     <title>HOME</title>
 </head>
+
+
 <body>
     <form id="form1" runat="server">
 
@@ -46,6 +48,7 @@
                     </div>
 
                     <div class="donate">
+
                         <asp:LinkButton ID="btn_donate" Text="Donate Now" DescriptionUrl="~/home.aspx" runat="server" />
                     </div>
                 </div>
@@ -54,7 +57,9 @@
             <nav>
                 <asp:SiteMapDataSource ID="sds_menu" runat="server" />
                 <asp:Menu ID="menu_nav" DataSourceID="sds_menu" StaticDisplayLevels="2" Orientation="Horizontal" runat="server"  DynamicMenuItemStyle-BackColor="#8cc63f" DisappearAfter="500" DynamicVerticalOffset="5" StaticEnableDefaultPopOutImage="false" DynamicHoverStyle-CssClass="DynamicHoverStyle" CssClass="menu">
-                    <%--CssClass="menu_"--%>
+
+
+
                     <StaticMenuItemStyle ItemSpacing="100" />
 
                     <Items>
@@ -202,14 +207,15 @@
                     <p><asp:HyperLink ID="HyperLink7" Text="Site map" runat="server" /></p>
                     <p><asp:HyperLink ID="HyperLink6" Text="Privacy &amp; Confidentiality" runat="server" /></p>
                     <p><asp:HyperLink ID="HyperLink8" Text="Copyright &amp; terms of use" runat="server" /></p>
-              
                 </div>
-
-
             </div>
 
         </div>
         <%--end wraper--%>
     </form>
 </body>
+
+
+
+
 </html>
