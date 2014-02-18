@@ -2,7 +2,7 @@
 /* CSS Document */
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
+   v2.0 | 20110126f
    License: none (public domain)
 */
 html, body, div, span, applet, object, iframe,
@@ -502,7 +502,7 @@ nav {
         .box_c p a {
             text-align: left;
             cursor: pointer;
-            margin:0;
+            margin: 0;
         }
 
             .box_c p a:hover {
@@ -526,7 +526,7 @@ nav {
     .box_r p {
         text-align: left;
         cursor: pointer;
-        margin:0;
+        margin: 0;
     }
 
         .box_r p a:hover {
@@ -589,14 +589,14 @@ nav {
             letter-spacing: inherit;
         }
 
-    .logo p {
-        text-align: left;
-        padding: 0 0 0 20%;
-        font-family: 'Franklin Gothic Book','Bell MT','Bookman Old Style', Cambria;
-        color: #a5a0a0;
-        font-size:0.75em;
-        letter-spacing:0;
-    }
+        .logo p {
+            text-align: left;
+            padding: 0 0 0 20%;
+            font-family: 'Franklin Gothic Book','Bell MT','Bookman Old Style', Cambria;
+            color: #a5a0a0;
+            font-size: 0.75em;
+            letter-spacing: 0;
+        }
 
     .img {
         width: 20%;
@@ -806,11 +806,11 @@ nav {
 
     .menu {
         /*margin-left: 0;*/
-        margin:0 0 0 200px;
+        margin: 0 0 0 200px;
     }
 
         .menu ul {
-            width:100%;
+            width: 100%;
             background-color: #8cc63f;
             text-align: left;
             float: none;
@@ -940,8 +940,7 @@ nav {
         padding: 0;
         word-wrap: break-word;
         border-bottom: solid thin #29b5b3;
-        text-align:left;
-
+        text-align: left;
     }
 
 
@@ -980,7 +979,7 @@ nav {
         width: 100%;
         min-width: 290px;
         height: auto;
-         margin: 0 0 2% 5%;
+        margin: 0 0 2% 5%;
         float: none;
         font-size: 80%;
         padding: 0;
@@ -992,7 +991,6 @@ nav {
             text-align: left;
             cursor: pointer;
             margin: 0;
-
         }
 
             .box_r p a:hover {
@@ -1054,7 +1052,7 @@ nav {
         }
 
         .logo p {
-            display:none;
+            display: none;
         }
 
     .img {
@@ -1265,11 +1263,11 @@ nav {
 
     .menu {
         /*margin-left: 0;*/
-        margin:0 0 0 70px;
+        margin: 0 0 0 70px;
     }
 
         .menu ul {
-            width:100%;
+            width: 100%;
             background-color: #8cc63f;
             text-align: left;
             float: none;
@@ -1399,8 +1397,7 @@ nav {
         padding: 0;
         word-wrap: break-word;
         border-bottom: solid thin #29b5b3;
-        text-align:left;
-
+        text-align: left;
     }
 
 
@@ -1439,7 +1436,7 @@ nav {
         width: 100%;
         min-width: 290px;
         height: auto;
-         margin: 0 0 2% 5%;
+        margin: 0 0 2% 5%;
         float: none;
         font-size: 80%;
         padding: 0;
@@ -1451,7 +1448,6 @@ nav {
             text-align: left;
             cursor: pointer;
             margin: 0;
-
         }
 
             .box_r p a:hover {
@@ -1540,7 +1536,7 @@ nav {
         -moz-border-radius: 0;
         border-radius: 0;
         height: 23px;
-        overflow:hidden;
+        overflow: hidden;
     }
 
     .box {
@@ -1701,7 +1697,7 @@ nav {
         float: right;
         z-index: 12;
         text-align: center;
-        letter-spacing:normal;
+        letter-spacing: normal;
     }
 
         .reg a {
@@ -1992,7 +1988,7 @@ nav {
         -moz-border-radius: 0;
         border-radius: 0;
         height: 23px;
-        overflow:hidden;
+        overflow: hidden;
     }
 
     .box {
@@ -2153,7 +2149,7 @@ nav {
         float: right;
         z-index: 12;
         text-align: center;
-        letter-spacing:normal;
+        letter-spacing: normal;
     }
 
         .reg a {
@@ -2329,7 +2325,7 @@ nav {
         .box_c p {
             text-align: left;
             margin: 0;
-            padding:0;
+            padding: 0;
         }
 
             .box_c p a {
