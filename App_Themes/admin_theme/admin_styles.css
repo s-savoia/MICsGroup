@@ -214,7 +214,8 @@ header
 {
     width:709px;
     float:left;
-    padding:15px 35px 0 0;
+    padding:15px 35px 15px 0;
+    color:#666666;
 }
 .contentHead
 {
@@ -224,6 +225,7 @@ header
     background-color:#22BCB9;
     color:#ffffff;
     font-size:14px;
+    
 }
 .contentTitle
 {
@@ -232,8 +234,40 @@ header
 }
 .contentMain
 {
-    border:3px solid #22BCB9;
+    border-top:3px solid #8CC63F;
+    border-left:3px solid #22BCB9;
+    border-right:3px solid #22BCB9;
+    border-bottom:3px solid #22BCB9;
     padding:15px 20px;
+}
+#tbl_list
+{
+    color:#666666;
+}
+#tbl_list th
+{
+    height:15px;
+    width:675px;
+    text-align:left;
+    border-top:2px dotted #22BCB9;
+    background-color:#C7ECEF;
+    padding:10px 15px 10px 15px;
+}
+#tbl_list td
+{
+    width:675px;
+    text-align:left;
+    border-top:2px dotted #22BCB9;
+    border-bottom:2px dotted #22BCB9;
+    padding:10px 15px 10px 15px;
+}
+#content_edit
+{
+    margin:15px 0 30px 15px;
+}
+.paddingBottom
+{
+    padding-bottom:20px;
 }
 /* - - - - - - - - - footer - - - - - - - - - */
 footer
