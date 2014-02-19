@@ -1,2 +1,494 @@
-﻿body {
+﻿@charset "utf-8";
+/* CSS Document */
+/*CODED BY CLAUDIA*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126f
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    /*padding: 0;*/
+    border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    margin: 0;
+    vertical-align: baseline;
+    text-decoration: none;
+    text-align: right;
 }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+/* reset5 Â© 2011 opensource.736cs.com MIT */
+
+body {
+    font-family: Tahoma,Arial,sans-serif;
+    font-size: 1em;
+    color: #6d6d6e;
+    letter-spacing: 0.5%;
+    /*text-align: left;*/
+    background-color: #f5f5f5;
+    /*background-image:url(http://localhost:49466/hospital/img/2.png);*/
+}
+
+/* -------containers or divs -----------*/
+
+.wraper {
+    width: 100%;
+    margin:0 auto;
+    /*border: dashed thin red;*/
+    min-width: 310px;
+    position: relative;
+    /*agregando pos:rel*/
+}
+
+
+
+header {
+    width: 90%;
+    /*min-width: 300px;*/
+    margin-left: auto;
+    margin-right: auto;
+    height: 140px;
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(left, #ffffff 1%, #ffffff 17%, #29b5b3 99%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(1%,#ffffff), color-stop(17%,#ffffff), color-stop(99%,#29b5b3)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #ffffff 1%,#ffffff 17%,#29b5b3 99%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #ffffff 1%,#ffffff 17%,#29b5b3 99%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #ffffff 1%,#ffffff 17%,#29b5b3 99%); /* IE10+ */
+    background: linear-gradient(to right, #ffffff 1%,#ffffff 17%,#29b5b3 99%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#29b5b3',GradientType=1 ); /* IE6-9 */
+    /*---- border and shadow ----*/
+    -webkit-box-shadow: 0px 4px 8px 0px rgba(50, 50, 50, 0.29);
+    -moz-box-shadow: 0px 4px 8px 0px rgba(50, 50, 50, 0.29);
+    box-shadow: 0px 4px 8px 0px rgba(50, 50, 50, 0.29);
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}
+
+.container {
+    
+   width: 80%;
+    margin: 1% 10% 1% 10%;
+    min-width: 300px;
+    
+    position: relative;
+    z-index: 1;
+    
+    
+    
+    }
+
+.logo {
+    width: 40%;
+    margin: 0 0 0 4%;
+    height: auto;
+    float: left;
+}
+
+    .logo h1 {
+        text-align: left;
+        padding: 1% 0 0 20%;
+        font-family: 'Franklin Gothic Book','Bell MT','Bookman Old Style', Cambria;
+        color: #a5a0a0;
+        font-size: 1.8em;
+        letter-spacing: -1px;
+    }
+
+    .logo p {
+        text-align: left;
+        padding: 0 0 0 20%;
+        font-family: 'Franklin Gothic Book','Bell MT','Bookman Old Style', Cambria;
+        color: #a5a0a0;
+        font-size: 1em;
+        letter-spacing: 1%;
+    }
+
+
+.img {
+    width: 20%;
+    float: left;
+    margin-right: 2%;
+    height: auto;
+    min-width: 100px;
+}
+
+.box_head {
+    width: 40%;
+    float: right;
+    position: relative;
+    top: 20%;
+    right: 2%;
+    z-index: 11;
+}
+
+
+
+
+
+
+.box {
+    width: 25%;
+    min-width: 225px;
+    min-height:180px;
+    margin: 0 0 3% 0;
+    height:auto;
+    display:table;
+    border: thin solid #29b5b3;
+    float: left;
+    font-size: 90%;
+    background-color: #fff;
+    /*---- border and shadow ----*/
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 4px 8px 0px rgba(50, 50, 50, 0.29);
+    -moz-box-shadow: 0px 4px 8px 0px rgba(50, 50, 50, 0.29);
+    box-shadow: 0px 4px 8px 0px rgba(50, 50, 50, 0.29);
+    overflow: auto;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+
+
+
+
+.chat {
+    width: 70%;
+    margin: 1% auto 1% auto;
+    height: auto;
+    min-width: 90px;
+    text-align: left;
+}
+
+/*TOP NAVIGATION*/
+
+.donate {
+    width: 8.4%;
+    min-width: 90px;
+    background-color: #ff8a3d;
+    color: #fff;
+    font-size: 90%;
+    float: right;
+    text-align: center;
+    padding: 0.2% 0.4% 0.2% 0.2%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    position: relative;
+    top: 27%;
+    right: 5%;
+    z-index: 4;
+}
+
+    .donate a {
+        color: #fff;
+    }
+
+        .donate a:hover {
+            color: #fff;
+            font-size: 105%;
+        }
+
+.access {
+    font-size: 90%;
+    position: relative;
+    top: 44%;
+    right: 45%;
+}
+
+
+    .access a {
+        color: #08659f;
+    }
+
+        .access a:hover {
+            text-decoration: underline;
+        }
+
+
+.log {
+    font-size: 90%;
+    position: relative;
+    top: 35%;
+    right: 5%;
+    float: right;
+}
+
+    .log a {
+        color: #fff;
+    }
+
+        .log a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+
+.reg {
+    font-size: 90%;
+    position: relative;
+    top: 35%;
+    right: 7%;
+    float: right;
+}
+
+    .reg a {
+        color: #fff;
+    }
+
+        .reg a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+/*---- MAIN NAVEGATION ----*/
+
+nav {
+    width: 90%;
+    background-color: #8cc63f;
+    height: auto;
+    margin: 0px auto 0px auto;
+    position: relative;
+    -webkit-border-radius: 75px;
+        -moz-border-radius: 7px;
+        border-radius: 7px;
+}
+
+
+.menu {
+   margin:0.5% auto 0.5% auto;
+}
+
+    .menu ul {
+        background-color: #8cc63f;
+        text-align: left;
+        
+       
+    }
+
+        .menu ul li {
+            background-color: #8cc63f;
+            text-decoration: none;
+            padding: 1px 10px 3px 10px;
+            margin: 0 4px 0 4px;
+            text-align: left;
+        }
+
+            .menu ul li a {
+                color: White;
+                text-align: left;
+            }
+
+                .menu ul li a:hover {
+                    color: #08659f;
+                    background-color: #c6e39f;
+                    text-align: left;
+                }
+
+
+
+.menu_ {
+    background-color: #8cc63f;
+    float: left;
+    position: relative;
+    
+    padding: 1%;
+    text-align: left;
+    /*round corners*/
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+    .menu_ a {
+        color: #fff;
+        text-align: left;
+        padding: 1px 5px 1px 0;
+    }
+
+        .menu_ a:hover {
+            background-color: #c6e39f;
+            color: #08659f;
+            /*height: 100%;*/
+            text-align: left;
+            padding: 1px 5px 1px 0;
+        }
+
+.left {
+     width: 20%;
+    margin: 1% 0% 1% 0;
+    
+    float: left;
+    position:relative;
+}
+
+.right {
+    
+    width: 20%;
+    height: auto;
+    
+    margin: 1% 0% 1% 0;
+    float: right;
+    position:relative;
+}
+
+.content {
+   
+    width: 30%;
+   
+    float: left;
+    
+    height: auto;
+    margin: 1% 0 2% 0%;
+    
+
+}
+
+
+.btn {
+    width: 95%;
+    border-bottom: solid thin #8cc63f;
+    background-color: #C7ECEF;
+    padding: 2.5%;
+    text-align: left;
+    font-size: 90%;
+    cursor: pointer;
+}
+
+
+
+    .btn :hover {
+         width: 95%;
+        color: #29b5b3;
+        background-color: #e2e2e2;
+        font-weight: bold;
+    }
+
+.subcontent {
+    border-top:solid 20px #8cc63f;
+}
+
+.icon {
+    margin: 0 5% 0 3%;
+}
+
+/*----- content boxes ------*/
+
+.title {
+    background-color: #29b5b3;
+    color: #fff;
+    padding: 2% 22% 5% 22%;
+    text-align: center;
+    font-size: 100%;
+    border-bottom: medium solid #8cc63f;
+    width: auto;
+    min-height: 12px;
+}
+
+.shape {
+    float: left;
+    height: auto;
+    width: 10px;
+}
+
+
+/********* FOOTER ********/
+
+.footer {
+    width: 95%;
+    margin: 0 auto 1% auto;
+    height: auto;
+    border-top: solid medium #29b5b3;
+    border-bottom: solid thick #29b5b3;
+    background-color: #e2e2e2;
+    display: table;
+    padding: 0.2%;
+    overflow: hidden;
+    float: none;
+}
+
+.box_l {
+    width: 20%;
+    margin: 1% 5% 3% 0;
+    padding: 0;
+    float: left;
+    font-size: 85%;
+    height: auto;
+    padding: 2%;
+    word-wrap: break-word;
+}
+
+
+.box_c {
+    width: 30%;
+    min-width: 290px;
+    float: left;
+    font-size: 85%;
+    height: auto;
+    margin: 1% 0 2% 2%;
+    border-left: solid thin #808080;
+    border-right: solid thin #808080;
+    padding: 2% 3% 2% 3%;
+    word-wrap: break-word;
+}
+
+    .box_c p {
+        text-align: left;
+        margin: 0;
+        padding: 0;
+    }
+
+        .box_c p a {
+            text-align: left;
+            cursor: pointer;
+            margin: 0;
+        }
+
+            .box_c p a:hover {
+                text-align: left;
+                color: #29b5b3;
+                text-decoration: underline;
+            }
+
+.box_r {
+    width: 20%;
+    min-width: 290px;
+    height: auto;
+    margin: 2% 5% 2% 0;
+    float: right;
+    font-size: 85%;
+    padding: 0%;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+    .box_r p {
+        text-align: left;
+        cursor: pointer;
+        margin: 0;
+    }
+
+        .box_r p a:hover {
+            text-align: left;
+            color: #29b5b3;
+            text-decoration: underline;
+        }
+
+
