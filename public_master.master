@@ -122,9 +122,9 @@
 
             </div>
              <div class="content">
-                 <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
+                 <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" />
+                 <asp:ContentPlaceHolder id="cph_careerapplication" runat="server" />
+
             </div>
             <div class="right">
                 <%--nav features--%>
