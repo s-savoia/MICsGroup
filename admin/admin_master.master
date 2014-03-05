@@ -5,25 +5,12 @@
 <%-- style sheet --%>
 <link href="../App_Themes/admin_theme/admin_styles.css" rel="stylesheet" />
 <%-- stylesheet for media queries --%>
-<link href="../App_Themes/admin_theme/mediaqueries.css" rel="stylesheet" type="text/css">
+<%-- link href="../App_Themes/admin_theme/mediaqueries.css" rel="stylesheet" type="text/css">--%>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Admin Master Page</title>
-    <%-- media queries and shiv --%>
-    <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-        <![endif]-->
-    <!--[if IE 9]>
-	    <link rel="stylesheet" type="text/css" media="all" href="css/ie9.css"/>
-	    <![endif]-->
-    <!--[if IE 8]>
-	    <link rel="stylesheet" type="text/css" media="all" href="css/ie.css"/>
-	    <![endif]-->
-    <!--[if IE 7]>
-	    <link rel="stylesheet" type="text/css" media="all" href="css/ie7.css"/>
-	    <![endif]-->
+
     <%-- meta data --%>
     <meta name="keywords" content="MICS group, hospital, CMS" />
     <meta name="description" content="MICS group hospital admin website" />
@@ -96,7 +83,7 @@
                             <asp:Image ID="img_swash" runat="server" ImageUrl="~/admin/img/swash.png" />
                             <asp:Label ID="lbl_content" runat="server" Text="CONTENT" CssClass="navTitle" />
                         </li><%-- navStyleHead  --%>
-                         <asp:Menu ID="mnu_main" runat="server" DataSourceID="sds_main" StaticMenuItemStyle-CssClass="navStyle" DynamicMenuItemStyle-CssClass="navStyle" ForeColor="#666666" StaticEnableDefaultPopOutImage="false" StaticBottomSeparatorImageUrl="img/border.png" DynamicBottomSeparatorImageUrl="img/border.png" />
+                         <asp:Menu ID="mnu_main" runat="server" DataSourceID="sds_main" StaticMenuItemStyle-CssClass="navStyle" DynamicMenuItemStyle-CssClass="navStyleDynamic" ForeColor="#666666" StaticEnableDefaultPopOutImage="false" StaticBottomSeparatorImageUrl="img/border.png" DynamicBottomSeparatorImageUrl="img/border.png" />
                         <asp:SiteMapDataSource ID="sds_main" runat="server" ShowStartingNode="false" />
 
                         <%-- User Menu --%>

@@ -203,6 +203,18 @@ header
     font-weight:500;
     font-size:14px;
 }
+.navStyleDynamic
+{
+    width:195px;
+    height:28px;
+    background-color:#A2DADE;
+    text-align:left;
+    padding-top:12px;
+    padding-left:15px;
+    color:#888888;
+    font-weight:500;
+    font-size:14px;
+}
 .navTitle
 {
     position:relative;
