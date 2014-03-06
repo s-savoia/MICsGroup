@@ -8,24 +8,6 @@
       <Column Name="long_alert" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.mic_volunteer" Member="mic_volunteers">
-    <Type Name="mic_volunteer">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="fname" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="lname" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="gender" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="age" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="contact_number" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="email" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="address" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="city" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="province" Type="System.String" DbType="VarChar(22)" CanBeNull="true" />
-      <Column Name="qualification" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="school_name" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
-      <Column Name="date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="resume" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.mic_book_appointment" Member="mic_book_appointments">
     <Type Name="mic_book_appointment">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -106,12 +88,11 @@
       <Column Name="details" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.mic_job_posts" Member="mic_job_posts">
-    <Type Name="mic_job_post">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="position" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="location" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="details" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+  <Table Name="dbo.mic_mailing_list" Member="mic_mailing_lists">
+    <Type Name="mic_mailing_list">
+      <Column Name="mailing_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.mic_locations" Member="mic_locations">
@@ -123,13 +104,6 @@
       <Column Name="lat" Type="System.Decimal" DbType="Decimal(18,12)" CanBeNull="true" />
       <Column Name="lng" Type="System.Decimal" DbType="Decimal(18,12)" CanBeNull="true" />
       <Column Name="phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.mic_mailing_list" Member="mic_mailing_lists">
-    <Type Name="mic_mailing_list">
-      <Column Name="mailing_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="name" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="email" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.mic_news_events" Member="mic_news_events">
@@ -175,6 +149,32 @@
       <Column Name="area" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="symptom" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="causes" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mic_volunteer" Member="mic_volunteers">
+    <Type Name="mic_volunteer">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fname" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="lname" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="gender" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="contact_number" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="province" Type="System.String" DbType="VarChar(22)" CanBeNull="true" />
+      <Column Name="qualification" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="school_name" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="resume" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mic_job_postings" Member="mic_job_postings">
+    <Type Name="mic_job_posting">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="position" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="location" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="details" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>
