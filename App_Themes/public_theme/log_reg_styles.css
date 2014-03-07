@@ -1,0 +1,13 @@
+﻿img {
+    margin:50px 0 10px 0;
+}
+
+#log_reg_wrapper {
+    text-align: center;
+}
+
+#log_reg_main {
+    border: 3px #22BCB9 solid;
+    display: inline-block;
+    padding:8px;
+}
