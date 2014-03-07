@@ -1,9 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/public_master.master" AutoEventWireup="true" CodeFile="career_application.aspx.cs" Inherits="career_application" %>
 <%-- This page was coded by HIDEMI NAWATA --%>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="cph_careerapplication" Runat="Server">
+
+<asp:Content ID="Content1" ContentPlaceHolderID="content_main" Runat="Server">
     <div>
         <%--Header and subheader--%>
         <asp:Label ID="lbl_careerhead" runat="server" Text="Online Application for: Registered Nurse" />

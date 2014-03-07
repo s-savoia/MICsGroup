@@ -1,6 +1,6 @@
 ﻿@charset "utf-8";
 /* CSS Document */
-/*CODED BY CLAUDIA*/
+/*CODED BY CLAUDIA AND PRABHJOT*/
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126f
@@ -26,7 +26,7 @@ time, mark, audio, video {
     margin: 0;
     vertical-align: baseline;
     text-decoration: none;
-    text-align: right;
+    
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -269,16 +269,20 @@ nav {
     -webkit-border-radius: 75px;
         -moz-border-radius: 7px;
         border-radius: 7px;
+        z-index: 10;
 }
 
 
+
 .menu {
-   margin:0.5% auto 0.5% auto;
+   margin:0.5% 20% 0.5% 20%;
 }
 
     .menu ul {
         background-color: #8cc63f;
         text-align: left;
+        padding-left:50px;
+        
         
        
     }
@@ -287,7 +291,7 @@ nav {
             background-color: #8cc63f;
             text-decoration: none;
             padding: 1px 10px 3px 10px;
-            margin: 0 4px 0 4px;
+            margin: 0 15px 0 4px;
             text-align: left;
         }
 
@@ -306,7 +310,7 @@ nav {
 
 .menu_ {
     background-color: #8cc63f;
-    float: left;
+    float: right;
     position: relative;
     
     padding: 1%;
@@ -351,9 +355,10 @@ nav {
 
 .content {
    
-    width: 30%;
+    width: 60%;
    
     float: left;
+    text-align:left;
     
     height: auto;
     margin: 1% 0 2% 0%;
@@ -374,12 +379,6 @@ nav {
 
 
 
-    .btn :hover {
-         width: 95%;
-        color: #29b5b3;
-        background-color: #e2e2e2;
-        font-weight: bold;
-    }
 
 .subcontent {
     border-top:solid 20px #8cc63f;

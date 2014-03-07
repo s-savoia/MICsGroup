@@ -36,11 +36,11 @@
 
                 <div class="box_head">
                     <div class="log">
-                        <asp:LinkButton ID="btn" Text="Log in" runat="server" Target="_self" DescriptionUrl="~/home.aspx" />
+                        <asp:LinkButton ID="btn" Text="Log in" runat="server"  DescriptionUrl="~/home.aspx" />
                     </div>
 
                     <div class="reg">
-                        <asp:LinkButton ID="btn_reg" Text="Register" runat="server" Target="_self" DescriptionUrl="~/home.aspx" />
+                        <asp:LinkButton ID="btn_reg" Text="Register" runat="server"  DescriptionUrl="~/home.aspx" />
                     </div>
 
                     <div class="access">
@@ -122,8 +122,8 @@
 
             </div>
              <div class="content">
-                 <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" />
-                 <asp:ContentPlaceHolder id="cph_careerapplication" runat="server" />
+                 <asp:ContentPlaceHolder id="content_main" runat="server" />
+                
 
             </div>
             <div class="right">
