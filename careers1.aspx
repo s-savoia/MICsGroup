@@ -6,7 +6,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="content_main" runat="Server">
 
     <h3><asp:Literal ID="ltl_title" runat="server" Text="Job Postings" /></h3>
 
@@ -100,8 +100,6 @@
 
 
     </section>
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="cph_careerapplication" runat="Server">
 </asp:Content>
 
 <%--    <pages>  <!--pages section added by James (sorry, but I had to add this)-->
