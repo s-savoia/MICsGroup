@@ -33,7 +33,7 @@
         </siteMapNode>
       
         <!--Career--> 
-        <siteMapNode url="admin_career.aspx" title="Career"  description="Career">
+        <siteMapNode url="admin_job.aspx" title="Career"  description="Career">
           <siteMapNode url="admin_jobposting.aspx" title="Job Posting"  description="Job Posting" />
           <siteMapNode url="admin_career.aspx" title="Career Application"  description="Career Application" />
           <siteMapNode url="admin_volunteer.aspx" title="Volunteer Application"  description="Volunteer Application" />
@@ -46,7 +46,7 @@
         <siteMapNode url="admin_donation.aspx" title="Donation" description="Donation">
           <siteMapNode url="admin_success.aspx" title="Success Stories" description="Success Stories" />
           <siteMapNode url="admin_plea.aspx" title="Plea From The Board" description="Plea From The Board" />
-          <siteMapNode url="admin_donation.aspx" title="Donation" description="Donation" />
+          <siteMapNode url="admin_paydonation.aspx" title="Donation" description="Donation" />
         </siteMapNode>
       
         <!--Privacy & Confidentiality-->

@@ -84,7 +84,7 @@
                             <asp:Label ID="lbl_content" runat="server" Text="CONTENT" CssClass="navTitle" />
                         </li><%-- navStyleHead  --%>
                          <asp:Menu ID="mnu_main" runat="server" DataSourceID="sds_main" StaticMenuItemStyle-CssClass="navStyle" DynamicMenuItemStyle-CssClass="navStyleDynamic" ForeColor="#666666" StaticEnableDefaultPopOutImage="false" StaticBottomSeparatorImageUrl="img/border.png" DynamicBottomSeparatorImageUrl="img/border.png" />
-                        <asp:SiteMapDataSource ID="sds_main" runat="server" ShowStartingNode="false" />
+                        <asp:SiteMapDataSource ID="sds_main" runat="server" SiteMapProvider="AdminSiteMapProvider" ShowStartingNode="false" />
 
                         <%-- User Menu --%>
                         <li class="navStyleHead">
