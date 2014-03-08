@@ -37,7 +37,7 @@
 
         <%--Country--%>
         <asp:Label ID="lbl_country" runat="server" Text="Country: " />
-        <asp:Dropdownlist ID="ddl_country" runat="server" CausesValidation="false" SelectedValue='<%#Bind("address")%>'>
+        <asp:Dropdownlist ID="ddl_country" runat="server" CausesValidation="false" SelectedValue='<%#Bind("country")%>'>
             <asp:ListItem Value="1" Text="Canada" Selected="True" />
             <asp:ListItem Value="2" Text="International" />
         </asp:Dropdownlist>
@@ -159,12 +159,17 @@
         <br /><br />
 
         <%--consent--%>
-        <asp:CheckBox ID="ckb_consent" runat="server" Text="I certify that the information I've provided through this application process is correct." Checked='<%#Bind("consent")%>' />
+        <asp:Label ID="lbl_consent" runat="server" Text="I certify that the information I've provided through this application process is correct." />
+        <asp:CheckBoxList ID="ckb_consent" runat="server"  SelectedValue='<%#Bind("consent")%>'>
+            <asp:ListItem Value="1" Text="yes" Selected="True" />
+            <asp:ListItem Value="2" Text="no" />
+        </asp:CheckBoxList>
         <br /><br />
 
         <%--send button--%>
-        <asp:Button ID="btn_newsletter" runat="server" OnClick="subClick" Text="Apply" CausesValidation="true" ValidationGroup="careerapplication" />
-        <asp:ValidationSummary ID="vds_career" runat="server" ShowMessageBox="true" ValidationGroup="careerapplication" HeaderText="Career Application Error" />
+        <asp:Button ID="btn_send" runat="server" OnCommand="subAdmin" CommandName="Insert" Text="Apply" CausesValidation="true" ValidationGroup="careerapplication" />
+        <asp:Button ID="btn_cancel" runat="server" OnCommand="subAdmin" CommandName="Cancel" Text="Cancel" CausesValidation="false" ValidationGroup="careerapplication" />
+        <asp:ValidationSummary ID="vds_career" runat="server" ShowMessageBox="true" ValidationGroup="careerapplication" HeaderText="Career Application Error" DisplayMode="List" />
         <br />
         <%--confirmation message--%>
         <asp:Label ID="lbl_output" runat="server" />
