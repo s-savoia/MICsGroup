@@ -6,7 +6,7 @@ using System.Web;
 //This page is the bridge between the class pages and the products.dbml file
 public class contactClass
 {
-    public IQueryable<mic_contact> getProducts()
+    public IQueryable<mic_contact> getMessages()
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         var allContact = objHospital.mic_contacts.Select(x => x); // "x" represents all columns
@@ -14,7 +14,7 @@ public class contactClass
         return allContact;
     }
 
-    public IQueryable<mic_contact> getProductByID(int _id)
+    public IQueryable<mic_contact> getMessageByID(int _id)
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         var allContact = objHospital.mic_contacts.Where(x => x.Id == _id).Select(x => x);
