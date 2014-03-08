@@ -8,9 +8,6 @@
 
         <asp:ListView ID="lv_contact" runat="server" DataKeyNames="Id" onitemcommand="subUpDel" OnPagePropertiesChanging="ListEvents_PagePropertiesChanging">
         <LayoutTemplate>
-            <div class="blog">
-            <h2>Blue Jays GIF Blog</h2>
-            </div>
             <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
         </LayoutTemplate>
         <ItemTemplate>

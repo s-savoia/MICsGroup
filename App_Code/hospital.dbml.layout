@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12, 15.5" name="hospital">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 13, 15.5" name="hospital">
   <DataContextMoniker Name="/hospitalDataContext" />
   <nestedChildShapes>
     <classShape Id="eab74854-a004-45f5-ba8a-676949110684" absoluteBounds="0.5, 0.75, 2, 1.5785953776041666">
@@ -36,12 +36,6 @@
       <DataClassMoniker Name="/hospitalDataContext/mic_mailing_list" />
       <nestedChildShapes>
         <elementListCompartment Id="2688f745-ad63-4a3a-8e33-48a60d4a3369" absoluteBounds="6.765, 9.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="fd7c6a50-c57b-4509-a964-cfbdcac4b96f" absoluteBounds="9.75, 0.75, 2, 2.1554996744791666">
-      <DataClassMoniker Name="/hospitalDataContext/mic_location" />
-      <nestedChildShapes>
-        <elementListCompartment Id="25a6499a-97de-4d78-9001-95da2fb54956" absoluteBounds="9.765, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="d7069ceb-66a9-4dfa-b7b4-81f99bb2ca5b" absoluteBounds="9.75, 3.75, 2, 1.9631982421875005">
@@ -84,6 +78,12 @@
       <DataClassMoniker Name="/hospitalDataContext/mic_career_application" />
       <nestedChildShapes>
         <elementListCompartment Id="c1271161-f805-4536-96b0-61c392a52083" absoluteBounds="1.0150000000000001, 5.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6086ee11-956b-4078-8772-7117ada59f7f" absoluteBounds="10.75, 1, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/hospitalDataContext/mic_location" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dfc11ae2-356e-48a8-baf8-bed52daf4aca" absoluteBounds="10.765, 1.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
