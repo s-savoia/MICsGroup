@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
         <div id="log_reg_wrapper">
-        <asp:Image ID="img_logo" runat="server" ImageUrl="~/img/logo.png" />
+        <asp:Image ID="img_logo" runat="server" ImageUrl="~/img/log_reg_logo.png" />
             <br />
     <div id="log_reg_main">
         <asp:Login ID="lgn_main" runat="server" DestinationPageUrl="~/admin/admin_master.aspx" CreateUserUrl="~/register.aspx" CreateUserText="Register" />    
