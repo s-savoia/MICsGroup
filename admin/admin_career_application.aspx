@@ -13,6 +13,7 @@
                     <th><asp:Label ID="lbl_status" runat="server" Text="Last Name" /></th>
                     <th><asp:Label ID="lbl_date" runat="server" Text="email" /></th>
                     <th></th>
+                    <th></th>
                 </tr>
             </table>
         </HeaderTemplate>
@@ -24,7 +25,8 @@
                     <td><asp:Label ID="lbl_authorD" runat="server" Text='<%#Eval("fname") %>' /></td>
                     <td><asp:Label ID="lbl_statusD" runat="server" Text='<%#Eval("lname") %>' /></td>
                     <td><asp:Label ID="lbl_dateD" runat="server" Text='<%#Eval("email") %>' /></td>
-                    <td><asp:LinkButton ID="btn_edit" runat="server" Text="Edit" Width="55px" CommandName="Update" CommandArgument='<%#Eval("career_id") %>' /></td>
+                    <td></td>
+                    <td><asp:Button ID="btn_edit" runat="server" Text="Edit" Width="55px" CommandName="Update" CommandArgument='<%#Eval("career_id") %>' /></td>
                 </tr>  
             </table>
         </ItemTemplate>
@@ -33,6 +35,7 @@
     
 
     <asp:Panel ID="pnl_edit" runat="server">
+        <asp:Label ID="lbl_message" runat="server" />
         <asp:Repeater ID="rpt_edit" runat="server" OnItemCommand="subUpdate">      
             <%--Edit--%>
             <ItemTemplate>
@@ -55,7 +58,7 @@
                     <br /><br />
                     <%--address--%>
                     <asp:Label ID="lbl_addressE" runat="server" Text="Address: " />
-                    <asp:TextBox ID="txt_addressE" TextMode="Multiline" runat="server" Text='<%#Bind("address") %>' Columns="75" Rows="10" BorderColor="#666666" />
+                    <asp:TextBox ID="txt_addressE" TextMode="Multiline" runat="server" Text='<%#Bind("address") %>' Columns="75" Rows="5" BorderColor="#666666" />
                     <asp:RequiredFieldValidator ID="rfv_addressE" runat="server" ControlToValidate="txt_addressE" ErrorMessage="*Required" Display="None" ValidationGroup="edit" />
                     <br /><br />
                     <%--country--%>
@@ -160,13 +163,13 @@
                     <%--reason--%>
                     <asp:Label ID="lbl_reasonE" runat="server" Text="Reason:" AssociatedControlID="txt_reasonE" />
                     <br /><br />
-                    <asp:TextBox ID="txt_reasonE" runat="server" TextMode="MultiLine" Text='<%#Bind("reason")%>' Columns="75" Rows="10" BorderColor="#666666" />
+                    <asp:TextBox ID="txt_reasonE" runat="server" TextMode="MultiLine" Text='<%#Bind("reason")%>' Columns="75" Rows="5" BorderColor="#666666" />
                     <asp:RequiredFieldValidator ID="rfv_reasonE" runat="server" ControlToValidate="txt_reasonE" ErrorMessage="*Required" Display="None" ValidationGroup="edit" />
                     <br /><br />
                     <%--comment--%>
                     <asp:Label ID="lbl_commentE" runat="server" Text="Comment:" AssociatedControlID="txt_commentE" />
                     <br />
-                    <asp:TextBox ID="txt_commentE" runat="server" TextMode="MultiLine" Text='<%#Bind("comment")%>' Columns="75" Rows="10" BorderColor="#666666" />
+                    <asp:TextBox ID="txt_commentE" runat="server" TextMode="MultiLine" Text='<%#Bind("comment")%>' Columns="75" Rows="5" BorderColor="#666666" />
                     <asp:RequiredFieldValidator ID="rfv_commentE" runat="server" ControlToValidate="txt_commentE" ErrorMessage="*Required" Display="None" ValidationGroup="edit" />
                     <br /><br />
                     <%--consent--%>
@@ -176,14 +179,14 @@
                         <asp:ListItem Value="2" Text="no" />
                     </asp:CheckBoxList>
                     <br /><br />
-
+                    <%--update/delete/cancel button--%>
                     <asp:Button ID="btn_update" runat="server" Text="Update" CommandName="Update" Width="55px" />
                     <asp:Button ID="btn_delete" runat="server" Text="Delete" CommandName="Delete"  Width="55px" />
                     <asp:Button ID="btn_cancel" runat="server" Text="Cancel" CommandName="Cancel"  Width="55px" />
                 </div>
             </ItemTemplate>   
         </asp:Repeater>
-        <asp:Label ID="lbl_message" runat="server" />
+        
     </asp:Panel>
     
 </asp:Content>
