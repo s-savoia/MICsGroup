@@ -3,29 +3,34 @@
 <%-- This page was coded by HIDEMI NAWATA --%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="content_main" Runat="Server">
-    <asp:Repeater ID="rpt_main" runat="server" DataKeyField="id" OnItemCommand="subAdmin">
-        <ItemTemplate>     
+    <asp:Panel ID="pnl_main" runat="server">
+    <asp:Repeater ID="rpt_main" runat="server" OnItemCommand="subAdmin">
+        <HeaderTemplate>
             <table id="tbl_list">
                 <tr>
-                    <th><asp:Label ID="lbl_title" runat="server" Text="Applicant ID" /></th>
+                    <th><asp:Label ID="lbl_title" runat="server" Text="ID" /></th>
                     <th><asp:Label ID="lbl_author" runat="server" Text="First Name" /></th>
                     <th><asp:Label ID="lbl_status" runat="server" Text="Last Name" /></th>
                     <th><asp:Label ID="lbl_date" runat="server" Text="email" /></th>
                     <th></th>
                 </tr>
-       
+            </table>
+        </HeaderTemplate>
+        <ItemTemplate>
+            <table id="tbl_list2">       
                 <%--Bind Data--%>
                 <tr>
                     <td><asp:Label ID="lbl_titleD" runat="server" Text='<%#Eval("career_id") %>' /></td>
                     <td><asp:Label ID="lbl_authorD" runat="server" Text='<%#Eval("fname") %>' /></td>
                     <td><asp:Label ID="lbl_statusD" runat="server" Text='<%#Eval("lname") %>' /></td>
                     <td><asp:Label ID="lbl_dateD" runat="server" Text='<%#Eval("email") %>' /></td>
-                    <td><asp:LinkButton ID="btn_edit" runat="server" Text="Edit" Width="55px" OnClick="showEdit" CommandArgument='<%#Eval("career_id") %>' /></td>
-                    <td><asp:LinkButton ID="btn_delete" runat="server" Text="Delete" CommandName="Delete" OnClientClick="return confirm('Confirm Delete?)" /></td>
+                    <td><asp:LinkButton ID="btn_edit" runat="server" Text="Edit" Width="55px" CommandName="Update" CommandArgument='<%#Eval("career_id") %>' /></td>
                 </tr>  
             </table>
         </ItemTemplate>
     </asp:Repeater>
+    </asp:Panel>
+    
 
     <asp:Panel ID="pnl_edit" runat="server">
         <asp:Repeater ID="rpt_edit" runat="server" OnItemCommand="subUpdate">      
@@ -140,21 +145,21 @@
                     <br /><br />
                     <%--resume--%>
                     <asp:Label ID="lbl_resumeE" runat="server" Text="Resume:" />
-                    <br />
-                    <asp:Image ID="img_resumeE" runat="server" ImageUrl='<%#Bind("resume") %>' />
+                    <asp:Label ID="lbl_resumeShow" runat="server" Text='<%#Bind("resume") %>' />
+                    <%-- <asp:Image ID="img_resumeE" runat="server" ImageUrl='<%#Bind("resume") %>' /> --%>
                     <br />
                     <asp:FileUpload ID="ful_resumeE" runat="server" FileName='<%#Bind("resume") %>' />
                     <br /><br />
                     <%--coverletter--%>
                     <asp:Label ID="lbl_coverletterE" runat="server" Text="Coverletter:" />
+                    <asp:Label ID="lbl_coverletterShow" runat="server" Text='<%#Bind("coverletter") %>' />
+                    <%--<asp:Image ID="Image1" runat="server" ImageUrl='<%#Bind("coverletter") %>' /> --%>
                     <br />
-                    <asp:Image ID="Image1" runat="server" ImageUrl='<%#Bind("coverletter") %>' />
-                    <br />
-                    <asp:FileUpload ID="FileUpload1" runat="server" FileName='<%#Bind("coverletter") %>' />
+                    <asp:FileUpload ID="ful_coverletterE" runat="server" FileName='<%#Bind("coverletter") %>' />
                     <br /><br />
                     <%--reason--%>
-                    <asp:Label ID="lbl_reasonE" runat="server" Text="Reason:" AssociatedControlID="txt_reason" />
-                    <br />
+                    <asp:Label ID="lbl_reasonE" runat="server" Text="Reason:" AssociatedControlID="txt_reasonE" />
+                    <br /><br />
                     <asp:TextBox ID="txt_reasonE" runat="server" TextMode="MultiLine" Text='<%#Bind("reason")%>' Columns="75" Rows="10" BorderColor="#666666" />
                     <asp:RequiredFieldValidator ID="rfv_reasonE" runat="server" ControlToValidate="txt_reasonE" ErrorMessage="*Required" Display="None" ValidationGroup="edit" />
                     <br /><br />
@@ -173,10 +178,12 @@
                     <br /><br />
 
                     <asp:Button ID="btn_update" runat="server" Text="Update" CommandName="Update" Width="55px" />
+                    <asp:Button ID="btn_delete" runat="server" Text="Delete" CommandName="Delete"  Width="55px" />
                     <asp:Button ID="btn_cancel" runat="server" Text="Cancel" CommandName="Cancel"  Width="55px" />
                 </div>
             </ItemTemplate>   
         </asp:Repeater>
+        <asp:Label ID="lbl_message" runat="server" />
     </asp:Panel>
     
 </asp:Content>

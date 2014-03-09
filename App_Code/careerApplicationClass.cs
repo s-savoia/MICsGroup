@@ -14,7 +14,7 @@ public class careerApplicationClass
     }
 
     //Get Specific Career
-    public IQueryable<mic_career_application> getItemByID(int _id)
+    public IQueryable<mic_career_application> getCareerByID(int _id)
     {
         hospitalDataContext objCareer = new hospitalDataContext();
         var allCareer = objCareer.mic_career_applications.Where(x => x.career_id == _id).Select(x => x);

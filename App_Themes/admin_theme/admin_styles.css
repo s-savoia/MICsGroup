@@ -270,6 +270,25 @@ header
     width:675px;
     text-align:left;
     border-top:2px dotted #22BCB9;
+    padding:10px 15px 10px 15px;
+}
+#tbl_list2
+{
+    color:#666666;
+}
+#tbl_list2 th
+{
+    height:15px;
+    width:675px;
+    text-align:left;
+    background-color:#C7ECEF;
+    padding:10px 15px 10px 15px;
+}
+#tbl_list2 td
+{
+    width:675px;
+    text-align:left;
+    border-top:2px dotted #22BCB9;
     border-bottom:2px dotted #22BCB9;
     padding:10px 15px 10px 15px;
 }
