@@ -170,7 +170,7 @@
     <Type Name="mic_location">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="image" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="lat" Type="System.Decimal" DbType="Decimal(18,12)" CanBeNull="true" />
       <Column Name="lng" Type="System.Decimal" DbType="Decimal(18,12)" CanBeNull="true" />

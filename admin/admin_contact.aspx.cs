@@ -79,7 +79,7 @@ public partial class admin_Default : System.Web.UI.Page
 protected void ListEvents_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
 {
     //set current page startindex, max rows and rebind to false
-    dp_contact.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+    Response.Write("<script languge='javascript'>alert('again');</script>");
 
     //rebind List View
 //    _subRebind();

@@ -3456,7 +3456,7 @@ public partial class mic_location : INotifyPropertyChanging, INotifyPropertyChan
 	
 	private string _name;
 	
-	private System.Data.Linq.Binary _image;
+	private string _image;
 	
 	private string _description;
 	
@@ -3474,7 +3474,7 @@ public partial class mic_location : INotifyPropertyChanging, INotifyPropertyChan
     partial void OnIdChanged();
     partial void OnnameChanging(string value);
     partial void OnnameChanged();
-    partial void OnimageChanging(System.Data.Linq.Binary value);
+    partial void OnimageChanging(string value);
     partial void OnimageChanged();
     partial void OndescriptionChanging(string value);
     partial void OndescriptionChanged();
@@ -3531,8 +3531,8 @@ public partial class mic_location : INotifyPropertyChanging, INotifyPropertyChan
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_image", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-	public System.Data.Linq.Binary image
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_image", DbType="VarChar(50)")]
+	public string image
 	{
 		get
 		{
