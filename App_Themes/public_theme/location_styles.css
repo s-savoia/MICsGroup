@@ -1,2 +1,4 @@
-﻿body {
+﻿#map-canvas {
+    height:400px;
+    width:650px;
 }

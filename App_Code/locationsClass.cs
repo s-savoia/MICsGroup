@@ -28,14 +28,14 @@ public class locationsClass
         hospitalDataContext objLocation = new hospitalDataContext();
         using (objLocation)
         {
-            mic_contact objUpLocation = objLocation.mic_locations.Single(x => x.Id == _id);
-            objUpLocation.fname = _name;
-            objUpLocation.lname = _image;
-            objUpLocation.email = _description;
-            objUpLocation.city = _lat;
-            objUpLocation.province = _lng;
-            objUpLocation.subject = _phone;
-            objLocation.mic_contacts.InsertOnSubmit(objUpLocation);
+            mic_location objUpLocation = objLocation.mic_locations.Single(x => x.Id == _id);
+            objUpLocation.name = _name;
+            objUpLocation.image = _image;
+            objUpLocation.description = _description;
+            objUpLocation.lat = _lat;
+            objUpLocation.lng = _lng;
+            objUpLocation.phone = _phone;
+            objLocation.mic_locations.InsertOnSubmit(objUpLocation);
             objLocation.SubmitChanges();
             return true;
         }

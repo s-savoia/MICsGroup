@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 public partial class Default2 : System.Web.UI.Page
 {
+
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!Page.IsPostBack)
@@ -23,4 +24,6 @@ public partial class Default2 : System.Web.UI.Page
         lv_locations.DataSource = objLinq.getLocations();
         lv_locations.DataBind();
     }
+
+
 }
