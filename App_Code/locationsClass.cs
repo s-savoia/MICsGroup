@@ -35,7 +35,6 @@ public class locationsClass
             objUpLocation.lat = _lat;
             objUpLocation.lng = _lng;
             objUpLocation.phone = _phone;
-            objLocation.mic_locations.InsertOnSubmit(objUpLocation);
             objLocation.SubmitChanges();
             return true;
         }
