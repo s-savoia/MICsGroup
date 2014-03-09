@@ -1,4 +1,41 @@
 ﻿#map-canvas {
     height:400px;
-    width:650px;
+    width:100%;
 }
+
+.locations_image {
+    display:block;
+    margin:0 auto;
+    border: 3px #22BCB9 solid;
+}
+
+.location_public_content {
+    width: 90%;
+    overflow:auto;
+}
+
+.locations_hospital_info {
+    padding:5px;
+    width:210px;
+    float:left;
+}
+
+#hospitals_wrapper {
+    margin: 0 auto;
+    overflow:auto;
+    display:block;
+    width:100%;
+}
+
+.hospital_info_text > a {
+    font-size:1.2em;
+    margin:5px 0 2px 0;
+    display:inline-block;
+}
+
+.hospital_info_text {
+    text-align:center;
+    width: 160px;
+    margin: 0 auto;
+}
+

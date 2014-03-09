@@ -9,29 +9,31 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content_main" Runat="Server">
     <h2>Contact Us</h2>
-
-            <div id="map-canvas"></div>
             <asp:ListView ID="lv_locations" runat="server" DataKeyNames="Id">
         <LayoutTemplate>
-
-            <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
+            <div class="location_public_content">
+            <div id="map-canvas"></div>
+                <div id="hospitals_wrapper">
+                    <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
+                </div>
+            </div>
         </LayoutTemplate>
         <ItemTemplate>
             <asp:hiddenfield ID="hdf_name" runat="server" Value='<%#Eval("name") %>' />
             <asp:hiddenfield ID="hdf_lat" runat="server" Value='<%#Eval("lat") %>' />
             <asp:hiddenfield ID="hdf_lng" runat="server" Value='<%#Eval("lng") %>' />
-            <div class="location_public_content">
-                <asp:Image ID="img" runat="server" ImageUrl='<%#Eval("image") %>' />
-                <div>
-                    From: <%#Eval("name") %> <%#Eval("description") %>
-                    Location: <%#Eval("lat") %>, <%#Eval("lng") %>
-                    Email: <%#Eval("phone") %>
+                <div class="locations_hospital_info">
+                    <a href="javascript:void(0);" onclick="zoomTo(<%#Eval("lat") %>,<%#Eval("lng") %>);">
+                    <asp:Image ID="img" runat="server" CssClass="locations_image" ImageUrl='<%#Eval("image") %>' /></a>
+                    <div class="hospital_info_text">
+                        <a href="javascript:void(0);" onclick="zoomTo(<%#Eval("lat") %>,<%#Eval("lng") %>);"><%#Eval("name") %></a>
+                        <br />
+                        <%#Eval("description") %>
+                        <br />
+                        Phone:<br />
+                        <%#Eval("phone") %>
+                    </div>
                 </div>
-                <div class="post">
-                    <%#Eval("image") %>
-                    <br />
-                </div> 
-            </div>
         </ItemTemplate>
     </asp:ListView>
 
@@ -45,8 +47,8 @@
 
                 function initialize() {
                     var mapOptions = {
-                        zoom: 7,
-                        center: new google.maps.LatLng(48, -80.5)
+                        zoom: 8,
+                        center: new google.maps.LatLng(48.839589, -80.66974)
                     }
                     map = new google.maps.Map(document.getElementById('map-canvas'),
                                                   mapOptions);
@@ -59,7 +61,7 @@
 
                 function setMarker(name, lat, lng) {
                     var image = {
-                        url: 'img/cruz.png'
+                        url: 'img/map_logo.png'
                     };
                     var myLatLng = new google.maps.LatLng(lat, lng);
                     var marker = new google.maps.Marker({
@@ -69,6 +71,12 @@
                         title: name
                     });
 
+                }
+
+                function zoomTo(lat, lng) {
+                    var this_lat_long = new google.maps.LatLng(lat, lng);
+                    map.setZoom(14);
+                    map.panTo(this_lat_long);
                 }
 
                 google.maps.event.addDomListener(window, 'load', initialize);
