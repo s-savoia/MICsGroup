@@ -4,9 +4,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="content_main" Runat="Server">
     <h1>Locations - Admin</h1>
+    <asp:Label ID="lbl_message" runat="server" />
     <h2>Update Hospital Location Information:</h2>
     <asp:ValidationSummary ID="vds_edit" ValidationGroup="edit" runat="server" DisplayMode="BulletList" ShowMessageBox="true" ShowSummary="false" HeaderText="Validation Summary:" />
-    <asp:Label ID="lbl_message" runat="server" />
     
     <asp:Listview ID="lv_all" runat="server" OnItemCommand="subUpDel" >
     <ItemTemplate>
@@ -27,25 +27,25 @@
         <asp:Label ID="lbl_image" AssociatedControlID="txt_image" runat="server" Text="Image:" />
         <br />
         <asp:TextBox ID="txt_image" runat="server" Text='<%#Bind("image") %>' />
-        <asp:RequiredFieldValidator ID="rfv_image" runat="server" Text="*" ControlToValidate="txt_image" ValidationGroup="edit" ErrorMessage="Please insert a pathway to the image" />
+        <asp:RequiredFieldValidator ID="rfv_image" runat="server" Text="*" ControlToValidate="txt_image" ValidationGroup="edit" ErrorMessage="Please insert a pathway to the hospital image" />
         <br />
         <asp:Label ID="lbl_phone" AssociatedControlID="txt_phone" runat="server" Text="Phone:" />
         <br />
         <asp:TextBox ID="txt_phone" runat="server" Text='<%#Bind("phone") %>' />
-        <asp:RequiredFieldValidator ID="rfv_phone" runat="server" Text="*" ControlToValidate="txt_phone" ValidationGroup="edit" ErrorMessage="Please insert a pathway to the image" />
+        <asp:RequiredFieldValidator ID="rfv_phone" runat="server" Text="*" ControlToValidate="txt_phone" ValidationGroup="edit" ErrorMessage="Please insert a phone number" />
 
         <br />
         <asp:Label ID="lbl_lat" AssociatedControlID="txt_lat" runat="server" Text="Lat:" />
         <br />
         <asp:TextBox ID="txt_lat" runat="server" Text='<%#Bind("lat") %>' />
-        <asp:RequiredFieldValidator ID="rfv_lat" runat="server" Text="*" ControlToValidate="txt_lat" ValidationGroup="edit" ErrorMessage="Please insert a lat coordinate" />
-        <asp:CompareValidator ID="cv_lat" runat="server" Text="*" ControlToValidate="txt_lat" Type="Double" Operator="DataTypeCheck" ErrorMessage="Please insert a price (must be a decimal)" ValidationGroup="edit" />
+        <asp:RequiredFieldValidator ID="rfv_lat" runat="server" Text="*" ControlToValidate="txt_lat" ValidationGroup="edit" ErrorMessage="Please insert a latitude coordinate" Display="Dynamic" />
+        <asp:CompareValidator ID="cv_lat" runat="server" Text="*" ControlToValidate="txt_lat" Type="Double" Operator="DataTypeCheck" ErrorMessage="Please insert a latitude coordinate (must be a decimal)" ValidationGroup="edit" Display="Dynamic" />
         <br />
         <asp:Label ID="lbl_lng" AssociatedControlID="txt_lng" runat="server" Text="Lng:" />
         <br />
         <asp:TextBox ID="txt_lng" runat="server" Text='<%#Bind("lng") %>' />
-        <asp:RequiredFieldValidator ID="rfv_lng" runat="server" Text="*" ControlToValidate="txt_lng" ValidationGroup="edit" ErrorMessage="Please insert a lat coordinate" />
-        <asp:CompareValidator ID="cv_lng" runat="server" Text="*" ControlToValidate="txt_lng" Type="Double" Operator="DataTypeCheck" ErrorMessage="Please insert a longitude coordinate (must be a decimal)" ValidationGroup="edit" />
+        <asp:RequiredFieldValidator ID="rfv_lng" runat="server" Text="*" ControlToValidate="txt_lng" ValidationGroup="edit" ErrorMessage="Please insert a longitude coordinate" Display="Dynamic" />
+        <asp:CompareValidator ID="cv_lng" runat="server" Text="*" ControlToValidate="txt_lng" Type="Double" Operator="DataTypeCheck" ErrorMessage="Please insert a longitude coordinate (must be a decimal)" ValidationGroup="edit" Display="Dynamic" />
 
     </div>
 

@@ -28,7 +28,8 @@
                     <div class="hospital_info_text">
                         <a href="javascript:void(0);" onclick="zoomTo(<%#Eval("lat") %>,<%#Eval("lng") %>);"><%#Eval("name") %></a>
                         <br />
-                        <%#Eval("description") %>
+                        <%#Eval("description").ToString().Replace("\r\n","<br />") %>
+                        <br />
                         <br />
                         Phone:<br />
                         <%#Eval("phone") %>
