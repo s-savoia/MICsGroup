@@ -72,31 +72,24 @@ public partial class admin_career_application : System.Web.UI.Page
                 DropDownList ddlProficiency = (DropDownList)e.Item.FindControl("ddl_proficiencyE");
                 DropDownList ddlExperience = (DropDownList)e.Item.FindControl("ddl_experienceE");
                 FileUpload fulResume = (FileUpload)e.Item.FindControl("ful_resumeE");
+                Label lblResume = (Label)e.Item.FindControl("lbl_resumeShow");
                 FileUpload fulCover = (FileUpload)e.Item.FindControl("ful_coverletterE");
+                Label lblCover = (Label)e.Item.FindControl("lbl_coverletterShow");
                 TextBox txtReason = (TextBox)e.Item.FindControl("txt_reasonE");
                 TextBox txtComment = (TextBox)e.Item.FindControl("txt_commentE");
                 CheckBoxList cblConsent = (CheckBoxList)e.Item.FindControl("ckb_consentE");
 
                 int careerID = int.Parse(hdfID.Value.ToString());
-                //int careerCountry = int.Parse(ddlCountry.SelectedValue.ToString());
-                //int careerProvince = int.Parse(ddlProvince.SelectedValue.ToString());
-                //int careerStatus = int.Parse(rblStatus.SelectedValue.ToString());
-                //int careerCrime = int.Parse(rblCrime.SelectedValue.ToString());
-                //int careerCertificate = int.Parse(ddlCertificate.SelectedValue.ToString());
-                //int careerProficiency = int.Parse(ddlProficiency.SelectedValue.ToString());
-                //int careerExperience = int.Parse(ddlExperience.SelectedValue.ToString());
-                //int careerConsent = int.Parse(cblConsent.SelectedValue.ToString());
-
-                //if (fulResume.HasFile)
-                //{
-                //    String filePath = "~/img/" + fulResume.FileName;
-                //    fulResume.SaveAs(MapPath(filePath));
-                //}
-                //if (fulCover.HasFile)
-                //{
-                //    String filePath = "~/img/" + fulCover.FileName;
-                //    fulCover.SaveAs(MapPath(filePath));
-                //}
+                if (fulResume.HasFile)
+                {
+                    String filePath = "~/admin/img/career/" + fulResume.FileName;
+                    fulResume.SaveAs(MapPath(filePath));
+                }
+                if (fulCover.HasFile)
+                {
+                    String filePath = "~/admin/img/career/" + fulCover.FileName;
+                    fulCover.SaveAs(MapPath(filePath));
+                }
                 _strMessage(objCareer.commitUpdate(careerID, txtFname.Text, txtLname.Text, txtEmail.Text, txtAddress.Text, int.Parse(ddlCountry.SelectedValue.ToString()), int.Parse(ddlProvince.SelectedValue.ToString()), txtCity.Text, txtZip.Text, txtPhone.Text, int.Parse(rblStatus.SelectedValue.ToString()), int.Parse(ddlCertificate.SelectedValue.ToString()), int.Parse(ddlProficiency.SelectedValue.ToString()), int.Parse(ddlExperience.SelectedValue.ToString()), int.Parse(rblCrime.SelectedValue.ToString()), fulResume.FileName.ToString(), fulCover.FileName, txtReason.Text, txtComment.Text, int.Parse(cblConsent.SelectedValue.ToString())), "update");
                 _subRebind();
                 break;
