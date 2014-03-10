@@ -15,9 +15,38 @@ public partial class Default2 : System.Web.UI.Page
     }
 
     private void _subRebind()
-    {        
+    {
         rpt_data.DataSource = objJobPosting.getJobPostings();
         rpt_data.DataBind();
+        _PanelControl(pnl_all);
 
     }
+
+    public void subAdmin(object sender, CommandEventArgs e)
+    {
+        switch (e.CommandName)
+        {
+            case "ViewDetails":
+                ltl_title.Text = e.CommandArgument.ToString();
+                _showUpdate(e.CommandArgument.ToString());
+                break;
+
+        }
+    }
+
+        private void _showUpdate(string id)
+    {
+        _PanelControl(pnl_viewDetails);
+        rpt_popup.DataSource = objJobPosting.getJobPostingById(Int32.Parse(id)); 
+        rpt_popup.DataBind();
+    }
+
+    private void _PanelControl(Panel pnl)
+    {
+        pnl_all.Visible = false;
+        pnl_viewDetails.Visible = false;
+        pnl.Visible = true;
+    }
+
+
 }
