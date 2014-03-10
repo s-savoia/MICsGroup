@@ -3,6 +3,11 @@
 <%-- This page was coded by HIDEMI NAWATA --%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="content_main" Runat="Server">
+    <%--Career Application header--%>
+    <asp:Label ID="lbl_header" runat="server" Text="Career Application" Font-Bold="true" />
+    <br /><br />
+
+    <%--Applicant Information List--%>
     <asp:Panel ID="pnl_main" runat="server">
     <asp:Repeater ID="rpt_main" runat="server" OnItemCommand="subAdmin">
         <HeaderTemplate>
@@ -17,9 +22,10 @@
                 </tr>
             </table>
         </HeaderTemplate>
+
+        <%--Bind Data--%>
         <ItemTemplate>
             <table id="tbl_list2">       
-                <%--Bind Data--%>
                 <tr>
                     <td><asp:Label ID="lbl_titleD" runat="server" Text='<%#Eval("career_id") %>' /></td>
                     <td><asp:Label ID="lbl_authorD" runat="server" Text='<%#Eval("fname") %>' /></td>
@@ -33,7 +39,7 @@
     </asp:Repeater>
     </asp:Panel>
     
-
+    <%--Applicant Information Each--%>
     <asp:Panel ID="pnl_edit" runat="server">
         <asp:Label ID="lbl_message" runat="server" />
         <asp:Repeater ID="rpt_edit" runat="server" OnItemCommand="subUpdate">      
@@ -185,9 +191,7 @@
                     <asp:Button ID="btn_cancel" runat="server" Text="Cancel" CommandName="Cancel"  Width="55px" />
                 </div>
             </ItemTemplate>   
-        </asp:Repeater>
-        
-    </asp:Panel>
-    
+        </asp:Repeater>     
+    </asp:Panel> 
 </asp:Content>
 

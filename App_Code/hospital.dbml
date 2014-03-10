@@ -64,13 +64,6 @@
       <Column Name="details" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.mic_mailing_list" Member="mic_mailing_lists">
-    <Type Name="mic_mailing_list">
-      <Column Name="mailing_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="name" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="email" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.mic_news_events" Member="mic_news_events">
     <Type Name="mic_news_event">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -175,6 +168,15 @@
       <Column Name="lat" Type="System.Decimal" DbType="Decimal(18,12)" CanBeNull="true" />
       <Column Name="lng" Type="System.Decimal" DbType="Decimal(18,12)" CanBeNull="true" />
       <Column Name="phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mic_mailing_list" Member="mic_mailing_lists">
+    <Type Name="mic_mailing_list">
+      <Column Name="mailing_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="subject" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="image" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

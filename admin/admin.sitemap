@@ -3,55 +3,56 @@
     <siteMapNode url="~/admin_master.aspx" title="Admin Home"  description="Admin Home Page"><!--root node-->
       
       <!--About Us-->
-      <siteMapNode url="admin_about.aspx" title="About US"  description="About US">
-        <siteMapNode url="admin_news.aspx" title="News &amp; Events" description="News &amp; Events" />
-        <siteMapNode url="admin_location.aspx" title="Map/Location" description="Map/Location" />
-        <siteMapNode url="admin_mail.aspx" title="Newsletter" description="Mailing List" />
-        <siteMapNode url="admin_overview.aspx" title="Mission/Vision/Values" description="Vision/Overview" />
-        <siteMapNode url="admin_strategy.aspx" title="Strategy &amp; Plan" description="Strategy Plan" />
-        <siteMapNode url="admin_board.aspx" title="Board Of Directors" description="Board of Directors" />
-        <siteMapNode url="admin_quality.aspx" title="Quality &amp; Risk Management" description="Quality and Risk Management" />
+      <siteMapNode url="admin/admin_about.aspx" title="About US"  description="About US">
+        <siteMapNode url="admin/admin_news.aspx" title="News &amp; Events" description="News &amp; Events" />
+        <siteMapNode url="admin/admin_location.aspx" title="Map/Location" description="Map/Location" />
+        <siteMapNode url="admin/admin_newsletter_form.aspx" title="Newsletter Form" description="Newsletter Form" />
+        <siteMapNode url="admin/admin_newsletter.aspx" title="Newsletter" description="Mailing List" />
+        <siteMapNode url="admin/admin_overview.aspx" title="Mission/Vision/Values" description="Vision/Overview" />
+        <siteMapNode url="admin/admin_strategy.aspx" title="Strategy &amp; Plan" description="Strategy Plan" />
+        <siteMapNode url="admin/admin_board.aspx" title="Board Of Directors" description="Board of Directors" />
+        <siteMapNode url="admin/admin_quality.aspx" title="Quality &amp; Risk Management" description="Quality and Risk Management" />
       </siteMapNode>
         
         <!--Patient & Families-->
-        <siteMapNode url="admin_patient.aspx" title="Patient &amp; Families"  description="Patient &amp; Families">
-          <siteMapNode url="admin_symptom.aspx" title="Symptom Checker"  description="Symptom Checker" />
-          <siteMapNode url="admin_chat.aspx" title="Chat With A Nurse"  description="Chat with a nurse" />
-          <siteMapNode url="admin_rights.aspx" title="Patient Rights &amp; Responsibility"  description="Patient Rights &amp; Responsibility" />
-        <siteMapNode url="admin_faq.aspx" title="FAQ"  description="FAQ" />
-        <siteMapNode url="admin_advicestay.aspx" title="Advice On Their Stay"  description="Advice on Their Stay" />
-        <siteMapNode url="admin_advicefamily.aspx" title="Advice For Families"  description="Advice for Families" />
+        <siteMapNode url="admin/admin_patient.aspx" title="Patient &amp; Families"  description="Patient &amp; Families">
+          <siteMapNode url="admin/admin_symptom.aspx" title="Symptom Checker"  description="Symptom Checker" />
+          <siteMapNode url="admin/admin_chat.aspx" title="Chat With A Nurse"  description="Chat with a nurse" />
+          <siteMapNode url="admin/admin_rights.aspx" title="Patient Rights &amp; Responsibility"  description="Patient Rights &amp; Responsibility" />
+        <siteMapNode url="admin/admin_faq.aspx" title="FAQ"  description="FAQ" />
+        <siteMapNode url="admin/admin_advicestay.aspx" title="Advice On Their Stay"  description="Advice on Their Stay" />
+        <siteMapNode url="admin/admin_advicefamily.aspx" title="Advice For Families"  description="Advice for Families" />
         </siteMapNode>
       
         <!--Services-->
-        <siteMapNode url="admin_service.aspx" title="Services"  description="Services">
-          <siteMapNode url="admin_payment.aspx" title="Bill Payment"  description="Bill Payment" />
-          <siteMapNode url="admin_appointment.aspx" title="Book An Appointment"  description="Book an appointment" />
-          <siteMapNode url="admin_doctor.aspx" title="Find A Doctor"  description="Find a doctor" />
-          <siteMapNode url="admin_find.aspx" title="Find A Service"  description="Find a service" />
-          <siteMapNode url="admin_specialty.aspx" title="Specialty Services "  description="Bill Payment" />        
+        <siteMapNode url="admin/admin_service.aspx" title="Services"  description="Services">
+          <siteMapNode url="admin/admin_payment.aspx" title="Bill Payment"  description="Bill Payment" />
+          <siteMapNode url="admin/admin_appointment.aspx" title="Book An Appointment"  description="Book an appointment" />
+          <siteMapNode url="admin/admin_doctor.aspx" title="Find A Doctor"  description="Find a doctor" />
+          <siteMapNode url="admin/admin_find.aspx" title="Find A Service"  description="Find a service" />
+          <siteMapNode url="admin/admin_specialty.aspx" title="Specialty Services "  description="Bill Payment" />        
         </siteMapNode>
       
         <!--Career--> 
-        <siteMapNode url="admin_job.aspx" title="Career"  description="Career">
-          <siteMapNode url="admin_jobposting.aspx" title="Job Posting"  description="Job Posting" />
-          <siteMapNode url="admin_career_application.aspx" title="Career Application"  description="Career Application" />
-          <siteMapNode url="admin_volunteer.aspx" title="Volunteer Application"  description="Volunteer Application" />
+        <siteMapNode url="admin/admin_job.aspx" title="Career"  description="Career">
+          <siteMapNode url="admin/admin_jobposting.aspx" title="Job Posting"  description="Job Posting" />
+          <siteMapNode url="admin/admin_career_application.aspx" title="Career Application"  description="Career Application" />
+          <siteMapNode url="admin/admin_volunteer.aspx" title="Volunteer Application"  description="Volunteer Application" />
         </siteMapNode>
         
         <!--Contact-->
-        <siteMapNode url="admin_contact.aspx" title="Contact Us"  description="Contact Us" />
+        <siteMapNode url="admin/admin_contact.aspx" title="Contact Us"  description="Contact Us" />
       
         <!--Donation-->
-        <siteMapNode url="admin_donation.aspx" title="Donation" description="Donation">
-          <siteMapNode url="admin_success.aspx" title="Success Stories" description="Success Stories" />
-          <siteMapNode url="admin_plea.aspx" title="Plea From The Board" description="Plea From The Board" />
-          <siteMapNode url="admin_paydonation.aspx" title="Donation" description="Donation" />
+        <siteMapNode url="admin/admin_donation.aspx" title="Donation" description="Donation">
+          <siteMapNode url="admin/admin_success.aspx" title="Success Stories" description="Success Stories" />
+          <siteMapNode url="admin/admin_plea.aspx" title="Plea From The Board" description="Plea From The Board" />
+          <siteMapNode url="admin/admin_paydonation.aspx" title="Donation" description="Donation" />
         </siteMapNode>
       
         <!--Privacy & Confidentiality-->
-        <siteMapNode url="admin_privacy.aspx" title="Privacy &amp; Confidentiality"  description="Privacy &amp; Confidentiality">
-          <siteMapNode url="admin_copyright.aspx" title="Copyright &amp; Terms" description="Copyright &amp; Terms" />
+        <siteMapNode url="admin/admin_privacy.aspx" title="Privacy &amp; Confidentiality"  description="Privacy &amp; Confidentiality">
+          <siteMapNode url="admin/admin_copyright.aspx" title="Copyright &amp; Terms" description="Copyright &amp; Terms" />
         </siteMapNode>
 
     </siteMapNode>

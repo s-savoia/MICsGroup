@@ -44,9 +44,6 @@ public partial class hospitalDataContext : System.Data.Linq.DataContext
   partial void Insertmic_find_service(mic_find_service instance);
   partial void Updatemic_find_service(mic_find_service instance);
   partial void Deletemic_find_service(mic_find_service instance);
-  partial void Insertmic_mailing_list(mic_mailing_list instance);
-  partial void Updatemic_mailing_list(mic_mailing_list instance);
-  partial void Deletemic_mailing_list(mic_mailing_list instance);
   partial void Insertmic_news_event(mic_news_event instance);
   partial void Updatemic_news_event(mic_news_event instance);
   partial void Deletemic_news_event(mic_news_event instance);
@@ -71,6 +68,9 @@ public partial class hospitalDataContext : System.Data.Linq.DataContext
   partial void Insertmic_location(mic_location instance);
   partial void Updatemic_location(mic_location instance);
   partial void Deletemic_location(mic_location instance);
+  partial void Insertmic_mailing_list(mic_mailing_list instance);
+  partial void Updatemic_mailing_list(mic_mailing_list instance);
+  partial void Deletemic_mailing_list(mic_mailing_list instance);
   #endregion
 	
 	public hospitalDataContext() : 
@@ -143,14 +143,6 @@ public partial class hospitalDataContext : System.Data.Linq.DataContext
 		}
 	}
 	
-	public System.Data.Linq.Table<mic_mailing_list> mic_mailing_lists
-	{
-		get
-		{
-			return this.GetTable<mic_mailing_list>();
-		}
-	}
-	
 	public System.Data.Linq.Table<mic_news_event> mic_news_events
 	{
 		get
@@ -212,6 +204,14 @@ public partial class hospitalDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<mic_location>();
+		}
+	}
+	
+	public System.Data.Linq.Table<mic_mailing_list> mic_mailing_lists
+	{
+		get
+		{
+			return this.GetTable<mic_mailing_list>();
 		}
 	}
 }
@@ -1437,116 +1437,6 @@ public partial class mic_find_service : INotifyPropertyChanging, INotifyProperty
 				this._details = value;
 				this.SendPropertyChanged("details");
 				this.OndetailsChanged();
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-}
-
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.mic_mailing_list")]
-public partial class mic_mailing_list : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _mailing_id;
-	
-	private string _name;
-	
-	private string _email;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onmailing_idChanging(int value);
-    partial void Onmailing_idChanged();
-    partial void OnnameChanging(string value);
-    partial void OnnameChanged();
-    partial void OnemailChanging(string value);
-    partial void OnemailChanged();
-    #endregion
-	
-	public mic_mailing_list()
-	{
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mailing_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-	public int mailing_id
-	{
-		get
-		{
-			return this._mailing_id;
-		}
-		set
-		{
-			if ((this._mailing_id != value))
-			{
-				this.Onmailing_idChanging(value);
-				this.SendPropertyChanging();
-				this._mailing_id = value;
-				this.SendPropertyChanged("mailing_id");
-				this.Onmailing_idChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NVarChar(20)")]
-	public string name
-	{
-		get
-		{
-			return this._name;
-		}
-		set
-		{
-			if ((this._name != value))
-			{
-				this.OnnameChanging(value);
-				this.SendPropertyChanging();
-				this._name = value;
-				this.SendPropertyChanged("name");
-				this.OnnameChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="NVarChar(20)")]
-	public string email
-	{
-		get
-		{
-			return this._email;
-		}
-		set
-		{
-			if ((this._email != value))
-			{
-				this.OnemailChanging(value);
-				this.SendPropertyChanging();
-				this._email = value;
-				this.SendPropertyChanged("email");
-				this.OnemailChanged();
 			}
 		}
 	}
@@ -3627,6 +3517,164 @@ public partial class mic_location : INotifyPropertyChanging, INotifyPropertyChan
 				this._phone = value;
 				this.SendPropertyChanged("phone");
 				this.OnphoneChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.mic_mailing_list")]
+public partial class mic_mailing_list : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _mailing_id;
+	
+	private string _name;
+	
+	private string _email;
+	
+	private string _subject;
+	
+	private string _image;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onmailing_idChanging(int value);
+    partial void Onmailing_idChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void OnemailChanging(string value);
+    partial void OnemailChanged();
+    partial void OnsubjectChanging(string value);
+    partial void OnsubjectChanged();
+    partial void OnimageChanging(string value);
+    partial void OnimageChanged();
+    #endregion
+	
+	public mic_mailing_list()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mailing_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int mailing_id
+	{
+		get
+		{
+			return this._mailing_id;
+		}
+		set
+		{
+			if ((this._mailing_id != value))
+			{
+				this.Onmailing_idChanging(value);
+				this.SendPropertyChanging();
+				this._mailing_id = value;
+				this.SendPropertyChanged("mailing_id");
+				this.Onmailing_idChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NVarChar(20)")]
+	public string name
+	{
+		get
+		{
+			return this._name;
+		}
+		set
+		{
+			if ((this._name != value))
+			{
+				this.OnnameChanging(value);
+				this.SendPropertyChanging();
+				this._name = value;
+				this.SendPropertyChanged("name");
+				this.OnnameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="NVarChar(20)")]
+	public string email
+	{
+		get
+		{
+			return this._email;
+		}
+		set
+		{
+			if ((this._email != value))
+			{
+				this.OnemailChanging(value);
+				this.SendPropertyChanging();
+				this._email = value;
+				this.SendPropertyChanged("email");
+				this.OnemailChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_subject", DbType="NVarChar(30)")]
+	public string subject
+	{
+		get
+		{
+			return this._subject;
+		}
+		set
+		{
+			if ((this._subject != value))
+			{
+				this.OnsubjectChanging(value);
+				this.SendPropertyChanging();
+				this._subject = value;
+				this.SendPropertyChanged("subject");
+				this.OnsubjectChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_image", DbType="NVarChar(50)")]
+	public string image
+	{
+		get
+		{
+			return this._image;
+		}
+		set
+		{
+			if ((this._image != value))
+			{
+				this.OnimageChanging(value);
+				this.SendPropertyChanging();
+				this._image = value;
+				this.SendPropertyChanged("image");
+				this.OnimageChanged();
 			}
 		}
 	}
