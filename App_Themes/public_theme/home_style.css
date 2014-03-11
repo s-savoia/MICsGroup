@@ -1,9 +1,8 @@
 ﻿@charset "utf-8";
-/* CSS Document */
-/*CODED BY CLAUDIA*/
+/* CODE BY CLAUDIA */
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126f
+   v2.0 | 20110126
    License: none (public domain)
 */
 html, body, div, span, applet, object, iframe,
@@ -383,7 +382,7 @@ nav {
     margin: 1% auto 1% auto;
     height: 250px;
     min-width: 300px;
-    background-color: #29b5b3;
+    background-color:#29b5b3; /*#29b5b3*/
     position: relative;
     z-index: 1;
     /*---- border and shadow ----*/
@@ -395,15 +394,102 @@ nav {
     border-radius: 7px;
 }
 
+.b_prev{
+/*ARREGLAR ESTA VAINA*/ 
+    font-size:.8em;
+    font-weight:bold;
+    border:0;
+    float:right;
+    position:absolute;
+    top:80%;
+    right:30%;
+    padding:3px;
+    z-index:20;
+    margin:2px;
+    background-color:#fff;
+    color:#29b5b3;
+        -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}
+
+
+.b_play{
+/*ARREGLAR ESTA VAINA*/ 
+    font-size:.8em;
+    font-weight:bold;
+    border:0;
+    float:right;
+    position:absolute;
+    top:80%;
+    right:26%;
+    padding:3px;
+    z-index:20;
+    margin:2px;
+    background-color:#fff;
+    color:#29b5b3;
+        -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}
+
+.b_next{
+/*ARREGLAR ESTA VAINA*/ 
+    font-size:.8em;
+    font-weight:bold;
+    border:0;
+    float:right;
+    position:absolute;
+    top:80%;
+    right:23%;
+    padding:3px;
+    z-index:20;
+    margin:2px;
+    background-color:#fff;
+    color:#29b5b3;
+            -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}
+
+.photo {
+        z-index:2;
+            position:absolute;
+        height:250px;
+    left:0%;
+
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+
+}
+
+.shape1 {
+    z-index:3;
+    position:absolute;
+    left:43%;
+    /*height:250px;*/
+    width:410px;
+
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}
+
 
 .features {
     width: 15%;
     background-color: #fff; /*#c7ecef*/
     /*min-width: 185px;*/
     height: auto;
-    float: right;
+    /*float: left;*/
+
+    position:absolute;
+    top:2%;
+    right:1%;
+
     margin: 3% 4% 0 0;
-    z-index: 2;
+    z-index: 4; /*was2*/
     /*---- border and shadow ----*/
     border-left: solid 10px #8cc63f;
     -webkit-border-radius: 7px;
@@ -460,8 +546,8 @@ nav {
     width: 95%;
     margin: 0 auto 1% auto;
     height: auto;
+    border-bottom: solid medium #29b5b3;
     border-top: solid medium #29b5b3;
-    border-bottom: solid thick #29b5b3;
     background-color: #e2e2e2;
     display: table;
     padding: 0.2%;
@@ -503,7 +589,7 @@ nav {
         .box_c p a {
             text-align: left;
             cursor: pointer;
-            margin: 0;
+            margin:0;
         }
 
             .box_c p a:hover {
@@ -527,7 +613,7 @@ nav {
     .box_r p {
         text-align: left;
         cursor: pointer;
-        margin: 0;
+        margin:0;
     }
 
         .box_r p a:hover {
@@ -590,14 +676,14 @@ nav {
             letter-spacing: inherit;
         }
 
-        .logo p {
-            text-align: left;
-            padding: 0 0 0 20%;
-            font-family: 'Franklin Gothic Book','Bell MT','Bookman Old Style', Cambria;
-            color: #a5a0a0;
-            font-size: 0.75em;
-            letter-spacing: 0;
-        }
+    .logo p {
+        text-align: left;
+        padding: 0 0 0 20%;
+        font-family: 'Franklin Gothic Book','Bell MT','Bookman Old Style', Cambria;
+        color: #a5a0a0;
+        font-size:0.75em;
+        letter-spacing:0;
+    }
 
     .img {
         width: 20%;
@@ -715,7 +801,7 @@ nav {
     /*TOP NAVIGATION*/
 
     .donate {
-        width: 8.4%;
+        width: 500px;
         min-width: 90px;
         background-color: #ff8a3d;
         color: #fff;
@@ -807,11 +893,11 @@ nav {
 
     .menu {
         /*margin-left: 0;*/
-        margin: 0 0 0 200px;
+        margin:0 0 0 200px;
     }
 
         .menu ul {
-            width: 100%;
+            width:100%;
             background-color: #8cc63f;
             text-align: left;
             float: none;
@@ -923,7 +1009,7 @@ nav {
         margin: 0 auto 1% auto;
         height: auto;
         border-bottom: solid thick #29b5b3;
-        border-top: solid medium #29b5b3;
+        border-top: solid thin #29b5b3;
         background-color: #e2e2e2;
         display: table;
         padding: 0.2%;
@@ -941,7 +1027,8 @@ nav {
         padding: 0;
         word-wrap: break-word;
         border-bottom: solid thin #29b5b3;
-        text-align: left;
+        text-align:left;
+
     }
 
 
@@ -980,7 +1067,7 @@ nav {
         width: 100%;
         min-width: 290px;
         height: auto;
-        margin: 0 0 2% 5%;
+         margin: 0 0 2% 5%;
         float: none;
         font-size: 80%;
         padding: 0;
@@ -992,6 +1079,7 @@ nav {
             text-align: left;
             cursor: pointer;
             margin: 0;
+
         }
 
             .box_r p a:hover {
@@ -1053,7 +1141,7 @@ nav {
         }
 
         .logo p {
-            display: none;
+            display:none;
         }
 
     .img {
@@ -1264,11 +1352,11 @@ nav {
 
     .menu {
         /*margin-left: 0;*/
-        margin: 0 0 0 70px;
+        margin:0 0 0 70px;
     }
 
         .menu ul {
-            width: 100%;
+            width:100%;
             background-color: #8cc63f;
             text-align: left;
             float: none;
@@ -1380,7 +1468,7 @@ nav {
         margin: 0 auto 1% auto;
         height: auto;
         border-bottom: solid thick #29b5b3;
-        border-top: solid medium #29b5b3;
+        border-top: solid thin #29b5b3;
         background-color: #e2e2e2;
         display: table;
         padding: 0.2%;
@@ -1398,7 +1486,8 @@ nav {
         padding: 0;
         word-wrap: break-word;
         border-bottom: solid thin #29b5b3;
-        text-align: left;
+        text-align:left;
+
     }
 
 
@@ -1437,7 +1526,7 @@ nav {
         width: 100%;
         min-width: 290px;
         height: auto;
-        margin: 0 0 2% 5%;
+         margin: 0 0 2% 5%;
         float: none;
         font-size: 80%;
         padding: 0;
@@ -1449,6 +1538,7 @@ nav {
             text-align: left;
             cursor: pointer;
             margin: 0;
+
         }
 
             .box_r p a:hover {
@@ -1537,7 +1627,7 @@ nav {
         -moz-border-radius: 0;
         border-radius: 0;
         height: 23px;
-        overflow: hidden;
+        overflow:hidden;
     }
 
     .box {
@@ -1698,7 +1788,7 @@ nav {
         float: right;
         z-index: 12;
         text-align: center;
-        letter-spacing: normal;
+        letter-spacing:normal;
     }
 
         .reg a {
@@ -1837,7 +1927,7 @@ nav {
         width: 100%;
         margin: 0 auto 1% auto;
         height: auto;
-        border-bottom: solid thick #29b5b3;
+        border-bottom: solid medium #29b5b3;
         border-top: solid medium #29b5b3;
         background-color: #e2e2e2;
         display: table;
@@ -1868,7 +1958,7 @@ nav {
         border-right: 0;
         padding: 2%;
         word-wrap: break-word;
-        border-bottom: medium solid #29b5b3;
+        border-bottom: thick solid #29b5b3;
     }
 
         .box_c p {
@@ -1989,7 +2079,7 @@ nav {
         -moz-border-radius: 0;
         border-radius: 0;
         height: 23px;
-        overflow: hidden;
+        overflow:hidden;
     }
 
     .box {
@@ -2150,7 +2240,7 @@ nav {
         float: right;
         z-index: 12;
         text-align: center;
-        letter-spacing: normal;
+        letter-spacing:normal;
     }
 
         .reg a {
@@ -2289,7 +2379,7 @@ nav {
         width: 100%;
         margin: 0 auto 1% auto;
         height: auto;
-        border-bottom: solid thick #29b5b3;
+        border-bottom: solid medium #29b5b3;
         border-top: solid medium #29b5b3;
         background-color: #e2e2e2;
         display: table;
@@ -2326,7 +2416,7 @@ nav {
         .box_c p {
             text-align: left;
             margin: 0;
-            padding: 0;
+            padding:0;
         }
 
             .box_c p a {
