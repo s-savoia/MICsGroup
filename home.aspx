@@ -1,7 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="home.aspx.cs" Inherits="home" %>
 
-<!-- This page is coded by CLAUDIA REINOZA -->
-
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <%--CODE BY CLAUDIA--%>
@@ -58,6 +56,8 @@
                 </div>
             </header>
 
+            <asp:Label ID="ImagePath" runat="server" ForeColor="black" />
+
             <nav>
                 <asp:SiteMapDataSource ID="sds_menu" runat="server" />
 
@@ -112,9 +112,7 @@
                     </div>
 
                 </div>
-
-
-                <asp:DragPanelExtender ID="DragPanelExtender1" runat="server" TargetControlID="pnl_feature" />
+                <asp:DragPanelExtender ID="DragPanelExtender2" runat="server" TargetControlID="pnl_feature" />
 
                 <%--nav features--%>
                 <asp:Panel runat="server" ID="pnl_feature" CssClass="features">

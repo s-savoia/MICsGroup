@@ -33,6 +33,7 @@ public partial class home : System.Web.UI.Page
                 Name = Path.GetFileNameWithoutExtension(file),
                 //Description = Path.GetFileNameWithoutExtension(file) + " Description.",
                 ImagePath = pathUri.MakeRelativeUri(filePathUri).ToString()
+
             });
         }
         return slides.ToArray();
