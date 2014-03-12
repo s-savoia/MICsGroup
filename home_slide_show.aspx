@@ -43,7 +43,7 @@
                     <div class="reg">
                         <asp:LinkButton ID="btn_reg" Text="Register" runat="server" Target="_self" DescriptionUrl="~/home.aspx" />
                     </div>
-
+                    
                     <div class="access">
                         <asp:Image ImageUrl="~/img/access.png" runat="server" ID="img_acc" CssClass="a_img" />
                         <asp:LinkButton ID="btn_access" Text="Accessibility" DescriptionUrl="~/home.aspx" runat="server" />
@@ -93,11 +93,12 @@
 
                 <div id="photo">
                     <%--<asp:ScriptManager ID="ScriptManager1" runat="server" />--%>
-
+                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
                     <asp:HyperLink ID="HyperLink19" NavigateUrl="http://www.cbc.ca" runat="server" Target="_blank">
                         <asp:Image ID="slide_show" runat="server" CssClass="photo" />
                     </asp:HyperLink>
+
 <%--                    <asp:SlideShowExtender ID="SlideShowExtender" runat="server" TargetControlID="slide_show" SlideShowServiceMethod="GetImages" AutoPlay="true" Loop="true" PlayButtonID="btn_play" PlayButtonText="play" NextButtonID="btn_next" PreviousButtonID="btn_prev" StopButtonText="stop" />--%>
 
 
@@ -108,7 +109,7 @@
                     </div>
 
                 </div>
-
+                <asp:DragPanelExtender ID="DragPanelExtender1" runat="server" TargetControlID="pnl_feature"></asp:DragPanelExtender>
 
                <%-- <asp:DragPanelExtender ID="DragPanelExtender1" runat="server" TargetControlID="pnl_feature"/>--%>
 
