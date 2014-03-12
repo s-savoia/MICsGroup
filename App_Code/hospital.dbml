@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_65873_mic" Class="hospitalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=s10.winhost.com;Initial Catalog=DB_65873_mic;User ID=DB_65873_mic_user" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DB_65873_micConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.mic_alerts" Member="mic_alerts">
-    <Type Name="mic_alert">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="alert_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="short_alert" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="long_alert" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.mic_book_appointment" Member="mic_book_appointments">
     <Type Name="mic_book_appointment">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -64,16 +56,6 @@
       <Column Name="details" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.mic_news_events" Member="mic_news_events">
-    <Type Name="mic_news_event">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="title" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="content" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="img" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="category" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.mic_pay_bills" Member="mic_pay_bills">
     <Type Name="mic_pay_bill">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -91,13 +73,6 @@
       <Column Name="security_number" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="cardholder_name" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="expiration" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.mic_slider" Member="mic_sliders">
-    <Type Name="mic_slider">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="img_path" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="alt_name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.mic_symptom_checker" Member="mic_symptom_checkers">
@@ -177,6 +152,32 @@
       <Column Name="email" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="subject" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
       <Column Name="image" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mic_alerts" Member="mic_alerts">
+    <Type Name="mic_alert">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="date_alert" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="short_alert" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="long_alert" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="title_alert" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mic_news_events" Member="mic_news_events">
+    <Type Name="mic_news_event">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="content" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="img" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="category" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mic_slider" Member="mic_sliders">
+    <Type Name="mic_slider">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="img_path" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="alt_name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
