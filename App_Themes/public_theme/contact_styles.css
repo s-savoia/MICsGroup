@@ -1,0 +1,30 @@
+﻿#contact_us_public{
+    margin-top:5px;
+}
+
+#contact_us_public td {
+    vertical-align:top;
+    padding:3px;
+}
+
+#contact_us_public textarea {
+    width:400px;
+    height:175px;
+}
+
+#contact_us_public input[type='text'] {
+    width:200px;
+}
+
+#content_main_txt_province {
+    margin-bottom: 20px;
+}
+
+#content_main_txt_subject {
+    width: 400px !important;
+}
+
+#contact_us_public input[type='submit'] {
+    float: right;
+    margin-right:50px;
+}

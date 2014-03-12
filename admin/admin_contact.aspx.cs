@@ -56,6 +56,11 @@ public partial class admin_Default : System.Web.UI.Page
     {
         e.NewMaximumRows = e.Item.Pager.MaximumRows;
 
+        test.Text += "<br/><br/> command: " + e.CommandName.ToString();
+        test.Text += "<br/>max rows: " + e.NewMaximumRows.ToString();  
+        test.Text += "<br />total rows: " + e.TotalRowCount.ToString();
+        test.Text += "<br />startRow index: " + e.Item.Pager.StartRowIndex.ToString();
+
         //switch statement that takes the button pressed by the user as the parameter
         switch (e.CommandName)
         {
@@ -63,7 +68,6 @@ public partial class admin_Default : System.Web.UI.Page
                 if (e.Item.Pager.StartRowIndex + 3 <= e.TotalRowCount - 3)
                 {
                     e.NewStartRowIndex = e.Item.Pager.StartRowIndex + 3;
-                    Response.Write(@"<script language='javascript'>alert('previous button clicked');</script>");
                 }
                 break;
             case "Next":
@@ -74,14 +78,4 @@ public partial class admin_Default : System.Web.UI.Page
                 break;
         }
     }
-
-// 3 - call this method on the PagePropertiesChanging event of the ListView
-protected void ListEvents_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
-{
-    //set current page startindex, max rows and rebind to false
-    Response.Write("<script languge='javascript'>alert('again');</script>");
-
-    //rebind List View
-//    _subRebind();
-}
 }

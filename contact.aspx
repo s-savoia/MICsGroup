@@ -3,6 +3,7 @@
 <%-- This page was coded by STEPHEN SAVOIA. --%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+        <link href="App_Themes/public_theme/contact_styles.css" rel="stylesheet" media="all" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content_main" Runat="Server">
     <h2>Contact Us</h2>
@@ -75,7 +76,7 @@
         </tr>
         <tr>
             <td></td>
-            <td><asp:Button ID="btn_insert" runat="server" Text="Insert" CommandName="Insert" OnCommand="subAdmin" ValidationGroup="insert" /></td>
+            <td><asp:Button ID="btn_insert" runat="server" Text="Submit" CommandName="Insert" OnCommand="subAdmin" ValidationGroup="insert" /></td>
         </tr>            
     </table>
 </asp:Content>

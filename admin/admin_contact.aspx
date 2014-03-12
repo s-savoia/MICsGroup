@@ -2,11 +2,12 @@
 
 <%-- This page was coded by STEPHEN SAVOIA. --%>
 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="content_main" Runat="Server">
 
     <h2>Contact Us - Admin</h2>
-
-        <asp:ListView ID="lv_contact" runat="server" DataKeyNames="Id" onitemcommand="subUpDel" OnPagePropertiesChanging="ListEvents_PagePropertiesChanging">
+    <asp:Label ID="test" runat="server" />
+        <asp:ListView ID="lv_contact" runat="server"  onitemcommand="subUpDel">
         <LayoutTemplate>
             <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
         </LayoutTemplate>
