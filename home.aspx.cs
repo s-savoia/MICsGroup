@@ -18,7 +18,7 @@ public partial class home : System.Web.UI.Page
     public static Slide[] GetImages()
     {
         List<Slide> slides = new List<Slide>();
-        string path = HttpContext.Current.Server.MapPath("~/img1/");
+        string path = HttpContext.Current.Server.MapPath("~/img/");
         if (path.EndsWith("\\"))
         {
             path = path.Remove(path.Length - 1);
