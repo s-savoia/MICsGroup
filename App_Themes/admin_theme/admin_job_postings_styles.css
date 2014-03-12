@@ -1,0 +1,8 @@
+﻿.required {
+    color:#f00; /* red */
+}
+
+.adm-textArea {
+    width: 100%;
+    height: 20%;
+}
