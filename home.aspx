@@ -56,7 +56,7 @@
                 </div>
             </header>
 
-            <asp:Label ID="ImagePath" runat="server" ForeColor="black" />
+<%--            <asp:Label ID="ImagePath" runat="server" ForeColor="black" /> PRUEBA DE SALIDA--%>
 
             <nav>
                 <asp:SiteMapDataSource ID="sds_menu" runat="server" />
@@ -94,7 +94,7 @@
 
                 <div id="photo">
 
-                    <asp:ScriptManager ID="ScriptManager1" runat="server" />
+                    <%--<asp:ScriptManager ID="sm_main" runat="server" />--%>
 
                     <%--******************* link slideshow *********************--%>
 
@@ -102,7 +102,7 @@
                         <asp:Image ID="slide_show" runat="server" CssClass="photo" />
                     </asp:HyperLink>
 
-                    <asp:SlideShowExtender ID="SlideShowExtender" runat="server" TargetControlID="slide_show" SlideShowServiceMethod="GetImages" AutoPlay="true" Loop="true" PlayButtonID="btn_play" PlayButtonText="play" NextButtonID="btn_next" PreviousButtonID="btn_prev" StopButtonText="stop" />
+                    <%--<asp:SlideShowExtender ID="SlideShowExtender" runat="server" TargetControlID="slide_show" SlideShowServiceMethod="GetImages" AutoPlay="true" Loop="true" PlayButtonID="btn_play" PlayButtonText="play" NextButtonID="btn_next" PreviousButtonID="btn_prev" StopButtonText="stop" />--%>
 
 
                     <div class="shape1">
@@ -112,11 +112,11 @@
                     </div>
 
                 </div>
-                <asp:DragPanelExtender ID="DragPanelExtender2" runat="server" TargetControlID="pnl_feature" />
+<%--                <asp:DragPanelExtender ID="DragPanelExtender2" runat="server" TargetControlID="pnl_feature" />--%>
 
                 <%--nav features--%>
-                <asp:Panel runat="server" ID="pnl_feature" CssClass="features">
-                    <%--<div class="features">--%>
+<%--                <asp:Panel runat="server" ID="pnl_feature" CssClass="features">--%>
+                    <div class="features">
                     <div class="btn">
                         <asp:Image ID="img_search" runat="server" ImageUrl="~/img/search.png" CssClass="icon" />
                         <asp:HyperLink ID="hpl_dr" runat="server" Text="Find a Doctor" />
@@ -147,8 +147,8 @@
                         <asp:HyperLink ID="HyperLink5" runat="server" Text="Careers" />
                     </div>
 
-                    <%--</div>--%>
-                </asp:Panel>
+                    </div>
+<%--                </asp:Panel>--%>
                 <%--end features--%>
             </div>
 

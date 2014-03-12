@@ -54,6 +54,7 @@ body {
     min-width: 310px;
     position: relative;
     /*agregando pos:rel*/
+    max-width:1366px;
 }
 
 
