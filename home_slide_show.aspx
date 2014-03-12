@@ -76,13 +76,8 @@
                 </asp:Menu>
             </nav>
 
-           <%-- <div class="btn1">
-                <asp:Button ID="btn_prev" runat="server" Text="<<" CssClass="btn1"/>
-                <asp:Button ID="btn_play" runat="server" Text="Play"  CssClass="btn1" />
-                <asp:Button ID="btn_next" runat="server" Text=">>"  CssClass="btn1"/>
-            </div>--%>
 
-
+            <%--************ BUTTONS SLIDER *************--%>
             <div class="slider">
 
                  <div>
@@ -94,16 +89,16 @@
 
                 <%--<asp:Label runat="server" ID="Label1" />--%>
 
-                <%--******************* codigo slideshow *********************--%>
+                <%--******************* slideshow code *********************--%>
 
                 <div id="photo">
-                    <asp:ScriptManager ID="ScriptManager1" runat="server" />
+                    <%--<asp:ScriptManager ID="ScriptManager1" runat="server" />--%>
 
 
                     <asp:HyperLink ID="HyperLink19" NavigateUrl="http://www.cbc.ca" runat="server" Target="_blank">
                         <asp:Image ID="slide_show" runat="server" CssClass="photo" />
                     </asp:HyperLink>
-                    <asp:SlideShowExtender ID="SlideShowExtender" runat="server" TargetControlID="slide_show" SlideShowServiceMethod="GetImages" AutoPlay="true" Loop="true" PlayButtonID="btn_play" PlayButtonText="play" NextButtonID="btn_next" PreviousButtonID="btn_prev" StopButtonText="stop" />
+<%--                    <asp:SlideShowExtender ID="SlideShowExtender" runat="server" TargetControlID="slide_show" SlideShowServiceMethod="GetImages" AutoPlay="true" Loop="true" PlayButtonID="btn_play" PlayButtonText="play" NextButtonID="btn_next" PreviousButtonID="btn_prev" StopButtonText="stop" />--%>
 
 
                     <div class="shape1">
@@ -115,7 +110,7 @@
                 </div>
 
 
-                <asp:DragPanelExtender ID="DragPanelExtender1" runat="server" TargetControlID="pnl_feature"/>
+               <%-- <asp:DragPanelExtender ID="DragPanelExtender1" runat="server" TargetControlID="pnl_feature"/>--%>
 
                 <%--nav features--%>
                 <asp:Panel runat="server" ID="pnl_feature" CssClass="features">
@@ -158,7 +153,7 @@
 
             <div class="alert">
                 <asp:Label runat="server" ID="lbl_alert" Text='<%#"title_alert"%>'>
-                    <%--In week 05, overall influenza activity continued to decrease in Canada, with most activity identified in eastern provinces.--%>
+                    In week 05, overall influenza activity continued to decrease in Canada, with most activity identified in eastern provinces.
                 </asp:Label>
             </div>
 
