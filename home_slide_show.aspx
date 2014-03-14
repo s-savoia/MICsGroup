@@ -10,8 +10,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+
+<%--****** SCRIPTS ALERT ******--%> 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script_alert.js"></script>
+        <title>HOME</title>
 </head>
+
 <body>
     <form id="form1" runat="server">
 
@@ -148,14 +153,23 @@
 
                 <%--</div>--%>
                     </asp:Panel>
-                <%--end features--%>
-            </div>
-            
+            </div><%--end features--%>
 
+
+            
+            <%--******** DIV ALERT **********--%>
             <div class="alert">
-                <asp:Label runat="server" ID="lbl_alert" Text='<%#"title_alert"%>'>
-                    In week 05, overall influenza activity continued to decrease in Canada, with most activity identified in eastern provinces.
-                </asp:Label>
+                <asp:HyperLink ID="hpl_alert" runat="server" NavigateUrl="http://www.cbc.ca/" Target="_blank">
+            <div id="columnas">
+            <asp:Repeater ID="rpt_main" runat="server">
+                <ItemTemplate>
+
+                    <div class="text_alert"><%#Eval("title_alert")%> </div>
+
+                </ItemTemplate>
+            </asp:Repeater>
+        </div>
+ </asp:HyperLink>
             </div>
 
             <div class="box">

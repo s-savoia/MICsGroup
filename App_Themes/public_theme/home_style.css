@@ -125,20 +125,27 @@ header {
     z-index: 11;
 }
 
-
+/*modificado viernes 14 marzo*/
 .alert {
     width: 87%;
     margin: 1% auto 1% auto;
-    /*min-width: 300px;*/
     padding: 0.5% 1.5% 0.5% 1%;
-    text-align: left;
     background-color: #ff8149;
-    color: #fff;
-    font-size: 90%;
-    letter-spacing: 1px;
+
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+}
+
+#columnas > div {
+    display: none;
+}
+
+.text_alert {
+    text-align: left;
+    color: #fff;
+    font-size: 90%;
+    letter-spacing: 1px;
 }
 
 

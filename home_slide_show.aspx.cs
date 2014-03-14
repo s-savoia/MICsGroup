@@ -10,25 +10,21 @@ using System.Web.Script.Services;
 using System.Collections.Generic;
 using System.Xml;
 
-//******** los que tenia originalmente ********
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Web;
-//using System.Web.UI;
-//using System.Web.UI.WebControls;
 
 public partial class _home_slide_show : System.Web.UI.Page
 {
-    [WebMethod]
-    [ScriptMethod]
+    alertLinkClass objLinq = new alertLinkClass();
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        string path = HttpContext.Current.Server.MapPath("~/img1/");
-
-        
+        rpt_main.DataSource = objLinq.getAlert();
+        rpt_main.DataBind();
     }
+
+
+    [WebMethod]
+    [ScriptMethod]
+
 
     public static Slide[] GetImages()
     {
