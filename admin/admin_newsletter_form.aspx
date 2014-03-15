@@ -4,11 +4,11 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="content_main" Runat="Server">
     <div>
-        <%--Newsletter header--%>
+        <%--newsletter header--%>
         <asp:Label ID="lbl_header" runat="server" Text="Newsletter Form" Font-Bold="true" />
         <br /><br />
-        <%--Newsletter subheader--%>
-        <asp:Label ID="lbl_subhead" runat="server" Text="Please fill in a message to send a newsletter" />
+        <%--newsletter subheader--%>
+        <asp:Label ID="lbl_subhead" runat="server" Text="Please fill in a message to send a newsletter." />
         <br /><br />
         <%--newsletter subject--%>
         <asp:Label ID="lbl_subject" runat="server" Text="Subject: " AssociatedControlID="txt_subject" />
@@ -25,7 +25,7 @@
         <asp:FileUpload ID="ful_attach" runat="server" FileName='<%#Bind("image") %>' />
         <br /><br />
         <%--send button--%>
-        <asp:Button ID="btn_newsletter" runat="server" Text="Send" CausesValidation="true" ValidationGroup="newsletter" />
+        <asp:Button ID="btn_newsletter" runat="server" Text="Send" CausesValidation="true" ValidationGroup="newsletter" OnClick="subClick" />
         <asp:ValidationSummary ID="vds_newsletter" runat="server" ShowMessageBox="true" ValidationGroup="newsletter" HeaderText="Newsletter Form Error" />
         <br />
         <%--confirmation message--%>
