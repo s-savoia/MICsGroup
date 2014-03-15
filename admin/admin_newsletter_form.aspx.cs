@@ -13,7 +13,10 @@ public partial class admin_newsletter_form : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (IsPostBack)
+        {
+            lbl_output.Text = String.Empty;
+        }
     }
 
     protected void subClick(object sender, EventArgs e)

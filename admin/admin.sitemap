@@ -6,8 +6,8 @@
       <siteMapNode url="admin/admin_about.aspx" title="About US"  description="About US">
         <siteMapNode url="admin/admin_news.aspx" title="News &amp; Events" description="News &amp; Events" />
         <siteMapNode url="admin/admin_location.aspx" title="Map/Location" description="Map/Location" />
-        <siteMapNode url="admin/admin_newsletter_form.aspx" title="Newsletter Form" description="Newsletter Form" />
-        <siteMapNode url="admin/admin_newsletter.aspx" title="Newsletter" description="Mailing List" />
+        <siteMapNode url="admin/admin_newsletter_form.aspx" title="Send Newsletter" description="Send Newsletter" />
+        <siteMapNode url="admin/admin_newsletter.aspx" title="Edit Newsletter" description="Edit Newsletter" />
         <siteMapNode url="admin/admin_overview.aspx" title="Mission/Vision/Values" description="Vision/Overview" />
         <siteMapNode url="admin/admin_strategy.aspx" title="Strategy &amp; Plan" description="Strategy Plan" />
         <siteMapNode url="admin/admin_board.aspx" title="Board Of Directors" description="Board of Directors" />

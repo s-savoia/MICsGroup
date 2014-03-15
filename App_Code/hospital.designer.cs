@@ -3780,7 +3780,7 @@ public partial class mic_mailing_list : INotifyPropertyChanging, INotifyProperty
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="NVarChar(20)")]
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="NVarChar(50)")]
 	public string email
 	{
 		get

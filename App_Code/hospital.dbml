@@ -183,7 +183,7 @@
     <Type Name="mic_mailing_list">
       <Column Name="mailing_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="name" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="email" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
