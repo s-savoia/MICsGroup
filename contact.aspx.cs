@@ -21,7 +21,7 @@ public partial class Default2 : System.Web.UI.Page
         txt_lname.Text = string.Empty;
         txt_email.Text = string.Empty;
         txt_city.Text = string.Empty;
-        txt_province.Text = string.Empty;
+        ddl_province.SelectedValue = "0"; 
         txt_subject.Text = string.Empty;
         txt_contact_message.Text = string.Empty;
     }
@@ -32,7 +32,7 @@ public partial class Default2 : System.Web.UI.Page
         switch (e.CommandName)
         {
             case "Insert":
-                _strMessage(objLinq.commitInsert(txt_fname.Text, txt_lname.Text, txt_email.Text, txt_city.Text, txt_province.Text, txt_subject.Text, txt_contact_message.Text), "insert");
+                _strMessage(objLinq.commitInsert(txt_fname.Text, txt_lname.Text, txt_email.Text, txt_city.Text, ddl_province.SelectedValue.ToString(), txt_subject.Text, txt_contact_message.Text), "insert");
                 _subRebind();
                 break;
             case "Cancel":

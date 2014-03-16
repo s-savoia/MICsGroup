@@ -8,7 +8,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="content_main" Runat="Server">
     <h2>Contact Us</h2>
     <asp:ValidationSummary ID="vs_insert" runat="server" ValidationGroup="insert" HeaderText="Validation Summary:" />
-            <asp:Label ID="lbl_message" runat="server" />
+            <asp:Label ID="lbl_message" runat="server" CssClass="contact_response_message" />
     <table id="contact_us_public">
         <tr>
             <td>
@@ -49,11 +49,26 @@
         </tr>
         <tr>
             <td>
-                <asp:Label ID="lbl_province" runat="server" Text="Province: " AssociatedControlID="txt_province" />
+                <asp:Label ID="lbl_province" runat="server" Text="Province: " AssociatedControlID="ddl_province" />
             </td>
             <td>
-                <asp:TextBox ID="txt_province" runat="server" />
-                <asp:RequiredFieldValidator ID="rfv_province" runat="server" Text="*" ControlToValidate="txt_province" ValidationGroup="insert" ErrorMessage="Please select your province" />
+                <asp:DropDownList ID="ddl_province" runat="server">
+                    <asp:ListItem Value="0">-- Select a Province --</asp:ListItem>
+                    <asp:ListItem Value="Alberta">Alberta</asp:ListItem>
+                    <asp:ListItem Value="British Columbia">British Columbia</asp:ListItem>
+                    <asp:ListItem Value="Manitoba">Manitoba</asp:ListItem>
+                    <asp:ListItem Value="New Brunswick">New Brunswick</asp:ListItem>
+                    <asp:ListItem Value="Newfoundland and Labrador">Newfoundland and Labrador</asp:ListItem>
+                    <asp:ListItem Value="Northwest Territories">Northwest Territories</asp:ListItem>
+                    <asp:ListItem Value="Nova Scotia">Nova Scotia</asp:ListItem>
+                    <asp:ListItem Value="Nunavut">Nunavut</asp:ListItem>
+                    <asp:ListItem Value="Ontario">Ontario</asp:ListItem>
+                    <asp:ListItem Value="Prince Edward Island">Prince Edward Island</asp:ListItem>
+                    <asp:ListItem Value="Quebec">Quebec</asp:ListItem>
+                    <asp:ListItem Value="Saskatchewan">Saskatchewan</asp:ListItem>
+                    <asp:ListItem Value="Yukon">Yukon</asp:ListItem>
+                </asp:DropDownList>
+                <asp:RequiredFieldValidator ID="rfv_province" runat="server" Text="*" ErrorMessage="Please select your province" ControlToValidate="ddl_province" ValidationGroup="insert" InitialValue="0"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>

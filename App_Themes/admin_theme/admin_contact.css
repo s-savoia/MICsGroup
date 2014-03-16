@@ -1,0 +1,63 @@
+﻿body {
+}
+
+.contentMain {
+    overflow: auto;
+}
+
+.contentMain >h2 {
+    font-weight: bold;
+    font-size:1.3em;
+    padding-bottom:5px;
+    border-bottom: 2px #22BCB9 solid;
+}
+
+.contact_us_admin {
+    overflow: auto;
+    border-bottom: 2px #22BCB9 solid;
+    padding:5px;
+}
+
+.contact_left {
+    float:left;
+    width:25%;
+}
+
+.contact_right {
+    float:left;
+    padding-left:3%;
+    width:72%;
+}
+
+.contact_details {
+    display:block;
+    margin: 3px 0px 8px 3px;
+}
+
+.contact_subject {
+    font-size: 1.2em;
+    display:block;
+    margin-bottom:8px;
+}
+
+.contact_delete_button {
+    clear:both;
+    padding-left:75%;
+    padding-bottom:3px;
+}
+
+#content_main_dp_contact_ctl00_btn_pre {
+    float:left;
+    margin-top:4px;
+}
+
+#content_main_dp_contact_ctl00_btn_nxt {
+    float:right;
+    margin-top:4px;
+}
+
+.contact_response_message {
+    margin-bottom: 10px;
+    display:block;
+    color: blue;
+}

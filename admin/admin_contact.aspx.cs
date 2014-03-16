@@ -11,7 +11,7 @@ public partial class admin_Default : System.Web.UI.Page
     {
         if (!Page.IsPostBack)
         {
-           _subRebind();
+            _subRebind();
         }
     }
 
@@ -21,9 +21,9 @@ public partial class admin_Default : System.Web.UI.Page
     private void _strMessage(bool flag, string str)
     {
         if (flag)
-            Response.Write("Message deleted.");
+            lbl_message.Text = "Message deleted.";
         else
-            Response.Write("Error. Message not deleted");
+            lbl_message.Text = "Error. Message not deleted";
     }
 
     // Resets the values of the insert input fields and updates the database fields.
@@ -51,29 +51,34 @@ public partial class admin_Default : System.Web.UI.Page
         }
     }
 
+
+    protected void lv_contact_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
+    {
+        dp_contact.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+        _subRebind();
+    }
+
     //this function happens when a button in the datapager is pressed
     protected void subPager(object sender, DataPagerCommandEventArgs e)
     {
         e.NewMaximumRows = e.Item.Pager.MaximumRows;
-
-        test.Text += "<br/><br/> command: " + e.CommandName.ToString();
-        test.Text += "<br/>max rows: " + e.NewMaximumRows.ToString();  
-        test.Text += "<br />total rows: " + e.TotalRowCount.ToString();
-        test.Text += "<br />startRow index: " + e.Item.Pager.StartRowIndex.ToString();
-
+        
         //switch statement that takes the button pressed by the user as the parameter
         switch (e.CommandName)
         {
-            case "Prev":
-                if (e.Item.Pager.StartRowIndex + 3 <= e.TotalRowCount - 3)
+            case "Next":
+                if (e.Item.Pager.StartRowIndex + 3 <= e.TotalRowCount)
                 {
                     e.NewStartRowIndex = e.Item.Pager.StartRowIndex + 3;
+                    //_subRebind();
                 }
+
                 break;
-            case "Next":
+            case "Prev":
                 if (e.Item.Pager.StartRowIndex - 3 >= 0)
                 {
                     e.NewStartRowIndex = e.Item.Pager.StartRowIndex - 3;
+                    //_subRebind();
                 }
                 break;
         }

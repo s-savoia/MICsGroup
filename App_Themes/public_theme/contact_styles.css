@@ -28,3 +28,10 @@
     float: right;
     margin-right:50px;
 }
+
+.contact_response_message {
+    margin-bottom: 10px;
+    margin-top:5px;
+    display:block;
+    color: blue;
+}
