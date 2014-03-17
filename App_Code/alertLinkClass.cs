@@ -37,7 +37,7 @@ public class alertLinkClass
 
     //******** INSERT *******//
 
-    public bool commitInsert(string _date, string _title, string _short, string _long)
+    public bool commitInsert(string _title, string _short, string _long)
     {
         // to ensure all data will be disposed when finished
 
@@ -50,41 +50,10 @@ public class alertLinkClass
 
             //set table columns to new values being pass from *.aspx page
 
-           //objNewAlert.date_alert = Convert.ToDateTime(_date);
-           //objNewAlert.date_alert = _date;
+           
 
-            //objNewAlert.date_alert = DateTime.Parse(_date);
-
-            //DateTime dateAlert = DateTime.Parse(_date);
-
-            //DateTime dateAlert = DateTime.ParseExact(_date,"ddMMyyyy", null);
-            //objNewAlert.date_alert = dateAlert;
-           // objNewAlert.date_alert = Convert.ToDateTime(objHospitalDC.["date_alert"]);
-
-            //***********************************************************
-           // DateTime date1 = new DateTime(2008, 6, 1, 7, 47, 0);
-            //Console.WriteLine(date1.ToString());
-
-            // Get date-only portion of date, without its time.
-            //DateTime dateOnly = date1.Date;
-            // Display date using short date string.
-            //Console.WriteLine(dateOnly.ToString("d"));
-            // Display date using 24-hour clock.
-            //Console.WriteLine(dateOnly.ToString("g"));
-            //Console.WriteLine(dateOnly.ToString("MM/dd/yyyy HH:mm"));
-
-            // The example displays the following output to the console: 
-            //       6/1/2008 7:47:00 AM 
-            //       6/1/2008 
-            //       6/1/2008 12:00 AM 
-            //       06/01/2008 00:00
-            //***************************************************************
-
-            //DateTime dateAlert = DateTime.ParseExact(_date, "ddMMyyyy", CultureInfo.InvariantCulture, DateTimeStyles.None);
-
-            DateTime dateAlert = DateTime.Parse(_date);
-            DateTime date_1 = dateAlert.Date;
-            objNewAlert.date_alert = date_1;
+            DateTime dateAlert = DateTime.Now;
+            objNewAlert.date_alert = dateAlert;
 
             objNewAlert.title_alert = _title;
             objNewAlert.short_alert = _short;
@@ -103,7 +72,7 @@ public class alertLinkClass
 
     //******** UPDATE *******//
 
-    public bool commitUpdate(int _id, string _date, string _title, string _short, string _long)
+    public bool commitUpdate(int _id, string _title, string _short, string _long)
     {
         hospitalDataContext objHospitalDC = new hospitalDataContext();
 
@@ -111,7 +80,10 @@ public class alertLinkClass
         {
 
             var objUPhospital = objHospitalDC.mic_alerts.Single(x => x.Id == _id);
-            objUPhospital.date_alert = Convert.ToDateTime(_date);
+
+            DateTime dateAlert = DateTime.Now;
+            objUPhospital.date_alert = dateAlert;
+            
             objUPhospital.short_alert = _short;
             objUPhospital.title_alert = _title;
             objUPhospital.long_alert = _long;
@@ -145,3 +117,37 @@ public class alertLinkClass
 
 
 }
+
+
+
+//objNewAlert.date_alert = Convert.ToDateTime(_date);
+//objNewAlert.date_alert = _date;
+
+//objNewAlert.date_alert = DateTime.Parse(_date);
+
+//DateTime dateAlert = DateTime.Parse(_date);
+
+//DateTime dateAlert = DateTime.ParseExact(_date,"ddMMyyyy", null);
+//objNewAlert.date_alert = dateAlert;
+// objNewAlert.date_alert = Convert.ToDateTime(objHospitalDC.["date_alert"]);
+
+//***********************************************************
+// DateTime date1 = new DateTime(2008, 6, 1, 7, 47, 0);
+//Console.WriteLine(date1.ToString());
+
+// Get date-only portion of date, without its time.
+//DateTime dateOnly = date1.Date;
+// Display date using short date string.
+//Console.WriteLine(dateOnly.ToString("d"));
+// Display date using 24-hour clock.
+//Console.WriteLine(dateOnly.ToString("g"));
+//Console.WriteLine(dateOnly.ToString("MM/dd/yyyy HH:mm"));
+
+// The example displays the following output to the console: 
+//       6/1/2008 7:47:00 AM 
+//       6/1/2008 
+//       6/1/2008 12:00 AM 
+//       06/01/2008 00:00
+//***************************************************************
+
+//DateTime dateAlert = DateTime.ParseExact(_date, "ddMMyyyy", CultureInfo.InvariantCulture, DateTimeStyles.None);

@@ -159,7 +159,7 @@
             
             <%--******** DIV ALERT **********--%>
             <div class="alert">
-                <asp:HyperLink ID="hpl_alert" runat="server" NavigateUrl="http://www.cbc.ca/" Target="_blank">
+                <asp:HyperLink ID="hpl_alert" runat="server" NavigateUrl="~/alert_list.aspx" Target="_blank">
             <div id="columnas">
             <asp:Repeater ID="rpt_main" runat="server">
                 <ItemTemplate>
