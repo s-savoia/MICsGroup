@@ -11,10 +11,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 
-<%--****** SCRIPTS ALERT ******--%> 
+    <%--****** SCRIPTS ALERT ******--%>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script type="text/javascript" src="js/script_alert.js"></script>
-        <title>HOME</title>
+    <title>HOME</title>
 </head>
 
 <body>
@@ -48,7 +48,7 @@
                     <div class="reg">
                         <asp:LinkButton ID="btn_reg" Text="Register" runat="server" Target="_self" DescriptionUrl="~/home.aspx" />
                     </div>
-                    
+
                     <div class="access">
                         <asp:Image ImageUrl="~/img/access.png" runat="server" ID="img_acc" CssClass="a_img" />
                         <asp:LinkButton ID="btn_access" Text="Accessibility" DescriptionUrl="~/home.aspx" runat="server" />
@@ -85,26 +85,99 @@
             <%--************ BUTTONS SLIDER *************--%>
             <div class="slider">
 
-                 <div>
-                <asp:Button ID="btn_next" runat="server" Text=">>"  CssClass="b_next"/>
-                <asp:Button ID="btn_prev" runat="server" Text="<<" CssClass="b_prev"/>
-                <asp:Button ID="btn_play" runat="server" Text="Play"  CssClass="b_play" />
-                
-            </div>
+<%--                <div>
+                    <asp:Button ID="btn_next" runat="server" Text=">>" CssClass="b_next" />
+                    <asp:Button ID="btn_prev" runat="server" Text="<<" CssClass="b_prev" />
+                    <asp:Button ID="btn_play" runat="server" Text="Play" CssClass="b_play" />
+
+                </div>--%>
 
                 <%--<asp:Label runat="server" ID="Label1" />--%>
 
                 <%--******************* slideshow code *********************--%>
 
                 <div id="photo">
+                    
                     <%--<asp:ScriptManager ID="ScriptManager1" runat="server" />--%>
                     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
                     <asp:HyperLink ID="HyperLink19" NavigateUrl="http://www.cbc.ca" runat="server" Target="_blank">
-                        <asp:Image ID="slide_show" runat="server" CssClass="photo" />
+                        <%--<asp:Image ID="slide_show" runat="server" CssClass="photo" />--%>
+
+
+                        <%--******** SLIDE-SHOW SEGUNDO CODIGO ********--%>
+
+                        
+                                   <div class="alert">
+                <asp:HyperLink ID="HyperLink20" runat="server" NavigateUrl="#" Target="_blank">
+                    <div id="Div1">
+                        <asp:Repeater ID="rpt_images" runat="server">
+                            <ItemTemplate>
+
+                                <div class="text_alert">
+
+                                <asp:Image runat="server" ID="img" ImageUrl=<%#Eval("img") %> CssClass="text_alert" />
+                                    </div>
+
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </div>
+                </asp:HyperLink>
+            </div>
+
+
+
+                        <%--<asp:UpdatePanel ID="udp" runat="server">
+
+                            <ContentTemplate>
+                                <asp:MultiView ID="mtv" runat="server">
+                                    <asp:View ID="view1" runat="server">
+                                        <asp:Repeater ID="rpt_images" runat="server">
+                                            <ItemTemplate>
+                                        <asp:Image ID="img1" runat="server" ImageUrl='<%#Eval("img") %> ' CssClass="photo" />
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                    </asp:View>
+
+                                    <%--<asp:View ID="view2" runat="server">
+                                        <asp:Image ID="img2" runat="server" ImageUrl="~/img1/img3.png" CssClass="photo" />
+                                    </asp:View>
+
+                                    <asp:View ID="view3" runat="server">
+                                        <asp:Image ID="img3" runat="server" ImageUrl="~/img1/img4.png" CssClass="photo" />
+                                    </asp:View>
+
+                                    <asp:View ID="view4" runat="server">
+                                        <asp:Image ID="img4" runat="server" ImageUrl="~/img1/img5.png" CssClass="photo" />
+                                    </asp:View>--%>
+    <%--                            </asp:MultiView>
+                            </ContentTemplate>
+
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger ControlID="tmr" EventName="Tick" />
+                            </Triggers>
+                        </asp:UpdatePanel>--%>
+                            
+
+
+<%--                        <asp:Timer ID="tmr" runat="server" OnTick="subTick" Interval="2500" />--%>
+
+                         <%--******** SLIDE-SHOW SEGUNDO CODIGO ********--%>
+
+
+
+
+
+
+
+
+
+
+
+
                     </asp:HyperLink>
 
-<%--                    <asp:SlideShowExtender ID="SlideShowExtender" runat="server" TargetControlID="slide_show" SlideShowServiceMethod="GetImages" AutoPlay="true" Loop="true" PlayButtonID="btn_play" PlayButtonText="play" NextButtonID="btn_next" PreviousButtonID="btn_prev" StopButtonText="stop" />--%>
+                    <%--                    <asp:SlideShowExtender ID="SlideShowExtender" runat="server" TargetControlID="slide_show" SlideShowServiceMethod="GetImages" AutoPlay="true" Loop="true" PlayButtonID="btn_play" PlayButtonText="play" NextButtonID="btn_next" PreviousButtonID="btn_prev" StopButtonText="stop" />--%>
 
 
                     <div class="shape1">
@@ -116,11 +189,10 @@
                 </div>
                 <asp:DragPanelExtender ID="DragPanelExtender1" runat="server" TargetControlID="pnl_feature"></asp:DragPanelExtender>
 
-               <%-- <asp:DragPanelExtender ID="DragPanelExtender1" runat="server" TargetControlID="pnl_feature"/>--%>
 
-                <%--nav features--%>
+                <%--BOX WITH FEATURES--%>
                 <asp:Panel runat="server" ID="pnl_feature" CssClass="features">
-                <%--<div class="features">--%>
+                    <%--<div class="features">--%>
                     <div class="btn">
                         <asp:Image ID="img_search" runat="server" ImageUrl="~/img/search.png" CssClass="icon" />
                         <asp:HyperLink ID="hpl_dr" runat="server" Text="Find a Doctor" />
@@ -151,25 +223,26 @@
                         <asp:HyperLink ID="HyperLink5" runat="server" Text="Careers" />
                     </div>
 
-                <%--</div>--%>
-                    </asp:Panel>
-            </div><%--end features--%>
+                    <%--</div>--%>
+                </asp:Panel>
+            </div>
+            <%--end features--%>
 
 
-            
+
             <%--******** DIV ALERT **********--%>
             <div class="alert">
                 <asp:HyperLink ID="hpl_alert" runat="server" NavigateUrl="~/alert_list.aspx" Target="_blank">
-            <div id="columnas">
-            <asp:Repeater ID="rpt_main" runat="server">
-                <ItemTemplate>
+                    <div id="columnas">
+                        <asp:Repeater ID="rpt_main" runat="server">
+                            <ItemTemplate>
 
-                    <div class="text_alert"><%#Eval("title_alert")%> </div>
+                                <div class="text_alert"><%#Eval("title_alert")%> </div>
 
-                </ItemTemplate>
-            </asp:Repeater>
-        </div>
- </asp:HyperLink>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </div>
+                </asp:HyperLink>
             </div>
 
             <div class="box">
@@ -183,7 +256,7 @@
                        
                          
                     </asp:Literal>
-                     <asp:Label ID="ImagePath" runat="server"></asp:Label>
+                    <asp:Label ID="ImagePath" runat="server"></asp:Label>
 
                 </div>
 

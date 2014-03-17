@@ -13,12 +13,31 @@ using System.Xml;
 
 public partial class _home_slide_show : System.Web.UI.Page
 {
+
+    //protected void subTick(object sender, EventArgs e)
+    //{
+    //    if (mtv.ActiveViewIndex < 3)
+    //    {
+    //        mtv.ActiveViewIndex += 1;
+    //    }
+    //    else
+    //    {
+    //        mtv.ActiveViewIndex = 0;
+    //    }
+    //}
+
+
     alertLinkClass objLinq = new alertLinkClass();
+
+    imagesLinkClass objImages = new imagesLinkClass();
 
     protected void Page_Load(object sender, EventArgs e)
     {
         rpt_main.DataSource = objLinq.getAlert();
         rpt_main.DataBind();
+
+        rpt_images.DataSource = objImages.getImages();
+        rpt_images.DataBind();
     }
 
 
