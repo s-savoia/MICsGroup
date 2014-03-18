@@ -2,7 +2,8 @@
     width:97%;
     margin: 0 auto 0 auto;
     text-align:left;
-    font-size: .9em;
+
+     font-size: .9em;
     color: #808080;
     font-family: Arial,Calibris,sans-serif;
     line-height: 1.8em;
@@ -108,11 +109,3 @@ font-variant-caps:small-caps;
     margin:10px;
     align-items:baseline;
 }
-
-/*.td_left {
-    float:left;
-    margin:3px;
-}*/
-
-
-
