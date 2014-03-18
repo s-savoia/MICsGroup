@@ -14,6 +14,7 @@
     <%--****** SCRIPTS ALERT ******--%>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script type="text/javascript" src="js/script_alert.js"></script>
+    <script type="text/javascript" src="js/script_slider.js"></script>
     <title>HOME</title>
 </head>
 
@@ -85,7 +86,7 @@
             <%--************ BUTTONS SLIDER *************--%>
             <div class="slider">
 
-<%--                <div>
+                <%--                <div>
                     <asp:Button ID="btn_next" runat="server" Text=">>" CssClass="b_next" />
                     <asp:Button ID="btn_prev" runat="server" Text="<<" CssClass="b_prev" />
                     <asp:Button ID="btn_play" runat="server" Text="Play" CssClass="b_play" />
@@ -97,49 +98,44 @@
                 <%--******************* slideshow code *********************--%>
 
                 <div id="photo">
-                    
-                    <%--<asp:ScriptManager ID="ScriptManager1" runat="server" />--%>
+
                     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
-                    <asp:HyperLink ID="HyperLink19" NavigateUrl="http://www.cbc.ca" runat="server" Target="_blank">
-                        <%--<asp:Image ID="slide_show" runat="server" CssClass="photo" />--%>
+                    <%--<asp:Image ID="slide_show" runat="server" CssClass="photo" />--%>
 
 
-                        <%--******** SLIDE-SHOW SEGUNDO CODIGO ********--%>
+                    <%--******** SLIDE-SHOW CON JQUERY SLIDE ********--%>
 
-                        
-                                   <div class="alert">
-                <asp:HyperLink ID="HyperLink20" runat="server" NavigateUrl="#" Target="_blank">
-                    <div id="Div1">
+                    <div id="columnas1">
                         <asp:Repeater ID="rpt_images" runat="server">
                             <ItemTemplate>
-
-                                <div class="text_alert">
-
-                                <asp:Image runat="server" ID="img" ImageUrl=<%#Eval("img") %> CssClass="text_alert" />
-                                    </div>
-
+                                <div>
+                                    <asp:HyperLink ID="hpl_1" runat="server" NavigateUrl='<%#Eval("link") %>'
+                                            ForeColor="#ff66cc" Target="_blank" >
+                                        <%--<%#Eval("name")%>--%>
+                                        <asp:Image runat="server" ID="img" ImageUrl='<%#Eval("img") %>' CssClass="photo" />
+                                        </asp:HyperLink>
+                                </div>
                             </ItemTemplate>
                         </asp:Repeater>
                     </div>
-                </asp:HyperLink>
-            </div>
+
+                    <%--******** SLIDE-SHOW CON JQUERY DEL ALERT ********--%>
 
 
-
-                        <%--<asp:UpdatePanel ID="udp" runat="server">
+                    <%--<asp:UpdatePanel ID="udp" runat="server">
 
                             <ContentTemplate>
                                 <asp:MultiView ID="mtv" runat="server">
                                     <asp:View ID="view1" runat="server">
                                         <asp:Repeater ID="rpt_images" runat="server">
                                             <ItemTemplate>
-                                        <asp:Image ID="img1" runat="server" ImageUrl='<%#Eval("img") %> ' CssClass="photo" />
+                                                <asp:Image ID="img1" runat="server" ImageUrl='<%#Eval("img") %>' CssClass="photo" />
                                             </ItemTemplate>
                                         </asp:Repeater>
-                                    </asp:View>
+                                    </asp:View>--%>
 
-                                    <%--<asp:View ID="view2" runat="server">
+                    <%--<asp:View ID="view2" runat="server">
                                         <asp:Image ID="img2" runat="server" ImageUrl="~/img1/img3.png" CssClass="photo" />
                                     </asp:View>
 
@@ -150,34 +146,22 @@
                                     <asp:View ID="view4" runat="server">
                                         <asp:Image ID="img4" runat="server" ImageUrl="~/img1/img5.png" CssClass="photo" />
                                     </asp:View>--%>
-    <%--                            </asp:MultiView>
+                    <%--                              </asp:MultiView>
                             </ContentTemplate>
 
                             <Triggers>
                                 <asp:AsyncPostBackTrigger ControlID="tmr" EventName="Tick" />
                             </Triggers>
-                        </asp:UpdatePanel>--%>
-                            
+                        </asp:UpdatePanel>
+
+                        <asp:Timer ID="tmr" runat="server" OnTick="subTick" Interval="2500" />
+
+                        </asp:HyperLink>--%>
+
+                    <%--******** SLIDE-SHOW SEGUNDO CODIGO ********--%>
 
 
-<%--                        <asp:Timer ID="tmr" runat="server" OnTick="subTick" Interval="2500" />--%>
-
-                         <%--******** SLIDE-SHOW SEGUNDO CODIGO ********--%>
-
-
-
-
-
-
-
-
-
-
-
-
-                    </asp:HyperLink>
-
-                    <%--                    <asp:SlideShowExtender ID="SlideShowExtender" runat="server" TargetControlID="slide_show" SlideShowServiceMethod="GetImages" AutoPlay="true" Loop="true" PlayButtonID="btn_play" PlayButtonText="play" NextButtonID="btn_next" PreviousButtonID="btn_prev" StopButtonText="stop" />--%>
+                    <%--<asp:SlideShowExtender ID="SlideShowExtender" runat="server" TargetControlID="slide_show" SlideShowServiceMethod="GetImages" AutoPlay="true" Loop="true" PlayButtonID="btn_play" PlayButtonText="play" NextButtonID="btn_next" PreviousButtonID="btn_prev" StopButtonText="stop" />--%>
 
 
                     <div class="shape1">
@@ -244,7 +228,7 @@
                     </div>
                 </asp:HyperLink>
             </div>
-
+            <%--******** END DIV ALERT **********--%>
             <div class="box">
 
                 <div class="box_left">

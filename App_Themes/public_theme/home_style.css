@@ -484,6 +484,14 @@ nav {
     border-radius: 7px;
 }
 
+.link {
+    z-index:5;
+    position:absolute;
+    right:10%;
+    top:50%;
+    /*height:250px;*/
+}
+
 
 .features {
     width: 15%;

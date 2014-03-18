@@ -10,9 +10,14 @@
 
         <h1>Image Gallery</h1>
 
-        <asp:GridView ID="grid_main" runat="server">
+        <asp:GridView ID="grid_main" runat="server" AutoGenerateColumns="false" CellPadding="10">
             <Columns>
-                <asp:BoundField HeaderText="Images" />
+                <asp:ImageField DataImageUrlField="img" ControlStyle-Width="350"></asp:ImageField>
+
+                <asp:BoundField DataField="name" />
+
+                <%--<asp:BoundField HeaderText="Link" DataField="link" />--%>
+
             </Columns>
 
         </asp:GridView>
