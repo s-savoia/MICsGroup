@@ -8,7 +8,7 @@
 
 <%--*******************--%>
 
-            <div class="wraper">
+            <div class="wraper1">
             <h1>
                 <asp:Label ID="admin1" runat="server">Admin page for Alerts</asp:Label></h1>
 
@@ -16,36 +16,20 @@
                 <asp:Label ID="insert" runat="server" Text="Insert new Alert:" />
             </h2>
 
-            <asp:Label ID="lbl_message" runat="server" />
+            <h3><asp:Label ID="lbl_message" runat="server" ForeColor="#ff8149" /></h3>
 
             <%--<asp:ValidationSummary ID="val_alert" runat="server" HeaderText="Errors" ShowSummary="true" ShowMessageBox="true" />--%>
 
             <%--******** INPUT USERS ********--%>
 
-            <table>
-                <tr>
-<%--                    <td>
-                        <asp:Label ID="date" runat="server" Text="Date of the alert:" />
-                    </td>
-                    <td>
-                        <asp:ScriptManager ID="ScriptManager1" runat="server" />
-                        <asp:TextBox ID="txt_date" runat="server" />--%>
-
-                        <%--                        <asp:RequiredFieldValidator ID="rfv_nameI" runat="server" ControlToValidate="txt_date" Display="Dynamic" Text="*Required" ErrorMessage="Is not a date" SetFocusOnError="true" Font-Size="Small" ForeColor="Red" ValidationGroup="insert" />
-
-                        <asp:CompareValidator ID="cv_date" runat="server" Operator="DataTypeCheck" Text="Is not a date" ControlToValidate="txt_date" Type="Date" ValidationGroup="insert" Display="Dynamic" />--%>
-
-                        <%--<asp:CalendarExtender ID="calendar" runat="server" TargetControlID="txt_date" />--%>
-
-<%--                    </td>
-                </tr>--%>
+            <table class="table1">
 
                 <tr>
-                    <td>
+                    <td >
                         <asp:Label ID="title" runat="server" Text="Title of the alert:<br /> 100 characters" />
                     </td>
-                    <td class="auto-style1">
-                        <asp:TextBox ID="txt_title" runat="server" TextMode="MultiLine" Rows="4" Columns="50" />
+                    <td  class="td_left">
+                        <asp:TextBox ID="txt_title" runat="server" TextMode="MultiLine" Rows="2" Columns="40" />
 
                         <%--                        <asp:RequiredFieldValidator ID="rfv_title" runat="server" ControlToValidate="txt_date" Display="Dynamic" Text="*Required" ErrorMessage="Please insert the title" SetFocusOnError="true" Font-Size="Small" ForeColor="Red" ValidationGroup="insert" />
 
@@ -58,8 +42,8 @@
                     <td>
                         <asp:Label ID="short_alert" runat="server" Text="Short Text:" />
                     </td>
-                    <td>
-                        <asp:TextBox ID="txt_short" runat="server" TextMode="MultiLine" EnableViewState="false" Rows="4" Columns="50" />
+                    <td  class="td_left">
+                        <asp:TextBox ID="txt_short" runat="server" TextMode="MultiLine" EnableViewState="false" Rows="2" Columns="40" />
 
                         <%--                        <cc1:Editor ID="Editor1" runat="server" TargetControlID="txt_short" />--%>
 
@@ -74,8 +58,8 @@
                     <td>
                         <asp:Label ID="long_alert" runat="server" Text="Long Text:" />
                     </td>
-                    <td>
-                        <asp:TextBox ID="txt_long" runat="server" TextMode="MultiLine" Rows="4" Columns="50" />
+                    <td class="td_left">
+                        <asp:TextBox ID="txt_long" runat="server" TextMode="MultiLine" Rows="2" Columns="40" />
 
                     </td>
                 </tr>
@@ -102,7 +86,7 @@
                 <asp:Repeater ID="rpt_all" runat="server">
 
                     <ItemTemplate>
-                        <div class="content">
+                        <div class="content1">
                             <div class="date">
                                 <%#Eval("date_alert") %>
                             </div>
@@ -163,15 +147,12 @@
 
 
             <%--********panel to update *********--%>
-            <asp:Panel runat="server" ID="pnl_update">
+            <asp:Panel runat="server" ID="pnl_update" >
 
                 <h2>Update Health Alerts</h2>
-                <table>
+                <table border="1">
                     <thead>
                         <tr>
-                            <%--<th>
-                                <asp:Label runat="server" ID="lbl_dateU" Text="Date" />
-                            </th>--%>
                             <th>
                                 <asp:Label runat="server" ID="lbl_titleU" Text="Title Alert" />
                             </th>
@@ -186,24 +167,22 @@
                     <tbody>
                         <asp:Repeater runat="server" ID="rpt_update" OnItemCommand="subUpDel">
                             <ItemTemplate>
-                                <tr>
+                                <tr style="float:left;">
                                     <td>
                                         <asp:HiddenField ID="hdf_idU" runat="server" Value='<%#Eval("Id") %>' />
-
-                                        <%--<asp:TextBox runat="server" ID="txt_dateU" Text='<%#Eval("date_alert") %>' />--%>
                                     </td>
                                     <td>
                                         <asp:TextBox runat="server" ID="txt_titleU" Text='<%#Eval("title_alert") %>'
-                                            TextMode="MultiLine" Rows="3" />
+                                            TextMode="MultiLine" Rows="4" Width="150" />
                                     </td>
-                                    <td>
+                                    <td style="margin:4px;">
                                         <asp:TextBox runat="server" ID="txt_shortU" Text='<%#Eval("short_alert") %>'
-                                            Rows="3" TextMode="MultiLine" />
+                                            Rows="4" TextMode="MultiLine" Width="180" />
                                     </td>
 
                                     <td>
                                         <asp:TextBox runat="server" ID="txt_longU" Text='<%#Eval("long_alert") %>'
-                                         Rows="3" TextMode="MultiLine" />
+                                         Rows="4" TextMode="MultiLine" />
                                     </td>
 
                                 </tr>

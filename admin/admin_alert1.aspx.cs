@@ -129,9 +129,9 @@ public partial class admin_Default : System.Web.UI.Page
     private void _strMessage(bool flag, string str)
     {
         if (flag) // if flag is true
-            lbl_message.Text = "Product " + str + " was successful"; //writing the output
+            lbl_message.Text = "Health Alert " + str + " was successful"; //writing the output
         else
-            lbl_message.Text = "sorry, unable to" + str + " product";
+            lbl_message.Text = "sorry, unable to" + str + " Health Alert";
     }
 
 }
