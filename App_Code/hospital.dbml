@@ -33,15 +33,6 @@
       <Column Name="expiration" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.mic_find_service" Member="mic_find_services">
-    <Type Name="mic_find_service">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="service" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="[unique]" Member="unique" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
-      <Column Name="location" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="details" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.mic_pay_bills" Member="mic_pay_bills">
     <Type Name="mic_pay_bill">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -187,6 +178,33 @@
       <Column Name="reason" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="time" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="booked" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mic_services_lady_minto" Member="mic_services_lady_mintos">
+    <Type Name="mic_services_lady_minto">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="service" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="[unique]" Member="unique" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="location" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="details" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mic_services_bingham" Member="mic_services_binghams">
+    <Type Name="mic_services_bingham">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="service" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="[unique]" Member="unique" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="location" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="details" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mic_services_anson" Member="mic_services_ansons">
+    <Type Name="mic_services_anson">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="service" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="[unique]" Member="unique" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="location" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="details" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

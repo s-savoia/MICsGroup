@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/admin_master.master" AutoEventWireup="true" CodeFile="admin_job_postings.aspx.cs" Inherits="admin_Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/admin_master.master" AutoEventWireup="true" CodeFile="admin_jobposting.aspx.cs" Inherits="admin_Default" %>
 
 <%--This page is coded by: JAMES HONG--%>
 
