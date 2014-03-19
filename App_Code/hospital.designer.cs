@@ -71,15 +71,15 @@ public partial class hospitalDataContext : System.Data.Linq.DataContext
   partial void Insertmic_book_appointment(mic_book_appointment instance);
   partial void Updatemic_book_appointment(mic_book_appointment instance);
   partial void Deletemic_book_appointment(mic_book_appointment instance);
-  partial void Insertmic_services_lady_minto(mic_services_lady_minto instance);
-  partial void Updatemic_services_lady_minto(mic_services_lady_minto instance);
-  partial void Deletemic_services_lady_minto(mic_services_lady_minto instance);
-  partial void Insertmic_services_bingham(mic_services_bingham instance);
-  partial void Updatemic_services_bingham(mic_services_bingham instance);
-  partial void Deletemic_services_bingham(mic_services_bingham instance);
   partial void Insertmic_services_anson(mic_services_anson instance);
   partial void Updatemic_services_anson(mic_services_anson instance);
   partial void Deletemic_services_anson(mic_services_anson instance);
+  partial void Insertmic_services_bingham(mic_services_bingham instance);
+  partial void Updatemic_services_bingham(mic_services_bingham instance);
+  partial void Deletemic_services_bingham(mic_services_bingham instance);
+  partial void Insertmic_services_lady_minto(mic_services_lady_minto instance);
+  partial void Updatemic_services_lady_minto(mic_services_lady_minto instance);
+  partial void Deletemic_services_lady_minto(mic_services_lady_minto instance);
   #endregion
 	
 	public hospitalDataContext() : 
@@ -224,11 +224,11 @@ public partial class hospitalDataContext : System.Data.Linq.DataContext
 		}
 	}
 	
-	public System.Data.Linq.Table<mic_services_lady_minto> mic_services_lady_mintos
+	public System.Data.Linq.Table<mic_services_anson> mic_services_ansons
 	{
 		get
 		{
-			return this.GetTable<mic_services_lady_minto>();
+			return this.GetTable<mic_services_anson>();
 		}
 	}
 	
@@ -240,11 +240,11 @@ public partial class hospitalDataContext : System.Data.Linq.DataContext
 		}
 	}
 	
-	public System.Data.Linq.Table<mic_services_anson> mic_services_ansons
+	public System.Data.Linq.Table<mic_services_lady_minto> mic_services_lady_mintos
 	{
 		get
 		{
-			return this.GetTable<mic_services_anson>();
+			return this.GetTable<mic_services_lady_minto>();
 		}
 	}
 }
@@ -3757,8 +3757,8 @@ public partial class mic_book_appointment : INotifyPropertyChanging, INotifyProp
 	}
 }
 
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.mic_services_lady_minto")]
-public partial class mic_services_lady_minto : INotifyPropertyChanging, INotifyPropertyChanged
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.mic_services_anson")]
+public partial class mic_services_anson : INotifyPropertyChanging, INotifyPropertyChanged
 {
 	
 	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -3767,7 +3767,7 @@ public partial class mic_services_lady_minto : INotifyPropertyChanging, INotifyP
 	
 	private string _service;
 	
-	private char _unique;
+	private string _unique;
 	
 	private string _location;
 	
@@ -3781,7 +3781,7 @@ public partial class mic_services_lady_minto : INotifyPropertyChanging, INotifyP
     partial void OnidChanged();
     partial void OnserviceChanging(string value);
     partial void OnserviceChanged();
-    partial void OnuniqueChanging(char value);
+    partial void OnuniqueChanging(string value);
     partial void OnuniqueChanged();
     partial void OnlocationChanging(string value);
     partial void OnlocationChanged();
@@ -3789,7 +3789,7 @@ public partial class mic_services_lady_minto : INotifyPropertyChanging, INotifyP
     partial void OndetailsChanged();
     #endregion
 	
-	public mic_services_lady_minto()
+	public mic_services_anson()
 	{
 		OnCreated();
 	}
@@ -3834,8 +3834,8 @@ public partial class mic_services_lady_minto : INotifyPropertyChanging, INotifyP
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[unique]", Storage="_unique", DbType="Char(1) NOT NULL")]
-	public char unique
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[unique]", Storage="_unique", DbType="Char(3) NOT NULL", CanBeNull=false)]
+	public string unique
 	{
 		get
 		{
@@ -3925,7 +3925,7 @@ public partial class mic_services_bingham : INotifyPropertyChanging, INotifyProp
 	
 	private string _service;
 	
-	private char _unique;
+	private string _unique;
 	
 	private string _location;
 	
@@ -3939,7 +3939,7 @@ public partial class mic_services_bingham : INotifyPropertyChanging, INotifyProp
     partial void OnidChanged();
     partial void OnserviceChanging(string value);
     partial void OnserviceChanged();
-    partial void OnuniqueChanging(char value);
+    partial void OnuniqueChanging(string value);
     partial void OnuniqueChanged();
     partial void OnlocationChanging(string value);
     partial void OnlocationChanged();
@@ -3992,8 +3992,8 @@ public partial class mic_services_bingham : INotifyPropertyChanging, INotifyProp
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[unique]", Storage="_unique", DbType="Char(1) NOT NULL")]
-	public char unique
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[unique]", Storage="_unique", DbType="Char(3) NOT NULL", CanBeNull=false)]
+	public string unique
 	{
 		get
 		{
@@ -4073,8 +4073,8 @@ public partial class mic_services_bingham : INotifyPropertyChanging, INotifyProp
 	}
 }
 
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.mic_services_anson")]
-public partial class mic_services_anson : INotifyPropertyChanging, INotifyPropertyChanged
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.mic_services_lady_minto")]
+public partial class mic_services_lady_minto : INotifyPropertyChanging, INotifyPropertyChanged
 {
 	
 	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -4083,7 +4083,7 @@ public partial class mic_services_anson : INotifyPropertyChanging, INotifyProper
 	
 	private string _service;
 	
-	private char _unique;
+	private string _unique;
 	
 	private string _location;
 	
@@ -4097,7 +4097,7 @@ public partial class mic_services_anson : INotifyPropertyChanging, INotifyProper
     partial void OnidChanged();
     partial void OnserviceChanging(string value);
     partial void OnserviceChanged();
-    partial void OnuniqueChanging(char value);
+    partial void OnuniqueChanging(string value);
     partial void OnuniqueChanged();
     partial void OnlocationChanging(string value);
     partial void OnlocationChanged();
@@ -4105,7 +4105,7 @@ public partial class mic_services_anson : INotifyPropertyChanging, INotifyProper
     partial void OndetailsChanged();
     #endregion
 	
-	public mic_services_anson()
+	public mic_services_lady_minto()
 	{
 		OnCreated();
 	}
@@ -4150,8 +4150,8 @@ public partial class mic_services_anson : INotifyPropertyChanging, INotifyProper
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[unique]", Storage="_unique", DbType="Char(1) NOT NULL")]
-	public char unique
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[unique]", Storage="_unique", DbType="Char(3) NOT NULL", CanBeNull=false)]
+	public string unique
 	{
 		get
 		{
