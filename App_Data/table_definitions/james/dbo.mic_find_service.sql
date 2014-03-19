@@ -33,3 +33,11 @@ CREATE TABLE [dbo].[mic_services_lady_minto] (
     [details]  NVARCHAR (MAX) NOT NULL,
     PRIMARY KEY CLUSTERED ([id] ASC)
 );
+
+-- 2014-03-19 (W) 11:36
+
+ALTER TABLE [dbo].[mic_services_bingham] ALTER COLUMN [unique] CHAR (3) NOT NULL;
+
+ALTER TABLE [dbo].[mic_services_anson] ALTER COLUMN [unique] CHAR (3) NOT NULL;
+
+ALTER TABLE [dbo].[mic_services_lady_minto] ALTER COLUMN [unique] CHAR (3) NOT NULL;
