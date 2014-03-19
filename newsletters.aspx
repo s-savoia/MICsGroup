@@ -13,7 +13,7 @@
     <%-- name --%>
     <asp:Label ID="lbl_name" runat="server" Text="Name:*" AssociatedControlID="txt_name" />
     <asp:TextBox ID="txt_name" runat="server" Text='<%#Bind("name")%>' />
-    <asp:RequiredFieldValidator ID="rfv_name" runat="server" Text="*Required" ControlToValidate="txt_name" Display="None" SetFocusOnError="true" ErrorMessage="Please enter your first name" ValidationGroup="newsletter" />
+    <asp:RequiredFieldValidator ID="rfv_name" runat="server" Text="*Required" ControlToValidate="txt_name" Display="None" SetFocusOnError="true" ErrorMessage="Please enter your name" ValidationGroup="newsletter" />
     <br /><br />
     <%--email--%>
     <asp:Label ID="lbl_email" runat="server" Text="Email:*" AssociatedControlID="txt_email" />

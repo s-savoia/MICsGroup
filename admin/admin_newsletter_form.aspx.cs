@@ -10,6 +10,7 @@ using System.Net.Mime;
 public partial class admin_newsletter_form : System.Web.UI.Page
 {
     sendNewsletterClass objNews = new sendNewsletterClass();
+    newsletterClass objEmail = new newsletterClass();
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -22,7 +23,8 @@ public partial class admin_newsletter_form : System.Web.UI.Page
     protected void subClick(object sender, EventArgs e)
     {
         //setting a newsletter
-        string to = "micsnewsletter@gmail.com";
+        //string to = "micsnewsletter@gmail.com";
+        string to = objEmail.getNewsemail();
         string from = "micsnewsletter@gmail.com";
         
         //save images
