@@ -1,5 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="admin_master.master.cs" Inherits="admin_admin_master" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
 <%-- This page was coded by HIDEMI NAWATA (HTML5 + CSS3) --%>
 <!DOCTYPE html>
 <%-- style sheet --%>

@@ -1,0 +1,31 @@
+﻿body {
+}
+
+.contentMain >h2 {
+    font-weight: bold;
+    font-size:1.3em;
+}
+
+.contentMain > a {
+    color: blue;
+    text-decoration:underline;
+    display:inline-block;
+    margin: 5px 25px 10px 0px;
+    padding:5px;
+}
+
+#content_main_pnl_appointment_create >h3 {
+    font-size:1.1em;
+    margin-bottom:10px;
+    padding-bottom:5px;
+    display: block;
+    border-bottom: 2px #22BCB9 solid;
+}
+
+#content_main_pnl_appointment_view >h3 {
+    font-size:1.1em;
+    margin-bottom:10px;
+    padding-bottom:5px;
+    display:block;
+    border-bottom: 2px #22BCB9 solid;
+}
