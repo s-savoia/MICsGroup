@@ -8,10 +8,65 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content_main" runat="Server">
 
-    <asp:GridView ID="grv_main" runat="server" DataKeyNames="Id" AllowPaging="true" AutoGenerateColumns="false" PagerSettings-Mode="NumericFirstLast">
-        <Columns>
-            <asp:TemplateField>
-                <HeaderTemplate>
+    <%--Here is a message saying if an action (insert/update/delete) was successful or not.--%>
+    <h3>
+        <asp:Label ID="lbl_message" runat="server" /><br />
+    </h3>
+    
+    <br />
+
+    <asp:ValidationSummary ID="vds_insert" runat="server" DisplayMode="List" ValidationGroup="insert" ShowMessageBox="true" ShowSummary="false" />
+
+    <asp:ValidationSummary ID="vds_update" runat="server" DisplayMode="List" ValidationGroup="update" ShowMessageBox="true" ShowSummary="false" />
+
+
+    <%--= = = ADD A JOB  = = =--%>
+
+    <table>
+         <tr>
+                <td>
+                    <asp:Label ID="lbl_instruction" runat="server" Text="Add a job to the database" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lbl_positionI" runat="server" Text="Position" />
+                </td>
+                <td>
+                    <asp:TextBox ID="txt_positionI" runat="server" ValidationGroup="insert" />
+                    <asp:RequiredFieldValidator ID="rfv_positionI" runat="server" ControlToValidate="txt_positionI" Text="*" ErrorMessage="Position required" ValidationGroup="insert" CssClass="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:TextBox ID="txt_locationI" runat="server" ValidationGroup="insert" />
+                    <asp:RequiredFieldValidator ID="rfv_locationI" runat="server" ControlToValidate="txt_locationI" Text="*" ErrorMessage="Location required" ValidationGroup="insert" CssClass="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lbl_detailsI" runat="server" Text="Details" />
+                    <asp:RequiredFieldValidator ID="rfv_detailsI" runat="server" ControlToValidate="txt_detailsI" Text="*" ErrorMessage="Details required" ValidationGroup="insert" CssClass="required" />
+                </td>
+            </tr>
+            <tr>
+                <asp:TextBox ID="txt_detailsI" runat="server" TextMode="MultiLine"  CssClass="adm-textArea" ValidationGroup="insert" />
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button ID="btn_insertI" runat="server" Text="Insert" CommandName="InsertC" OnCommand="subAdmin" ValidationGroup="insert" />
+                    <asp:Button ID="btn_cancelI" runat="server" Text="Cancel" CommandName="CancelC" OnCommand="subAdmin" CausesValidation="false" />
+
+                </td>
+            </tr>
+        </table>
+
+    <%--= = = LISTVIEW = = =--%>
+    <asp:ListView ID="ltv_main" runat="server" DataKeyNames="Id" OnItemCommand="subControl">
+
+        <LayoutTemplate>
+            <table>
+                <thead>
                     <table>
                         <tr>
                             <th>
@@ -26,82 +81,83 @@
                             <th>Options
                             </th>
                         </tr>
-                </HeaderTemplate>
-            </asp:TemplateField>
+                </thead>
+                <tbody>
+                    <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
+                </tbody>
+                <tfoot>
+            </table>
+            </tfoot>                
+        </LayoutTemplate>
+        
+        <%--= = = ITEM TEMPLATE = = =--%>
+        <ItemTemplate>
+            <tr>
+                <td>
+                    <asp:Label ID="lbl_id" runat="server" Text='<%#Eval("Id") %>' />
+                </td>
+                <td>
+                    <asp:Label ID="lbl_position" runat="server" Text='<%#Eval("position") %>' />
+                </td>
+                <td>
+                    <asp:Label ID="lbl_location" runat="server" Text='<%#Eval("location") %>' />
+                </td>
+                <td>
+                    <asp:Button ID="btn_edit" runat="server" Text="Edit" CommandName="EditC" CommandArgument='<%#Eval("Id") %>' />
+                    <asp:Button ID="btn_delete" runat="server" Text="Delete" CommandName="DeleteC" /> 
+                </td>
+            </tr>
+        </ItemTemplate>
 
-            <asp:TemplateField>
-                <InsertItemTemplate>
-                    <tr>
-                        <td>
-                            <asp:Label ID="lbl_Id" runat="server" Text="Id" />
+        <%--= = = EDIT ITEM TEMPLATE = = =--%>
+        <EditItemTemplate>
+            <tr>
+                <td>
+                    <asp:Label ID="lbl_IdE" runat="server" Text="Id" />
 
-                        </td>
-                        <td>
-                            <asp:HiddenField ID="hdf_id" runat="server" Value='1' /> <%--<%#Eval("Id"); %>--%>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Label ID="lbl_position" runat="server" Text="Position" />
-                        </td>
-                        <td>
-                            <asp:TextBox ID="txt_postionI" runat="server" Text='doctor' ValidationGroup="insert" /> <%--<%#Eval("position"); %>--%>
-                            <asp:RequiredFieldValidator ID="rfv_positionI" runat="server" ControlToValidate="txt_postionI" Text="*" ErrorMessage="Position required" ValidationGroup="insert" CssClass="required" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:TextBox ID="txt_locationI" runat="server" Text='Matheson' ValidationGroup="insert" /> <%--<%#Eval("location"); %>--%>
-                            <asp:RequiredFieldValidator ID="rfv_locationI" runat="server" ControlToValidate="txt_locationI" Text="*" ErrorMessage="Location required" ValidationGroup="insert" CssClass="required" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                        <asp:Label ID="lbl_details" runat="server" Text="Details" />
-                            <asp:RequiredFieldValidator ID="rfv_detailsI" runat="server" ControlToValidate="txt_detailsI" Text="*" ErrorMessage="Details required" ValidationGroup="insert" CssClass="required" />
-                    </td>
-                    </tr>
-                    <tr>
-                        <asp:TextBox ID="txt_detailsI" runat="server" TextMode="MultiLine" Text='best doctor' CssClass="adm-textArea" /> <%--<%#Eval("details"); %>--%>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Button ID="btn_insertI" runat="server" Text="Insert" CommandName="Insert" OnCommand="subAdmin" />
-                            <asp:Button ID="btn_cancelI" runat="server" Text="Cancel" CommandName="Cancel" OnCommand="subAdmin" />
-                            
-                        </td>
-                    </tr>
+                </td>
+                <td>
+                    <asp:Label ID="lbl_id2E" runat="server" Text='<%#Eval("Id") %>' />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lbl_positionE" runat="server" Text="Position" />
+                </td>
+                <td>
+                    <asp:TextBox ID="txt_positionE" runat="server" Text='<%#Eval("position") %>' ValidationGroup="update" />
+                    <asp:RequiredFieldValidator ID="rfv_positionE" runat="server" ControlToValidate="txt_positionE" Text="*" ErrorMessage="Position required" ValidationGroup="update" CssClass="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lbl_locationE" runat="server" Text="Location" />
+                </td>
+                <td>
+                    <asp:TextBox ID="txt_locationE" runat="server" Text='<%#Eval("location") %>' ValidationGroup="update" />
+                    <asp:RequiredFieldValidator ID="rfv_locationE" runat="server" ControlToValidate="txt_locationE" Text="*" ErrorMessage="Location required" ValidationGroup="update" CssClass="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lbl_detailsE" runat="server" Text="Details" />
+                    <asp:RequiredFieldValidator ID="rfv_detailsE" runat="server" ControlToValidate="txt_detailsE" Text="*" ErrorMessage="Details required" ValidationGroup="update" CssClass="required" />
+                </td>
+            </tr>
+            <tr>
+                <asp:TextBox ID="txt_detailsE" runat="server" TextMode="MultiLine" Text='<%#Eval("details") %>' ValidationGroup="update" CssClass="" /> <%--adm-textArea--%>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button ID="btn_updateE" runat="server" Text="Update" CommandName="UpdateC" ValidationGroup="update" />
+                    <asp:Button ID="btn_cancelE" runat="server" Text="Cancel" CommandName="CancelC" CausesValidation="false" />
 
-                </InsertItemTemplate>
-            </asp:TemplateField>
+                </td>
+            </tr>
 
-            <asp:TemplateField>
-                <ItemTemplate>
-                    <tr>
-                        <td>
-                            <%--<%#Eval("Id"); %>--%>
-                        </td>
-                        <td>
-                           <%-- <%#Eval("position"); %>--%>
-                        </td>
-                        <td>
-                            <%--<%#Eval("location"); %>--%>
-                        </td>
-                        <td>
-                            <asp:Button ID="btn_edit" runat="server" Text="Edit" CommandName="Edit" CommandArgument='' OnCommand="subAdmin" /> <%--<%#Eval("Id"); %>--%>
-                            <asp:Button ID="btn_delete" runat="server" Text="Delete" CommandName="Delete" CommandArgument='' OnCommand="subAdmin" /> <%--<%#Eval("Id"); %>--%>
-                        </td>
-                    </tr>
-                </ItemTemplate>
-            </asp:TemplateField>
+        </EditItemTemplate>
 
-            <asp:TemplateField>
-                <FooterTemplate>
-                    </table>
-                </FooterTemplate>
-            </asp:TemplateField>
-        </Columns>
-    </asp:GridView>
+    </asp:ListView>
 
 </asp:Content>
 
