@@ -180,11 +180,11 @@
       <Column Name="booked" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.mic_services_lady_minto" Member="mic_services_lady_mintos">
-    <Type Name="mic_services_lady_minto">
+  <Table Name="dbo.mic_services_anson" Member="mic_services_ansons">
+    <Type Name="mic_services_anson">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="service" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="[unique]" Member="unique" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="[unique]" Member="unique" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
       <Column Name="location" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="details" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
     </Type>
@@ -193,16 +193,16 @@
     <Type Name="mic_services_bingham">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="service" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="[unique]" Member="unique" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="[unique]" Member="unique" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
       <Column Name="location" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="details" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.mic_services_anson" Member="mic_services_ansons">
-    <Type Name="mic_services_anson">
+  <Table Name="dbo.mic_services_lady_minto" Member="mic_services_lady_mintos">
+    <Type Name="mic_services_lady_minto">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="service" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="[unique]" Member="unique" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="[unique]" Member="unique" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
       <Column Name="location" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="details" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
     </Type>
