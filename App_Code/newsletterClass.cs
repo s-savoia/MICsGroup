@@ -14,11 +14,11 @@ public class newsletterClass
     }
 
     //Get All email
-    public List<mic_mailing_list> getNewsemail()
+    public IQueryable<mic_mailing_list> getNewsemail()
     {
         hospitalDataContext objEmail = new hospitalDataContext();
-        var allEmail = objEmail.mic_mailing_lists.Select(x => x.email);
-        return allEmail.ToList();
+        var allEmail = objEmail.mic_mailing_lists.Select(x => x);
+        return allEmail;
 
         //var allEmail = objEmail.mic_mailing_lists.Select(x => new { x.email });
         //return allEmail.ToString();
