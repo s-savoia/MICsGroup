@@ -29,3 +29,28 @@
     display:block;
     border-bottom: 2px #22BCB9 solid;
 }
+
+#create_appointment_table {
+    width:300px;
+    margin:0 auto;
+}
+
+#create_appointment_table td {
+    padding: 5px;
+}
+
+#create_appointment_table input[type='text'] {
+    width:150px;
+}
+
+#create_appointment_table select {
+    width:155px;
+}
+
+#create_appointment_table input[type='submit'] {
+    margin:5px 0px 0px 75px;
+}
+
+.cat_left {
+    width: 60px;
+}

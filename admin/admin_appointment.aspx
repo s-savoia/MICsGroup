@@ -13,13 +13,13 @@
 
     <asp:Panel ID="pnl_appointment_create" runat="server">
         <h3>Create an Appointment Timeslot</h3>
-        <table>
+        <table id="create_appointment_table">
             <tr>
-                <td><asp:Label ID="lbl_date" runat="server" Text="Date:" /></td>
+                <td class="cat_left"><asp:Label ID="lbl_date" runat="server" Text="Date:" /></td>
                 <td><asp:TextBox ID="txt_date" runat="server" /></td>
             </tr>
             <tr>
-                <td><asp:Label ID="lbl_time" runat="server" Text="Time:" /></td>
+                <td class="cat_left"><asp:Label ID="lbl_time" runat="server" Text="Time:" /></td>
                 <td><asp:DropDownList ID="ddl_province" runat="server">
                         <asp:ListItem Value="9:00am">9:00am</asp:ListItem>
                         <asp:ListItem Value="9:30am">9:30am</asp:ListItem>
@@ -44,14 +44,14 @@
                 </asp:DropDownList>
                 </td>
             </tr>
+            <tr>
+                <td class="cat_left"></td>
+                <td>
+                    <asp:Button ID="btn_create_timeslot" runat="server" Text="Create" />
+                </td>
+            </tr>
         </table>
-            
-        
-        <br />
-        
-        
-        <br />
-        <asp:Button ID="btn_create_timeslot" runat="server" Text="Create" />
+
     </asp:Panel>
 
     <asp:Panel ID="pnl_appointment_view" runat="server">
