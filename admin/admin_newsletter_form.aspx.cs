@@ -24,7 +24,7 @@ public partial class admin_newsletter_form : System.Web.UI.Page
     {
         //setting a newsletter
         //string to = "micsnewsletter@gmail.com";
-        string to = objEmail.getNewsemail();
+        string to = "micsnewsletter@gmail.com";
         string from = "micsnewsletter@gmail.com";
         
         //save images
