@@ -12,27 +12,6 @@
       <Column Name="message" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.mic_donation" Member="mic_donations">
-    <Type Name="mic_donation">
-      <Column Name="donation_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="fname" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="lname" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="city" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="province" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
-      <Column Name="zip" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
-      <Column Name="phone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="email" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="survey" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="comment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="payment_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="card_number" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="security_number" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="cardholder_name" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="expiration" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.mic_pay_bills" Member="mic_pay_bills">
     <Type Name="mic_pay_bill">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -205,6 +184,29 @@
       <Column Name="[unique]" Member="unique" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
       <Column Name="location" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="details" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mic_donation" Member="mic_donations">
+    <Type Name="mic_donation">
+      <Column Name="donation_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fname" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="lname" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="province" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="zip" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="survey" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="comment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="payment_type" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="card_number" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="security_number" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cardholder_name" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="expiration_month" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="expiration_year" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="country" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

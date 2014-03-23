@@ -38,10 +38,9 @@
                 <asp:RequiredFieldValidator ID="rfv_city" runat="server" Text="*Required" ControlToValidate="txt_city" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter a city" ValidationGroup="donation1" />
                 <br /><br />
 
-
                 <%--Province--%>
                 <asp:Label ID="lbl_province" runat="server" Text="Province: " />
-                <asp:Dropdownlist ID="ddl_province" runat="server" CausesValidation="false" SelectedValue='<%#Bind("province")%>'>
+                <asp:Dropdownlist ID="ddl_province" runat="server" CausesValidation="false" SelectedItem='<%#Bind("province")%>'>
                     <asp:ListItem Value="1" Text="ON" Selected="True" />
                     <asp:ListItem Value="2" Text="QC" />
                     <asp:ListItem Value="3" Text="NS" />
@@ -58,7 +57,7 @@
                 
                 <%--Country--%>
                 <asp:Label ID="lbl_country" runat="server" Text="Country: " />
-                <asp:Dropdownlist ID="ddl_country" runat="server" CausesValidation="false" SelectedValue='<%#Bind("country")%>'>
+                <asp:Dropdownlist ID="ddl_country" runat="server" CausesValidation="false" SelectedItem='<%#Bind("country")%>'>
                     <asp:ListItem Value="1" Text="Canada" Selected="True" />
                     <asp:ListItem Value="1" Text="USA" />
                     <asp:ListItem Value="2" Text="International" />
@@ -96,7 +95,7 @@
                 <%--reason for donation--%>
                 <asp:Label ID="lbl_survey" runat="server" Text="What led you to donate today?" />
                 <br />
-                <asp:Dropdownlist ID="ddl_proficiency" runat="server" CausesValidation="false" SelectedValue='<%#Bind("survey")%>'>
+                <asp:Dropdownlist ID="ddl_survey" runat="server" CausesValidation="false" SelectedItem='<%#Bind("survey")%>'>
                     <asp:ListItem Value="1" Text="Please select one:" Selected="True" />
                     <asp:ListItem Value="2" Text="I have been a patient of MICs hospital" />
                     <asp:ListItem Value="3" Text="A family member/friend has been a patient of MICs hospital" />
@@ -115,7 +114,7 @@
                 <br /><br />
 
                 <%--amount--%>
-                <asp:Label ID="lbl_amount" runat="server" Text="Comment:" AssociatedControlID="txt_amount" />
+                <asp:Label ID="lbl_amount" runat="server" Text="Amount:" AssociatedControlID="txt_amount" />
                 <br />
                 <asp:TextBox ID="txt_amount" runat="server" Text='<%#Bind("amount")%>' />
                 <asp:RequiredFieldValidator ID="rfv_amount" runat="server" Text="*Required" ControlToValidate="txt_amount" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter the amount." ValidationGroup="donation2" />
@@ -123,7 +122,7 @@
 
                 <%--payment type--%>
                 <asp:Label ID="lbl_type" runat="server" Text="Which payment type do you prefer?" />
-                <asp:RadioButtonList ID="rbl_crime" runat="server" RepeatColumns="2" RepeatDirection="Horizontal" ValidationGroup="donation2" SelectedValue='<%#Bind("payment_type")%>'>
+                <asp:RadioButtonList ID="rbl_type" runat="server" RepeatColumns="2" RepeatDirection="Horizontal" ValidationGroup="donation2" SelectedItem='<%#Bind("payment_type")%>'>
                     <asp:ListItem Value="1" Text="VISA" Selected="True" />
                     <asp:ListItem Value="2" Text="Master Card" />
                     <asp:ListItem Value="3" Text="American Express" />
@@ -131,11 +130,12 @@
                 </asp:RadioButtonList>
                 <br /><br />
 
-                <%--amount--%>
+                <%--card number--%>
                 <asp:Label ID="lbl_cardnum" runat="server" Text="Card Number:" AssociatedControlID="txt_cardnum" />
                 <br />
                 <asp:TextBox ID="txt_cardnum" runat="server" Text='<%#Bind("card_number")%>' />
                 <asp:RequiredFieldValidator ID="rfv_cardnum" runat="server" Text="*Required" ControlToValidate="txt_cardnum" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter the card number." ValidationGroup="donation2" />
+                <asp:RegularExpressionValidator ID="rev_cardnum" runat="server" Text="*Invalid postal code: uppercase letters required" ControlToValidate="txt_zip" Display="Dynamic" SetFocusOnError="true" ValidationExpression="^((4\d{3})|(5[1-5]\d{2})|(6011)|(34\d{1})|(37\d{1}))-?\d{4}-?\d{4}-?\d{4}|3[4,7][\d\s-]{15}$" ValidationGroup="donation1" ErrorMessage="Your credit card number is invalid" />
                 <br /><br />
 
                 <%--security number--%>
@@ -155,7 +155,7 @@
                 <%--card expiration--%>
                 <asp:Label ID="lbl_expiration" runat="server" Text="Credit Card Expiration:" />
                 <br />
-                <asp:Dropdownlist ID="ddl_expiration" runat="server" CausesValidation="false" SelectedValue='<%#Bind("expiration_month")%>'>
+                <asp:Dropdownlist ID="ddl_expirationM" runat="server" CausesValidation="false" SelectedItem='<%#Bind("expiration_month")%>'>
                     <asp:ListItem Value="1" Text="Please select one:" Selected="True" />
                     <asp:ListItem Value="2" Text="01" />
                     <asp:ListItem Value="3" Text="02" />
@@ -170,7 +170,7 @@
                     <asp:ListItem Value="12" Text="11" />
                     <asp:ListItem Value="13" Text="12" />
                 </asp:Dropdownlist>
-                <asp:Dropdownlist ID="Dropdownlist1" runat="server" CausesValidation="false" SelectedValue='<%#Bind("expiration_year")%>'>
+                <asp:Dropdownlist ID="ddl_expirationY" runat="server" CausesValidation="false" SelectedItem='<%#Bind("expiration_year")%>'>
                     <asp:ListItem Value="1" Text="Please select one:" Selected="True" />
                     <asp:ListItem Value="2" Text="14" />
                     <asp:ListItem Value="3" Text="15" />
@@ -187,9 +187,11 @@
                 <br /><br />
 
                 <%--PreView Button--%>
-                <asp:Button ID="btn_prev" runat="server" Text="Previous" CommandName="Preview" CausesValidation="false" />
+                <asp:Button ID="btn_prev" runat="server" Text="Previous" CommandName="PrevView" CausesValidation="false" />
                 <%--Donate Button--%>
-                <asp:Button ID="btn_donate" runat="server" Text="Donate" CommandName="Donate" ValidationGroup="donation2" CausesValidation="true" />
+                <asp:Button ID="btn_donate" runat="server" Text="Donate" CommandName="Insert" OnCommand="subAdmin" ValidationGroup="donation2" CausesValidation="true" />
+                <%--Cancel Button--%>
+                <asp:Button ID="btn_cancel" runat="server" Text="Cancel" CommandName="Cancel" OnCommand="subAdmin" ValidationGroup="donation2" CausesValidation="false" />
                 <%--Validation Summary--%>
                 <asp:ValidationSummary ID="vds_donate2" runat="server" ShowMessageBox="true" ValidationGroup="donate2" HeaderText="Donation Error" DisplayMode="List" />
                 <br />
