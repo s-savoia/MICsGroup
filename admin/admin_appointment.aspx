@@ -7,6 +7,7 @@
 </asp:content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="content_main" Runat="Server">
+    <asp:Label ID="lbl_message" runat="server" CssClass="appointments_response_message" />
     <h2>Book an Appointment - Admin</h2>
     <asp:LinkButton ID="btn_show_create" runat="server" Text="Create Appointment Timeslots" OnClick="subShowCreate" />
     <asp:LinkButton ID="btn_show_view" runat="server" Text="View Appointments" OnClick="subShowView" />
@@ -20,7 +21,7 @@
             </tr>
             <tr>
                 <td class="cat_left"><asp:Label ID="lbl_time" runat="server" Text="Time:" /></td>
-                <td><asp:DropDownList ID="ddl_province" runat="server">
+                <td><asp:DropDownList ID="ddl_time" runat="server">
                         <asp:ListItem Value="9:00am">9:00am</asp:ListItem>
                         <asp:ListItem Value="9:30am">9:30am</asp:ListItem>
                         <asp:ListItem Value="10:00am">10:00am</asp:ListItem>
@@ -47,7 +48,7 @@
             <tr>
                 <td class="cat_left"></td>
                 <td>
-                    <asp:Button ID="btn_create_timeslot" runat="server" Text="Create" />
+                    <asp:Button ID="btn_create_timeslot" runat="server" Text="Create" OnClick="subInsert" />
                 </td>
             </tr>
         </table>
@@ -56,6 +57,49 @@
 
     <asp:Panel ID="pnl_appointment_view" runat="server">
         <h3>View Appointment Timeslots</h3>
+
+        <asp:DropDownList ID="ddl_view_appointments" runat="server" OnSelectedIndexChanged="subChangeEdited" AutoPostBack="true"  />
+        
+        <div id="appointments_admin_list">
+                    <asp:Listview ID="lv_appointments" runat="server" OnItemCommand="subUpDel" >
+                        <ItemTemplate>
+                            <asp:HiddenField ID="hdf_idE" runat="server" Value='<%#Eval("Id") %>' />
+                            <h3><%#Eval("time") %> - <%#DataBinder.Eval(Container.DataItem, "date", "{0:D}")%></h3>
+                            <table>
+                                <tr>
+                                    <td class="va_left_side">First Name:</td>
+                                    <td><%#Eval("fname") %></td>
+                                </tr>
+                                <tr>
+                                    <td class="va_left_side">Last Name:</td>
+                                    <td><%#Eval("lname") %></td>
+                                </tr>
+                                <tr>
+                                    <td class="va_left_side">Address:</td>
+                                    <td>
+                                        <%#Eval("address") %>,
+                                        <br />
+                                        <%#Eval("city") %>, <%#Eval("province") %>
+                                        <br />
+                                        <%#Eval("postal_code") %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="va_left_side">Reason for Appointment:</td>
+                                    <td><%#Eval("reason") %></td>
+                                </tr>
+                                <tr>
+                                    <td>
+
+                                    </td>
+                                    <td>
+                                        <asp:Button ID="btn_delete" runat="server" Text="Delete" CommandName="Delete_This" OnClientClick="return confirm('Confirm delete?');" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </ItemTemplate>
+                    </asp:Listview>
+            </div>
     </asp:Panel>
 </asp:Content>
 

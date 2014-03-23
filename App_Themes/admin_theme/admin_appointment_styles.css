@@ -54,3 +54,29 @@
 .cat_left {
     width: 60px;
 }
+
+.appointments_response_message {
+    margin-bottom: 10px;
+    display:block;
+    color: blue;
+}
+
+#appointments_admin_list h3 {
+    padding:5px;
+    font-size:1.2em;
+    border-bottom: 2px #22BCB9 dotted;
+    font-style:italic;
+}
+
+#appointments_admin_list td {
+    padding:5px;
+}
+
+#appointments_admin_list table {
+    margin:10px 0 20px 0;
+    padding:5px;
+}
+
+.va_left_side {
+    width: 125px;
+}
