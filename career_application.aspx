@@ -24,7 +24,7 @@
         <%--email--%>
         <asp:Label ID="lbl_email" runat="server" Text="Email:*" AssociatedControlID="txt_email" />
         <asp:TextBox ID="txt_email" runat="server" Text='<%#Bind("email")%>' />
-        <asp:RequiredFieldValidator ID="rfv_email" runat="server" Text="*Required" ControlToValidate="txt_email" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter your email" ValidationGroup="application" />
+        <asp:RequiredFieldValidator ID="rfv_email" runat="server" Text="*Required" ControlToValidate="txt_email" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter your email" ValidationGroup="careerapplication" />
         <asp:RegularExpressionValidator ID="rev_email" runat="server" Text="*Invalid email" ControlToValidate="txt_email" Display="Dynamic" SetFocusOnError="true" ValidationExpression="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" ValidationGroup="careerapplication" ErrorMessage="Your email is invalid" />
         <br /><br />
 
