@@ -21,14 +21,7 @@ public partial class admin_Default : System.Web.UI.Page
         pnl_appointment_create.Visible = false;
         pnl_appointment_view.Visible = true;
 
-
-        ddl_view_appointments.DataSource = objLinq.getAppointmentDates();
-        ddl_view_appointments.DataTextField = "date";
-        ddl_view_appointments.DataValueField = "date";
-        ddl_view_appointments.DataBind();
-
-        lv_appointments.DataSource = objLinq.getAppointmentsByDate(DateTime.Parse(ddl_view_appointments.SelectedValue.ToString()));
-        lv_appointments.DataBind();
+        _subBindView();
     }
 
     protected void subShowCreate(object sender, EventArgs e)
@@ -43,14 +36,29 @@ public partial class admin_Default : System.Web.UI.Page
     private void _subRebind()
     {
         txt_date.Text = string.Empty;
-        ddl_time.SelectedValue = "9:00am";
+        ddl_time.SelectedValue = "9:00:00 AM";
+    }
+
+    // resets the ddl and lv
+    private void _subBindView()
+    {
+        ddl_view_appointments.DataSource = objLinq.getAppointmentDates();
+        ddl_view_appointments.DataTextField = "date";
+        ddl_view_appointments.DataValueField = "date";
+        ddl_view_appointments.DataBind();
+
+        lv_appointments.DataSource = objLinq.getAppointmentsByDate(DateTime.Parse(ddl_view_appointments.SelectedValue.ToString()));
+        lv_appointments.DataBind();
     }
 
     // Inserts data into the database.
     protected void subInsert (object sender, EventArgs e)
     {
-                _strMessage(objLinq.commitInsert(DateTime.Parse(txt_date.Text.ToString()), ddl_time.SelectedValue.ToString()), "Appointment timeslot was successfully created.");
-                _subRebind();
+        DateTime date_selected = DateTime.Parse(txt_date.Text.ToString());
+        string date_string_to_insert = date_selected.ToLongDateString();
+        string date_to_insert = txt_date.Text.ToString() + " " + ddl_time.SelectedValue.ToString();
+        _strMessage(objLinq.commitInsert(DateTime.Parse(date_to_insert), date_to_insert), "Appointment timeslot was successfully created.");
+        _subRebind();
     }
 
     // Excecutes and then checks if the insert/update/delete was sucessful, and sends a response to the user.
@@ -70,7 +78,7 @@ public partial class admin_Default : System.Web.UI.Page
             case "Delete_This":
                 int _id = int.Parse(((HiddenField)e.Item.FindControl("hdf_idE")).Value);
                 _strMessage(objLinq.commitDelete(_id), "Appointment timeslot successfully deleted.");
-                _subRebind();
+                _subBindView();
                 break;
         }
     }

@@ -80,3 +80,16 @@
 .va_left_side {
     width: 125px;
 }
+
+.ajax__calendar_container TD {
+    padding:0 !important;
+}
+
+.ajax_calendar_day {
+    margin: 0 !important;
+}
+
+#content_main_ce_date_daysTable {
+    table-layout:auto;
+    width:auto;
+}

@@ -27,21 +27,21 @@ public class bookAppointmentClass
         return appointments;
     }
 
-    public bool commitInsert(DateTime _date, string _time)
+    public bool commitInsert(DateTime _date, string _date_string)
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         using (objHospital)
         {
             mic_book_appointment objBook = new mic_book_appointment();
             objBook.date = _date;
-            objBook.time = _time;
+            objBook.date_string = _date_string;
             objHospital.mic_book_appointments.InsertOnSubmit(objBook);
             objHospital.SubmitChanges();
             return true;
         }
     }
 
-    public bool commitUpdate(int _id, string _fname, string _lname, string _address, string _city, string _province, string _postal_code, string _phone, DateTime _date, string _reason, string time, bool _booked)
+    public bool commitUpdate(int _id, string _fname, string _lname, string _address, string _city, string _province, string _postal_code, string _phone, string _reason, bool _booked)
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         using (objHospital)

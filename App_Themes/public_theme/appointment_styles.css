@@ -1,0 +1,20 @@
+﻿body {
+}
+
+#book_appointment_public td {
+    vertical-align:top;
+    padding:3px;
+}
+
+#book_appointment_public input[type='text'] {
+    width:200px;
+}
+
+#book_appointment_public input[type='submit'] {
+    float: right;
+    margin-right:50px;
+}
+
+.va_left_side {
+    width: 125px;
+}

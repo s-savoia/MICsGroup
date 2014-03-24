@@ -65,9 +65,6 @@ public partial class hospitalDataContext : System.Data.Linq.DataContext
   partial void Insertmic_slider(mic_slider instance);
   partial void Updatemic_slider(mic_slider instance);
   partial void Deletemic_slider(mic_slider instance);
-  partial void Insertmic_book_appointment(mic_book_appointment instance);
-  partial void Updatemic_book_appointment(mic_book_appointment instance);
-  partial void Deletemic_book_appointment(mic_book_appointment instance);
   partial void Insertmic_services_anson(mic_services_anson instance);
   partial void Updatemic_services_anson(mic_services_anson instance);
   partial void Deletemic_services_anson(mic_services_anson instance);
@@ -80,6 +77,9 @@ public partial class hospitalDataContext : System.Data.Linq.DataContext
   partial void Insertmic_donation(mic_donation instance);
   partial void Updatemic_donation(mic_donation instance);
   partial void Deletemic_donation(mic_donation instance);
+  partial void Insertmic_book_appointment(mic_book_appointment instance);
+  partial void Updatemic_book_appointment(mic_book_appointment instance);
+  partial void Deletemic_book_appointment(mic_book_appointment instance);
   #endregion
 	
 	public hospitalDataContext() : 
@@ -208,14 +208,6 @@ public partial class hospitalDataContext : System.Data.Linq.DataContext
 		}
 	}
 	
-	public System.Data.Linq.Table<mic_book_appointment> mic_book_appointments
-	{
-		get
-		{
-			return this.GetTable<mic_book_appointment>();
-		}
-	}
-	
 	public System.Data.Linq.Table<mic_services_anson> mic_services_ansons
 	{
 		get
@@ -245,6 +237,14 @@ public partial class hospitalDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<mic_donation>();
+		}
+	}
+	
+	public System.Data.Linq.Table<mic_book_appointment> mic_book_appointments
+	{
+		get
+		{
+			return this.GetTable<mic_book_appointment>();
 		}
 	}
 }
@@ -2985,332 +2985,6 @@ public partial class mic_slider : INotifyPropertyChanging, INotifyPropertyChange
 	}
 }
 
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.mic_book_appointment")]
-public partial class mic_book_appointment : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _Id;
-	
-	private string _fname;
-	
-	private string _lname;
-	
-	private string _address;
-	
-	private string _city;
-	
-	private string _province;
-	
-	private string _postal_code;
-	
-	private string _phone;
-	
-	private System.Nullable<System.DateTime> _date;
-	
-	private string _reason;
-	
-	private string _time;
-	
-	private System.Nullable<bool> _booked;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnfnameChanging(string value);
-    partial void OnfnameChanged();
-    partial void OnlnameChanging(string value);
-    partial void OnlnameChanged();
-    partial void OnaddressChanging(string value);
-    partial void OnaddressChanged();
-    partial void OncityChanging(string value);
-    partial void OncityChanged();
-    partial void OnprovinceChanging(string value);
-    partial void OnprovinceChanged();
-    partial void Onpostal_codeChanging(string value);
-    partial void Onpostal_codeChanged();
-    partial void OnphoneChanging(string value);
-    partial void OnphoneChanged();
-    partial void OndateChanging(System.Nullable<System.DateTime> value);
-    partial void OndateChanged();
-    partial void OnreasonChanging(string value);
-    partial void OnreasonChanged();
-    partial void OntimeChanging(string value);
-    partial void OntimeChanged();
-    partial void OnbookedChanging(System.Nullable<bool> value);
-    partial void OnbookedChanged();
-    #endregion
-	
-	public mic_book_appointment()
-	{
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-	public int Id
-	{
-		get
-		{
-			return this._Id;
-		}
-		set
-		{
-			if ((this._Id != value))
-			{
-				this.OnIdChanging(value);
-				this.SendPropertyChanging();
-				this._Id = value;
-				this.SendPropertyChanged("Id");
-				this.OnIdChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fname", DbType="VarChar(30)")]
-	public string fname
-	{
-		get
-		{
-			return this._fname;
-		}
-		set
-		{
-			if ((this._fname != value))
-			{
-				this.OnfnameChanging(value);
-				this.SendPropertyChanging();
-				this._fname = value;
-				this.SendPropertyChanged("fname");
-				this.OnfnameChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lname", DbType="VarChar(30)")]
-	public string lname
-	{
-		get
-		{
-			return this._lname;
-		}
-		set
-		{
-			if ((this._lname != value))
-			{
-				this.OnlnameChanging(value);
-				this.SendPropertyChanging();
-				this._lname = value;
-				this.SendPropertyChanged("lname");
-				this.OnlnameChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_address", DbType="VarChar(50)")]
-	public string address
-	{
-		get
-		{
-			return this._address;
-		}
-		set
-		{
-			if ((this._address != value))
-			{
-				this.OnaddressChanging(value);
-				this.SendPropertyChanging();
-				this._address = value;
-				this.SendPropertyChanged("address");
-				this.OnaddressChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_city", DbType="VarChar(30)")]
-	public string city
-	{
-		get
-		{
-			return this._city;
-		}
-		set
-		{
-			if ((this._city != value))
-			{
-				this.OncityChanging(value);
-				this.SendPropertyChanging();
-				this._city = value;
-				this.SendPropertyChanged("city");
-				this.OncityChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_province", DbType="VarChar(30)")]
-	public string province
-	{
-		get
-		{
-			return this._province;
-		}
-		set
-		{
-			if ((this._province != value))
-			{
-				this.OnprovinceChanging(value);
-				this.SendPropertyChanging();
-				this._province = value;
-				this.SendPropertyChanged("province");
-				this.OnprovinceChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_postal_code", DbType="VarChar(7)")]
-	public string postal_code
-	{
-		get
-		{
-			return this._postal_code;
-		}
-		set
-		{
-			if ((this._postal_code != value))
-			{
-				this.Onpostal_codeChanging(value);
-				this.SendPropertyChanging();
-				this._postal_code = value;
-				this.SendPropertyChanged("postal_code");
-				this.Onpostal_codeChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_phone", DbType="VarChar(15)")]
-	public string phone
-	{
-		get
-		{
-			return this._phone;
-		}
-		set
-		{
-			if ((this._phone != value))
-			{
-				this.OnphoneChanging(value);
-				this.SendPropertyChanging();
-				this._phone = value;
-				this.SendPropertyChanged("phone");
-				this.OnphoneChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date", DbType="DateTime")]
-	public System.Nullable<System.DateTime> date
-	{
-		get
-		{
-			return this._date;
-		}
-		set
-		{
-			if ((this._date != value))
-			{
-				this.OndateChanging(value);
-				this.SendPropertyChanging();
-				this._date = value;
-				this.SendPropertyChanged("date");
-				this.OndateChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reason", DbType="VarChar(MAX)")]
-	public string reason
-	{
-		get
-		{
-			return this._reason;
-		}
-		set
-		{
-			if ((this._reason != value))
-			{
-				this.OnreasonChanging(value);
-				this.SendPropertyChanging();
-				this._reason = value;
-				this.SendPropertyChanged("reason");
-				this.OnreasonChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_time", DbType="VarChar(10)")]
-	public string time
-	{
-		get
-		{
-			return this._time;
-		}
-		set
-		{
-			if ((this._time != value))
-			{
-				this.OntimeChanging(value);
-				this.SendPropertyChanging();
-				this._time = value;
-				this.SendPropertyChanged("time");
-				this.OntimeChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_booked", DbType="Bit")]
-	public System.Nullable<bool> booked
-	{
-		get
-		{
-			return this._booked;
-		}
-		set
-		{
-			if ((this._booked != value))
-			{
-				this.OnbookedChanging(value);
-				this.SendPropertyChanging();
-				this._booked = value;
-				this.SendPropertyChanged("booked");
-				this.OnbookedChanged();
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-}
-
 [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.mic_services_anson")]
 public partial class mic_services_anson : INotifyPropertyChanging, INotifyPropertyChanged
 {
@@ -4254,6 +3928,332 @@ public partial class mic_donation : INotifyPropertyChanging, INotifyPropertyChan
 				this._country = value;
 				this.SendPropertyChanged("country");
 				this.OncountryChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.mic_book_appointment")]
+public partial class mic_book_appointment : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _Id;
+	
+	private string _fname;
+	
+	private string _lname;
+	
+	private string _address;
+	
+	private string _city;
+	
+	private string _province;
+	
+	private string _postal_code;
+	
+	private string _phone;
+	
+	private System.Nullable<System.DateTime> _date;
+	
+	private string _reason;
+	
+	private bool _booked;
+	
+	private string _date_string;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnfnameChanging(string value);
+    partial void OnfnameChanged();
+    partial void OnlnameChanging(string value);
+    partial void OnlnameChanged();
+    partial void OnaddressChanging(string value);
+    partial void OnaddressChanged();
+    partial void OncityChanging(string value);
+    partial void OncityChanged();
+    partial void OnprovinceChanging(string value);
+    partial void OnprovinceChanged();
+    partial void Onpostal_codeChanging(string value);
+    partial void Onpostal_codeChanged();
+    partial void OnphoneChanging(string value);
+    partial void OnphoneChanged();
+    partial void OndateChanging(System.Nullable<System.DateTime> value);
+    partial void OndateChanged();
+    partial void OnreasonChanging(string value);
+    partial void OnreasonChanged();
+    partial void OnbookedChanging(bool value);
+    partial void OnbookedChanged();
+    partial void Ondate_stringChanging(string value);
+    partial void Ondate_stringChanged();
+    #endregion
+	
+	public mic_book_appointment()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int Id
+	{
+		get
+		{
+			return this._Id;
+		}
+		set
+		{
+			if ((this._Id != value))
+			{
+				this.OnIdChanging(value);
+				this.SendPropertyChanging();
+				this._Id = value;
+				this.SendPropertyChanged("Id");
+				this.OnIdChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fname", DbType="VarChar(30)")]
+	public string fname
+	{
+		get
+		{
+			return this._fname;
+		}
+		set
+		{
+			if ((this._fname != value))
+			{
+				this.OnfnameChanging(value);
+				this.SendPropertyChanging();
+				this._fname = value;
+				this.SendPropertyChanged("fname");
+				this.OnfnameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lname", DbType="VarChar(30)")]
+	public string lname
+	{
+		get
+		{
+			return this._lname;
+		}
+		set
+		{
+			if ((this._lname != value))
+			{
+				this.OnlnameChanging(value);
+				this.SendPropertyChanging();
+				this._lname = value;
+				this.SendPropertyChanged("lname");
+				this.OnlnameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_address", DbType="VarChar(50)")]
+	public string address
+	{
+		get
+		{
+			return this._address;
+		}
+		set
+		{
+			if ((this._address != value))
+			{
+				this.OnaddressChanging(value);
+				this.SendPropertyChanging();
+				this._address = value;
+				this.SendPropertyChanged("address");
+				this.OnaddressChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_city", DbType="VarChar(30)")]
+	public string city
+	{
+		get
+		{
+			return this._city;
+		}
+		set
+		{
+			if ((this._city != value))
+			{
+				this.OncityChanging(value);
+				this.SendPropertyChanging();
+				this._city = value;
+				this.SendPropertyChanged("city");
+				this.OncityChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_province", DbType="VarChar(30)")]
+	public string province
+	{
+		get
+		{
+			return this._province;
+		}
+		set
+		{
+			if ((this._province != value))
+			{
+				this.OnprovinceChanging(value);
+				this.SendPropertyChanging();
+				this._province = value;
+				this.SendPropertyChanged("province");
+				this.OnprovinceChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_postal_code", DbType="VarChar(7)")]
+	public string postal_code
+	{
+		get
+		{
+			return this._postal_code;
+		}
+		set
+		{
+			if ((this._postal_code != value))
+			{
+				this.Onpostal_codeChanging(value);
+				this.SendPropertyChanging();
+				this._postal_code = value;
+				this.SendPropertyChanged("postal_code");
+				this.Onpostal_codeChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_phone", DbType="VarChar(15)")]
+	public string phone
+	{
+		get
+		{
+			return this._phone;
+		}
+		set
+		{
+			if ((this._phone != value))
+			{
+				this.OnphoneChanging(value);
+				this.SendPropertyChanging();
+				this._phone = value;
+				this.SendPropertyChanged("phone");
+				this.OnphoneChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date", DbType="DateTime")]
+	public System.Nullable<System.DateTime> date
+	{
+		get
+		{
+			return this._date;
+		}
+		set
+		{
+			if ((this._date != value))
+			{
+				this.OndateChanging(value);
+				this.SendPropertyChanging();
+				this._date = value;
+				this.SendPropertyChanged("date");
+				this.OndateChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reason", DbType="VarChar(MAX)")]
+	public string reason
+	{
+		get
+		{
+			return this._reason;
+		}
+		set
+		{
+			if ((this._reason != value))
+			{
+				this.OnreasonChanging(value);
+				this.SendPropertyChanging();
+				this._reason = value;
+				this.SendPropertyChanged("reason");
+				this.OnreasonChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_booked", DbType="Bit NOT NULL")]
+	public bool booked
+	{
+		get
+		{
+			return this._booked;
+		}
+		set
+		{
+			if ((this._booked != value))
+			{
+				this.OnbookedChanging(value);
+				this.SendPropertyChanging();
+				this._booked = value;
+				this.SendPropertyChanged("booked");
+				this.OnbookedChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date_string", DbType="VarChar(50)")]
+	public string date_string
+	{
+		get
+		{
+			return this._date_string;
+		}
+		set
+		{
+			if ((this._date_string != value))
+			{
+				this.Ondate_stringChanging(value);
+				this.SendPropertyChanging();
+				this._date_string = value;
+				this.SendPropertyChanged("date_string");
+				this.Ondate_stringChanged();
 			}
 		}
 	}
