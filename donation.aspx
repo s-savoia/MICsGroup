@@ -59,8 +59,8 @@
                 <asp:Label ID="lbl_country" runat="server" Text="Country: " />
                 <asp:Dropdownlist ID="ddl_country" runat="server" CausesValidation="false" SelectedItem='<%#Bind("country")%>'>
                     <asp:ListItem Value="1" Text="Canada" Selected="True" />
-                    <asp:ListItem Value="1" Text="USA" />
-                    <asp:ListItem Value="2" Text="International" />
+                    <asp:ListItem Value="2" Text="USA" />
+                    <asp:ListItem Value="3" Text="International" />
                 </asp:Dropdownlist>
                 <br /><br />         
 

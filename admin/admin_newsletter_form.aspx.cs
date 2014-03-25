@@ -18,14 +18,20 @@ public partial class admin_newsletter_form : System.Web.UI.Page
         {
             lbl_output.Text = String.Empty;
         }
+
     }
 
     protected void subClick(object sender, EventArgs e)
     {
-        //setting a newsletter
-        //string to = "micsnewsletter@gmail.com";
-        string to = "micsnewsletter@gmail.com";
-        string from = "micsnewsletter@gmail.com";
+
+        var allEmails = objEmail.getNewsletter();
+        MailMessage message = new MailMessage();
+        foreach (var eachEmail in allEmails)
+        {
+            message.To.Add(eachEmail.email);
+        }
+
+        message.From = new MailAddress ("micsnewsletter@gmail.com", "newsletter");
         
         //save images
         if (ful_attach.HasFile)
@@ -39,7 +45,7 @@ public partial class admin_newsletter_form : System.Web.UI.Page
         _strMessage(objNews.commitInsert(txt_subject.Text.ToString(), txt_message.Text.ToString(), ful_attach.FileName.ToString()), "insert");
 
         //setting from and to
-        MailMessage message = new MailMessage(from, to);
+
         message.Subject = txt_subject.Text.ToString();
         message.Body = txt_message.Text.ToString();
 
