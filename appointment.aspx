@@ -6,10 +6,20 @@
     <link href="App_Themes/public_theme/appointment_styles.css" rel="stylesheet" media="all" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content_main" Runat="Server">
+    <asp:Label ID="lbl_message" runat="server" CssClass="contact_response_message" />
     <h2>Book an Appointment</h2>
-    <asp:ValidationSummary ID="vs_insert" runat="server" ValidationGroup="insert" HeaderText="Validation Summary:" />
-            <asp:Label ID="lbl_message" runat="server" CssClass="contact_response_message" />
+    <asp:ValidationSummary ID="vs_insert" runat="server" ValidationGroup="insert" ShowSummary="false" ShowMessageBox="true" />
     <table id="book_appointment_public">
+        <tr>
+            <td class="va_left_side">
+                <asp:Label ID="lbl_time" runat="server" Text="Date/Time: " AssociatedControlID="ddl_view_appointments" />
+            </td>
+            <td>
+                <asp:DropDownList ID="ddl_view_appointments" runat="server" OnSelectedIndexChanged="subChangeEdited" AutoPostBack="true"  />
+    <asp:RequiredFieldValidator ID="rfv_appointments_time" runat="server" Text="*" ControlToValidate="rbl_appointments" ValidationGroup="insert" ErrorMessage="Please select an appointment time" Display="Dynamic" />
+    <asp:RadioButtonList ID="rbl_appointments" runat="server" RepeatDirection="Horizontal" RepeatColumns="3"  Display="Dynamic" />
+            </td>
+        </tr>
         <tr>
             <td class="va_left_side">
                 <asp:Label ID="lbl_fname" runat="server" Text="First Name: " AssociatedControlID="txt_fname" />
@@ -76,7 +86,8 @@
             </td>
             <td>
                 <asp:TextBox ID="txt_postal" runat="server" />
-            <asp:RequiredFieldValidator ID="rfv_postal" runat="server" Text="*" ControlToValidate="txt_postal" ValidationGroup="insert" ErrorMessage="Please enter your postal code" />
+            <asp:RequiredFieldValidator ID="rfv_postal" runat="server" Text="*" ControlToValidate="txt_postal" ValidationGroup="insert" ErrorMessage="Please enter your postal code" Display="Dynamic" />
+                <asp:RegularExpressionValidator ID="rev_postal" runat="server" Text="*" ControlToValidate="txt_postal" ValidationGroup="insert" ErrorMessage="Please us the format 'A1A 1A1'" ValidationExpression="^([a-zA-Z]\d[a-zA-z]( )?\d[a-zA-Z]\d)$" Display="Dynamic" />
             </td>
         </tr>
         <tr>
@@ -99,7 +110,7 @@
         </tr>
         <tr>
             <td class="va_left_side"></td>
-            <td><asp:Button ID="btn_insert" runat="server" Text="Submit" ValidationGroup="insert" /></td>
+            <td><asp:Button ID="btn_insert" runat="server" Text="Submit" ValidationGroup="insert" CommandName="Update" OnCommand="subCommand" /></td>
         </tr>            
     </table>
 </asp:Content>

@@ -43,11 +43,11 @@ public partial class admin_Default : System.Web.UI.Page
     private void _subBindView()
     {
         ddl_view_appointments.DataSource = objLinq.getAppointmentDates();
-        ddl_view_appointments.DataTextField = "date";
-        ddl_view_appointments.DataValueField = "date";
+        ddl_view_appointments.DataTextField = "date_string";
+        ddl_view_appointments.DataValueField = "date_string";
         ddl_view_appointments.DataBind();
 
-        lv_appointments.DataSource = objLinq.getAppointmentsByDate(DateTime.Parse(ddl_view_appointments.SelectedValue.ToString()));
+        lv_appointments.DataSource = objLinq.getAppointmentsByDate(ddl_view_appointments.SelectedValue.ToString());
         lv_appointments.DataBind();
     }
 
@@ -55,9 +55,9 @@ public partial class admin_Default : System.Web.UI.Page
     protected void subInsert (object sender, EventArgs e)
     {
         DateTime date_selected = DateTime.Parse(txt_date.Text.ToString());
-        string date_string_to_insert = date_selected.ToLongDateString();
+        string date_string_to_insert = date_selected.ToString("D");
         string date_to_insert = txt_date.Text.ToString() + " " + ddl_time.SelectedValue.ToString();
-        _strMessage(objLinq.commitInsert(DateTime.Parse(date_to_insert), date_to_insert), "Appointment timeslot was successfully created.");
+        _strMessage(objLinq.commitInsert(DateTime.Parse(date_to_insert), date_string_to_insert), "Appointment timeslot was successfully created.");
         _subRebind();
     }
 
@@ -86,7 +86,7 @@ public partial class admin_Default : System.Web.UI.Page
 
     protected void subChangeEdited(object sender, EventArgs e)
     {
-        lv_appointments.DataSource = objLinq.getAppointmentsByDate(DateTime.Parse(ddl_view_appointments.SelectedValue.ToString()));
+        lv_appointments.DataSource = objLinq.getAppointmentsByDate(ddl_view_appointments.SelectedValue.ToString());
         lv_appointments.DataBind();
     }
 }

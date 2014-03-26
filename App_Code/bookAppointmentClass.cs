@@ -6,10 +6,11 @@ using System.Web;
 //This page is the bridge between the class pages and the products.dbml file
 public class bookAppointmentClass
 {
+
     public IQueryable<mic_book_appointment> getAppointmentDates()
     {
         hospitalDataContext objHospital = new hospitalDataContext();
-        var allAppointments = objHospital.mic_book_appointments.Select(date => date).Distinct().OrderBy(x=>x.date);
+        var allAppointments = objHospital.mic_book_appointments.OrderBy(x => x.date).Select(x => x);
         return allAppointments;
     }
 
@@ -20,10 +21,17 @@ public class bookAppointmentClass
         return appointment;
     }
 
-    public IQueryable<mic_book_appointment> getAppointmentsByDate(DateTime _date)
+    public IQueryable<mic_book_appointment> getAppointmentsByDate(string _date_string)
     {
         hospitalDataContext objHospital = new hospitalDataContext();
-        var appointments = objHospital.mic_book_appointments.Where(x => x.date == _date).Select(x => x);
+        var appointments = objHospital.mic_book_appointments.Where(x => x.date_string == _date_string).OrderBy(x=> x.date).Select(x => x);
+        return appointments;
+    }
+
+    public IQueryable<mic_book_appointment> getAppointmentsByDateNotBooked(string _date_string)
+    {
+        hospitalDataContext objHospital = new hospitalDataContext();
+        var appointments = objHospital.mic_book_appointments.Where(x => x.date_string == _date_string && x.booked == false).OrderBy(x => x.date).Select(x => x);
         return appointments;
     }
 
@@ -54,7 +62,8 @@ public class bookAppointmentClass
             objBook.province = _province;
             objBook.postal_code = _postal_code;
             objBook.phone = _phone;
-            objHospital.mic_book_appointments.InsertOnSubmit(objBook);
+            objBook.reason = _reason;
+            objBook.booked = _booked;
             objHospital.SubmitChanges();
             return true;
         }

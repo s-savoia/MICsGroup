@@ -21,9 +21,10 @@
                 <td class="cat_left"><asp:Label ID="lbl_date" runat="server" Text="Date:" /></td>
                 <td>
                     <asp:TextBox ID="txt_date" runat="server" />
+                    <AJAX:CalendarExtender ID="ce_date" runat="server" TargetControlID="txt_date" FirstDayOfWeek="Sunday" Format="yyyy-MM-dd" DefaultView="Days" PopupButtonID="ibtn_calendar" />
+                    <asp:ImageButton ID="ibtn_calendar" runat="server" ImageUrl="~/admin/img/calendar_button.png" ToolTip="Select Appointment Date" />
                     <asp:RequiredFieldValidator ID="rfv_date" runat="server" Text="*" ControlToValidate="txt_date" Display="Dynamic" ValidationGroup="insert" ErrorMessage="Please enter a timeslot date" />
                 <asp:RegularExpressionValidator ID="rev_date" runat="server" Text="*" ControlToValidate="txt_date" Display="Dynamic" SetFocusOnError="true" ValidationExpression="^[0-9]{4}-(((0[13578]|(10|12))-(0[1-9]|[1-2][0-9]|3[0-1]))|(02-(0[1-9]|[1-2][0-9]))|((0[469]|11)-(0[1-9]|[1-2][0-9]|30)))$" ValidationGroup="insert" ErrorMessage="Please use the format YYYY-MM-DD" />
-                    <AJAX:CalendarExtender ID="ce_date" runat="server" TargetControlID="txt_date" FirstDayOfWeek="Sunday" Format="yyyy-MM-dd" DefaultView="Days" />
                 </td>
             </tr>
             <tr>
@@ -71,7 +72,7 @@
                     <asp:Listview ID="lv_appointments" runat="server" OnItemCommand="subUpDel" >
                         <ItemTemplate>
                             <asp:HiddenField ID="hdf_idE" runat="server" Value='<%#Eval("Id") %>' />
-                            <h3><%#DataBinder.Eval(Container.DataItem, "date", "{0:D}")%> - <%#DataBinder.Eval(Container.DataItem, "date", "{0:h:mm tt}")%></h3>
+                            <h3><%#DataBinder.Eval(Container.DataItem, "date", "{0:h:mm tt}")%></h3>
                             <asp:Panel ID="pnl_booked_timeslot" runat="server" Visible='<%#Eval("booked") %>'>
                             <table>
                                 <tr>
@@ -94,7 +95,7 @@
                                 </tr>
                                 <tr>
                                     <td class="va_left_side">Phone:</td>
-                                    <td><%#Eval("province") %></td>
+                                    <td><%#Eval("phone") %></td>
                                 </tr>
                                 <tr>
                                     <td class="va_left_side">Reason for Appointment:</td>
@@ -111,7 +112,7 @@
                             </table>
                         </asp:Panel>
                         <asp:Panel ID="pnl_free_timeslot" runat="server" Visible='<%# !(bool)Eval("booked") %>'>
-                            Timeslot has not been booked.
+                            <span class="appointments_free_time">Timeslot has not been booked.</span>
                             <asp:Button ID="Button1" runat="server" Text="Delete" CommandName="Delete_This" OnClientClick="return confirm('Confirm delete?');" />
                         </asp:Panel>
 
