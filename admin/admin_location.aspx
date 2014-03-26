@@ -7,9 +7,9 @@
 </asp:content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="content_main" Runat="Server">
+    <asp:Label ID="lbl_message" runat="server" CssClass="location_response_message" />
     <h2>Locations - Admin</h2>
     <br />
-    <asp:Label ID="lbl_message" runat="server" CssClass="location_response_message" />
     <h3>Update Hospital Location Information:</h3>
     <asp:ValidationSummary ID="vds_edit" ValidationGroup="edit" runat="server" DisplayMode="BulletList" ShowMessageBox="true" ShowSummary="false" HeaderText="Validation Summary:" />
     

@@ -29,7 +29,7 @@ public partial class Default2 : System.Web.UI.Page
 
     private void _subRebind()
     {
-        ddl_view_appointments.DataSource = objLinq.getAppointmentDates();
+        ddl_view_appointments.DataSource = objLinq.getAppointmentDatesNotBooked();
         ddl_view_appointments.DataTextField = "date_string";
         ddl_view_appointments.DataValueField = "date_string";
         ddl_view_appointments.DataBind();

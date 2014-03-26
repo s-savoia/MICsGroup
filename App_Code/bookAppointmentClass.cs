@@ -14,6 +14,13 @@ public class bookAppointmentClass
         return allAppointments;
     }
 
+    public IQueryable<mic_book_appointment> getAppointmentDatesNotBooked()
+    {
+        hospitalDataContext objHospital = new hospitalDataContext();
+        var allAppointments = objHospital.mic_book_appointments.Where(x => x.booked == false).OrderBy(x => x.date).Select(x => x);
+        return allAppointments;
+    }
+
     public IQueryable<mic_book_appointment> getAppointmentsByID(int _id)
     {
         hospitalDataContext objHospital = new hospitalDataContext();

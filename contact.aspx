@@ -6,10 +6,10 @@
         <link href="App_Themes/public_theme/contact_styles.css" rel="stylesheet" media="all" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content_main" Runat="Server">
+    <asp:Label ID="lbl_message" runat="server" CssClass="contact_response_message" />
+    <table id="contact_us_public">
     <h2>Contact Us</h2>
     <asp:ValidationSummary ID="vs_insert" runat="server" ValidationGroup="insert" ShowMessageBox="true" ShowSummary="false" />
-            <asp:Label ID="lbl_message" runat="server" CssClass="contact_response_message" />
-    <table id="contact_us_public">
         <tr>
             <td>
                 <asp:Label ID="lbl_fname" runat="server" Text="First Name: " AssociatedControlID="txt_fname" />

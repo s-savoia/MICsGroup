@@ -6,7 +6,7 @@
     <link href="App_Themes/public_theme/appointment_styles.css" rel="stylesheet" media="all" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content_main" Runat="Server">
-    <asp:Label ID="lbl_message" runat="server" CssClass="contact_response_message" />
+    <asp:Label ID="lbl_message" runat="server" CssClass="appointment_response_message" />
     <h2>Book an Appointment</h2>
     <asp:ValidationSummary ID="vs_insert" runat="server" ValidationGroup="insert" ShowSummary="false" ShowMessageBox="true" />
     <table id="book_appointment_public">
