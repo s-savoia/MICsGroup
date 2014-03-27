@@ -83,3 +83,9 @@ INSERT INTO [dbo].[mic_advice] ([level], [advice]) VALUES (2, N'Get lots of rest
 INSERT INTO [dbo].[mic_advice] ([level], [advice]) VALUES (3, N'Book an appointment quickly')
 INSERT INTO [dbo].[mic_advice] ([level], [advice]) VALUES (4, N'Book an appointment immediately')
 SET IDENTITY_INSERT [dbo].[mic_advice] OFF
+
+-- 2014-03-27 (Th) 16:58
+
+-- dropped column 'has'  (boolean field)
+ALTER TABLE [dbo].[mic_symptoms]
+DROP COLUMN [has];

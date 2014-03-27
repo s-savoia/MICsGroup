@@ -36,17 +36,20 @@
     <br />
     <br />
 
-    <h4>
-        <asp:Label ID="lbl_symptoms" runat="server" Text="Symptoms" />
-    </h4>
- 
 
     <asp:UpdatePanel ID="udp_symptoms" runat="server">
         <ContentTemplate>
 
-            <%--symptoms checkbox list--%>
-            <asp:CheckBoxList ID="cbl_symptoms" runat="server" AutoPostBack="false" DataTextField="symptom" DataValueField="id" />
+            <asp:Panel ID="pnl_symptomsList" runat="server" Visible="false">
+                <h4>
+                    <asp:Label ID="lbl_symptoms" runat="server" Text="Symptoms" />
+                </h4>
 
+                <%--symptoms checkbox list--%>
+                <asp:CheckBoxList ID="cbl_symptoms" runat="server" AutoPostBack="false" DataTextField="symptom" DataValueField="id" />
+            </asp:Panel>
+
+            <asp:Label ID="lbl_underConstruction" runat="server" Text="Sorry, this feature is currently under construction." Visible="false" />
             <br />
         </ContentTemplate>
 
@@ -56,13 +59,17 @@
 
     </asp:UpdatePanel>
 
-    <asp:Button ID="btn_advice" runat="server" Text="Get advice" OnCommand="sub_admin" CommandName="getAdvice" />
-    &nbsp;&nbsp;&nbsp;
-    <asp:Button ID="btn_clear" runat="server" Text="Clear" CausesValidation="false" OnCommand="sub_admin" CommandName="clear" />
-    <br /><br />
+    <asp:Panel ID="pnl_buttons" runat="server" Visible="false">
+        <asp:Button ID="btn_advice" runat="server" Text="Get advice" OnCommand="sub_admin" CommandName="getAdvice" />
+        &nbsp;&nbsp;&nbsp;
+        <asp:Button ID="btn_clear" runat="server" Text="Clear" CausesValidation="false" OnCommand="sub_admin" CommandName="clear" />
+    </asp:Panel>
+
+    <br />
+    <br />
 
     <asp:UpdatePanel ID="udp_advice" runat="server">
-        
+
         <ContentTemplate>
 
             <%--a panel for showing advice--%>
@@ -74,6 +81,7 @@
 
                 <%--advice bulleted list--%>
                 <asp:BulletedList ID="bll_advice" runat="server" BulletStyle="CustomImage" BulletImageUrl="~/img/pen.png" DataTextField="advice" DataValueField="level" />
+
 
                 <br />
                 <br />
@@ -88,7 +96,7 @@
         </ContentTemplate>
 
         <Triggers>
-            <asp:AsyncPostBackTrigger ControlID="btn_advice" EventName="Command" />            
+            <asp:AsyncPostBackTrigger ControlID="btn_advice" EventName="Command" />
         </Triggers>
 
     </asp:UpdatePanel>
