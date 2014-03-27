@@ -73,3 +73,13 @@ INSERT INTO [dbo].[mic_advice] ([level], [advice]) VALUES (2, N'Book an appointm
 INSERT INTO [dbo].[mic_advice] ([level], [advice]) VALUES (3, N'Get lots of rest and stay warm')
 INSERT INTO [dbo].[mic_advice] ([level], [advice]) VALUES (4, N'You might have an allergy')
 SET IDENTITY_INSERT [dbo].[mic_advice] OFF
+
+-- Droped all rows in advice table
+
+-- switched order of levels
+SET IDENTITY_INSERT [dbo].[mic_advice] ON
+INSERT INTO [dbo].[mic_advice] ([level], [advice]) VALUES (1, N'You might have an allergy')
+INSERT INTO [dbo].[mic_advice] ([level], [advice]) VALUES (2, N'Get lots of rest and stay warm')
+INSERT INTO [dbo].[mic_advice] ([level], [advice]) VALUES (3, N'Book an appointment quickly')
+INSERT INTO [dbo].[mic_advice] ([level], [advice]) VALUES (4, N'Book an appointment immediately')
+SET IDENTITY_INSERT [dbo].[mic_advice] OFF

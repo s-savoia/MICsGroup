@@ -17,7 +17,7 @@
 
         <siteMapNode url="~/patients.aspx" title="Patients &amp; Families" >
           <siteMapNode url="~/patients1.aspx" title="Chat with a Nurse"  />
-          <siteMapNode url="~/symtom.aspx" title="Symtom Checker" /> 
+          <siteMapNode url="~/symptom.aspx" title="Symtom Checker" /> 
           <siteMapNode url="~/rights.aspx" title="Patients Rights &amp; Responsibility" />
         </siteMapNode>
 

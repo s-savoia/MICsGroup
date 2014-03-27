@@ -6,6 +6,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content_main" runat="Server">
 
+
+    <asp:ScriptManager ID="scm_main" runat="server" />
+
     <h3>
         <asp:Literal ID="ltl_title" runat="server" Text="Symptom Checker (For colds)" />
     </h3>
@@ -15,59 +18,82 @@
     <asp:BulletedList ID="bll_info" runat="server" BulletStyle="CustomImage" BulletImageUrl="~/img/cruz.png">
         <asp:ListItem Text="&nbsp;&nbsp; You can view symptoms for common colds on this page" />
         <asp:ListItem Text="&nbsp;&nbsp; If you do not see the symptom you are looking for, please use the 'Chat with a Nurse' feature, or 'book an appointment'." />
+        <asp:ListItem Text="&nbsp;&nbsp;To get advice, choose some symptoms by clicking on a checkbox or the actual text, then click/touch the 'get advice' button to receive advice." />
     </asp:BulletedList>
     <br />
     <br />
     <asp:Label ID="lbl_warning" runat="server" Text="! This is NOT a replacement for a doctor's diagnosis. " BackColor="#ecf10e" ForeColor="Black" />
     <br />
     <br />
-
     <asp:LinkButton ID="lkb_chat" runat="server" Text="Chat with a nurse" PostBackUrl="~/symptom.aspx" />
+
     <%--change the postBackUrl to chat feature--%>
     &nbsp;&nbsp;&nbsp;
     <asp:LinkButton ID="lkb_appointment" runat="server" Text="Book an appointment" PostBackUrl="~/appointment.aspx" />
 
-    
+
+    <asp:Image ID="img_doctor_patient" runat="server" ImageUrl="~/img/symptom-checker/doctor-patient.jpg" ImageAlign="Right" />
     <br />
     <br />
-    
+
     <h4>
-        <asp:Label ID="lbl_symptoms" runat="server" Text="Symptoms" /></h4>
+        <asp:Label ID="lbl_symptoms" runat="server" Text="Symptoms" />
+    </h4>
+ 
 
-    <%--symptoms checkbox list--%>
-    <asp:CheckBoxList ID="cbl_symptoms" runat="server" AutoPostBack="false" DataTextField="symptom" DataValueField="id">
-<%--        <asp:ListItem Text='<%#Eval("symptom") %>' Value='<%#Eval("symptom") %>' />--%>
-        <%--<asp:ListItem Text="test" Value="test" />
-        <asp:ListItem Text="hi" Value="hi" />
-        <asp:ListItem Text="ha" Value="ha" />--%>
-    </asp:CheckBoxList>
+    <asp:UpdatePanel ID="udp_symptoms" runat="server">
+        <ContentTemplate>
 
-    <%--<asp:SqlDataSource ID="sds_symptoms" runat="server" ConnectionString="<%$ ConnectionStrings:DB_65873_micConnectionString %>" SelectCommand="SELECT [id], [symptom] FROM [mic_symptoms]" />
+            <%--symptoms checkbox list--%>
+            <asp:CheckBoxList ID="cbl_symptoms" runat="server" AutoPostBack="false" DataTextField="symptom" DataValueField="id" />
 
-    <asp:GridView ID="grv_test" runat="server" DataKeyNames="symptom" AutoGenerateColumns="false"> 
-        <Columns>
-            <asp:CheckBoxField DataField="has" HeaderText="I have this" />
-            <asp:BoundField DataField="symptom" HeaderText="symptom" />
-                                 
-        </Columns>
-    </asp:GridView>--%>
+            <br />
+        </ContentTemplate>
 
-    <br />
+        <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="btn_clear" EventName="Command" />
+        </Triggers>
+
+    </asp:UpdatePanel>
 
     <asp:Button ID="btn_advice" runat="server" Text="Get advice" OnCommand="sub_admin" CommandName="getAdvice" />
     &nbsp;&nbsp;&nbsp;
-    <asp:Button ID="btn_cancel" runat="server" Text="Cancel" CausesValidation="false" OnCommand="sub_admin" CommandName="cancel" />
+    <asp:Button ID="btn_clear" runat="server" Text="Clear" CausesValidation="false" OnCommand="sub_admin" CommandName="clear" />
+    <br /><br />
 
-    <br />
-    <br />
+    <asp:UpdatePanel ID="udp_advice" runat="server">
+        
+        <ContentTemplate>
 
-    <asp:Panel ID="pnl_advice" runat="server" GroupingText="Advice">
-        <asp:Label ID="lbl_advice" runat="server" />
-        <br />
+            <%--a panel for showing advice--%>
+            <asp:Panel ID="pnl_advice" runat="server" Visible="false">
 
-        <%--advice bulleted list--%>
-        <asp:BulletedList ID="bll_advice" runat="server" BulletStyle="CustomImage" BulletImageUrl="~/img/pen.png" DataTextField="advice" DataValueField="level" />
-    </asp:Panel>
+                <h4>
+                    <asp:Label ID="lbl_advice" runat="server" Text="Advice" />
+                </h4>
+
+                <%--advice bulleted list--%>
+                <asp:BulletedList ID="bll_advice" runat="server" BulletStyle="CustomImage" BulletImageUrl="~/img/pen.png" DataTextField="advice" DataValueField="level" />
+
+                <br />
+                <br />
+
+                <asp:LinkButton ID="lkb_chatPnl" runat="server" Text="Chat with a nurse" PostBackUrl="~/symptom.aspx" />
+
+                <%--change the postBackUrl to chat feature--%>
+    &nbsp;&nbsp;&nbsp;
+    <asp:LinkButton ID="lkb_appointmentPnl" runat="server" Text="Book an appointment" PostBackUrl="~/appointment.aspx" />
+            </asp:Panel>
+
+        </ContentTemplate>
+
+        <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="btn_advice" EventName="Command" />            
+        </Triggers>
+
+    </asp:UpdatePanel>
+
+
 
 </asp:Content>
 
