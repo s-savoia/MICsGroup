@@ -38,36 +38,19 @@ public partial class admin_Default : System.Web.UI.Page
     // This fuction commits an insert using linq. First, the strMessage function is called with two arguments (a boolean and a string). The boolean is the commitInsert function of the linq class, and the string is the word 'insert'. In the call to the commitInsert function of the linq class, there are three arguments (the text values of the three textboxes in the insert panel, which are name, description, and price). The textbox for the price is converted from a decimal to a string. Then the subRebind function is called.
     protected void subInsert(object sender, EventArgs e)
     {
-    //    if (Double.Parse(txt_priceI.Text.ToString()) < 0)
-    //    {
-    //        lbl_priceCheckI.Text = "A price that is greater than zero must be entered.";
-    //    }
-
-    //    else
-    //    {
-    //        _strMessage(objLinq.commitInsert(txt_nameI.Text, txt_descI.Text, decimal.Parse(txt_priceI.Text.ToString())), "insert");
-    //        _subRebind();
-    //    }
+        lbl_message.Text = "Processing - Insert";
+            // _strMessage(objService.commitInsert(txt_nameI.Text, txt_descI.Text, decimal.Parse(txt_priceI.Text.ToString())), "insert");
+            _subRebind();
+        
     }
 
-    // This is the function to show the edit template. It passes the edit panel to the panel control function, and the edit item index of the dataList is set to zero (which makes it the current template to be displated). In this function, an id is found (lbl_id2) and cast; an integer 'proID' is assigned the value of a string converted to an integer (the casted label Lbl_Id2); the 'getProductById' function of the linqClass is assigned as the data source for the dataList control, and this data source is bound to the dataList control.
-    protected void subShowEditTemplate(object sender, DataListCommandEventArgs e)
-    {
-    //    _PanelControl(pnl_edit);
-    //    dlt_main.EditItemIndex = 0;
-
-    //    Label Lbl_Id2 = (Label)e.Item.FindControl("lbl_id2");
-    //    int proID = int.Parse(Lbl_Id2.Text.ToString());
-    //    dlt_main.DataSource = objService.getServicesBinghamByID(proID);
-    //    dlt_main.DataBind();
-    }
 
     //This is the cancel function. The edit item index of the datalist is set to -1, which switches the template of the edit template back to the item template. The inset panel is sent to the panel control and the subRebind function is called.
     protected void subCancel(object sender, DataListCommandEventArgs e)
     {
         dlt_main.EditItemIndex = -1;
-        //_PanelControl(pnl_insert);
-        //_subRebind();
+        _PanelControl(pnl_edit);
+        _subRebind();
     }
 
     // This is a function to commit an update. A hidden field, and three textboxes are found and cast. A variable for an integer (proID) converts the value of the casted hidden value from a string to an integer. Then the strMessage function is called with two arguments (a boolean and a string). The boolean is the commitUpdate function of the linq class, and the string is the word 'update'. In the call to the commitUpdate function of the linq class, there are three arguments (the text values of the three textboxes in the edit panel, which are name, description, and price). The textbox for the price is converted from a decimal to a string.  The edit item index of the datalist is set to -1, which switches the template of the edit template back to the item template. The inset panel is sent to the panel control and the subRebind function is called.
@@ -120,9 +103,9 @@ public partial class admin_Default : System.Web.UI.Page
     // This is the subRebind function. It clears the textboxes in the insert panel, sets the datasource of the datalist to the getProducts function of the linq class, and then binds this data source to the dataList.
     private void _subRebind()
     {
-        //txt_nameI.Text = string.Empty;
-        //txt_descI.Text = string.Empty;
-        //txt_priceI.Text = string.Empty;
+        txt_serviceI.Text = string.Empty;
+        ddl_locationsI.SelectedIndex = 0;
+        ddl_uniqueI.SelectedIndex = 0;
         dlt_main.DataSource = objService.getServicesBingham();
         dlt_main.DataBind();
     }

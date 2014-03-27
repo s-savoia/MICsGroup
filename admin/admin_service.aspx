@@ -10,6 +10,7 @@
 
     <h4>Choose a mode</h4>
     <asp:DropDownList ID="ddl_mode" runat="server" OnSelectedIndexChanged="subChangeMode" AutoPostBack="true">
+        <asp:ListItem Text="Choose a mode" />
         <asp:ListItem Text="Add a service" Value="pnl_insert" />
         <asp:ListItem Text="Edit a service" Value="pnl_edit" />
     </asp:DropDownList>
@@ -32,7 +33,7 @@
                 </strong>
                 </td>
                 <td>
-                    <asp:TextBox ID="txt_serviceI" runat="server" />
+                    <asp:TextBox ID="txt_serviceI" runat="server" Width="100%" />
                     <asp:RequiredFieldValidator ID="rfv_serviceI" runat="server" ControlToValidate="txt_serviceI" Text="*Required" ForeColor="Red" ValidationGroup="insert" />
                 </td>
             </tr>
@@ -56,8 +57,8 @@
                 </td>
                 <td>
                     <asp:DropDownList ID="ddl_uniqueI" runat="server">
-                        <asp:ListItem Text="Yes" Value="Y" />
                         <asp:ListItem Text="No" Value="N" />
+                        <asp:ListItem Text="Yes" Value="Y" />                        
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator ID="rfv_uniqueI" runat="server" ControlToValidate="ddl_uniqueI" Text="*Required" ForeColor="Red" ValidationGroup="insert" />
 
@@ -74,7 +75,7 @@
     </asp:Panel>
 
     <asp:SqlDataSource ID="sds_locations" runat="server" ConnectionString="<%$ ConnectionStrings:DB_65873_micConnectionString %>" SelectCommand="SELECT [name] FROM [mic_locations]" />
-    <hr />
+    
 
     <%--This is the edit panel. Products (records) can be updated, deleted, or a cancel button may be clicked to see all the products.--%>
     <asp:Panel ID="pnl_edit" runat="server">
