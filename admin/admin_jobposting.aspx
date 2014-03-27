@@ -145,7 +145,10 @@
                 </td>
             </tr>
             <tr>
-                <asp:TextBox ID="txt_detailsE" runat="server" TextMode="MultiLine" Text='<%#Eval("details") %>' ValidationGroup="update" CssClass="" /> <%--adm-textArea--%>
+                <td>
+                    <asp:TextBox ID="txt_detailsE" runat="server" TextMode="MultiLine" Text='<%#Eval("details") %>' ValidationGroup="update" CssClass="" />
+                </td>
+                 <%--adm-textArea--%>
             </tr>
             <tr>
                 <td>

@@ -64,7 +64,7 @@ public partial class admin_Default : System.Web.UI.Page
                 
                 //ltv_main.EditIndex 
                 int editIndex = Int32.Parse(e.CommandArgument.ToString());
-                ltv_main.EditIndex = editIndex;
+                ltv_main.EditIndex = editIndex - 1;
                 lbl_message.Text = "Mode: edit, id: " + e.CommandArgument + ", edit index: " + editIndex;
                 _subRebind();
                 break;
