@@ -6,7 +6,6 @@ using System.Web;
 //This page is the bridge between the class pages and the products.dbml file
 public class bookAppointmentClass
 {
-    // need to update the dbml, add the new mic_book_appointments table as well as the stored procedures
     public List<mic_appointments_get_datesResult> getAppointmentDates()
     {
         hospitalDataContext objHospDC = new hospitalDataContext();
