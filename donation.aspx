@@ -16,26 +16,26 @@
                 <%--First Name--%>
                 <asp:Label ID="lbl_fname" runat="server" Text="First Name:*" AssociatedControlID="txt_fname" />
                 <asp:TextBox ID="txt_fname" runat="server" Text='<%#Bind("fname")%>' />
-                <asp:RequiredFieldValidator ID="rfv_fname" runat="server" Text="*Required" ControlToValidate="txt_fname" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter your first name" ValidationGroup="donation1" />
+                <%--<asp:RequiredFieldValidator ID="rfv_fname" runat="server" Text="*Required" ControlToValidate="txt_fname" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter your first name" ValidationGroup="donation1" />--%>
                 <br /><br />
 
                 <%--Last Name--%>
                 <asp:Label ID="lbl_lname" runat="server" Text="Last Name:*" AssociatedControlID="txt_lname" />
                 <asp:TextBox ID="txt_lname" runat="server" Text='<%#Bind("lname")%>' />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Text="*Required" ControlToValidate="txt_fname" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter your first name" ValidationGroup="donation1" />
+                <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Text="*Required" ControlToValidate="txt_fname" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter your first name" ValidationGroup="donation1" />--%>
                 <br /><br />
 
                 <%--address--%>
                 <asp:Label ID="lbl_address" runat="server" Text="Address:" AssociatedControlID="txt_address" />
                 <br />
                 <asp:TextBox ID="txt_address" runat="server" TextMode="MultiLine" Text='<%#Bind("address")%>' />
-                <asp:RequiredFieldValidator ID="rfv_address" runat="server" Text="*Required" ControlToValidate="txt_address" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter an address" ValidationGroup="donation1" />
+                <%--<asp:RequiredFieldValidator ID="rfv_address" runat="server" Text="*Required" ControlToValidate="txt_address" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter an address" ValidationGroup="donation1" />--%>
                 <br /><br />
 
                 <%--city--%>
                 <asp:Label ID="lbl_city" runat="server" Text="City:" AssociatedControlID="txt_city" />
                 <asp:TextBox ID="txt_city" runat="server" Text='<%#Bind("city")%>' />
-                <asp:RequiredFieldValidator ID="rfv_city" runat="server" Text="*Required" ControlToValidate="txt_city" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter a city" ValidationGroup="donation1" />
+                <%--<asp:RequiredFieldValidator ID="rfv_city" runat="server" Text="*Required" ControlToValidate="txt_city" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter a city" ValidationGroup="donation1" />--%>
                 <br /><br />
 
                 <%--Province--%>
@@ -67,22 +67,22 @@
                 <%--postal code--%>
                 <asp:Label ID="lbl_zip" runat="server" Text="Postal Code:" AssociatedControlID="txt_zip" />
                 <asp:TextBox ID="txt_zip" runat="server" Text='<%#Bind("zip")%>' />
-                <asp:RequiredFieldValidator ID="rfv_zip" runat="server" Text="*Required" ControlToValidate="txt_zip" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter an postal code" ValidationGroup="donation1" />
-                <asp:RegularExpressionValidator ID="rev_zip" runat="server" Text="*Invalid postal code: uppercase letters required" ControlToValidate="txt_zip" Display="Dynamic" SetFocusOnError="true" ValidationExpression="^([ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVWXYZ])\ {0,1}(\d[ABCEGHJKLMNPRSTVWXYZ]\d)$" ValidationGroup="donation1" ErrorMessage="Your postal code is invalid" />
+                <%--<asp:RequiredFieldValidator ID="rfv_zip" runat="server" Text="*Required" ControlToValidate="txt_zip" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter an postal code" ValidationGroup="donation1" />
+                <asp:RegularExpressionValidator ID="rev_zip" runat="server" Text="*Invalid postal code: uppercase letters required" ControlToValidate="txt_zip" Display="Dynamic" SetFocusOnError="true" ValidationExpression="^([ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVWXYZ])\ {0,1}(\d[ABCEGHJKLMNPRSTVWXYZ]\d)$" ValidationGroup="donation1" ErrorMessage="Your postal code is invalid" />--%>
                 <br /><br />
 
                 <%--phone number--%>
                 <asp:Label ID="lbl_phone" runat="server" Text="Your phone number:" AssociatedControlID="txt_phone" />
                 <asp:TextBox ID="txt_phone" runat="server" Text='<%#Bind("phone")%>' />
-                <asp:RequiredFieldValidator ID="rfv_phone" runat="server" Text="*Required" ControlToValidate="txt_phone" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter your phone number" ValidationGroup="donation1" />
-                <asp:RegularExpressionValidator ID="rev_phone" runat="server" Text="*Invalid phone number" ControlToValidate="txt_phone" Display="Dynamic" SetFocusOnError="true" ValidationExpression="^[2-9]\d{2}-\d{3}-\d{4}$" ValidationGroup="donation1" ErrorMessage="Your phone number is invalid" />
+                <%--<asp:RequiredFieldValidator ID="rfv_phone" runat="server" Text="*Required" ControlToValidate="txt_phone" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter your phone number" ValidationGroup="donation1" />
+                <asp:RegularExpressionValidator ID="rev_phone" runat="server" Text="*Invalid phone number" ControlToValidate="txt_phone" Display="Dynamic" SetFocusOnError="true" ValidationExpression="^[2-9]\d{2}-\d{3}-\d{4}$" ValidationGroup="donation1" ErrorMessage="Your phone number is invalid" />--%>
                 <br /><br />
 
                 <%--email--%>
                 <asp:Label ID="lbl_email" runat="server" Text="Email:*" AssociatedControlID="txt_email" />
                 <asp:TextBox ID="txt_email" runat="server" Text='<%#Bind("email")%>' />
-                <asp:RequiredFieldValidator ID="rfv_email" runat="server" Text="*Required" ControlToValidate="txt_email" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter your email" ValidationGroup="donation1" />
-                <asp:RegularExpressionValidator ID="rev_email" runat="server" Text="*Invalid email" ControlToValidate="txt_email" Display="Dynamic" SetFocusOnError="true" ValidationExpression="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" ValidationGroup="donation1" ErrorMessage="Your email is invalid" />
+                <%--<asp:RequiredFieldValidator ID="rfv_email" runat="server" Text="*Required" ControlToValidate="txt_email" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter your email" ValidationGroup="donation1" />
+                <asp:RegularExpressionValidator ID="rev_email" runat="server" Text="*Invalid email" ControlToValidate="txt_email" Display="Dynamic" SetFocusOnError="true" ValidationExpression="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" ValidationGroup="donation1" ErrorMessage="Your email is invalid" />--%>
                 <br /><br />
 
                 <%--Validation Summary--%>
@@ -110,15 +110,10 @@
                 <asp:Label ID="lbl_comment" runat="server" Text="Comment:" AssociatedControlID="txt_comment" />
                 <br />
                 <asp:TextBox ID="txt_comment" runat="server" textmode="MultiLine" Wrap="true" Text='<%#Bind("comment")%>' />
-                <asp:RequiredFieldValidator ID="rfv_comment" runat="server" Text="*Required" ControlToValidate="txt_comment" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please give any feedback." ValidationGroup="donation2" />
+                <%--<asp:RequiredFieldValidator ID="rfv_comment" runat="server" Text="*Required" ControlToValidate="txt_comment" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please give any feedback." ValidationGroup="donation2" />--%>
                 <br /><br />
 
-                <%--amount--%>
-                <asp:Label ID="lbl_amount" runat="server" Text="Amount:" AssociatedControlID="txt_amount" />
-                <br />
-                <asp:TextBox ID="txt_amount" runat="server" Text='<%#Bind("amount")%>' />
-                <asp:RequiredFieldValidator ID="rfv_amount" runat="server" Text="*Required" ControlToValidate="txt_amount" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter the amount." ValidationGroup="donation2" />
-                <br /><br />
+                
 
                 <%--payment type--%>
                 <asp:Label ID="lbl_type" runat="server" Text="Which payment type do you prefer?" />
@@ -134,22 +129,22 @@
                 <asp:Label ID="lbl_cardnum" runat="server" Text="Card Number:" AssociatedControlID="txt_cardnum" />
                 <br />
                 <asp:TextBox ID="txt_cardnum" runat="server" Text='<%#Bind("card_number")%>' />
-                <asp:RequiredFieldValidator ID="rfv_cardnum" runat="server" Text="*Required" ControlToValidate="txt_cardnum" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter the card number." ValidationGroup="donation2" />
-                <asp:RegularExpressionValidator ID="rev_cardnum" runat="server" Text="*Invalid postal code: uppercase letters required" ControlToValidate="txt_zip" Display="Dynamic" SetFocusOnError="true" ValidationExpression="^((4\d{3})|(5[1-5]\d{2})|(6011)|(34\d{1})|(37\d{1}))-?\d{4}-?\d{4}-?\d{4}|3[4,7][\d\s-]{15}$" ValidationGroup="donation1" ErrorMessage="Your credit card number is invalid" />
+                <%--<asp:RequiredFieldValidator ID="rfv_cardnum" runat="server" Text="*Required" ControlToValidate="txt_cardnum" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter the card number." ValidationGroup="donation2" />--%>
+                
                 <br /><br />
 
                 <%--security number--%>
                 <asp:Label ID="lbl_security" runat="server" Text="Security Number:" AssociatedControlID="txt_security" />
                 <br />
                 <asp:TextBox ID="txt_security" runat="server" Text='<%#Bind("security_number")%>' />
-                <asp:RequiredFieldValidator ID="rfv_security" runat="server" Text="*Required" ControlToValidate="txt_security" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter the security number." ValidationGroup="donation2" />
+                <%--<asp:RequiredFieldValidator ID="rfv_security" runat="server" Text="*Required" ControlToValidate="txt_security" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter the security number." ValidationGroup="donation2" />--%>
                 <br /><br />
 
                 <%--cardholder name--%>
                 <asp:Label ID="lbl_holdername" runat="server" Text="Cardholder's name:" AssociatedControlID="txt_holdername" />
                 <br />
                 <asp:TextBox ID="txt_holdername" runat="server" Text='<%#Bind("cardholder_name")%>' />
-                <asp:RequiredFieldValidator ID="rfv_holdername" runat="server" Text="*Required" ControlToValidate="txt_holdername" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter the cardholder's name" ValidationGroup="donation2" />
+                <%--<asp:RequiredFieldValidator ID="rfv_holdername" runat="server" Text="*Required" ControlToValidate="txt_holdername" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter the cardholder's name" ValidationGroup="donation2" />--%>
                 <br /><br />
 
                 <%--card expiration--%>
@@ -186,6 +181,20 @@
                 </asp:Dropdownlist>
                 <br /><br />
 
+                <%--amount--%>
+                <asp:Label ID="lbl_amount" runat="server" Text="Donation Amount:" AssociatedControlID="txt_amount" />
+                <br />
+                <asp:TextBox ID="txt_amount" runat="server" Text='<%#Bind("amount")%>' />
+                <%--<asp:RequiredFieldValidator ID="rfv_amount" runat="server" Text="*Required" ControlToValidate="txt_amount" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter the amount." ValidationGroup="donation2" />--%>
+                <br /><br />
+
+                <%--Paypal Button--%>
+                <form action='expresscheckout.aspx' METHOD='POST'>
+<input type='image' name='submit' src='https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif' style="vertical-align:top; border:none" alt='Check out with PayPal'/>
+                </form>
+
+
+                <br /><br />
                 <%--PreView Button--%>
                 <asp:Button ID="btn_prev" runat="server" Text="Previous" CommandName="PrevView" CausesValidation="false" />
                 <%--Donate Button--%>
