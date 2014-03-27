@@ -6,20 +6,27 @@ using System.Web;
 //This page is the bridge between the class pages and the products.dbml file
 public class bookAppointmentClass
 {
-
-    public IQueryable<mic_book_appointment> getAppointmentDates()
+    // need to update the dbml, add the new mic_book_appointments table as well as the stored procedures
+    public List<mic_appointments_get_datesResult> getAppointmentDates()
     {
-        hospitalDataContext objHospital = new hospitalDataContext();
-        var allAppointments = objHospital.mic_book_appointments.OrderBy(x => x.date).Select(x => x);
-        return allAppointments;
+        hospitalDataContext objHospDC = new hospitalDataContext();
+        using (objHospDC)
+        {
+            var dates = objHospDC.mic_appointments_get_dates().ToList();
+            return dates;
+        }
     }
 
+    // Need to update this to make it look like the one above, now that I've updated the DBML to include this stored procedure mic_appointments_get_dates_not_booked
     public IQueryable<mic_book_appointment> getAppointmentDatesNotBooked()
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         var allAppointments = objHospital.mic_book_appointments.Where(x => x.booked == false).OrderBy(x => x.date).Select(x => x);
         return allAppointments;
     }
+
+
+
 
     public IQueryable<mic_book_appointment> getAppointmentsByID(int _id)
     {
@@ -28,28 +35,28 @@ public class bookAppointmentClass
         return appointment;
     }
 
-    public IQueryable<mic_book_appointment> getAppointmentsByDate(string _date_string)
+    public IQueryable<mic_book_appointment> getAppointmentsByDate(DateTime _date_only)
     {
         hospitalDataContext objHospital = new hospitalDataContext();
-        var appointments = objHospital.mic_book_appointments.Where(x => x.date_string == _date_string).OrderBy(x=> x.date).Select(x => x);
+        var appointments = objHospital.mic_book_appointments.Where(x => x.date_only == _date_only).OrderBy(x=> x.date).Select(x => x);
         return appointments;
     }
 
-    public IQueryable<mic_book_appointment> getAppointmentsByDateNotBooked(string _date_string)
+    public IQueryable<mic_book_appointment> getAppointmentsByDateNotBooked(DateTime _date_only)
     {
         hospitalDataContext objHospital = new hospitalDataContext();
-        var appointments = objHospital.mic_book_appointments.Where(x => x.date_string == _date_string && x.booked == false).OrderBy(x => x.date).Select(x => x);
+        var appointments = objHospital.mic_book_appointments.Where(x => x.date_only == _date_only && x.booked == false).OrderBy(x => x.date).Select(x => x);
         return appointments;
     }
 
-    public bool commitInsert(DateTime _date, string _date_string)
+    public bool commitInsert(DateTime _date, DateTime _date_only)
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         using (objHospital)
         {
             mic_book_appointment objBook = new mic_book_appointment();
             objBook.date = _date;
-            objBook.date_string = _date_string;
+            objBook.date_only = _date_only;
             objHospital.mic_book_appointments.InsertOnSubmit(objBook);
             objHospital.SubmitChanges();
             return true;
