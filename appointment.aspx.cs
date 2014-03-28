@@ -20,7 +20,7 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void subChangeEdited(object sender, EventArgs e)
     {
-        rbl_appointments.DataSource = objLinq.getAppointmentsByDateNotBooked(ddl_view_appointments.SelectedValue.ToString());
+        rbl_appointments.DataSource = objLinq.getAppointmentsByDateNotBooked(DateTime.Parse(ddl_view_appointments.SelectedValue.ToString()));
         rbl_appointments.DataTextField = "date";
         rbl_appointments.DataTextFormatString = "{0:h:mm tt}";
         rbl_appointments.DataValueField = "Id";
@@ -34,7 +34,7 @@ public partial class Default2 : System.Web.UI.Page
         ddl_view_appointments.DataValueField = "date_string";
         ddl_view_appointments.DataBind();
 
-        rbl_appointments.DataSource = objLinq.getAppointmentsByDateNotBooked(ddl_view_appointments.SelectedValue.ToString());
+        rbl_appointments.DataSource = objLinq.getAppointmentsByDateNotBooked(DateTime.Parse(ddl_view_appointments.SelectedValue.ToString()));
         rbl_appointments.DataTextField = "date";
         rbl_appointments.DataTextFormatString = "{0:h:mm tt}";
         rbl_appointments.DataValueField = "Id";

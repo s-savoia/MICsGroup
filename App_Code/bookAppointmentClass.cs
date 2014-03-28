@@ -25,8 +25,6 @@ public class bookAppointmentClass
     }
 
 
-
-
     public IQueryable<mic_book_appointment> getAppointmentsByID(int _id)
     {
         hospitalDataContext objHospital = new hospitalDataContext();
