@@ -1,0 +1,27 @@
+﻿.requiredColour {
+color:orangered;
+}
+
+.border-bottom {
+border-bottom:2px dotted #22BCB9;
+}
+
+.floatR
+{
+    float: right;
+}
+
+/*.column-s {
+width: 5%;
+float: left;
+}
+
+.column-m {
+width: 10%;
+float: left;
+}
+
+.column-xl {
+width: 25%;
+float: left;
+}*/
