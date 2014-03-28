@@ -184,13 +184,6 @@
       <Column Name="country" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.mic_symptoms" Member="mic_symptoms">
-    <Type Name="mic_symptom">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="symptom" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="has" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.mic_advice" Member="mic_advices">
     <Type Name="mic_advice">
       <Column Name="[level]" Member="level" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -212,6 +205,12 @@
       <Column Name="booked" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="date_string" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="date_only" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mic_symptoms" Member="mic_symptoms">
+    <Type Name="mic_symptom">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="symptom" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Function Name="dbo.mic_appointments_get_dates_not_booked" Method="mic_appointments_get_dates_not_booked">
