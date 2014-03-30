@@ -16,14 +16,15 @@ public class bookAppointmentClass
         }
     }
 
-    // Need to update this to make it look like the one above, now that I've updated the DBML to include this stored procedure mic_appointments_get_dates_not_booked
-    public IQueryable<mic_book_appointment> getAppointmentDatesNotBooked()
+    public List<mic_appointments_get_dates_not_bookedResult> getAppointmentDatesNotBooked()
     {
-        hospitalDataContext objHospital = new hospitalDataContext();
-        var allAppointments = objHospital.mic_book_appointments.Where(x => x.booked == false).OrderBy(x => x.date).Select(x => x);
-        return allAppointments;
+        hospitalDataContext objHospDC = new hospitalDataContext();
+        using (objHospDC)
+        {
+            var dates_not_booked = objHospDC.mic_appointments_get_dates_not_booked().ToList();
+            return dates_not_booked;
+        }
     }
-
 
     public IQueryable<mic_book_appointment> getAppointmentsByID(int _id)
     {

@@ -30,8 +30,9 @@ public partial class Default2 : System.Web.UI.Page
     private void _subRebind()
     {
         ddl_view_appointments.DataSource = objLinq.getAppointmentDatesNotBooked();
-        ddl_view_appointments.DataTextField = "date_string";
-        ddl_view_appointments.DataValueField = "date_string";
+        ddl_view_appointments.DataTextField = "date_only";
+        ddl_view_appointments.DataTextFormatString = "{0:D}";
+        ddl_view_appointments.DataValueField = "date_only";
         ddl_view_appointments.DataBind();
 
         rbl_appointments.DataSource = objLinq.getAppointmentsByDateNotBooked(DateTime.Parse(ddl_view_appointments.SelectedValue.ToString()));

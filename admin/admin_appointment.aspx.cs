@@ -36,7 +36,7 @@ public partial class admin_Default : System.Web.UI.Page
     private void _subRebind()
     {
         txt_date.Text = string.Empty;
-        ddl_time.SelectedValue = "9:00:00 AM";
+        lb_time.SelectedValue = "9:00:00 AM";
     }
 
     // resets the ddl and lv
@@ -55,10 +55,20 @@ public partial class admin_Default : System.Web.UI.Page
     // Inserts data into the database.
     protected void subInsert (object sender, EventArgs e)
     {
+        // Get the date that the appointment timeslot will be on
         DateTime date_only_selected = DateTime.Parse(txt_date.Text.ToString());
-        //string date_string_to_insert = date_selected.ToString("D");
-        string date_to_insert = txt_date.Text.ToString() + " " + ddl_time.SelectedValue.ToString();
-        _strMessage(objLinq.commitInsert(DateTime.Parse(date_to_insert), date_only_selected), "Appointment timeslot was successfully created.");
+        
+        // For each selected timeslot, make an appointment on the date selected above
+        for (int i = 0; i < lb_time.Items.Count; i++)
+        {
+            if (lb_time.Items[i].Selected)
+            {
+                string date_to_insert = txt_date.Text.ToString() + " " + lb_time.Items[i].Value.ToString();
+                _strMessage(objLinq.commitInsert(DateTime.Parse(date_to_insert), date_only_selected), "Appointment timeslot(s) successfully created.");
+            }
+        }
+
+
         _subRebind();
     }
 

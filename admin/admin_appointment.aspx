@@ -28,8 +28,33 @@
                 </td>
             </tr>
             <tr>
-                <td class="cat_left"><asp:Label ID="lbl_time" runat="server" Text="Time:" /></td>
-                <td><asp:DropDownList ID="ddl_time" runat="server">
+                <td class="cat_left"><asp:Label ID="lbl_time" runat="server" Text="Times:" /></td>
+                <td>
+                    <asp:ListBox ID="lb_time" runat="server" SelectionMode="Multiple">
+                        <asp:ListItem Value="9:00:00 AM" Selected="True">9:00am</asp:ListItem>
+                        <asp:ListItem Value="9:30:00 AM">9:30am</asp:ListItem>
+                        <asp:ListItem Value="10:00:00 AM">10:00am</asp:ListItem>
+                        <asp:ListItem Value="10:30:00 AM">10:30am</asp:ListItem>
+                        <asp:ListItem Value="11:00:00 AM">11:00am</asp:ListItem>
+                        <asp:ListItem Value="11:30:00 AM">11:30am</asp:ListItem>
+                        <asp:ListItem Value="12:00:00 PM">12:00pm</asp:ListItem>
+                        <asp:ListItem Value="12:30:00 PM">12:30pm</asp:ListItem>
+                        <asp:ListItem Value="1:00:00 PM">1:00pm</asp:ListItem>
+                        <asp:ListItem Value="1:30:00 PM">1:30pm</asp:ListItem>
+                        <asp:ListItem Value="2:00:00 PM">2:00pm</asp:ListItem>
+                        <asp:ListItem Value="2:30:00 PM">2:30pm</asp:ListItem>
+                        <asp:ListItem Value="3:00:00 PM">3:00pm</asp:ListItem>
+                        <asp:ListItem Value="3:30:00 PM">3:30pm</asp:ListItem>
+                        <asp:ListItem Value="4:00:00 PM">4:00pm</asp:ListItem>
+                        <asp:ListItem Value="4:30:00 PM">4:30pm</asp:ListItem>
+                        <asp:ListItem Value="5:00:00 PM">5:00pm</asp:ListItem>
+                        <asp:ListItem Value="5:30:00 PM">5:30pm</asp:ListItem>
+                        <asp:ListItem Value="6:00:00 PM">6:00pm</asp:ListItem>
+                        <asp:ListItem Value="6:30:00 PM">6:30pm</asp:ListItem>
+                    </asp:ListBox>
+                    
+                    
+<%--                    <asp:DropDownList ID="ddl_time" runat="server">
                         <asp:ListItem Value="9:00:00 AM">9:00am</asp:ListItem>
                         <asp:ListItem Value="9:30:00 AM">9:30am</asp:ListItem>
                         <asp:ListItem Value="10:00:00 AM">10:00am</asp:ListItem>
@@ -50,7 +75,7 @@
                         <asp:ListItem Value="5:30:00 PM">5:30pm</asp:ListItem>
                         <asp:ListItem Value="6:00:00 PM">6:00pm</asp:ListItem>
                         <asp:ListItem Value="6:30:00 PM">6:30pm</asp:ListItem>
-                </asp:DropDownList>
+                </asp:DropDownList>--%>
                 </td>
             </tr>
             <tr>

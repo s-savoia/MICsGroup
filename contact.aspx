@@ -7,8 +7,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content_main" Runat="Server">
     <asp:Label ID="lbl_message" runat="server" CssClass="contact_response_message" />
-    <table id="contact_us_public">
     <h2>Contact Us</h2>
+    <table id="contact_us_public">
     <asp:ValidationSummary ID="vs_insert" runat="server" ValidationGroup="insert" ShowMessageBox="true" ShowSummary="false" />
         <tr>
             <td>

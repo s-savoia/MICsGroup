@@ -46,6 +46,7 @@
                     [document.getElementById('content_main_lv_locations_hdf_name_2').value, document.getElementById('content_main_lv_locations_hdf_lat_2').value, document.getElementById('content_main_lv_locations_hdf_lng_2').value]
                 ];
 
+                // Initializes the map to div element in the page
                 function initialize() {
                     var mapOptions = {
                         zoom: 8,
@@ -60,6 +61,7 @@
                     }
                 }
 
+                // Places the marker at a certain location
                 function setMarker(name, lat, lng) {
                     var image = {
                         url: 'img/map_logo.png'
@@ -74,6 +76,7 @@
 
                 }
 
+                // Centers the map on the icon hospital that was clicked
                 function zoomTo(lat, lng) {
                     var this_lat_long = new google.maps.LatLng(lat, lng);
                     map.setZoom(14);
