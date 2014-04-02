@@ -6,28 +6,21 @@ using System.Web;
 
 public class jobPostingsClass
 {
-    public IQueryable<mic_job_posting> getJobPostings()
+    public IQueryable<mic_job_posting> getJobPostings()  // GET all job postings
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         var allJobPostings = objHospital.mic_job_postings.Select(x => x);  
         return allJobPostings;
     }
 
-    public IQueryable<mic_job_posting> getJobPostingById(int _id)
+    public IQueryable<mic_job_posting> getJobPostingById(int _id)  // GET a single job posting by Id
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         var allJobPostings = objHospital.mic_job_postings.Where(x => x.Id == _id).Select(x => x);
         return allJobPostings;
     }
 
-    //public IQueryable<product> getProductByName(string _name)
-    //{
-    //    productsDataContext objProd = new productsDataContext();
-    //    var allProducts = objProd.products.Where(x => x.Name == _name).Select(x => x);
-    //    return allProducts;
-    //}
-
-    public bool commitInsert(string _postion, string _location, string _details)   //  INSERT
+    public bool commitInsert(string _postion, string _location, string _details)   //  INSERT a job posting into the database
     {
         hospitalDataContext objJobPosting = new hospitalDataContext();
         using (objJobPosting)
@@ -37,12 +30,12 @@ public class jobPostingsClass
             objNewJobPosting.location = _location;
             objNewJobPosting.details = _details;
             objJobPosting.mic_job_postings.InsertOnSubmit(objNewJobPosting);
-            objJobPosting.SubmitChanges();  // will commit change to database
+            objJobPosting.SubmitChanges(); 
             return true;
         }
     }
 
-    public bool commitUpdate(int _id, string _position, string _location, string _details)
+    public bool commitUpdate(int _id, string _position, string _location, string _details)   // UPDATE a job posting
     {
         hospitalDataContext objJobPosting = new hospitalDataContext();
         using (objJobPosting)
@@ -57,7 +50,7 @@ public class jobPostingsClass
         }
     }
 
-    public bool commitDelete(int _id)
+    public bool commitDelete(int _id)  // DELETE a job posting
     {
         hospitalDataContext objJobPosting = new hospitalDataContext();
         using (objJobPosting)

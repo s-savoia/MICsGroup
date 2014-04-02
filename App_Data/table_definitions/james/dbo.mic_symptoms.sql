@@ -42,7 +42,7 @@ DROP TABLE [dbo].[mic_advice];
 CREATE TABLE [dbo].[mic_symptoms] (    
     [id] INT IDENTITY (1, 1) NOT NULL, 
 	[symptom] NVARCHAR (200) NOT NULL, 
-    [has] BIT NOT NULL DEFAULT 0, 
+--  [has] BIT NOT NULL DEFAULT 0, 
     CONSTRAINT [PK_mic_symptoms] PRIMARY KEY ([id]),
 );
 

@@ -6,61 +6,98 @@ using System.Web;
 
 public class symptomsClass
 {
-    public IQueryable<mic_symptom> getSymptoms()
+    // = = = SYMPTOMS = = = 
+    public IQueryable<mic_symptom> getSymptoms()  // GET all symptoms
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         var allSymptoms = objHospital.mic_symptoms.Select(x => x);        
-        //var allSymptoms = objHospital.mic_symptoms.Select(s => new { symptom = s.symptom} );
         return allSymptoms;
     }
 
-    public IQueryable<mic_services_bingham> getServicesBingham()
+    public bool commitInsertSymptom(string _symptom)   //  INSERT a symptom
     {
         hospitalDataContext objHospital = new hospitalDataContext();
-        var allServicesBingham = objHospital.mic_services_binghams.Select(x => x);
-        return allServicesBingham;
+        using (objHospital)
+        {
+            mic_symptom objNewSymptom = new mic_symptom();
+            objNewSymptom.symptom = _symptom;
+            objHospital.mic_symptoms.InsertOnSubmit(objNewSymptom);
+            objHospital.SubmitChanges();  
+            return true;
+        }
     }
 
-    //public bool commitInsert(string _postion, string _location, string _details)   //  INSERT
-    //{
-    //    hospitalDataContext objJobPosting = new hospitalDataContext();
-    //    using (objJobPosting)
-    //    {
-    //        mic_job_posting objNewJobPosting = new mic_job_posting();
-    //        objNewJobPosting.position = _postion;
-    //        objNewJobPosting.location = _location;
-    //        objNewJobPosting.details = _details;
-    //        objJobPosting.mic_job_postings.InsertOnSubmit(objNewJobPosting);
-    //        objJobPosting.SubmitChanges();  // will commit change to database
-    //        return true;
-    //    }
-    //}
+    public bool commitUpdateSymptom(int _id, string _symptom)   //  UPDATE a symptom
+    {
+        hospitalDataContext objHospital = new hospitalDataContext();
+        using (objHospital)
+        {
+            mic_symptom objSymptom = new mic_symptom();
+            var objUpSymptom = objHospital.mic_symptoms.Single(x => x.id == _id);
+            objSymptom.symptom = _symptom;            
+            objHospital.SubmitChanges();
+            return true;
+        }
+    }
 
-    //public bool commitUpdate(int _id, string _position, string _location, string _details)
-    //{
-    //    hospitalDataContext objJobPosting = new hospitalDataContext();
-    //    using (objJobPosting)
-    //    {
-    //        mic_job_posting objNewJobPosting = new mic_job_posting();
-    //        var objUpJob = objJobPosting.mic_job_postings.Single(x => x.Id == _id);
-    //        objNewJobPosting.position = _position;
-    //        objNewJobPosting.location = _location;
-    //        objNewJobPosting.details = _details;
-    //        objJobPosting.SubmitChanges();
-    //        return true;
-    //    }
-    //}
+    public bool commitDeleteSymptom(int _id)   //  DELETE a symptom
+    {
+        hospitalDataContext objHospital = new hospitalDataContext();
+        using (objHospital)
+        {
+            mic_symptom objSymptom = new mic_symptom();
+            var objDelSymptom = objHospital.mic_symptoms.Single(x => x.id == _id);
+            objHospital.mic_symptoms.DeleteOnSubmit(objDelSymptom);
+            objHospital.SubmitChanges();
+            return true;
+        }
+    }
 
-    //public bool commitDelete(int _id)
-    //{
-    //    hospitalDataContext objJobPosting = new hospitalDataContext();
-    //    using (objJobPosting)
-    //    {
-    //        mic_job_posting objNewJobPosting = new mic_job_posting();
-    //        var objDelJob = objJobPosting.mic_job_postings.Single(x => x.Id == _id);
-    //        objJobPosting.mic_job_postings.DeleteOnSubmit(objDelJob);
-    //        objJobPosting.SubmitChanges();
-    //        return true;
-    //    }
-    //}
+    // = = = ADVICE = = = 
+
+    public IQueryable<mic_advice> getAdvice()  // GET all advice
+    {
+        hospitalDataContext objHospital = new hospitalDataContext();
+        var allAdvice = objHospital.mic_advices.Select(x => x);
+        return allAdvice;
+    }
+
+    public bool commitInsertAdvice(string _advice)   //  INSERT a level of advice
+    {
+        hospitalDataContext objHospital = new hospitalDataContext();
+        using (objHospital)
+        {
+            mic_advice objAdvice = new mic_advice();
+            objAdvice.advice = _advice;
+            objHospital.mic_advices.InsertOnSubmit(objAdvice);
+            objHospital.SubmitChanges();
+            return true;
+        }
+    }
+
+    public bool commitUpdateAdvice(int _level, string _advice)   //  UPDATE a level of advice
+    {
+        hospitalDataContext objHospital = new hospitalDataContext();
+        using (objHospital)
+        {
+            mic_advice objAdvice = new mic_advice();
+            var objUpAdvice = objHospital.mic_advices.Single(x => x.level == _level);
+            objAdvice.advice = _advice;
+            objHospital.SubmitChanges();
+            return true;
+        }
+    }
+
+    public bool commitDeleteAdvice(int _level)   //  DELETE a level of advice
+    {
+        hospitalDataContext objHospital = new hospitalDataContext();
+        using (objHospital)
+        {
+            mic_advice objAdvice = new mic_advice();
+            var objDelAdvice = objHospital.mic_advices.Single(x => x.level == _level);
+            objHospital.mic_advices.DeleteOnSubmit(objDelAdvice);
+            objHospital.SubmitChanges();
+            return true;
+        }
+    }
 }
