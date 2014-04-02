@@ -8,7 +8,7 @@
         <asp:MultiView ID="mtv_main" runat="server" ActiveViewIndex="0">
             <asp:View ID="view1" runat="server">
                 <%--Header and subheader--%>
-                <asp:Label ID="lbl_donationhead" runat="server" Text="Donor Information" />
+                <asp:Label ID="lbl_donationhead" runat="server" Text="Donor Information" Font-Bold="true" />
                 <br />
                 <asp:Label ID="lbl_donationsubhead" runat="server" Text="Please tell us about your donation." />
                 <br />
@@ -130,14 +130,16 @@
                 <br />
                 <asp:TextBox ID="txt_cardnum" runat="server" Text='<%#Bind("card_number")%>' />
                 <%--<asp:RequiredFieldValidator ID="rfv_cardnum" runat="server" Text="*Required" ControlToValidate="txt_cardnum" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter the card number." ValidationGroup="donation2" />--%>
+                <asp:RegularExpressionValidator ID="rev_cardnum" runat="server" Text='*Your card number starts from "3" for AMEX, "4" for VISA and "5" for Master Card.' ControlToValidate="txt_cardnum" Display="Dynamic" SetFocusOnError="true" ValidationExpression="^((4\d{3})|(5[1-5]\d{2}))(-?|\040?)(\d{4}(-?|\040?)){3}|^(3[4,7]\d{2})(-?|\040?)\d{6}(-?|\040?)\d{5}" ValidationGroup="donation2" ErrorMessage='Your card number format has to be "4-6-5" for AMEX, "4-4-4-4" for Visa and Mastercard' />
                 
                 <br /><br />
 
                 <%--security number--%>
-                <asp:Label ID="lbl_security" runat="server" Text="Security Number:" AssociatedControlID="txt_security" />
+                <asp:Label ID="lbl_security" runat="server" Text="Security Code:" AssociatedControlID="txt_security" />
                 <br />
                 <asp:TextBox ID="txt_security" runat="server" Text='<%#Bind("security_number")%>' />
                 <%--<asp:RequiredFieldValidator ID="rfv_security" runat="server" Text="*Required" ControlToValidate="txt_security" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter the security number." ValidationGroup="donation2" />--%>
+                <asp:RegularExpressionValidator ID="rfv_security" runat="server" Text='*Your security code is either 3 or 4-digit number.' ControlToValidate="txt_security" Display="Dynamic" SetFocusOnError="true" ValidationExpression="^\d{3}$|^\d{4}$" ValidationGroup="donation2" ErrorMessage='Your security code is either 3 or 4-digit number.' />
                 <br /><br />
 
                 <%--cardholder name--%>
@@ -182,28 +184,28 @@
                 <br /><br />
 
                 <%--amount--%>
-                <asp:Label ID="lbl_amount" runat="server" Text="Donation Amount:" AssociatedControlID="txt_amount" />
+                <asp:Label ID="lbl_amount" runat="server" Text="Donation Amount:" AssociatedControlID="payment_amt" />
                 <br />
-                <asp:TextBox ID="txt_amount" runat="server" Text='<%#Bind("amount")%>' />
+                <asp:TextBox ID="payment_amt" runat="server" Text='' />
                 <%--<asp:RequiredFieldValidator ID="rfv_amount" runat="server" Text="*Required" ControlToValidate="txt_amount" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter the amount." ValidationGroup="donation2" />--%>
                 <br /><br />
-
-                <%--Paypal Button--%>
-                <form action='expresscheckout.aspx' METHOD='POST'>
-<input type='image' name='submit' src='https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif' style="vertical-align:top; border:none" alt='Check out with PayPal'/>
-                </form>
-
+                
+                <%--Donate/Paypal Button--%>
+                <asp:ImageButton ID="btn_donate" src='https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif' runat="server" Text="Donate" CommandName="Insert" OnCommand="subAdmin" ValidationGroup="donation2" CausesValidation="true" />
+                <asp:Image ID="img_card" runat="server" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" />
+                <asp:HiddenField ID="hdf_button_id" runat="server" value="RTSTZNYUU4SJE" />
+                <asp:HiddenField ID="hdf_cmd" runat="server" value="_s-xclick" />
 
                 <br /><br />
+
                 <%--PreView Button--%>
                 <asp:Button ID="btn_prev" runat="server" Text="Previous" CommandName="PrevView" CausesValidation="false" />
-                <%--Donate Button--%>
-                <asp:Button ID="btn_donate" runat="server" Text="Donate" CommandName="Insert" OnCommand="subAdmin" ValidationGroup="donation2" CausesValidation="true" />
                 <%--Cancel Button--%>
                 <asp:Button ID="btn_cancel" runat="server" Text="Cancel" CommandName="Cancel" OnCommand="subAdmin" ValidationGroup="donation2" CausesValidation="false" />
                 <%--Validation Summary--%>
                 <asp:ValidationSummary ID="vds_donate2" runat="server" ShowMessageBox="true" ValidationGroup="donate2" HeaderText="Donation Error" DisplayMode="List" />
                 <br />
+
                 <%--confirmation message--%>
                 <asp:Label ID="lbl_output" runat="server" />
             </asp:View>

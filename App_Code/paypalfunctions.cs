@@ -68,9 +68,9 @@ public class NVPAPICaller
 			pendpointurl = "https://api-3t.sandbox.paypal.com/nvp";
 			host = "www.sandbox.paypal.com";
 		}
-		
-        string returnURL = "http://localhost:50386/donation_confirmation.aspx";
-        string cancelURL = "http://localhost:50386/donation.aspx";
+
+        string returnURL = "http://localhost:50386/MICsGroup/donation_confirmation.aspx";
+        string cancelURL = "http://localhost:50386/MICsGroup/donation.aspx";
 
         NVPCodec encoder = new NVPCodec();
         encoder["METHOD"] = "SetExpressCheckout";
@@ -346,7 +346,7 @@ public class NVPAPICaller
         if (!IsEmpty(Subject))
             codec["SUBJECT"] = Subject;
 
-        codec["VERSION"] = "2.3";
+        codec["VERSION"] = "72.0";
 
         return codec.Encode();
     }

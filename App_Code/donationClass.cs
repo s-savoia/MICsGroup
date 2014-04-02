@@ -23,7 +23,7 @@ public class donationClass
     }
 
     //Insert Donation Items
-    public bool commitInsert(string _fname, string _lname, string _address, string _city, string _province, string _country, string _zip, string _phone, string _email, string _survey, string _comment, int _amount, string _payment_type, string _card_number, int _security_number, string _cardholder_name, string _expiration_month, string _expiration_year)
+    public bool commitInsert(string _fname, string _lname, string _address, string _city, string _province, string _country, string _zip, string _phone, string _email, string _survey, string _comment, string _amount, string _payment_type, string _card_number, int _security_number, string _cardholder_name, string _expiration_month, string _expiration_year, string _token)
     {
         hospitalDataContext objDonation = new hospitalDataContext();
         using (objDonation)
@@ -47,6 +47,7 @@ public class donationClass
             objNewDonation.cardholder_name = _cardholder_name;
             objNewDonation.expiration_month = _expiration_month;
             objNewDonation.expiration_year = _expiration_year;
+            objNewDonation.token = _token;
 
             objDonation.mic_donations.InsertOnSubmit(objNewDonation);
             objDonation.SubmitChanges();
@@ -55,7 +56,7 @@ public class donationClass
     }
 
     //Update Donation Item
-    public bool commitUpdate(int _id, string _fname, string _lname, string _address, string _city, string _province, string _country, string _zip, string _phone, string _email, string _survey, string _comment, int _amount, string _payment_type, string _card_number, int _security_number, string _cardholder_name, string _expiration_month, string _expiration_year)
+    public bool commitUpdate(int _id, string _fname, string _lname, string _address, string _city, string _province, string _country, string _zip, string _phone, string _email, string _survey, string _comment, string _amount, string _payment_type, string _card_number, int _security_number, string _cardholder_name, string _expiration_month, string _expiration_year, string _token, int _success)
     {
         hospitalDataContext objDonation = new hospitalDataContext();
         using (objDonation)
@@ -79,6 +80,21 @@ public class donationClass
             objUpDonation.cardholder_name = _cardholder_name;
             objUpDonation.expiration_month = _expiration_month;
             objUpDonation.expiration_year = _expiration_year;
+            objUpDonation.token = _token;
+            objUpDonation.success = _success;
+            objDonation.SubmitChanges();
+            return true;
+        }
+    }
+
+    public bool commitUpdateSuccess(string _token)
+    {
+        hospitalDataContext objDonation = new hospitalDataContext();
+        using (objDonation)
+        {
+            var objUpDonation = objDonation.mic_donations.Single(x => x.token == _token);
+            objUpDonation.token = _token;
+            objUpDonation.success = 1;
             objDonation.SubmitChanges();
             return true;
         }

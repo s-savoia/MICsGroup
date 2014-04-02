@@ -72,6 +72,8 @@
                     <br /><br />
                     <%--province--%>
                     <asp:Label ID="lbl_provinceE" runat="server" Text="Province: " />
+                    <asp:Label ID="lbl_provinceResult" runat="server" Text='<%#Eval("province")%>' />
+                    <br />
                     <asp:Dropdownlist ID="ddl_provinceE" runat="server" CausesValidation="false" SelectedItem='<%#Bind("province")%>'>
                         <asp:ListItem Value="1" Text="ON" Selected="True" />
                         <asp:ListItem Value="2" Text="QC" />
@@ -88,6 +90,8 @@
                     <br /><br />
                     <%--country--%>
                     <asp:Label ID="lbl_countryE" runat="server" Text="Country: " />
+                    <asp:Label ID="lbl_countryResult" runat="server" Text='<%#Eval("country")%>' />
+                    <br />
                     <asp:Dropdownlist ID="ddl_countryE" runat="server" CausesValidation="false" SelectedItem='<%#Bind("country")%>'>
                         <asp:ListItem Value="1" Text="Canada" Selected="True" />
                         <asp:ListItem Value="2" Text="USA" />
@@ -112,6 +116,7 @@
                     
                     <%--survey--%>
                     <asp:Label ID="lbl_statusE" runat="server" Text="Status: " />
+                    <asp:Label ID="lbl_statusResult" runat="server" Text='<%#Eval("survey")%>' />
                     <br />
                     <asp:Dropdownlist ID="ddl_surveyE" runat="server" CausesValidation="false" SelectedItem='<%#Bind("survey")%>'>
                         <asp:ListItem Value="1" Text="Please select one:" Selected="True" />
@@ -131,13 +136,13 @@
                     <br /><br />                 
                     <%--amount--%>
                     <asp:Label ID="lbl_amountE" runat="server" Text="Amount:" AssociatedControlID="txt_amountE" />
-                    <br /><br />
                     <asp:TextBox ID="txt_amountE" runat="server" Text='<%#Bind("amount")%>' />
                     <asp:RequiredFieldValidator ID="rfv_amountE" runat="server" ControlToValidate="txt_amountE" ErrorMessage="*Required" Display="None" ValidationGroup="edit" />
                     <br /><br />
                     
                     <%--payment type--%>
                     <asp:Label ID="lbl_typeE" runat="server" Text="Payment Type:" />
+                    <asp:Label ID="lbl_typeResult" runat="server" Text='<%#Eval("payment_type")%>' />
                     <asp:RadioButtonList ID="rbl_typeE" runat="server" RepeatColumns="2" RepeatDirection="Horizontal" ValidationGroup="edit" SelectedItem='<%#Bind("payment_type")%>'>
                         <asp:ListItem Value="1" Text="VISA" Selected="True" />
                         <asp:ListItem Value="2" Text="Master Card" />
@@ -169,6 +174,9 @@
 
                     <%--card expiration--%>
                     <asp:Label ID="lbl_expirationE" runat="server" Text="Credit Card Expiration:" />
+                    <asp:Label ID="lbl_expirationMonth" runat="server" Text='<%#Eval("expiration_month")%>' />
+                    <asp:Label ID="lbl_slash" runat="server" Text="/" />
+                    <asp:Label ID="lbl_expirationYear" runat="server" Text='<%#Eval("expiration_year")%>' />
                     <br />
                     <asp:Dropdownlist ID="ddl_expirationmonthE" runat="server" CausesValidation="false" SelectedItem='<%#Bind("expiration_month")%>'>
                         <asp:ListItem Value="1" Text="Please select one:" Selected="True" />
@@ -200,6 +208,19 @@
                         <asp:ListItem Value="12" Text="24" />
                     </asp:Dropdownlist>
                     <br /><br />
+
+                    <%--token--%>
+                    <asp:Label ID="lbl_tokenE" runat="server" Text="Token:" AssociatedControlID="txt_cardnumE" />
+                    <br />
+                    <asp:TextBox ID="txt_tokenE" runat="server" Text='<%#Bind("token")%>' />
+                    <asp:RequiredFieldValidator ID="rfv_tokenE" runat="server" Text="*Required" ControlToValidate="txt_tokenE" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter the correct token." ValidationGroup="edit" />
+                    <br /><br />
+                    <%--success--%>
+                    <asp:Label ID="lbl_successE" runat="server" Text="Token:" AssociatedControlID="txt_successE" />
+                    <br />
+                    <asp:TextBox ID="txt_successE" runat="server" Text='<%#Bind("success")%>' />
+                    <asp:RequiredFieldValidator ID="rfv_successE" runat="server" Text="*Required" ControlToValidate="txt_tokenE" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter a success number." ValidationGroup="edit" />
+                    <br />
 
                     <%--update/delete/cancel button--%>
                     <asp:Button ID="btn_update" runat="server" Text="Update" CommandName="Update" Width="55px" />
