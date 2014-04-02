@@ -28,9 +28,9 @@ public class NVPAPICaller
     //Replace <API_USERNAME> with your API Username
     //Replace <API_PASSWORD> with your API Password
     //Replace <API_SIGNATURE> with your Signature
-    public string APIUsername = "micsnewsletter-facilitator_api1.gmail.com";
-    private string APIPassword = "1395788733";
-    private string APISignature = "AdqeWgnUkl2Hz.x4xVsYyzl1k68vAXvy3lxqz6amyYf3aobhGWk0w8kx";
+    public string APIUsername = "micsdonation_api1.gmail.com";
+    private string APIPassword = "1396229944";
+    private string APISignature = "AozbpP6zWzk8f1lSF0AUqcZ.o318AauVIGFtq1J8cjernkzW-Pc7QtXg";
     private string Subject = "";
 	private string BNCode = "PP-ECWizard";
 

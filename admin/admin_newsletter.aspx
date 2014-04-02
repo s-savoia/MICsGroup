@@ -46,7 +46,6 @@
 
         <%--Newsletter Information Each--%>
         <asp:Panel ID="pnl_edit" runat="server">
-            <asp:Label ID="lbl_message" runat="server" />
             <asp:Listview ID="ltv_edit" runat="server" OnItemCommand="subUpdate">      
                 <%--Edit--%>
                 <ItemTemplate>
@@ -111,10 +110,6 @@
         </asp:Datalist>
         </asp:Panel>
 
-        <%--Message--%>
-        <br /><br />
-        <asp:Label ID="lbl_messageDL" runat="server" />
-
         <%--Newsletter Information Each--%>
         <asp:Panel ID="pnl_editDL" runat="server">            
             <asp:Datalist ID="dtl_editDL" runat="server" OnItemCommand="subUpdateDL">      
@@ -136,8 +131,9 @@
 
                         <%--image--%>
                         <asp:Label ID="lbl_imageEDL" runat="server" Text="Attached Image:" />
-                        <%--<asp:Image ID="img_imageEDL" runat="server" ImageUrl='<%#Bind("image") %>' />--%>
-                        <asp:Label ID="lbl_imagePath" runat="server" Text='<%#Bind("image")%>' />
+                        <br />
+                        <asp:Image ID="img_imageEDL" runat="server" ImageUrl='<%#Bind("image") %>' />
+                        
                         <br />
                         <asp:FileUpload ID="ful_imageEDL" runat="server" FileName='<%#Bind("image") %>' />
                         <br /><br />
@@ -151,6 +147,9 @@
             </asp:Datalist>     
         </asp:Panel>
     </asp:Panel>
+    <%--Message--%>
+    <br /><br />
+    <asp:Label ID="lbl_message" runat="server" />
 <%-----------------------------Newsletter Applicant Edit Section Ends-----------------------------%>
 
 </asp:Content>

@@ -142,18 +142,27 @@ public partial class admin_newsletter : System.Web.UI.Page
                 HiddenField hdfIDDL = (HiddenField)e.Item.FindControl("hdf_idDL");
                 TextBox txtSubjectDL = (TextBox)e.Item.FindControl("txt_subjectEDL");
                 TextBox txtMessageDL = (TextBox)e.Item.FindControl("txt_messageEDL");
-                //Image imgAttachment = (Image)e.Item.FindControl("img_imageEDL");
+                Image imgAttachment = (Image)e.Item.FindControl("img_imageEDL");
                 FileUpload fulAttachment = (FileUpload)e.Item.FindControl("ful_imageEDL");
 
                 if (fulAttachment.HasFile)
                 {
                     String filePath = "~/admin/img/newsletter/" + fulAttachment.FileName;
                     fulAttachment.SaveAs(MapPath(filePath));
+                    int letterID = int.Parse(hdfIDDL.Value.ToString());
+                    _strMessageDL(objLetter.commitUpdate(letterID, txtSubjectDL.Text, txtMessageDL.Text, filePath), "update");
+
+                }
+                else
+                {
+                    int letterID = int.Parse(hdfIDDL.Value.ToString());
+                    _strMessageDL(objLetter.commitUpdate(letterID, txtSubjectDL.Text, txtMessageDL.Text, imgAttachment.ImageUrl.ToString()), "update");
+
                 }
 
-                int letterID = int.Parse(hdfIDDL.Value.ToString());
+                //int letterID = int.Parse(hdfIDDL.Value.ToString());
 
-                _strMessageDL(objLetter.commitUpdate(letterID, txtSubjectDL.Text, txtMessageDL.Text, fulAttachment.FileName), "update");
+                //_strMessageDL(objLetter.commitUpdate(letterID, txtSubjectDL.Text, txtMessageDL.Text, fulAttachment.FileName), "update");
                 _PanelControlDL(pnl_mainDL);
                 pnl_applicant.Visible = true;
                 _subRebind();
