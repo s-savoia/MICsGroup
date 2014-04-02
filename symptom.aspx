@@ -15,14 +15,14 @@
     <br />
     <br />
 
-    <asp:BulletedList ID="bll_info" runat="server" BulletStyle="CustomImage" BulletImageUrl="~/img/cruz.png">
+    <asp:BulletedList ID="bll_info" runat="server" BulletStyle="CustomImage" BulletImageUrl="~/img/pen.png">
         <asp:ListItem Text="&nbsp;&nbsp; You can view symptoms for common colds on this page" />
         <asp:ListItem Text="&nbsp;&nbsp; If you do not see the symptom you are looking for, please use the 'Chat with a Nurse' feature, or 'book an appointment'." />
         <asp:ListItem Text="&nbsp;&nbsp;To get advice, choose some symptoms by clicking on a checkbox or the actual text, then click/touch the 'get advice' button to receive advice." />
     </asp:BulletedList>
     <br />
     <br />
-    <asp:Label ID="lbl_warning" runat="server" Text="! This is NOT a replacement for a doctor's diagnosis. " BackColor="#ecf10e" ForeColor="Black" />
+    <asp:Label ID="lbl_warning" runat="server" Text="! This is NOT a replacement for a doctor's diagnosis. " BackColor="#f1ed36" ForeColor="#996633" />
     <br />
     <br />
     <asp:LinkButton ID="lkb_chat" runat="server" Text="Chat with a nurse" PostBackUrl="~/symptom.aspx" />
@@ -32,7 +32,7 @@
     <asp:LinkButton ID="lkb_appointment" runat="server" Text="Book an appointment" PostBackUrl="~/appointment.aspx" />
 
 
-    <asp:Image ID="img_doctor_patient" runat="server" ImageUrl="~/img/symptom-checker/doctor-patient.jpg" ImageAlign="Right" />
+    <asp:Image ID="img_doctor_patient" runat="server" ImageUrl="~/img/symptom-checker/doctor-patient.jpg" ImageAlign="Right" Width="400" Height="300" />
     <br />
     <br />
 
