@@ -67,7 +67,7 @@ public partial class admin_Default : System.Web.UI.Page
         switch (e.CommandName)
         {
             case "Next":
-                if (e.Item.Pager.StartRowIndex + 3 <= e.TotalRowCount)
+                if (e.Item.Pager.StartRowIndex + 3 < e.TotalRowCount)
                 {
                     e.NewStartRowIndex = e.Item.Pager.StartRowIndex + 3;
                     //_subRebind();
