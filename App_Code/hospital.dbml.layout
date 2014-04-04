@@ -14,12 +14,6 @@
         <elementListCompartment Id="73958b19-4eea-486e-84fa-294e1c21ae78" absoluteBounds="3.7650000000000006, 1.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f6da694b-22af-4267-9dca-3abf5d6ff9f1" absoluteBounds="0.75, 5.75, 2, 3.5016097005208309">
-      <DataClassMoniker Name="/hospitalDataContext/mic_volunteer" />
-      <nestedChildShapes>
-        <elementListCompartment Id="6d76359a-97c2-4501-a007-c85e0f6cde38" absoluteBounds="0.76500000000000057, 6.2100000000000009, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="8c4802ba-10a3-4dc4-8e2d-ff205e609d43" absoluteBounds="3.75, 5.75, 2, 1.5785953776041666">
       <DataClassMoniker Name="/hospitalDataContext/mic_job_posting" />
       <nestedChildShapes>
@@ -108,6 +102,18 @@
       <DataClassMoniker Name="/hospitalDataContext/mic_donation" />
       <nestedChildShapes>
         <elementListCompartment Id="b3c620ef-6024-4b50-a882-e0610da79e42" absoluteBounds="14.015, 4.71, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3cb8c844-9f61-4071-90d7-c93d26be011f" absoluteBounds="1.25, 7.25, 2, 4.6554182942708326">
+      <DataClassMoniker Name="/hospitalDataContext/mic_volunteer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f74b4f69-6bdd-45bb-8d47-291e0fe42a99" absoluteBounds="1.2650000000000001, 7.71, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8e4f6a5f-e40b-4be7-b2ed-3116c04f0475" absoluteBounds="1.125, 4.375, 2, 2.5401025390625">
+      <DataClassMoniker Name="/hospitalDataContext/mic_vemployment_history" />
+      <nestedChildShapes>
+        <elementListCompartment Id="196c829b-ed7c-4e16-95ab-c4f6d14e1784" absoluteBounds="1.1400000000000001, 4.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
