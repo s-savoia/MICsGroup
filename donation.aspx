@@ -187,7 +187,7 @@
                 <asp:Label ID="lbl_amount" runat="server" Text="Donation Amount:" AssociatedControlID="payment_amt" />
                 <br />
                 <asp:TextBox ID="payment_amt" runat="server" Text='' />
-                <asp:RequiredFieldValidator ID="rfv_amount" runat="server" Text="*Required" ControlToValidate="txt_amount" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter the amount." ValidationGroup="donation2" />
+                <asp:RequiredFieldValidator ID="rfv_amount" runat="server" Text="*Required" ControlToValidate="payment_amt" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter the amount." ValidationGroup="donation2" />
                 <br /><br />
                 
                 <%--Donate/Paypal Button--%>
