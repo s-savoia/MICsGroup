@@ -8,50 +8,41 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="content_main" Runat="Server">
     <asp:Label ID="lbl_message" runat="server" CssClass="contact_response_message" />
     <h2>Contact Us</h2>
-    <table id="contact_us_public">
+    <div id="contact_us_public">
     <asp:ValidationSummary ID="vs_insert" runat="server" ValidationGroup="insert" ShowMessageBox="true" ShowSummary="false" />
-        <tr>
-            <td>
-                <asp:Label ID="lbl_fname" runat="server" Text="First Name: " AssociatedControlID="txt_fname" />
-            </td>
-            <td>
+        <div class="ss_tr">
+            <asp:Label ID="lbl_fname" runat="server" Text="First Name: " AssociatedControlID="txt_fname" />
+            <div class="ss_td">
                 <asp:TextBox ID="txt_fname" runat="server" />
                 <asp:RequiredFieldValidator ID="rfv_fname" runat="server" Text="*" ControlToValidate="txt_fname" ValidationGroup="insert" ErrorMessage="Please enter your first name" />
-            </td>
-        </tr>
-        <tr>
-            <td>
+            </div>
+        </div>
+        <div class="ss_tr">
                 <asp:Label ID="lbl_lname" runat="server" Text="Last Name: " AssociatedControlID="txt_lname" />
-            </td>
-            <td>
+            <div class="ss_td">
                 <asp:TextBox ID="txt_lname" runat="server" />
                 <asp:RequiredFieldValidator ID="rfv_lname" runat="server" Text="*" ControlToValidate="txt_lname" ValidationGroup="insert" ErrorMessage="Please enter your last name" />
-            </td>
-        </tr>
-        <tr>
-            <td>
+            </div>
+        </div>
+
+        <div class="ss_tr">
                 <asp:Label ID="lbl_email" runat="server" Text="Email: " AssociatedControlID="txt_email" />
-            </td>
-            <td>
+            <div class="ss_td">
                 <asp:TextBox ID="txt_email" runat="server" />
                 <asp:RequiredFieldValidator ID="rfv_email" runat="server" Text="*" ControlToValidate="txt_email" Display="Dynamic" ValidationGroup="insert" ErrorMessage="Please enter your email address" />
                 <asp:RegularExpressionValidator ID="rev_email" runat="server" Text="*" ControlToValidate="txt_email" Display="Dynamic" SetFocusOnError="true" ValidationExpression="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" ValidationGroup="insert" ErrorMessage="Please enter a valid email address" />
-            </td>
-        </tr>
-        <tr>
-            <td>
+            </div>
+        </div>
+        <div class="ss_tr">
                 <asp:Label ID="lbl_city" runat="server" Text="City/Town: " AssociatedControlID="txt_city" />
-            </td>
-            <td>
+            <div class="ss_td">
                 <asp:TextBox ID="txt_city" runat="server" />
                 <asp:RequiredFieldValidator ID="rfv_city" runat="server" Text="*" ControlToValidate="txt_city" ValidationGroup="insert" ErrorMessage="Please enter your city/town" />
-            </td>
-        </tr>
-        <tr>
-            <td>
+            </div>
+        </div>
+        <div class="ss_tr">
                 <asp:Label ID="lbl_province" runat="server" Text="Province: " AssociatedControlID="ddl_province" />
-            </td>
-            <td>
+            <div class="ss_td">
                 <asp:DropDownList ID="ddl_province" runat="server">
                     <asp:ListItem Value="0">-- Select a Province --</asp:ListItem>
                     <asp:ListItem Value="Alberta">Alberta</asp:ListItem>
@@ -69,30 +60,25 @@
                     <asp:ListItem Value="Yukon">Yukon</asp:ListItem>
                 </asp:DropDownList>
                 <asp:RequiredFieldValidator ID="rfv_province" runat="server" Text="*" ErrorMessage="Please select your province" ControlToValidate="ddl_province" ValidationGroup="insert" InitialValue="0"></asp:RequiredFieldValidator>
-            </td>
-        </tr>
-        <tr>
-            <td>
+            </div>
+        </div>
+        <div class="ss_tr">
             <asp:Label ID="lbl_subject" runat="server" Text="Subject: " AssociatedControlID="txt_subject" />
-            </td>
-            <td>
+            <div class="ss_td">
                 <asp:TextBox ID="txt_subject" runat="server" />
             <asp:RequiredFieldValidator ID="rfv_subject" runat="server" Text="*" ControlToValidate="txt_subject" ValidationGroup="insert" ErrorMessage="Please enter a subject for your message" />
-            </td>
-        </tr>
-        <tr>
-            <td>
+            </div>
+        </div>
+        <div class="ss_tr">
             <asp:Label ID="lbl_contact_message" runat="server" Text="Message: " AssociatedControlID="txt_contact_message" />
-            </td>
-            <td>
+            <div class="ss_td">
                 <asp:TextBox ID="txt_contact_message" runat="server" TextMode="MultiLine" Columns="40" Rows="3" />
             <asp:RequiredFieldValidator ID="rfv_contact_message" runat="server" Text="*" ControlToValidate="txt_contact_message" ValidationGroup="insert" ErrorMessage="Please enter a message" />
-        </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><asp:Button ID="btn_insert" runat="server" Text="Submit" CommandName="Insert" OnCommand="subAdmin" ValidationGroup="insert" /></td>
-        </tr>            
-    </table>
+            </div>
+        </div>
+        <div class="ss_tr">
+            <asp:Button ID="btn_insert" runat="server" Text="Submit" CommandName="Insert" OnCommand="subAdmin" ValidationGroup="insert" />
+        </div>            
+    </div>
 </asp:Content>
 
