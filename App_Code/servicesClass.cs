@@ -56,7 +56,7 @@ public class servicesClass
     ////    return allProducts;
     ////}
 
-    public bool commitInsertBingham(string _service, string _unique, string _location, string _details)   //  INSERT new Bingham service
+    public bool commitInsertBingham(string _service, string _location, string _unique, string _details)   //  INSERT new Bingham service
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         using (objHospital)
@@ -72,7 +72,7 @@ public class servicesClass
         }
     }
 
-    public bool commitInsertAnson(string _service, string _unique, string _location, string _details)   //  INSERT new Anson service
+    public bool commitInsertAnson(string _service, string _location, string _unique, string _details)   //  INSERT new Anson service
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         using (objHospital)
@@ -88,7 +88,7 @@ public class servicesClass
         }
     }
 
-    public bool commitInsertLadyMinto(string _service, string _unique, string _location, string _details)   //  INSERT new Lady Minto service
+    public bool commitInsertLadyMinto(string _service, string _location, string _unique, string _details)   //  INSERT new Lady Minto service
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         using (objHospital)
