@@ -19,7 +19,7 @@ public partial class Default2 : System.Web.UI.Page
         rpt_data.DataSource = objJobPosting.getJobPostings();
         rpt_data.DataBind();
         _PanelControl(pnl_all);
-
+        ltl_title.Text = "Job postings";
     }
 
     public void subAdmin(object sender, CommandEventArgs e)
@@ -27,7 +27,7 @@ public partial class Default2 : System.Web.UI.Page
         switch (e.CommandName)
         {
             case "ViewDetails":
-                ltl_title.Text = e.CommandArgument.ToString();
+                ltl_title.Text = "Job posting: " + e.CommandArgument.ToString();
                 _showUpdate(e.CommandArgument.ToString());
                 break;
 

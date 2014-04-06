@@ -13,6 +13,7 @@ public partial class newsletters : System.Web.UI.Page
     {
         //insert(send) data to database
         _strMessage(objNews.commitInsert(txt_name.Text.ToString(), txt_email.Text.ToString()), "insert");
+        _subRebind();
     }
 
     private void _subRebind()

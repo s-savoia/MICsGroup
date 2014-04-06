@@ -1,19 +1,52 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/admin_master.master" AutoEventWireup="true" CodeFile="admin_service.aspx.cs" Inherits="admin_Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/admin_master.master" AutoEventWireup="true" CodeFile="admin_find.aspx.cs" Inherits="admin_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <link rel="stylesheet" href="../App_Themes/admin_theme/admin_services.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content_main" runat="Server">
 
     <h3>
         <asp:Label ID="lbl_message" runat="server" /><br />
+        <br />
     </h3>
 
-    <h4>Choose a mode</h4>
-    <asp:DropDownList ID="ddl_mode" runat="server" OnSelectedIndexChanged="subChangeMode" AutoPostBack="true">
-        <asp:ListItem Text="Choose a mode" />
-        <asp:ListItem Text="Add a service" Value="pnl_insert" />
-        <asp:ListItem Text="Edit a service" Value="pnl_edit" />
-    </asp:DropDownList>
+    <div class="floatL">
+        <asp:Label ID="lbl_manageContentTitle" runat="server" Text="Manage content for: " />
+    </div>
+
+    <div class="floatL margin-bottom-m">
+        <h3 class="">
+            <asp:Label ID="lbl_hospitalName" runat="server" Font-Bold="true" Font-Underline="true" /><br />
+        </h3>
+    </div>
+
+    <br class="clear-both" />
+
+    <%--Drop-down lists to choose a mode (insert, view/edit) and a hospital--%>
+    <asp:Panel ID="pnl_ddls" runat="server" CssClass="margin-bottom-m">
+        <div class="floatL margin-right-m">
+            <h4>Choose a mode</h4>
+            <br />
+
+            <asp:DropDownList ID="ddl_mode" runat="server" OnSelectedIndexChanged="subDDLMode" AutoPostBack="true">
+                <asp:ListItem Text="Choose a mode" />
+                <asp:ListItem Text="Add a service" Value="pnl_insert" />
+                <asp:ListItem Text="Edit a service" Value="pnl_edit" />
+            </asp:DropDownList>
+        </div>
+
+        <asp:Panel ID="pnl_hospitalDDL" runat="server" CssClass="floatL">
+            <h4>Choose a hospital</h4>
+            <br />
+
+            <%--Choose a hospital--%>
+            <asp:DropDownList ID="ddl_locationsC" runat="server" Visible="false" OnSelectedIndexChanged="subDDLlocations" AutoPostBack="true">
+                <%--DataSourceID="sds_locations"--%>
+            </asp:DropDownList>
+        </asp:Panel>
+
+        <br class="clear-both" />
+    </asp:Panel>
 
     <asp:Panel ID="pnl_insert" runat="server">
 
@@ -33,19 +66,24 @@
                 </strong>
                 </td>
                 <td>
-                    <asp:TextBox ID="txt_serviceI" runat="server" Width="100%" />
+                    <asp:TextBox ID="txt_serviceI" runat="server" Width="100%" MaxLength="100" />
                     <asp:RequiredFieldValidator ID="rfv_serviceI" runat="server" ControlToValidate="txt_serviceI" Text="*Required" ForeColor="Red" ValidationGroup="insert" />
                 </td>
             </tr>
-
+            <tr>
+                <td></td>
+                <td>
+                    <%--<asp:RegularExpressionValidator id="rev_serviceI" runat="server" ControlToValidate="txt_serviceI" Text="*Please enter only letters for a service name" ForeColor="Red" ValidationGroup="insert" ValidationExpression="&lt;[^&gt;]+&gt;" />--%>
+                </td>
+            </tr>
             <tr>
                 <td><strong>
                     <asp:Label ID="lbl_locationI" runat="server" Text="Location" />
                 </strong>
                 </td>
                 <td>
-                    <asp:DropDownList ID="ddl_locationsI" runat="server" DataSourceID="sds_locations" DataTextField="name" DataValueField="name">
-                    </asp:DropDownList>
+                    <asp:DropDownList ID="ddl_locationsI" runat="server" />
+
                     <asp:RequiredFieldValidator ID="rfv_locationsI" runat="server" ControlToValidate="ddl_locationsI" Text="*Required" ForeColor="Red" ValidationGroup="insert" />
                 </td>
             </tr>
@@ -57,14 +95,31 @@
                 </td>
                 <td>
                     <asp:DropDownList ID="ddl_uniqueI" runat="server">
-                        <asp:ListItem Text="No" Value="N" />
-                        <asp:ListItem Text="Yes" Value="Y" />                        
+                        <asp:ListItem Text="No" Value="No " />
+                        <asp:ListItem Text="Yes" Value="Yes" />
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator ID="rfv_uniqueI" runat="server" ControlToValidate="ddl_uniqueI" Text="*Required" ForeColor="Red" ValidationGroup="insert" />
 
                 </td>
             </tr>
-
+            <tr>
+                <td><strong>
+                    <asp:Label ID="lbl_detaiIsI" runat="server" Text="Details" />
+                </strong>
+                    <asp:RequiredFieldValidator ID="rfv_detailsI" runat="server" ControlToValidate="txt_detailsI" Text="*Required" ForeColor="Red" ValidationGroup="insert" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <asp:TextBox ID="txt_detailsI" runat="server" Width="100%" Height="300px" TextMode="MultiLine" />
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <%--<asp:RegularExpressionValidator id="rev_detailsI" runat="server" ControlToValidate="txt_detailsI" Text="*Please enter only letters. numbers, and symbols." ForeColor="Red" ValidationGroup="insert" ValidationExpression="&lt;[^&gt;]+&gt;" />--%>
+                </td>
+            </tr>
             <tr>
                 <td>&nbsp;</td>
                 <td>
@@ -75,7 +130,7 @@
     </asp:Panel>
 
     <asp:SqlDataSource ID="sds_locations" runat="server" ConnectionString="<%$ ConnectionStrings:DB_65873_micConnectionString %>" SelectCommand="SELECT [name] FROM [mic_locations]" />
-    
+
 
     <%--This is the edit panel. Products (records) can be updated, deleted, or a cancel button may be clicked to see all the products.--%>
     <asp:Panel ID="pnl_edit" runat="server">

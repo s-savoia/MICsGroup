@@ -39,19 +39,23 @@ public partial class admin_newsletter_form : System.Web.UI.Page
             string file = ful_attach.FileName.ToString();
             String filePath = "~/admin/img/newsletter/" + file;
             ful_attach.SaveAs(MapPath(filePath));
-        }
 
-        //insert(send) data to database
-        _strMessage(objNews.commitInsert(txt_subject.Text.ToString(), txt_message.Text.ToString(), ful_attach.FileName.ToString()), "insert");
+            //insert(send) data to database
+            _strMessage(objNews.commitInsert(txt_subject.Text.ToString(), txt_message.Text.ToString(), filePath), "insert");
+
+            //attach a file
+            Attachment data = new Attachment(Server.MapPath("~/admin/img/newsletter/" + ful_attach.FileName.ToString()), MediaTypeNames.Application.Octet);
+            message.Attachments.Add(data);
+        }
 
         //setting from and to
 
         message.Subject = txt_subject.Text.ToString();
         message.Body = txt_message.Text.ToString();
 
-        //attach a file
-        Attachment data = new Attachment(Server.MapPath("~/admin/img/newsletter/" + ful_attach.FileName.ToString()), MediaTypeNames.Application.Octet);
-        message.Attachments.Add(data);
+        ////attach a file
+        //Attachment data = new Attachment(Server.MapPath("~/admin/img/newsletter/" + ful_attach.FileName.ToString()), MediaTypeNames.Application.Octet);
+        //message.Attachments.Add(data);
 
         //send a newsletter
         SmtpClient client = new SmtpClient("smtp.gmail.com", 587);

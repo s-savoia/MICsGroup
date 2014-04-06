@@ -13,6 +13,12 @@ public class adviceClass
         return allAdvice;
     }
 
+    public IQueryable<mic_advice> getAdviceByLevel(int _level)
+    {
+        hospitalDataContext objHospital = new hospitalDataContext();
+        var allAdvice = objHospital.mic_advices.Where(x => x.level ==_level).Select(x => x);
+        return allAdvice;
+    }
 
     //public bool commitInsert(string _postion, string _location, string _details)   //  INSERT
     //{

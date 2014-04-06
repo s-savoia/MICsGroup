@@ -44,10 +44,10 @@
         <siteMapNode url="admin/admin_contact.aspx" title="Contact Us"  description="Contact Us" />
       
         <!--Donation-->
-        <siteMapNode url="admin/admin_donation.aspx" title="Donation" description="Donation">
+        <siteMapNode url="admin/admin_paydonation.aspx" title="Donation" description="Donation">
           <siteMapNode url="admin/admin_success.aspx" title="Success Stories" description="Success Stories" />
           <siteMapNode url="admin/admin_plea.aspx" title="Plea From The Board" description="Plea From The Board" />
-          <siteMapNode url="admin/admin_paydonation.aspx" title="Donation" description="Donation" />
+          <siteMapNode url="admin/admin_donation.aspx" title="Donation" description="Donation" />
         </siteMapNode>
       
         <!--Privacy & Confidentiality-->

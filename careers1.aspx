@@ -14,6 +14,17 @@
 
 
     <asp:Panel ID="pnl_all" runat="server">
+
+        <asp:CheckBoxList ID="cbl_instructions" runat="server">
+            <asp:ListItem Text="Listed below are current job postings that are available at MICs Group hospitals." Selected="True" />
+            <asp:ListItem Text="The basic information for each job posting is displayed. If you require more details about a posting, you can click on the 'view details' button for a particular posting." Selected="True" />
+        </asp:CheckBoxList>
+        <br /><br />
+        <asp:Image ID="img_nurse" runat="server" ImageUrl="~/img/symptom-checker/nurse1.gif" />
+        <asp:Image ID="img_secretary" runat="server" ImageUrl="~/img/symptom-checker/secretary.gif" />
+
+        <br /><br />
+
         <asp:Repeater ID="rpt_data" runat="server">
             <HeaderTemplate>
                 <table>
@@ -25,7 +36,7 @@
                         <th colspan="3">
                             <asp:Label ID="lbl_location" runat="server" Text="Location" /></th>
                         <th colspan="2">
-                            <asp:Label ID="lbl_link" runat="server" Text="Link" /></th>
+                            <asp:Label ID="lbl_link" runat="server" Text="View more" /></th>
                     </tr>
             </HeaderTemplate>
 
@@ -94,13 +105,15 @@
             <asp:Button ID="lnk_volunteerApp" runat="server" PostBackUrl="~/login.aspx"  Text="Go to volunteer application page" />
 
             <asp:Button ID="btn_OK" runat="server" Text="OK" />
-            <asp:Button ID="btn_cancel" runat="server" Text="Cancel" />
+            
         </div>
 
 
     </asp:Panel>
 
+    <br /><br />
 
-
+        <asp:Image ID="img_ad1" runat="server" ImageUrl="~/img/symptom-checker/jobs1.PNG" />
+    
 </asp:Content>
 

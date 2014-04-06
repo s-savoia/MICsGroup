@@ -75,12 +75,15 @@ public partial class admin_donation : System.Web.UI.Page
                 TextBox txtHolder = (TextBox)e.Item.FindControl("txt_holdernameE");
                 DropDownList ddlExmonth = (DropDownList)e.Item.FindControl("ddl_expirationmonthE");
                 DropDownList ddlExyear = (DropDownList)e.Item.FindControl("ddl_expirationyearE");
+                TextBox txtToken = (TextBox)e.Item.FindControl("txt_tokenE");
+                TextBox txtSuccess = (TextBox)e.Item.FindControl("txt_successE");
 
                 int donationID = int.Parse(hdfID.Value.ToString());
                 int securityNum = int.Parse(txtSecurity.Text);
-                int amount = int.Parse(txtAmount.Text);
+                string amount = txtAmount.Text;
+                int success = int.Parse(txtSuccess.Text);
 
-                _strMessage(objDonate.commitUpdate(donationID, txtFname.Text, txtLname.Text, txtAddress.Text, txtCity.Text, ddlProvince.SelectedItem.ToString(), ddlCountry.SelectedItem.ToString(), txtZip.Text, txtPhone.Text, txtEmail.Text, ddlSurvey.SelectedItem.ToString(), txtComment.Text, amount, rblType.SelectedItem.ToString(), txtCardNum.Text, securityNum, txtHolder.Text, ddlExmonth.SelectedItem.ToString(), ddlExyear.SelectedItem.ToString()), "update");
+                _strMessage(objDonate.commitUpdate(donationID, txtFname.Text, txtLname.Text, txtAddress.Text, txtCity.Text, ddlProvince.SelectedItem.ToString(), ddlCountry.SelectedItem.ToString(), txtZip.Text, txtPhone.Text, txtEmail.Text, ddlSurvey.SelectedItem.ToString(), txtComment.Text, amount, rblType.SelectedItem.ToString(), txtCardNum.Text, securityNum, txtHolder.Text, ddlExmonth.SelectedItem.ToString(), ddlExyear.SelectedItem.ToString(), txtToken.Text, success), "update");
                 _subRebind();
                 break;
 

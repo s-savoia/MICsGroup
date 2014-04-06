@@ -8,7 +8,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content_main" Runat="Server">
-    <h2>Contact Us</h2>
+    <h2>Locations</h2>
             <asp:ListView ID="lv_locations" runat="server" DataKeyNames="Id">
         <LayoutTemplate>
             <div class="location_public_content">

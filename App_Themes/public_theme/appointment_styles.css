@@ -7,20 +7,20 @@
 }
 
 #book_appointment_public input[type='text'] {
-    width:200px;
+    width:50%;
 }
 
 #book_appointment_public input[type='submit'] {
     float: right;
-    margin-right:50px;
-}
-
-.va_left_side {
-    width: 125px;
+    margin-right:100px;
 }
 
 #content_main_rbl_appointments {
     font-size:0.9em;
+}
+
+#content_main_ddl_province {
+    width:51%;
 }
 
 .appointment_response_message {
@@ -28,4 +28,48 @@
     margin-top:5px;
     display:block;
     color: blue;
+}
+
+.ss_tr {
+    border:1px red dashed;
+    clear: both;
+    overflow:hidden;
+    padding:1px;
+    margin:0 0 10px 0;
+    display:block;
+}
+
+.ss_tr > label {
+    border: 1px green dashed;
+    float:left;
+    width:25%;
+}
+
+.ss_td {
+    border:1px blue dotted;
+    width:70%;
+    float:right;
+}
+
+@media screen and (max-width:480px) {
+
+    .ss_tr > label {
+    border: 1px green dashed;
+    float:none;
+    width:100%;
+    }
+
+    .ss_td {
+        border:1px blue dotted;
+        width:100%;
+        float:none;
+    }
+
+    #book_appointment_public input[type='text'] {
+    width:100%;
+    }
+
+    #content_main_ddl_province {
+        width:100%;
+    }
 }
