@@ -38,29 +38,6 @@
                         </div>
                     </ItemTemplate>
 
-                    <%--<AlternatingItemTemplate>
-
-                        <div class="alternating">
-                            <div class="date">
-                                <%#Eval("date_alert") %>
-                            </div>
-
-                            <div class="title1">
-                                <%#Eval("title_alert") %>
-                            </div>
-                            <div class="short">
-                                <p>Summary:</p>
-                                <%#Eval("short_alert") %>
-                            </div>
-                            <div class="long">
-                                <p>Alert Details:</p>
-                                <%#Eval("long_alert") %>
-                            </div>
-                           
-                        </div>
-
-                    </AlternatingItemTemplate>--%>
-
                 </asp:Repeater>
     </div>
 

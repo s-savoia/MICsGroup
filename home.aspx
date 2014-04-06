@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="home.aspx.cs" Inherits="_home_slide_show" %>
 
+<%@ Register TagName="news_events" TagPrefix="ne" Src="~/UCnews_events.ascx" %>
+
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <%--CODE BY CLAUDIA--%>
@@ -86,22 +88,10 @@
             <%--************ BUTTONS SLIDER *************--%>
             <div class="slider">
 
-                <%--                <div>
-                    <asp:Button ID="btn_next" runat="server" Text=">>" CssClass="b_next" />
-                    <asp:Button ID="btn_prev" runat="server" Text="<<" CssClass="b_prev" />
-                    <asp:Button ID="btn_play" runat="server" Text="Play" CssClass="b_play" />
-
-                </div>--%>
-
-                <%--<asp:Label runat="server" ID="Label1" />--%>
-
-                <%--******************* slideshow code ajax *********************--%>
 
                 <div id="photo">
 
                     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-
-                    <%--<asp:Image ID="slide_show" runat="server" CssClass="photo" />--%>
 
 
                     <%--******** SLIDE-SHOW CON JQUERY SLIDE ********--%>
@@ -121,48 +111,6 @@
                     </div>
 
                     <%--******** SLIDE-SHOW CON JQUERY DEL ALERT ********--%>
-
-
-                    <%--<asp:UpdatePanel ID="udp" runat="server">
-
-                            <ContentTemplate>
-                                <asp:MultiView ID="mtv" runat="server">
-                                    <asp:View ID="view1" runat="server">
-                                        <asp:Repeater ID="rpt_images" runat="server">
-                                            <ItemTemplate>
-                                                <asp:Image ID="img1" runat="server" ImageUrl='<%#Eval("img") %>' CssClass="photo" />
-                                            </ItemTemplate>
-                                        </asp:Repeater>
-                                    </asp:View>--%>
-
-                    <%--<asp:View ID="view2" runat="server">
-                                        <asp:Image ID="img2" runat="server" ImageUrl="~/img1/img3.png" CssClass="photo" />
-                                    </asp:View>
-
-                                    <asp:View ID="view3" runat="server">
-                                        <asp:Image ID="img3" runat="server" ImageUrl="~/img1/img4.png" CssClass="photo" />
-                                    </asp:View>
-
-                                    <asp:View ID="view4" runat="server">
-                                        <asp:Image ID="img4" runat="server" ImageUrl="~/img1/img5.png" CssClass="photo" />
-                                    </asp:View>--%>
-                    <%--                              </asp:MultiView>
-                            </ContentTemplate>
-
-                            <Triggers>
-                                <asp:AsyncPostBackTrigger ControlID="tmr" EventName="Tick" />
-                            </Triggers>
-                        </asp:UpdatePanel>
-
-                        <asp:Timer ID="tmr" runat="server" OnTick="subTick" Interval="2500" />
-
-                        </asp:HyperLink>--%>
-
-                    <%--******** SLIDE-SHOW SEGUNDO CODIGO ********--%>
-
-
-                    <%--<asp:SlideShowExtender ID="SlideShowExtender" runat="server" TargetControlID="slide_show" SlideShowServiceMethod="GetImages" AutoPlay="true" Loop="true" PlayButtonID="btn_play" PlayButtonText="play" NextButtonID="btn_next" PreviousButtonID="btn_prev" StopButtonText="stop" />--%>
-
 
                     <div class="shape1">
 
@@ -246,13 +194,13 @@
 
                 </div>
 
+               <%-- ********* NEWS AND EVENTS BOX ************--%>
                 <div class="box_centre">
                     <h1 class="title">
                         <asp:Image runat="server" ID="Image2" ImageUrl="~/img/1.png" CssClass="shape" />
                         <asp:Label ID="label3" runat="server" Text="  News &amp; Events" /></h1>
-                    <asp:Literal ID="literal2" runat="server">
-                        Rfhfhfha fjhkzjfhfhhf f fhfhfh fhf fh fhf fhf hjkhk.
-                    </asp:Literal>
+                    
+                        <ne:news_events runat="server" ID="uc_newsEvent" />
                 </div>
 
                 <div class="box_right">

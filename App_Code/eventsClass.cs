@@ -6,10 +6,9 @@ using System.Data;
 using System.Globalization;
 
 
-public class alertLinkClass
+public class eventClass
 {
-    //public IQueryable<hospital> getAlert()
-    public IQueryable<mic_alert> getAlert()
+    public IQueryable<mic_news_event> getEvent()
     {
         //linea 25 o 25 del codigo
         //creating an instance of our LINQ object
@@ -18,26 +17,26 @@ public class alertLinkClass
 
         // methot syntax
         // creating an anonymous variable with its value being the instance of our LINQ object
-        var allAlert = objHospitalDC.mic_alerts.Select(x => x);
+        var allEvent = objHospitalDC.mic_news_events.Select(x => x);
 
         //x son todas las columnas
         //return IQueryable<product> for data bound control to bind to
 
-        return allAlert;  //return allProducts;
+        return allEvent;  //return allProducts;
     }
 
-    public IQueryable<mic_alert> getAlertByID(int _id)
+    public IQueryable<mic_news_event> getEventByID(int _id)
     {
         hospitalDataContext objHospitalDC = new hospitalDataContext();
 
-        var allAlert = objHospitalDC.mic_alerts.Where(x => x.Id == _id).Select(x => x);
-        return allAlert;
+        var allEvent = objHospitalDC.mic_news_events.Where(x => x.Id == _id).Select(x => x);
+        return allEvent;
     }
 
 
     //******** INSERT *******//
 
-    public bool commitInsert(string _title, string _short, string _long)
+    public bool commitInsert(string _title, string _content, string _img, string _category, string _short_cont)
     {
         // to ensure all data will be disposed when finished
 
@@ -46,22 +45,24 @@ public class alertLinkClass
         using (objHospitalDC)
         {
             //create an instance of the table
-            mic_alert objNewAlert = new mic_alert();
+            mic_news_event objNewEvent = new mic_news_event();
 
             //set table columns to new values being pass from *.aspx page
 
-           
 
-            DateTime dateAlert = DateTime.Now;
-            objNewAlert.date_alert = dateAlert;
 
-            objNewAlert.title_alert = _title;
-            objNewAlert.short_alert = _short;
-            objNewAlert.long_alert = _long;
+            DateTime dateEvent = DateTime.Now;
+            objNewEvent.date = dateEvent;
+
+            objNewEvent.title = _title;
+            objNewEvent.content = _content;
+            objNewEvent.img = _img;
+            objNewEvent.category = _category;
+            objNewEvent.short_cont = _short_cont;
 
 
             //insert comand
-            objHospitalDC.mic_alerts.InsertOnSubmit(objNewAlert);
+            objHospitalDC.mic_news_events.InsertOnSubmit(objNewEvent);
 
             //commit insert against database
             objHospitalDC.SubmitChanges();
@@ -72,21 +73,25 @@ public class alertLinkClass
 
     //******** UPDATE *******//
 
-    public bool commitUpdate(int _id, string _title, string _short, string _long)
+    public bool commitUpdate(int _id, string _title, string _content, string _img, string _category, string _short_cont)
     {
         hospitalDataContext objHospitalDC = new hospitalDataContext();
 
         using (objHospitalDC)
         {
 
-            var objUPhospital = objHospitalDC.mic_alerts.Single(x => x.Id == _id);
+            var objUPhospital = objHospitalDC.mic_news_events.Single(x => x.Id == _id);
 
-            DateTime dateAlert = DateTime.Now;
-            objUPhospital.date_alert = dateAlert;
-            
-            objUPhospital.short_alert = _short;
-            objUPhospital.title_alert = _title;
-            objUPhospital.long_alert = _long;
+            DateTime dateEvent = DateTime.Now;
+            objUPhospital.date= dateEvent;
+
+            objUPhospital.title=_title;
+            objUPhospital.content = _content;
+            objUPhospital.img = _img;
+            objUPhospital.category = _category;
+            objUPhospital.short_cont = _short_cont;
+
+
 
             objHospitalDC.SubmitChanges();
             return true;
@@ -103,10 +108,10 @@ public class alertLinkClass
         using (objHospitalDC)
         {
             //anonymous
-            var objDelHosp = objHospitalDC.mic_alerts.Single(x => x.Id == _id);
+            var objDelHosp = objHospitalDC.mic_news_events.Single(x => x.Id == _id);
 
             //delete command            
-            objHospitalDC.mic_alerts.DeleteOnSubmit(objDelHosp);
+            objHospitalDC.mic_news_events.DeleteOnSubmit(objDelHosp);
 
             //commit delete against DB
             objHospitalDC.SubmitChanges();
@@ -115,6 +120,4 @@ public class alertLinkClass
         }
     }
 
-
 }
-
