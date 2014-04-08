@@ -27,7 +27,7 @@ public partial class Default2 : System.Web.UI.Page
         switch (e.CommandName)
         {
             case "ViewDetails":
-                ltl_title.Text = "Job posting: " + e.CommandArgument.ToString();
+                ltl_title.Text = "Job posting ID: " + e.CommandArgument.ToString();
                 _showUpdate(e.CommandArgument.ToString());
                 break;
 

@@ -81,12 +81,12 @@ public partial class admin_Default : System.Web.UI.Page
             case "UpdateC":
                 lbl_message.Text = "Mode: Update";
                 Label lblID2 = (Label)e.Item.FindControl("lbl_id2E");
-                TextBox txtPostion = (TextBox)e.Item.FindControl("txt_positionE");
+                TextBox txtPosition = (TextBox)e.Item.FindControl("txt_positionE");
                 TextBox txtLocation = (TextBox)e.Item.FindControl("txt_locationE");
                 TextBox txtDetails = (TextBox)e.Item.FindControl("txt_detailsE");
                 int jobID = int.Parse(lblID2.Text.ToString());
 
-                _strMessage(objJob.commitUpdate(jobID, txtPostion.Text, txtLocation.Text, txtDetails.Text), "update");
+                _strMessage(objJob.commitUpdate(jobID, txtPosition.Text, txtLocation.Text, txtDetails.Text), "update");
                 //lbl_message.Text = txtPostion.Text + ", " + txtLocation.Text + ", " + txtDetails.Text;
                 _subRebind();
                 _pnlControl(pnl_main);

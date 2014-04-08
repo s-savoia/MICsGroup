@@ -7,7 +7,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content_main" runat="Server">
-
+       
     <%--Here is a message saying if an action (insert/update/delete) was successful or not.--%>
     <h3>
         <asp:Label ID="lbl_message" runat="server" /><br />

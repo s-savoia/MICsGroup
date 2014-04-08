@@ -1,4 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/public_master.master" AutoEventWireup="true" CodeFile="careers1.aspx.cs" Inherits="Default2" EnableEventValidation="false"  %> <%----%>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/public_master.master" AutoEventWireup="true" CodeFile="careers1.aspx.cs" Inherits="Default2" EnableEventValidation="false" %>
+
+<%----%>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
@@ -7,11 +9,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content_main" runat="Server">
-    
+
     <h3>
-        <asp:Literal ID="ltl_title" runat="server" Text="Job Postings" /></h3>
-
-
+        <asp:Literal ID="ltl_title" runat="server" Text="Job Postings" />
+    </h3>
 
     <asp:Panel ID="pnl_all" runat="server">
 
@@ -19,11 +20,13 @@
             <asp:ListItem Text="Listed below are current job postings that are available at MICs Group hospitals." Selected="True" />
             <asp:ListItem Text="The basic information for each job posting is displayed. If you require more details about a posting, you can click on the 'view details' button for a particular posting." Selected="True" />
         </asp:CheckBoxList>
-        <br /><br />
+        <br />
+        <br />
         <asp:Image ID="img_nurse" runat="server" ImageUrl="~/img/symptom-checker/nurse1.gif" />
         <asp:Image ID="img_secretary" runat="server" ImageUrl="~/img/symptom-checker/secretary.gif" />
 
-        <br /><br />
+        <br />
+        <br />
 
         <asp:Repeater ID="rpt_data" runat="server">
             <HeaderTemplate>
@@ -64,7 +67,9 @@
 
         <div style="background-color: #c3c3c3;">
             <h3>
-                <asp:Label ID="lbl_title" runat="server" Text="View Details" /></h3>
+                <asp:Label ID="lbl_title" runat="server" Text="View Details" />
+            </h3>
+            <br />
 
             <%--= = =  REPEATER INSIDE PANEL = = =--%>
 
@@ -78,8 +83,6 @@
                                 <asp:Label ID="lbl_positionI" runat="server" Text="Position" /></th>
                             <th colspan="3">
                                 <asp:Label ID="lbl_location" runat="server" Text="Location" /></th>
-                            <th colspan="2">
-                                <asp:Label ID="lbl_details" runat="server" Text="Details" /></th>
                         </tr>
                 </HeaderTemplate>
 
@@ -88,7 +91,25 @@
                         <td><%# Eval("Id") %></td>
                         <td colspan="3"><%# Eval("position") %></td>
                         <td colspan="3"><%# Eval("location") %></td>
-                        <td colspan="2"><%# Eval("details") %></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" style="text-decoration:underline;">
+                            <asp:Label ID="lbl_details" runat="server" Text="Details" />
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="4"><%# Eval("details") %></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">
+                            <p>
+                                <hr />
+                                If you want to apply for a career/volunteer postion, click one of the two buttons below.
+                                <br />
+                                <br />
+                                You will be redirected to another page. As well, the application is a general application form that will not be related to this job posting.                                
+                            </p>
+                        </td>
                     </tr>
                 </ItemTemplate>
 
@@ -99,21 +120,22 @@
             </asp:Repeater>
 
             <%--= = = BUTTONS  = = =--%>
-            <asp:Button ID="lnk_careerApp" runat="server" PostBackUrl="~/career_application.aspx"  Text="Go to career application page" />
+            <asp:Button ID="lnk_careerApp" runat="server" PostBackUrl="~/career_application.aspx" Text="Go to career application page" />
 
-            <%--!!!!!!!!!!!!!! change url of this button !!!!!!!!!!!!!!!!!!!--%>
-            <asp:Button ID="lnk_volunteerApp" runat="server" PostBackUrl="~/login.aspx"  Text="Go to volunteer application page" />
 
-            <asp:Button ID="btn_OK" runat="server" Text="OK" />
-            
+            <asp:Button ID="lnk_volunteerApp" runat="server" PostBackUrl="~/careers3.aspx" Text="Go to volunteer application page" />
+
+            <asp:Button ID="btn_OK" runat="server" Text="Back to job postings" />
+
         </div>
 
 
     </asp:Panel>
 
-    <br /><br />
+    <br />
+    <br />
 
-        <asp:Image ID="img_ad1" runat="server" ImageUrl="~/img/symptom-checker/jobs1.PNG" />
-    
+    <asp:Image ID="img_ad1" runat="server" ImageUrl="~/img/symptom-checker/jobs1.PNG" />
+
 </asp:Content>
 
