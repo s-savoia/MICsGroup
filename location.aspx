@@ -78,6 +78,7 @@
 
                 // Centers the map on the icon hospital that was clicked
                 function zoomTo(lat, lng) {
+                    document.getElementById('map-canvas').scrollIntoView();
                     var this_lat_long = new google.maps.LatLng(lat, lng);
                     map.setZoom(14);
                     map.panTo(this_lat_long);
