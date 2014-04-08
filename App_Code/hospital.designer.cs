@@ -74,11 +74,11 @@ public partial class hospitalDataContext : System.Data.Linq.DataContext
   partial void Insertmic_symptom(mic_symptom instance);
   partial void Updatemic_symptom(mic_symptom instance);
   partial void Deletemic_symptom(mic_symptom instance);
-<<<<<<< HEAD
+
   partial void Insertmic_news_event(mic_news_event instance);
   partial void Updatemic_news_event(mic_news_event instance);
   partial void Deletemic_news_event(mic_news_event instance);
-=======
+
   partial void Insertmic_donation(mic_donation instance);
   partial void Updatemic_donation(mic_donation instance);
   partial void Deletemic_donation(mic_donation instance);
@@ -88,7 +88,7 @@ public partial class hospitalDataContext : System.Data.Linq.DataContext
   partial void Insertmic_vemployment_history(mic_vemployment_history instance);
   partial void Updatemic_vemployment_history(mic_vemployment_history instance);
   partial void Deletemic_vemployment_history(mic_vemployment_history instance);
->>>>>>> c809adae07dea0f1acf16a2275beafd8c53f689d
+
   #endregion
 	
 	public hospitalDataContext() : 
@@ -240,14 +240,16 @@ public partial class hospitalDataContext : System.Data.Linq.DataContext
 			return this.GetTable<mic_symptom>();
 		}
 	}
-	
-<<<<<<< HEAD
-	public System.Data.Linq.Table<mic_news_event> mic_news_events
-	{
-		get
-		{
-			return this.GetTable<mic_news_event>();
-=======
+
+
+    public System.Data.Linq.Table<mic_news_event> mic_news_events
+    {
+        get
+        {
+            return this.GetTable<mic_news_event>();
+        }
+    }
+
 	public System.Data.Linq.Table<mic_donation> mic_donations
 	{
 		get
@@ -269,7 +271,7 @@ public partial class hospitalDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<mic_vemployment_history>();
->>>>>>> c809adae07dea0f1acf16a2275beafd8c53f689d
+
 		}
 	}
 	
