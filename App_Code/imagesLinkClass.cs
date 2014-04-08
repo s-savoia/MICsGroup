@@ -5,7 +5,7 @@ using System.Web;
 
 public class imagesLinkClass
 {
-	
+
     //public IQueryable<hospital> getAlert()
     public IQueryable<mic_slider> getImages()
     {
@@ -16,7 +16,7 @@ public class imagesLinkClass
 
         // methot syntax
         // creating an anonymous variable with its value being the instance of our LINQ object
-        var allImages = objHospitalDC.mic_sliders.Select(x=>x);
+        var allImages = objHospitalDC.mic_sliders.Select(x => x);
 
 
         //x son todas las columnas
@@ -50,8 +50,8 @@ public class imagesLinkClass
             //set table columns to new values being pass from *.aspx page
 
             objNewImages.img = _img;
-            objNewImages.name=_name;
-            objNewImages.name=_link;
+            objNewImages.name = _name;
+            objNewImages.name = _link;
 
 
             //insert comand
@@ -66,7 +66,9 @@ public class imagesLinkClass
 
     //******** UPDATE *******//
 
-    public bool commitUpdate(int _id, string _img, string _name, string _link)
+    // public bool commitUpdate(int _id, string _img, string _name, string _link)
+
+    public bool commitUpdate(int _id, string _name, string _link)
     {
         hospitalDataContext objHospitalDC = new hospitalDataContext();
 
@@ -75,8 +77,8 @@ public class imagesLinkClass
 
             var objUPhospital = objHospitalDC.mic_sliders.Single(x => x.Id == _id);
 
-            
-            objUPhospital.img = _img;
+
+            //objUPhospital.img = _img;
             objUPhospital.name = _name;
             objUPhospital.link = _link;
 
@@ -109,5 +111,3 @@ public class imagesLinkClass
 
 
 }
-
-

@@ -21,10 +21,12 @@ public partial class _admin_slideshow : System.Web.UI.Page
 
     private void _subReset()
     {
+
+        //lbl_message.Text = string.Empty;
+        salida.Text = string.Empty;
+
+
         imagesLinkClass objLinq = new imagesLinkClass(); //creating an object from the linqClass
-
-
-
         dtl_main.DataSource = objLinq.getImages();
         dtl_main.DataBind(); //binding the DB
 
@@ -72,10 +74,10 @@ public partial class _admin_slideshow : System.Web.UI.Page
 
         imagesLinkClass objLinq = new imagesLinkClass(); //creating an object from the imagesLinkClass
 
-        string img_path = salida.Text;
+        //string img_path = salida.Text;
 
         // commiting the change and passing the to parameters into _strMesage
-        _strMessage(objLinq.commitUpdate(int.Parse(hdfID.Value.ToString()), txtNameE.Text, txtlinkE.Text, img_path), "update");
+        _strMessage(objLinq.commitUpdate(int.Parse(hdfID.Value.ToString()), txtNameE.Text, txtlinkE.Text), "update");
 
         dtl_main.DataSource = objLinq.getImages();
         dtl_main.EditItemIndex = -1;
@@ -136,15 +138,13 @@ public partial class _admin_slideshow : System.Web.UI.Page
                 String filePath = "~/img1/" + up_Image.FileName;
                 up_Image.SaveAs(MapPath(filePath));
 
-                salida.Text =filePath;
+                salida.Text = filePath;
 
                 pnl_datalist.Visible = true;/// para ver el panel
-                                            /// 
+                /// 
                 //string path_image = filePath; COMO SACAR ESTE VALOR DE AQUI PARA ASIGNARLO AL IMG_PATH DE ARRIBA
 
                 return;
-
-                
 
             }
         }
@@ -176,25 +176,24 @@ public partial class _admin_slideshow : System.Web.UI.Page
 
 }
 
-    //void Page_PreRender()
-    //{
-    //    string upFolder = MapPath("~/img1/");
-    //    DirectoryInfo dir=new DirectoryInfo(upFolder);
+//void Page_PreRender()
+//{
+//    string upFolder = MapPath("~/img1/");
+//    DirectoryInfo dir=new DirectoryInfo(upFolder);
 
-    //    }
-    
-    
+//    }
 
 
 
 
-    //protected void UpLoadImg(object sender, FormViewInsertEventArgs e)
-    //{
-    //    FileUpload upImage = (FileUpload)frm_img.FindControl("up_img");
-
-    //    frm_img.
-    
-    //}
 
 
-    
+//protected void UpLoadImg(object sender, FormViewInsertEventArgs e)
+//{
+//    FileUpload upImage = (FileUpload)frm_img.FindControl("up_img");
+
+//    frm_img.
+
+//}
+
+
