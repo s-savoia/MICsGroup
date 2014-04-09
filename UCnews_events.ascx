@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="UCnews_events.ascx.cs" Inherits="UCnews_events" %>
+<link href="App_Themes/public_theme/news_styles.css" rel="stylesheet" />
 
  <script src="js/jquery-latest.pack.js" type="text/javascript"></script>
 
@@ -10,13 +11,13 @@
                 vertical: true,
                 hoverPause: true,
                 visible: 1,
-                auto: 1000,
-                speed: 4000
+                auto: 500,
+                speed: 6000
             });
         });
     </script>
 
-    <style>
+<%--    <style>
         * {
             margin: 0;
             padding: 0;
@@ -84,7 +85,7 @@
         .clear {
             clear: both;
         }
-    </style>
+    </style>--%>
 
     <%-- *************************--%>
 
@@ -98,7 +99,9 @@
                 <ItemTemplate>
                     
                         
-
+                                <div class="categ">
+                                    <asp:Label ID="Label3" runat="server" Text='<%#Eval("category") %>' />
+                                </div>
                                 <div class="date1">
                                     <asp:Label ID="Label1" runat="server" Text='<%#Eval("date") %>' />
                                 </div>
@@ -106,9 +109,9 @@
                                     <asp:Label ID="Label2" runat="server" Text='<%#Eval("title") %>' />
                                 </div>
 
-                                <div class="img">
+                                <%--<div class="img">
                                     <asp:Label ID="Label3" runat="server" Text='<%#Eval("img") %>' />
-                                </div>
+                                </div>--%>
 
                                 <div class="long">
                                     <p>

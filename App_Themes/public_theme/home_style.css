@@ -131,6 +131,7 @@ header {
     margin: 1% auto 1% auto;
     padding: 0.5% 1.5% 0.5% 1%;
     background-color: #ff8149;
+    text-align:left;
 
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -139,6 +140,13 @@ header {
 
 #columnas > div {
     display: none;
+}
+
+
+#alert {
+    color:#fff;
+    float:left;
+    margin-right:5px;
 }
 
 .text_alert {
@@ -500,9 +508,9 @@ nav {
     height: auto;
     /*float: left;*/
 
-    position:absolute;
-    top:2%;
-    right:1%;
+    position:fixed;
+    top:-1%;
+    right:10%;
 
     margin: 3% 4% 0 0;
     z-index: 4; /*was2*/
@@ -547,6 +555,7 @@ nav {
     border-bottom: medium solid #8cc63f;
     width: auto;
     min-height: 12px;
+    position:fixed;
 }
 
 .shape {
@@ -594,6 +603,8 @@ nav {
     border-right: solid thin #808080;
     padding: 2% 3% 2% 3%;
     word-wrap: break-word;
+    overflow-x:hidden;
+    overflow-y:hidden;
 }
 
     .box_c p {

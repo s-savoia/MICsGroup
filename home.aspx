@@ -166,6 +166,7 @@
             <div class="alert">
                 <asp:HyperLink ID="hpl_alert" runat="server" NavigateUrl="~/alert_list.aspx" Target="_blank">
                     <div id="columnas">
+                        <asp:Label ID="alert" runat="server" Text="ALERTS"/>
                         <asp:Repeater ID="rpt_main" runat="server">
                             <ItemTemplate>
 
