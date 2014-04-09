@@ -1,58 +1,56 @@
 ﻿.wraper1 {
     width:95%;
     margin: 0 auto 0 auto;
+    text-align:left;
     font-size: .9em;
     color: #808080;
     font-family: Arial,Calibris,sans-serif;
     line-height: 1.8em;
 }
 
-
     .wraper1 h2 {
         color:#29b5b3;
+        font-size:1.3em;
+        margin:0 0 15px 0;
     }
 
-        .wraper h3 {
+        .wraper1 h3 {
         color:#29b5b3;
+        font-size:1.3em;
+        margin:5px;
+    }
+
+            .wraper1 h1 {
+        color:#808080;
+        font-size:2em;
+        margin:0 0 15px 0;
     }
 
 .content1 {
-    /*background-color: #eafbff;
+    background-color: #fff;
     padding: 10px 10px 50px 10px;
-    margin: 10px;*/
-
-    background-color:#fff;
-    padding: 2% 2% 5% 2%;
-    /*margin: 2%;*/
-    /*border: thin solid #29b5b3;*/
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-}
-.alternating {
-    background-color:#f4fedb;
-    padding: 10px 10px 50px 10px;
-    margin: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
+    margin: 5px;
+    border-bottom:medium solid #29b5b3;
 }
 
 
-.date1 {
-    color: #eeffc2;/*//#fff;*/
+.news {
+    color:#29b5b3;
+    background-color:#f7f7f7;
+    width:100%;
+    padding:0 0 0 10px;
+    margin:0;
+    font-weight:bold;
+}
 
+.date {
     font-weight: bold;
     margin: 10px;
-    background-color: #29b5b3;
     width: 170px;
-    padding: 3px;
-        -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    border-radius: 7px;
+
 }
 
-.title1 {
+.title {
     margin: 10px;
     color:#29b5b3;
     font-size:1.5em;
@@ -78,8 +76,8 @@ font-variant-caps:small-caps;
 
 .long p {
     border-top: solid thin #29b5b3;
-    color:#808080;
-        /*font-weight:bold;*/
+    color:#29b5b3;
+        font-weight:bold;
         padding:3px;
 }
 
@@ -99,8 +97,16 @@ font-variant-caps:small-caps;
     background-color:#29b5b3;
 }
 
-#content_main_title tr td {
-    align-items:center;
-    /*align-content:center;*/
+.table1{
+    width:40%;
+    margin:10px;
+    /*align-items:baseline;*/
+    border:solid thin 1px;
+    
+}
+
+.td_left {
+    
     vertical-align:top;
 }
+

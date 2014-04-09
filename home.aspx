@@ -59,7 +59,7 @@
 
                     <div class="donate">
 
-                        <asp:LinkButton ID="btn_donate" Text="Donate Now" DescriptionUrl="~/home.aspx" runat="server" />
+                        <asp:LinkButton ID="btn_donate" Text="Donate Now" DescriptionUrl="~/donation.aspx" runat="server"  />
                     </div>
                 </div>
             </header>
@@ -84,10 +84,7 @@
                 </asp:Menu>
             </nav>
 
-
-            <%--************ BUTTONS SLIDER *************--%>
             <div class="slider">
-
 
                 <div id="photo">
 
@@ -101,10 +98,10 @@
                             <ItemTemplate>
                                 <div>
                                     <asp:HyperLink ID="hpl_1" runat="server" NavigateUrl='<%#Eval("link") %>'
-                                            ForeColor="#ff66cc" Target="_blank" >
+                                        ForeColor="#ff66cc" Target="_blank">
                                         <%--<%#Eval("name")%>--%>
                                         <asp:Image runat="server" ID="img" ImageUrl='<%#Eval("img") %>' CssClass="photo" />
-                                        </asp:HyperLink>
+                                    </asp:HyperLink>
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
@@ -119,44 +116,8 @@
                     </div>
 
                 </div>
-                <asp:DragPanelExtender ID="DragPanelExtender1" runat="server" TargetControlID="pnl_feature"></asp:DragPanelExtender>
 
 
-                <%--BOX WITH FEATURES--%>
-                <asp:Panel runat="server" ID="pnl_feature" CssClass="features">
-                    <%--<div class="features">--%>
-                    <div class="btn">
-                        <asp:Image ID="img_search" runat="server" ImageUrl="~/img/search.png" CssClass="icon" />
-                        <asp:HyperLink ID="hpl_dr" runat="server" Text="Find a Doctor" />
-                    </div>
-
-                    <div class="btn">
-                        <asp:Image ID="Image5" runat="server" ImageUrl="~/img/search.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink1" runat="server" Text="Locations" />
-                    </div>
-
-                    <div class="btn">
-                        <asp:Image ID="Image6" runat="server" ImageUrl="~/img/money.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink2" runat="server" Text="Pay your Bill" />
-                    </div>
-
-                    <div class="btn">
-                        <asp:Image ID="Image7" runat="server" ImageUrl="~/img/cruz.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink3" runat="server" Text="Symptom Checker" />
-                    </div>
-
-                    <div class="btn">
-                        <asp:Image ID="Image8" runat="server" ImageUrl="~/img/phone.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink4" runat="server" Text="Contact Us" />
-                    </div>
-
-                    <div class="btn">
-                        <asp:Image ID="Image9" runat="server" ImageUrl="~/img/pen.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink5" runat="server" Text="Careers" />
-                    </div>
-
-                    <%--</div>--%>
-                </asp:Panel>
             </div>
             <%--end features--%>
 
@@ -166,7 +127,7 @@
             <div class="alert">
                 <asp:HyperLink ID="hpl_alert" runat="server" NavigateUrl="~/alert_list.aspx" Target="_blank">
                     <div id="columnas">
-                        <asp:Label ID="alert" runat="server" Text="ALERTS"/>
+                        <asp:Label ID="alert" runat="server" Text="ALERTS >>" />
                         <asp:Repeater ID="rpt_main" runat="server">
                             <ItemTemplate>
 
@@ -177,6 +138,50 @@
                     </div>
                 </asp:HyperLink>
             </div>
+
+
+               <div>
+                <asp:DragPanelExtender ID="DragPanelExtender1" runat="server" TargetControlID="pnl_feature"></asp:DragPanelExtender>
+
+                <%--BOX WITH FEATURES--%>
+                <asp:Panel runat="server" ID="pnl_feature" CssClass="features">
+                    
+                    <div class="btn">
+                        <asp:Image ID="img_search" runat="server" ImageUrl="~/img/search.png" CssClass="icon" />
+                        <asp:HyperLink ID="hpl_dr" runat="server" Text="Find a Service" NavigateUrl="~/fservice.aspx" />
+                    </div>
+
+                    <div class="btn">
+                        <asp:Image ID="Image5" runat="server" ImageUrl="~/img/search.png" CssClass="icon" />
+                        <asp:HyperLink ID="HyperLink1" runat="server" Text="Locations" NavigateUrl="~/location.aspx" />
+                    </div>
+
+                    <div class="btn">
+                        <asp:Image ID="Image6" runat="server" ImageUrl="~/img/money.png" CssClass="icon" />
+                        <asp:HyperLink ID="HyperLink2" runat="server" Text="Pay your Bill" NavigateUrl="#" />
+                    </div>
+
+                    <div class="btn">
+                        <asp:Image ID="Image7" runat="server" ImageUrl="~/img/cruz.png" CssClass="icon" />
+                        <asp:HyperLink ID="HyperLink3" runat="server" Text="Symptom Checker" NavigateUrl="~/symptom.aspx" />
+                    </div>
+
+                    <div class="btn">
+                        <asp:Image ID="Image8" runat="server" ImageUrl="~/img/phone.png" CssClass="icon" />
+                        <asp:HyperLink ID="HyperLink4" runat="server" Text="Contact Us" NavigateUrl="~/contact.aspx" />
+                    </div>
+
+                    <div class="btn">
+                        <asp:Image ID="Image9" runat="server" ImageUrl="~/img/pen.png" CssClass="icon" />
+                        <asp:HyperLink ID="HyperLink5" runat="server" Text="Careers" NavigateUrl="~/career_application.aspx" />
+                    </div>
+
+                </asp:Panel>
+                </div>
+
+
+
+
             <%--******** END DIV ALERT **********--%>
 
 
@@ -195,13 +200,13 @@
 
                 </div>
 
-               <%-- ********* NEWS AND EVENTS BOX ************--%>
+                <%-- ********* NEWS AND EVENTS BOX ************--%>
                 <div class="box_centre">
                     <h1 class="title">
                         <asp:Image runat="server" ID="Image2" ImageUrl="~/img/1.png" CssClass="shape" />
                         <asp:Label ID="label3" runat="server" Text="  News &amp; Events" /></h1>
-                    
-                        <ne:news_events runat="server" ID="uc_newsEvent" />
+
+                    <ne:news_events runat="server" ID="uc_newsEvent" />
                 </div>
 
                 <div class="box_right">

@@ -33,12 +33,12 @@ public partial class admin_admin_news_event : System.Web.UI.Page
                 if (rbt_event.Checked)
                 {
 
-                    string events = "e";
+                    string events = "Event";
                     _strMessage(objLinq.commitInsert(txt_title.Text, txt_content.Text, img, events, txt_short.Text), "Insert");
                 }
                 else
                 {
-                    string news = "n";
+                    string news = "News";
                     _strMessage(objLinq.commitInsert(txt_title.Text, txt_content.Text, img, news, txt_short.Text), "Insert");
                 }
 

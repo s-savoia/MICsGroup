@@ -269,7 +269,7 @@
 
                                 <tr>
                                     <td colspan="3">
-                                        <asp:Button runat="server" ID="btn_delete" Text="Delete" CommandName="Delete" />
+                                        <asp:Button runat="server" ID="btn_delete" Text="Delete" CommandName="Delete" OnClientClick="return confirm('Confirm Delete?')"  />
                                         &nbsp;&nbsp;&nbsp;
 
                                         <asp:Button runat="server" ID="btn_cancel" Text="Cancel" CommandName="Cancel" />
