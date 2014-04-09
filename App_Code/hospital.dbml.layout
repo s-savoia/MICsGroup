@@ -1,120 +1,125 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 16.25, 16.25" name="hospital">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 18, 15.5" name="hospital">
   <DataContextMoniker Name="/hospitalDataContext" />
   <nestedChildShapes>
-    <classShape Id="8eec66b1-a8e0-4a79-bfa5-6ec3219d93d5" absoluteBounds="0.75, 0.75, 2, 2.3478011067708344">
-      <DataClassMoniker Name="/hospitalDataContext/mic_contact" />
-      <nestedChildShapes>
-        <elementListCompartment Id="e7690e05-2a56-4271-b925-a912847a35f4" absoluteBounds="0.76500000000000057, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="80a0f61b-fb99-4103-864a-12a5ea387de3" absoluteBounds="3.75, 0.75, 2, 3.6939111328124987">
-      <DataClassMoniker Name="/hospitalDataContext/mic_pay_bill" />
-      <nestedChildShapes>
-        <elementListCompartment Id="73958b19-4eea-486e-84fa-294e1c21ae78" absoluteBounds="3.7650000000000006, 1.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="8c4802ba-10a3-4dc4-8e2d-ff205e609d43" absoluteBounds="3.75, 5.75, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/hospitalDataContext/mic_job_posting" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d0baa11b-0d9f-415c-a7f1-73c0f4eafd41" absoluteBounds="3.7649999999999997, 6.2100000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="584118a4-e315-4362-a0bd-2430cfac456c" absoluteBounds="6.75, 0.75, 2, 4.6554182942708309">
-      <DataClassMoniker Name="/hospitalDataContext/mic_career_application" />
-      <nestedChildShapes>
-        <elementListCompartment Id="c1271161-f805-4536-96b0-61c392a52083" absoluteBounds="6.7650000000000006, 1.2100000000000009, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="4aea397c-e73e-4f1a-886d-f4e9124172d3" absoluteBounds="6.75, 6.75, 2, 2.1554996744791666">
-      <DataClassMoniker Name="/hospitalDataContext/mic_location" />
-      <nestedChildShapes>
-        <elementListCompartment Id="db40e907-eb6e-42e0-9278-6642c7d9f481" absoluteBounds="6.7650000000000006, 7.2100000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="b5c204eb-fb86-4d57-b91e-151e57588c4a" absoluteBounds="9.75, 0.75, 2, 1.7708968098958329">
-      <DataClassMoniker Name="/hospitalDataContext/mic_alert" />
-      <nestedChildShapes>
-        <elementListCompartment Id="4b411463-8876-4fa9-8388-fa28a716dee8" absoluteBounds="9.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="14b3a670-6d2d-440f-8b01-79656828618f" absoluteBounds="3.75, 9.75, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/hospitalDataContext/mic_sendletter" />
-      <nestedChildShapes>
-        <elementListCompartment Id="73c8ff3a-6b78-4c86-b860-df1481d72359" absoluteBounds="3.7650000000000006, 10.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="0e1e0e9a-4bde-4093-ac5b-d5422eee5baf" absoluteBounds="9.75, 6.75, 2, 1.3862939453124987">
-      <DataClassMoniker Name="/hospitalDataContext/mic_mailing_list" />
-      <nestedChildShapes>
-        <elementListCompartment Id="9f432ecb-79dc-433a-853f-5c5bf91fe067" absoluteBounds="9.765, 7.2100000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="7edf9d0d-d4ea-4844-9547-addb68a6c37f" absoluteBounds="6.75, 9.75, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/hospitalDataContext/mic_slider" />
-      <nestedChildShapes>
-        <elementListCompartment Id="41b62f54-ae7c-4d6c-8153-ecccc82670da" absoluteBounds="6.7650000000000006, 10.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="8fad3274-1d0b-475e-a7f7-b0474e84ba7f" absoluteBounds="9.75, 9.75, 2, 1.7708968098958344">
-      <DataClassMoniker Name="/hospitalDataContext/mic_services_anson" />
-      <nestedChildShapes>
-        <elementListCompartment Id="a033c1dc-c1fe-4286-908c-af02d097872b" absoluteBounds="9.765, 10.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="24f7f946-6e0f-4ec4-b540-e8b97bf8e132" absoluteBounds="12.75, 0.75, 2, 1.7708968098958309">
-      <DataClassMoniker Name="/hospitalDataContext/mic_services_bingham" />
-      <nestedChildShapes>
-        <elementListCompartment Id="f6facb73-a9a5-4544-8783-293eb9f88893" absoluteBounds="12.765, 1.2100000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="b4374744-2537-4aad-924a-2ca622550467" absoluteBounds="0.75, 12.75, 2, 1.7708968098958344">
-      <DataClassMoniker Name="/hospitalDataContext/mic_services_lady_minto" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d08e8560-2416-4ae5-8d88-5e16f5603601" absoluteBounds="0.76500000000000057, 13.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="0d65fd0b-ba9d-417f-9c3b-bd030b6645d1" absoluteBounds="3.75, 12.75, 2, 1.1939925130208344">
+    <classShape Id="06b80b99-7a6c-4ab0-ad13-748b487f88cb" absoluteBounds="0.75, 0.75, 2, 1.1939925130208335">
       <DataClassMoniker Name="/hospitalDataContext/mic_advice" />
       <nestedChildShapes>
-        <elementListCompartment Id="d5b617a4-9ab4-4ce5-9166-adb1481e64b9" absoluteBounds="3.7650000000000006, 13.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c546192f-9c5a-4870-8cc7-f3e525689c6e" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2051cff3-9df8-438d-908d-324e22e73e9d" absoluteBounds="6.75, 12.75, 2, 3.3093082682291666">
-      <DataClassMoniker Name="/hospitalDataContext/mic_book_appointment" />
-      <nestedChildShapes>
-        <elementListCompartment Id="8582fe41-0376-4a5d-b5ad-b00d67e1a56a" absoluteBounds="6.765, 13.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="9811d844-78c3-4c1e-b79f-f51a8168952f" absoluteBounds="12.75, 9.75, 2, 1.1939925130208344">
-      <DataClassMoniker Name="/hospitalDataContext/mic_symptom" />
-      <nestedChildShapes>
-        <elementListCompartment Id="ad50fb90-6551-4dd4-b29d-c16df813a4a9" absoluteBounds="12.765, 10.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-<<<<<<< HEAD
-    <classShape Id="6f25e83c-4113-429c-a29e-df5ebc1b8f68" absoluteBounds="10, 3.5, 2, 2.1554996744791666">
-      <DataClassMoniker Name="/hospitalDataContext/mic_news_event" />
-      <nestedChildShapes>
-        <elementListCompartment Id="6610b4d0-d074-452b-8a8b-b0ac19b04871" absoluteBounds="10.015, 3.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-=======
-    <classShape Id="7f5e0615-0f1f-464f-8a41-8cd9ee6773f7" absoluteBounds="14, 4.25, 2, 4.8477197265625">
-      <DataClassMoniker Name="/hospitalDataContext/mic_donation" />
-      <nestedChildShapes>
-        <elementListCompartment Id="b3c620ef-6024-4b50-a882-e0610da79e42" absoluteBounds="14.015, 4.71, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="3cb8c844-9f61-4071-90d7-c93d26be011f" absoluteBounds="1.25, 7.25, 2, 4.6554182942708326">
+    <classShape Id="b9563138-45f2-4c7e-9ca8-ae72d8b48f88" absoluteBounds="0.75, 2.75, 2, 4.6554182942708326">
       <DataClassMoniker Name="/hospitalDataContext/mic_volunteer" />
       <nestedChildShapes>
-        <elementListCompartment Id="f74b4f69-6bdd-45bb-8d47-291e0fe42a99" absoluteBounds="1.2650000000000001, 7.71, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="273a5698-491b-4f0c-81cb-e8c802b8fff2" absoluteBounds="0.765, 3.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="8e4f6a5f-e40b-4be7-b2ed-3116c04f0475" absoluteBounds="1.125, 4.375, 2, 2.5401025390625">
+    <classShape Id="dad43561-ba5f-4031-9fc0-57cc427f5ba2" absoluteBounds="3.75, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/hospitalDataContext/mic_alert" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8bd1131e-ff24-4d12-9eab-18faf1c8cfa1" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e653d285-b235-45c6-800b-9c667d1d49f4" absoluteBounds="3.75, 3.75, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/hospitalDataContext/mic_book_appointment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bede7dd1-6c51-418d-aac9-90c031085e11" absoluteBounds="3.765, 4.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="078d578b-c5b2-4115-93b0-289b9d4fb9ee" absoluteBounds="6.75, 0.75, 2, 4.6554182942708326">
+      <DataClassMoniker Name="/hospitalDataContext/mic_career_application" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0526d923-638b-4c84-8985-8cead9ca0a33" absoluteBounds="6.765, 1.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c6aa700e-bbae-4f44-96dd-d20e079ccfa9" absoluteBounds="6.75, 6.75, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/hospitalDataContext/mic_contact" />
+      <nestedChildShapes>
+        <elementListCompartment Id="347d4012-1a97-4a52-8e4a-fac17c1da5d0" absoluteBounds="6.765, 7.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cc70bcec-e85e-4727-b25e-cc51973515b4" absoluteBounds="0.75, 8.75, 2, 4.8477197265624987">
+      <DataClassMoniker Name="/hospitalDataContext/mic_donation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="52a27181-e17e-4bd5-b175-79b36976478b" absoluteBounds="0.765, 9.21, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4732a490-08c2-4de7-8133-09f0186dde47" absoluteBounds="9.75, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/hospitalDataContext/mic_job_posting" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0a2b8b72-c104-4de1-a9d2-9d2d0ad82236" absoluteBounds="9.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4a39f951-c2c5-4cf5-bcc4-c2cc310e7e0c" absoluteBounds="9.75, 3.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/hospitalDataContext/mic_location" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a4e7b1f4-e1e9-4dfd-baa2-7201223c4bb9" absoluteBounds="9.765, 4.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e2f2b2ab-f2a3-4767-add5-43beef45e3c8" absoluteBounds="9.75, 6.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/hospitalDataContext/mic_mailing_list" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4927aaab-9552-46e5-834a-ab85fe739b8a" absoluteBounds="9.765, 7.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="acad2a3c-be47-46e4-88f6-248ef4d7879e" absoluteBounds="9.75, 9.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/hospitalDataContext/mic_news_event" />
+      <nestedChildShapes>
+        <elementListCompartment Id="46e5b654-b421-4f61-90fb-c478e487e314" absoluteBounds="9.765, 10.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e4db6abe-8f80-431e-9aeb-e1b9c09f3e75" absoluteBounds="3.75, 10.75, 2, 3.6939111328124987">
+      <DataClassMoniker Name="/hospitalDataContext/mic_pay_bill" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a237a451-907e-4b82-a309-eaf216d7aeb7" absoluteBounds="3.765, 11.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d16d11ce-a6fb-4f76-a86e-03b0a10e9cf4" absoluteBounds="12.75, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/hospitalDataContext/mic_sendletter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ac0d34bc-b667-4e52-9722-14bd196020be" absoluteBounds="12.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="56600dfe-6596-4001-8a20-04c87159c009" absoluteBounds="12.75, 3.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/hospitalDataContext/mic_services_anson" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fcf08ede-7baf-4a89-81a6-59c72eb0fe7e" absoluteBounds="12.765, 4.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ef3518ed-7b01-41ff-a0d0-f83023d0a4d3" absoluteBounds="12.75, 6.75, 2, 1.7708968098958335">
+      <DataClassMoniker Name="/hospitalDataContext/mic_services_bingham" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d8b1be0d-5db7-4a9b-a551-f38a4ebeb6cb" absoluteBounds="12.765, 7.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="65344ae0-88a8-4ad8-a4e5-969c82f24069" absoluteBounds="6.75, 12.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/hospitalDataContext/mic_services_lady_minto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e8f3fd79-a824-44a1-9c1b-af97bba6ed35" absoluteBounds="6.765, 13.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c5508d1a-80ce-4158-a9f2-37e75e80fa3b" absoluteBounds="12.75, 9.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/hospitalDataContext/mic_slider" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8bed17e5-c69a-46a3-aa0a-e2a260836130" absoluteBounds="12.765, 10.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3a676ffa-c091-46c4-98b9-8355d083ab54" absoluteBounds="9.75, 12.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/hospitalDataContext/mic_symptom" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7e5bb547-b8bd-4f30-9283-ad1923ae3d45" absoluteBounds="9.765, 13.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cf72cd55-89da-4f24-a8e9-9704f3a2d2b3" absoluteBounds="12.75, 12.75, 2, 2.5401025390624987">
       <DataClassMoniker Name="/hospitalDataContext/mic_vemployment_history" />
       <nestedChildShapes>
-        <elementListCompartment Id="196c829b-ed7c-4e16-95ab-c4f6d14e1784" absoluteBounds="1.1400000000000001, 4.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
->>>>>>> c809adae07dea0f1acf16a2275beafd8c53f689d
+        <elementListCompartment Id="fdda2709-9ba3-4683-aa99-4c7f915c6cd6" absoluteBounds="12.765, 13.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b7248f07-59fd-4807-b1d8-be4f47acd2c9" absoluteBounds="15.75, 0.75, 2, 4.6554182942708326">
+      <DataClassMoniker Name="/hospitalDataContext/mic_volunteer1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c94236ba-b8d4-4508-a9d5-cbbed70b687d" absoluteBounds="15.765, 1.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
