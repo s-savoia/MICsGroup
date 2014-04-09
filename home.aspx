@@ -138,7 +138,7 @@
                     </div>
                 </asp:HyperLink>
             </div>
-
+           <%--******** END DIV ALERT **********--%>
 
                <div>
                 <asp:DragPanelExtender ID="DragPanelExtender1" runat="server" TargetControlID="pnl_feature"></asp:DragPanelExtender>
@@ -182,7 +182,7 @@
 
 
 
-            <%--******** END DIV ALERT **********--%>
+
 
 
             <div class="box">

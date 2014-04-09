@@ -475,15 +475,15 @@ nav {
 }
 
 
-div#pnl_features {
-    width:100%;
+/*div#pnl_features {
+    width:15%;
     position: absolute;
     top: 100px;
-}
+}*/
 
 
 .features {
-    width: 50%;
+    width: 15%;
     background-color: #fff; /*#c7ecef*/
     /*min-width: 185px;*/
     height: auto;
@@ -1887,8 +1887,8 @@ div#pnl_features {
         border-radius: 0;
     }
 
-    #rpt_images_img_0, #rpt_images_img_1, rpt_images_img_2, rpt_images_img_3, #rpt_images_img_4, # rpt_images_img_5 {
-        display:none;
+    /*#rpt_images_img_0, #rpt_images_img_1, rpt_images_img_2, rpt_images_img_3, #rpt_images_img_4, #rpt_images_img_5 {
+        display:none;*/
     }
 
     .features {
