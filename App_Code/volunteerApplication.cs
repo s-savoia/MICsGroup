@@ -61,4 +61,16 @@ public class volunteerApplication
         objVolunteer.SubmitChanges();
         return true;
     }
+
+    public bool commitDelete(int _id)
+    {
+        hospitalDataContext objVolunteer = new hospitalDataContext();
+        using (objVolunteer)
+        {
+            var objDelVolunteer = objVolunteer.mic_volunteers.Single(x => x.Id == _id);
+            objVolunteer.mic_volunteers.DeleteOnSubmit(objDelVolunteer);
+            objVolunteer.SubmitChanges();
+            return true;
+        }
+    }
 }
