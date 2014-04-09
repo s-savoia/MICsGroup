@@ -56,7 +56,7 @@ public class servicesClass
     ////    return allProducts;
     ////}
 
-    public bool commitInsertBingham(string _service, string _location, string _unique, string _details)   //  INSERT new Bingham service
+    public bool commitInsertBingham(string _service, string _unique, string _location, string _details)   //  INSERT new Bingham service
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         using (objHospital)
@@ -72,7 +72,7 @@ public class servicesClass
         }
     }
 
-    public bool commitInsertAnson(string _service, string _location, string _unique, string _details)   //  INSERT new Anson service
+    public bool commitInsertAnson(string _service, string _unique, string _location, string _details)   //  INSERT new Anson service
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         using (objHospital)
@@ -88,7 +88,7 @@ public class servicesClass
         }
     }
 
-    public bool commitInsertLadyMinto(string _service, string _location, string _unique, string _details)   //  INSERT new Lady Minto service
+    public bool commitInsertLadyMinto(string _service, string _unique, string _location, string _details)   //  INSERT new Lady Minto service
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         using (objHospital)
@@ -108,13 +108,12 @@ public class servicesClass
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         using (objHospital)
-        {
-            mic_services_bingham objService = new mic_services_bingham();
+        {            
             var objUpServiceBingham = objHospital.mic_services_binghams.Single(x => x.id == _id);
-            objService.service = _service;
-            objService.unique = _unique;
-            objService.location = _location;
-            objService.details = _details;            
+            objUpServiceBingham.service = _service;
+            objUpServiceBingham.unique = _unique;
+            objUpServiceBingham.location = _location;
+            objUpServiceBingham.details = _details;            
             objHospital.SubmitChanges();
             return true;
         }
@@ -124,13 +123,12 @@ public class servicesClass
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         using (objHospital)
-        {
-            mic_services_anson objService = new mic_services_anson();
+        {            
             var objUpServiceAnson = objHospital.mic_services_ansons.Single(x => x.id == _id);
-            objService.service = _service;
-            objService.unique = _unique;
-            objService.location = _location;
-            objService.details = _details;
+            objUpServiceAnson.service = _service;
+            objUpServiceAnson.unique = _unique;
+            objUpServiceAnson.location = _location;
+            objUpServiceAnson.details = _details;
             objHospital.SubmitChanges();
             return true;
         }
@@ -140,13 +138,12 @@ public class servicesClass
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         using (objHospital)
-        {
-            mic_services_lady_minto objService = new mic_services_lady_minto();
+        {            
             var objUpServiceLadyMinto = objHospital.mic_services_lady_mintos.Single(x => x.id == _id);
-            objService.service = _service;
-            objService.unique = _unique;
-            objService.location = _location;
-            objService.details = _details;
+            objUpServiceLadyMinto.service = _service;
+            objUpServiceLadyMinto.unique = _unique;
+            objUpServiceLadyMinto.location = _location;
+            objUpServiceLadyMinto.details = _details;
             objHospital.SubmitChanges();
             return true;
         }
@@ -156,10 +153,9 @@ public class servicesClass
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         using (objHospital)
-        {
-            mic_services_bingham objService = new mic_services_bingham();
+        {            
             var objDelServiceBingham = objHospital.mic_services_binghams.Single(x => x.id == _id);
-            objHospital.mic_services_binghams.DeleteOnSubmit(objService);
+            objHospital.mic_services_binghams.DeleteOnSubmit(objDelServiceBingham);
             objHospital.SubmitChanges();
             return true;
         }
@@ -169,10 +165,9 @@ public class servicesClass
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         using (objHospital)
-        {
-            mic_services_anson objService = new mic_services_anson();
+        {            
             var objDelServiceAnson = objHospital.mic_services_ansons.Single(x => x.id == _id);
-            objHospital.mic_services_ansons.DeleteOnSubmit(objService);
+            objHospital.mic_services_ansons.DeleteOnSubmit(objDelServiceAnson);
             objHospital.SubmitChanges();
             return true;
         }
@@ -182,10 +177,9 @@ public class servicesClass
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         using (objHospital)
-        {
-            mic_services_lady_minto objService = new mic_services_lady_minto();
+        {            
             var objDelServiceLadyMinto = objHospital.mic_services_lady_mintos.Single(x => x.id == _id);
-            objHospital.mic_services_lady_mintos.DeleteOnSubmit(objService);
+            objHospital.mic_services_lady_mintos.DeleteOnSubmit(objDelServiceLadyMinto);
             objHospital.SubmitChanges();
             return true;
         }

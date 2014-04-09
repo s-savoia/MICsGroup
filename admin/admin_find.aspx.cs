@@ -19,120 +19,126 @@ public partial class admin_Default : System.Web.UI.Page
             ddl_locationsC.Visible = true;
             ddl_mode.SelectedIndex = 2;
 
+            //choose a location on the view/edit page
             ddl_locationsC.DataSourceID = "sds_locations";
             ddl_locationsC.DataTextField = "name";
             ddl_locationsC.DataValueField = "name";
             ddl_locationsC.DataBind();
 
+            // choose a location in on the add a service page
             ddl_locationsI.DataSourceID = "sds_locations";
             ddl_locationsI.DataTextField = "name";
             ddl_locationsI.DataValueField = "name";
             ddl_locationsI.DataBind();
-
+            
+            //default is Bingham services
+            setMode("pnl_edit");
             showServicesByHospital("Bingham Memorial");
         }
     }
 
+    protected void subAdmin(object sender, DataListCommandEventArgs e)
+    {
+        switch (e.CommandName)
+        {
+            case "EditC":
+                dlt_main.EditItemIndex = e.Item.ItemIndex;
+                lbl_message.Text = ddl_locationsC.SelectedValue;
+                //DropDownList ddlLocationSet = (DropDownList)e.Item.FindControl("ddl_locationsE");
+                //ddlLocationSet.SelectedValue = ddl_locationsC.SelectedValue;
+                break;
+            case "UpdateC":
+                Label lblID = (Label)e.Item.FindControl("lbl_id2E");
+                TextBox txtService = (TextBox)e.Item.FindControl("txt_serviceE");
+                DropDownList ddlLocation = (DropDownList)e.Item.FindControl("ddl_locationsE");
+                DropDownList ddlUnique = (DropDownList)e.Item.FindControl("ddl_uniqueE");
+                TextBox txtDetails = (TextBox)e.Item.FindControl("txt_detailsE");
+                int jobID = int.Parse(lblID.Text.ToString());
+                
+
+                switch (ddl_locationsC.SelectedValue)
+                {
+                    case "Bingham Memorial":
+                        _strMessage(objService.commitUpdateBingham(jobID, txtService.Text, ddlUnique.SelectedValue, ddlLocation.SelectedValue, txtDetails.Text), "update");
+                        dlt_main.EditItemIndex = -1; 
+                        break;
+                    case "Anson General":
+                        _strMessage(objService.commitUpdateAnson(jobID, txtService.Text, ddlUnique.SelectedValue, ddlLocation.SelectedValue, txtDetails.Text), "update");
+                        break;
+                    case "Lady Minto":
+                        _strMessage(objService.commitUpdateLadyMinto(jobID, txtService.Text, ddlUnique.SelectedValue, ddlLocation.SelectedValue, txtDetails.Text), "update");
+                        break;
+                }
+                               
+                break;
+            case "DeleteC":
+                HiddenField hdfID = (HiddenField)e.Item.FindControl("hdf_id");
+                int _id = int.Parse(hdfID.Value.ToString());
+
+                switch (ddl_locationsC.SelectedValue.ToString())
+                {
+                    case "Bingham Memorial":
+                        _strMessage(objService.commitDeleteBingham(_id), "delete");
+                        break;
+                    case "Anson General":
+                        _strMessage(objService.commitDeleteAnson(_id), "delete");
+                        break;
+                    case "Lady Minto":
+                        _strMessage(objService.commitDeleteLadyMinto(_id), "delete");
+                        break;
+                }               
+                setMode("pnl_edit");
+                showServicesByHospital(ddl_locationsC.SelectedValue);
+                break;
+            case "CancelC":
+                dlt_main.EditItemIndex = -1;
+                setMode("pnl_edit");
+                showServicesByHospital(ddl_locationsC.SelectedValue);
+                break;
+        }
+    }
 
     private void _strMessage(bool flag, string str)
     {
         if (flag)
         {
-            lbl_message.Text = "Product " + str + " was successful";
+            lbl_message.Text = "Service " + str + " was successful";
         }
         else
         {
-            lbl_message.Text = "Sorry, unable to " + str + " product";
+            lbl_message.Text = "Sorry, unable to " + str + " service";
         }
     }
 
-    protected void subInsert(object sender, EventArgs e)
-    {
-        lbl_message.Text = "Processing - Insert";
+    protected void subInsert(object sender, CommandEventArgs e)
+    {        
 
-        switch (ddl_locationsI.SelectedValue.ToString())
+        if (e.CommandName == "CancelC")
         {
-            case "Bingham Memorial":
-                _strMessage(objService.commitInsertBingham(txt_serviceI.Text, ddl_locationsI.SelectedValue, ddl_uniqueI.SelectedValue, txt_detailsI.Text), "insert");                
-                break;
-            case "Anson General":
-                _strMessage(objService.commitInsertAnson(txt_serviceI.Text, ddl_locationsI.SelectedValue, ddl_uniqueI.SelectedValue, txt_detailsI.Text), "insert");                
-                break;
-            case "Lady Minto":
-                _strMessage(objService.commitInsertLadyMinto(txt_serviceI.Text, ddl_locationsI.SelectedValue, ddl_uniqueI.SelectedValue, txt_detailsI.Text), "insert");                
-                break;
+            setMode("pnl_edit");
         }
-        //lbl_message.Text = txt_serviceI.Text + ", " + ddl_locationsI.SelectedValue + ", " + ddl_uniqueI.SelectedValue + ", " + txt_detailsI.Text;
-                        
+        else
+        {
+            switch (ddl_locationsI.SelectedValue.ToString())
+            {
+                case "Bingham Memorial":
+                    _strMessage(objService.commitInsertBingham(txt_serviceI.Text, ddl_uniqueI.SelectedValue, ddl_locationsC.SelectedValue, txt_detailsI.Text), "insert");
+                    break;
+                case "Anson General":
+                    _strMessage(objService.commitInsertAnson(txt_serviceI.Text, ddl_uniqueI.SelectedValue, ddl_locationsC.SelectedValue, txt_detailsI.Text), "insert");
+                    break;
+                case "Lady Minto":
+                    _strMessage(objService.commitInsertLadyMinto(txt_serviceI.Text, ddl_uniqueI.SelectedValue, ddl_locationsC.SelectedValue, txt_detailsI.Text), "insert");
+                    break;
+            }
+        }
+
         string chosenHospital = ddl_locationsI.SelectedValue.ToString();
         showServicesByHospital(chosenHospital);
         _subClearFields();
         _PanelControl(pnl_edit);
+
     }
-
-
-    protected void subCancel(object sender, DataListCommandEventArgs e)
-    {
-        dlt_main.EditItemIndex = -1;
-        _PanelControl(pnl_edit);
-        _subClearFields();
-    }
-
-
-    protected void subCommitUpdate(object sender, DataListCommandEventArgs e)
-    {
-
-        //    HiddenField hdfID = (HiddenField)e.Item.FindControl("hdf_idE");
-        //    TextBox txtName = (TextBox)e.Item.FindControl("txt_nameU");
-        //    TextBox txtDesc = (TextBox)e.Item.FindControl("txt_descU");
-        //    TextBox txtPrice = (TextBox)e.Item.FindControl("txt_priceU");
-        //    Label lblPriceCheck = (Label)e.Item.FindControl("lbl_priceCheckE");
-        //    int proID = int.Parse(hdfID.Value.ToString());
-
-        //    if (Double.Parse(txtPrice.Text.ToString()) < 0)
-        //    {
-        //        lblPriceCheck.Text = "A price that is greater than zero must be entered.";
-        //    }
-
-        //    else
-        //    {
-        //        _strMessage(objLinq.commitUpdate(proID, txtName.Text, txtDesc.Text, decimal.Parse(txtPrice.Text.ToString())), "update");
-        //        dlt_main.EditItemIndex = -1;
-        //        _PanelControl(pnl_insert);
-        //        _subRebind();
-        //    }
-    }
-
-
-    protected void subCommitDelete(object sender, DataListCommandEventArgs e)
-    {
-        //    int _id = int.Parse(((HiddenField)e.Item.FindControl("hdf_idE")).Value);
-        //    _strMessage(objLinq.commitDelete(_id), "delete");
-        //    dlt_main.EditItemIndex = -1;
-        //    _PanelControl(pnl_insert);
-        //    _subRebind();
-    }
-
-
-    private void _PanelControl(Panel pnl)
-    {
-        pnl_insert.Visible = false;
-        pnl_edit.Visible = false;
-        Panel PnlHospitalDDL = (Panel)pnl_ddls.FindControl("pnl_hospitalDDL");
-
-        if (pnl == pnl_insert)
-        {
-            pnl_edit.Visible = false;            
-            PnlHospitalDDL.Visible = false;
-        }
-        else if (pnl == pnl_edit)
-        {            
-            PnlHospitalDDL.Visible = true;
-        }
-
-        pnl.Visible = true;
-    }
-
 
     private void _subClearFields()
     {
@@ -142,15 +148,21 @@ public partial class admin_Default : System.Web.UI.Page
         txt_detailsI.Text = string.Empty;
         ddl_mode.SelectedIndex = 0;
         ddl_locationsC.SelectedIndex = 0;
-       
+        //lbl_message.Text = string.Empty;
+
     }
 
     protected void subDDLMode(object sender, EventArgs e)
     {
         string chosenMode = ddl_mode.SelectedValue.ToString();
-        setMode(chosenMode);
+        if (chosenMode != "not_chosen")
+        {
+            setMode(chosenMode);
+        }
+
     }
 
+    // go to showServicesByHospital function by determining which hospital was chosen in a drop down list
     protected void subDDLlocations(object sender, EventArgs e)
     {
         string pickedHospital = ddl_locationsC.SelectedValue.ToString();
@@ -158,17 +170,38 @@ public partial class admin_Default : System.Web.UI.Page
     }
 
     private void setMode(string selectedMode)
-    {       
+    {
         // display the right panel (insert or edit)
         if (selectedMode == "pnl_insert")
-        {            
-            _PanelControl(pnl_insert);            
+        {
+            _PanelControl(pnl_insert);
+            lbl_message.Text = "Mode: Add a service";
         }
         else if (selectedMode == "pnl_edit")
-        {           
-            _PanelControl(pnl_edit);            
+        {
+            _PanelControl(pnl_edit);
+            lbl_message.Text = "Mode: View/Edit service(s)";
         }
-                
+
+    }
+
+    private void _PanelControl(Panel pnl)
+    {
+        pnl_insert.Visible = false;
+        pnl_edit.Visible = false;
+        Panel PnlHospitalDDL = (Panel)pnl_ddls.FindControl("pnl_hospitalDDL");
+
+        if (pnl == pnl_insert)
+        {
+            pnl_edit.Visible = false;
+            PnlHospitalDDL.Visible = false;
+        }
+        else if (pnl == pnl_edit)
+        {
+            PnlHospitalDDL.Visible = true;
+        }
+
+        pnl.Visible = true;
     }
 
     private void showServicesByHospital(string selectedHospital)

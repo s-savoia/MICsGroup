@@ -33,15 +33,16 @@
         <table>
             <tr>
                 <td>
-                    <asp:Label ID="lbl_instruction" runat="server" Text="Add a job to the database" />
+                    <asp:Label ID="lbl_instruction" runat="server" Text="Add a job to the database" Font-Underline="true" />
                 </td>
             </tr>
+            <tr><td>&nbsp;</td></tr>
             <tr>
                 <td>
                     <asp:Label ID="lbl_positionI" runat="server" Text="Position" />
                 </td>
                 <td>
-                    <asp:TextBox ID="txt_positionI" runat="server" ValidationGroup="insert" />
+                    <asp:TextBox ID="txt_positionI" runat="server" ValidationGroup="insert" Columns="50" />
                     <asp:RequiredFieldValidator ID="rfv_positionI" runat="server" ControlToValidate="txt_positionI" Text="*" ErrorMessage="Position required" ValidationGroup="insert" CssClass="required" />
                 </td>
             </tr>
@@ -50,7 +51,7 @@
                     <asp:Label ID="lbl_locationI" runat="server" Text="Location" />
                 </td>
                 <td>
-                    <asp:TextBox ID="txt_locationI" runat="server" ValidationGroup="insert" />
+                    <asp:TextBox ID="txt_locationI" runat="server" ValidationGroup="insert" Columns="50" />
                     <asp:RequiredFieldValidator ID="rfv_locationI" runat="server" ControlToValidate="txt_locationI" Text="*" ErrorMessage="Location required" ValidationGroup="insert" CssClass="required" />
                 </td>
             </tr>
@@ -62,7 +63,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <asp:TextBox ID="txt_detailsI" runat="server" TextMode="MultiLine" CssClass="adm-textArea" ValidationGroup="insert" Columns="200" Rows="20" />
+                    <asp:TextBox ID="txt_detailsI" runat="server" TextMode="MultiLine" CssClass="adm-textArea" ValidationGroup="insert" Columns="80" Rows="10" />
                 </td>                
             </tr>
             <tr>
@@ -141,7 +142,7 @@
                         <asp:Label ID="lbl_positionE" runat="server" Text="Position" />
                     </td>
                     <td>
-                        <asp:TextBox ID="txt_positionE" runat="server" Text='<%#Eval("position") %>' ValidationGroup="update" />
+                        <asp:TextBox ID="txt_positionE" runat="server" Text='<%#Eval("position") %>' ValidationGroup="update" Columns="50" />
                         <asp:RequiredFieldValidator ID="rfv_positionE" runat="server" ControlToValidate="txt_positionE" Text="*" ErrorMessage="Position required" ValidationGroup="update" CssClass="required" />
                     </td>
                 </tr>
@@ -150,7 +151,7 @@
                         <asp:Label ID="lbl_locationE" runat="server" Text="Location" />
                     </td>
                     <td>
-                        <asp:TextBox ID="txt_locationE" runat="server" Text='<%#Eval("location") %>' ValidationGroup="update" />
+                        <asp:TextBox ID="txt_locationE" runat="server" Text='<%#Eval("location") %>' ValidationGroup="update" Columns="50" />
                         <asp:RequiredFieldValidator ID="rfv_locationE" runat="server" ControlToValidate="txt_locationE" Text="*" ErrorMessage="Location required" ValidationGroup="update" CssClass="required" />
                     </td>
                 </tr>
@@ -162,9 +163,8 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:TextBox ID="txt_detailsE" runat="server" TextMode="MultiLine" Text='<%#Eval("details") %>' ValidationGroup="update" CssClass="" />
-                    </td>
-                    <%--adm-textArea--%>
+                        <asp:TextBox ID="txt_detailsE" runat="server" TextMode="MultiLine" Rows="10" Columns="80" Text='<%#Eval("details") %>' ValidationGroup="update" CssClass="" />
+                    </td>                    
                 </tr>
                 <tr>
                     <td>

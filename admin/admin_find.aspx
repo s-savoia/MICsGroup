@@ -5,12 +5,13 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content_main" runat="Server">
 
+
     <h3>
         <asp:Label ID="lbl_message" runat="server" /><br />
         <br />
     </h3>
 
-    <div class="floatL">
+    <div class="floatL" style="margin-right:2%;">
         <asp:Label ID="lbl_manageContentTitle" runat="server" Text="Manage content for: " />
     </div>
 
@@ -28,8 +29,9 @@
             <h4>Choose a mode</h4>
             <br />
 
+            <%--Choose a mode--%>
             <asp:DropDownList ID="ddl_mode" runat="server" OnSelectedIndexChanged="subDDLMode" AutoPostBack="true">
-                <asp:ListItem Text="Choose a mode" />
+                <asp:ListItem Text="Choose a mode" Value="not_chosen" />
                 <asp:ListItem Text="Add a service" Value="pnl_insert" />
                 <asp:ListItem Text="Edit a service" Value="pnl_edit" />
             </asp:DropDownList>
@@ -41,7 +43,6 @@
 
             <%--Choose a hospital--%>
             <asp:DropDownList ID="ddl_locationsC" runat="server" Visible="false" OnSelectedIndexChanged="subDDLlocations" AutoPostBack="true">
-                <%--DataSourceID="sds_locations"--%>
             </asp:DropDownList>
         </asp:Panel>
 
@@ -50,10 +51,12 @@
 
     <asp:Panel ID="pnl_insert" runat="server">
 
+        <%--validation summary (for insert panel)--%>
         <asp:ValidationSummary ID="vds_insert" runat="server" DisplayMode="List" ShowMessageBox="false" ValidationGroup="insert" ShowSummary="true" />
         <br />
         <br />
 
+        <%--table inside insert panel for adding a new service--%>
         <table>
             <tr>
                 <td>&nbsp;</td>
@@ -123,131 +126,161 @@
             <tr>
                 <td>&nbsp;</td>
                 <td>
-                    <asp:Button ID="btn_insert" runat="server" Text="Insert" OnClick="subInsert" ValidationGroup="insert" />
+                    <asp:Button ID="btn_insertI" runat="server" Text="Insert" CommandName="InsertC" OnCommand="subInsert" ValidationGroup="insert" />
+                    <asp:Button ID="btn_cancelI" runat="server" Text="Cancel" CommandName="CancelC" OnCommand="subInsert" CausesValidation="false" />
                 </td>
             </tr>
         </table>
     </asp:Panel>
 
+    <%--sql data source for locations--%>
     <asp:SqlDataSource ID="sds_locations" runat="server" ConnectionString="<%$ ConnectionStrings:DB_65873_micConnectionString %>" SelectCommand="SELECT [name] FROM [mic_locations]" />
 
-
-    <%--This is the edit panel. Products (records) can be updated, deleted, or a cancel button may be clicked to see all the products.--%>
+    <%--= = = EDIT PANEL (view/edit services) = = =--%>
     <asp:Panel ID="pnl_edit" runat="server">
 
-        <%--This is a DataList control to display the records (products) in a database. The items in this DataList are rendered as span elements.--%>
-        <asp:DataList ID="dlt_main" runat="server" RepeatLayout="flow">
-            <%--OnEditCommand="subShowEditTemplate" OnUpdateCommand="subCommitUpdate" OnDeleteCommand="subCommitDelete" OnCancelCommand="subCancel"--%>
+        <%--a datalist to display services--%>
+        <asp:DataList ID="dlt_main" runat="server" RepeatLayout="flow" OnItemCommand="subAdmin">
 
-            <%--This is the item template for each item (product). Each product has an Id, a name, a description, and a price. The values are being
-                        retrieved from a table called products in the database. There is also an edit button to switch to the edit template.--%>
+            <%--= = = ITEM TEMPLATE = = =--%>
             <ItemTemplate>
 
                 <table>
                     <tr>
+                        <td colspan="2" style="padding-bottom: 3%;">
+                            <asp:Label ID="lbl_IdE" runat="server" Text="Id" />
+
+                        </td>
                         <td>
+                            <asp:Label ID="lbl_id2E" runat="server" Text='<%#Eval("id") %>' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <%--<td>
+                            <asp:HiddenField ID="hdf_id" runat="server" Value='<%#Eval("id") %>' />
+                        </td>--%>
+                        <td colspan="2" style="padding-bottom: 3%;">
                             <h4>
-                                <asp:Label ID="lbl_id" runat="server" Text="Service" />
+                                <asp:Label ID="lbl_service" runat="server" Text="Service" />
                             </h4>
                         </td>
                         <td colspan="10">
-                            <asp:Label ID="lbl_id2" runat="server" Text='<%# Eval("service") %>' />
+                            <asp:Label ID="lbl_service2" runat="server" Text='<%# Eval("service") %>' />
                         </td>
                     </tr>
 
                     <tr>
-                        <td>
+                        <td colspan="2" style="padding-bottom: 3%;">
                             <h4>
-                                <asp:Label ID="lbl_name" runat="server" Text="Location" />
+                                <asp:Label ID="lbl_location" runat="server" Text="Location" />
                             </h4>
                         </td>
                         <td colspan="10">
-                            <asp:Label ID="lbl_name2" runat="server" Text='<%# Eval("location") %>' />
+                            <asp:Label ID="lbl_location2" runat="server" Text='<%# Eval("location") %>' />
                         </td>
                     </tr>
 
                     <tr>
-                        <td>
+                        <td colspan="2" style="padding-bottom: 3%;">
                             <h4>
-                                <asp:Label ID="lbl_desc" runat="server" Text="Available only at this hospital?" />
+                                <asp:Label ID="lbl_unique" runat="server" Text="Available only at this hospital?" />
                             </h4>
                         </td>
                         <td colspan="10">
-                            <asp:Label ID="lbl_desc2" runat="server" Text='<%# Eval("unique") %>' />
+                            <asp:Label ID="lbl_unique2" runat="server" Text='<%# Eval("unique") %>' />
                         </td>
                     </tr>
 
                     <tr>
-                        <td>
+                        <td colspan="2" style="padding-bottom: 3%;">
                             <h4>
-                                <asp:Label ID="lbl_price" runat="server" Text="Details" />
+                                <asp:Label ID="lbl_details" runat="server" Text="Details" />
                             </h4>
                         </td>
-                        <td colspan="10">
-                            <asp:Label ID="lbl_price2" runat="server" Text='<%# Eval("details") %>' />
+                        <td colspan="10" style="padding-bottom: 3%;">
+                            <asp:Label ID="lbl_details2" runat="server" Text='<%# Eval("details") %>' />
                         </td>
                     </tr>
                     <tr>
                         <td>&nbsp;
                         </td>
-                        <td>
-                            <asp:Button ID="btn_edit" runat="server" CommandName="Edit" Text="Edit" />
-                            <asp:Button ID="btn_delete" runat="server" CommandName="Delete" Text="Delete" OnClientClick='confirm("Are you sure you want to delete?");' />
+                        <td colspan="3">
+                            <asp:Button ID="btn_edit" runat="server" CommandName="EditC" Text="Edit" CausesValidation="false" />
+                            <asp:Button ID="btn_delete" runat="server" CommandName="DeleteC" Text="Delete" OnClientClick='confirm("Are you sure you want to delete?");' />
                         </td>
                     </tr>
                 </table>
 
             </ItemTemplate>
 
-            <%--This is the edit template. It looks the same as the item template, but the insert panel is missing (ie. only the edit template is displayed).
-                    Instead of the id of the current product being displayed, a hidden field is used. There are three buttons (update, delete, and cancel). When a
-                        user clicks on the delete button, a confirm alert box displays asking for confirmation of the delete.--%>
+            <%--= = = EDIT TEMPLATE = = =--%>
             <EditItemTemplate>
 
                 <table>
+                     <tr>
+                        <td colspan="2" style="padding-bottom: 3%;">
+                            <asp:Label ID="lbl_IdE" runat="server" Text="Id" />
 
-                    <tr>
-                        <asp:HiddenField ID="hdf_idE" runat="server" Value='<%#Eval("Id") %>' />
-                        <td>
-                            <asp:Label ID="lbl_nameU" runat="server" Text="Name" />
                         </td>
-                        <td>
-                            <asp:TextBox ID="txt_nameU" runat="server" Text='<%#Eval("Name") %>' />
+                        <td colspan="10">
+                            <asp:Label ID="lbl_id2E" runat="server" Text='<%# Eval("id") %>' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="padding-bottom: 3%;">
+                            <asp:Label ID="lbl_serviceE" runat="server" Text="Service" />
+                        </td>
+                        <td colspan="10">
+                            <asp:TextBox ID="txt_serviceE" runat="server" Text='<%# Eval("service") %>'  ValidationGroup="update" /> 
+                            <asp:RequiredFieldValidator ID="rfv_serviceE" runat="server" ControlToValidate="txt_serviceE" Text="*" ErrorMessage="Service title required" ValidationGroup="update" CssClass="required" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="padding-bottom: 3%;">
+                            <asp:Label ID="lbl_locationE" runat="server" Text="Location" />
+                        </td>
+                        <td colspan="10">
+                            <asp:DropDownList ID="ddl_locationsE" runat="server" DataSourceID="sds_locationsE" DataTextField="name" DataValueField="name" ValidationGroup="update" />
+                            <asp:SqlDataSource ID="sds_locationsE" runat="server" ConnectionString="<%$ ConnectionStrings:DB_65873_micConnectionString %>" SelectCommand="SELECT [name] FROM [mic_locations]" />
+                            <asp:RequiredFieldValidator ID="rfv_locationsE" runat="server" ControlToValidate="ddl_locationsE" Text="*" ForeColor="Red" ValidationGroup="update" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="padding-bottom: 3%;">
+                            <asp:Label ID="lbl_uniqueE" runat="server" Text="Available only at this location?" />
+                        </td>
+                        <td colspan="10">
+                            <asp:DropDownList ID="ddl_uniqueE" runat="server">
+                                <asp:ListItem Text="No" Value="No " />
+                                <asp:ListItem Text="Yes" Value="Yes" />
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="rfv_uniqueE" runat="server" ControlToValidate="ddl_uniqueE" Text="*Required" ForeColor="Red" ValidationGroup="update" />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="lbl_descU" runat="server" Text="Description" />
-                        </td>
-                        <td>
-                            <asp:TextBox ID="txt_descU" runat="server" Text='<%#Eval("Description") %>' />
+                            <asp:Label ID="lbl_detailsE" runat="server" Text="Details" />
+                            <asp:RequiredFieldValidator ID="rfv_detailsE" runat="server" ControlToValidate="txt_detailsE" Text="*" ErrorMessage="Details required" ValidationGroup="update" CssClass="required" />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="lbl_priceU" runat="server" Text="Price" />
-                        </td>
-                        <td>
-                            <asp:TextBox ID="txt_priceU" runat="server" Text='<%#Eval("Price") %>' />
-                            <asp:CompareValidator ID="cpv_priceU" runat="server" ControlToValidate="txt_priceU" Operator="DataTypeCheck" Type="Currency" Text="A number must be inputted." ForeColor="IndianRed" ValidationGroup="update" />
-                            <asp:Label ID="lbl_priceCheckE" runat="server" ForeColor="IndianRed" />
+                            <asp:TextBox ID="txt_detailsE" runat="server" TextMode="MultiLine" Rows="10" Columns="80" Text='<%# Eval("details") %>' ValidationGroup="update" CssClass="" />
                         </td>
                     </tr>
                     <tr>
-                        <td>&nbsp;
-                        </td>
-                        <td>
-                            <asp:Button ID="btn_update" runat="server" Text="Update" CommandName="Update" ValidationGroup="update" />
-                            &nbsp;
-                                        <asp:Button ID="btn_delete" runat="server" Text="Delete" CommandName="Delete" CommandArgument='<%#Eval("Id") %>' OnClientClick=' return confirm("Confirm delete?");' />
-                            &nbsp;
-        <asp:Button ID="btn_cancel" runat="server" Text="Cancel" CommandName="Cancel" CausesValidation="false" />
-                        </td>
+                        <td colspan="3">
+                            <asp:Button ID="btn_updateE" runat="server" Text="Update" CommandName="UpdateC" ValidationGroup="update" />
+                            <asp:Button ID="btn_cancelE" runat="server" Text="Cancel" CommandName="CancelC" CausesValidation="false" />
 
+                        </td>
                     </tr>
+
+                </table>
+
             </EditItemTemplate>
 
-            <%--This is a separator template that renders a horizonal rule between items (products).--%>
+            <%--= = = SEPARATOR TEMPLATE = = =--%>
             <SeparatorTemplate>
                 <hr />
             </SeparatorTemplate>

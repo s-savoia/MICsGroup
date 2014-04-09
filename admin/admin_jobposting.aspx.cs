@@ -48,11 +48,14 @@ public partial class admin_Default : System.Web.UI.Page
                 break;
             
             case "add":
+                lbl_message.Text = "Mode: add <br /><br />(You can add a new job posting)";
                 _pnlControl(pnl_insert);
                 break;
 
             case "manage":
-                _pnlControl(pnl_main);
+                lbl_message.Text = "Mode: manage <br /><br />(You can view/edit job posting(s) ";
+                _subRebind();
+                _pnlControl(pnl_main);                
                 break;
         }
     }
@@ -73,8 +76,8 @@ public partial class admin_Default : System.Web.UI.Page
             case "EditC":
                 
                 int editIndex = Int32.Parse(e.CommandArgument.ToString());
-                ltv_main.EditIndex = editIndex - 1;
-                lbl_message.Text = "Mode: edit, id: " + e.CommandArgument + ", edit index: " + editIndex;
+                ltv_main.EditIndex = editIndex;
+                lbl_message.Text = "Mode: edit, Editing job id: " + e.CommandArgument; // + ", edit index: " + editIndex
                 _subRebind();
                 break;
 
@@ -85,12 +88,11 @@ public partial class admin_Default : System.Web.UI.Page
                 TextBox txtLocation = (TextBox)e.Item.FindControl("txt_locationE");
                 TextBox txtDetails = (TextBox)e.Item.FindControl("txt_detailsE");
                 int jobID = int.Parse(lblID2.Text.ToString());
-
                 _strMessage(objJob.commitUpdate(jobID, txtPosition.Text, txtLocation.Text, txtDetails.Text), "update");
-                //lbl_message.Text = txtPostion.Text + ", " + txtLocation.Text + ", " + txtDetails.Text;
+                ltv_main.EditIndex = -1;
                 _subRebind();
                 _pnlControl(pnl_main);
-                ltv_main.EditIndex = -1;
+                
                 break;
 
             case "DeleteC":
