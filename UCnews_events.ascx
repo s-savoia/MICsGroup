@@ -1,6 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="UCnews_events.ascx.cs" Inherits="UCnews_events" %>
 <link href="App_Themes/public_theme/news_styles.css" rel="stylesheet" />
 
+<%--**** CODE BY CLAUDIA ****--%>
+
  <script src="js/jquery-latest.pack.js" type="text/javascript"></script>
 
     <script src="js/jcarousellite_1.0.1c4.js" type="text/javascript"></script>
