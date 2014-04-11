@@ -196,9 +196,9 @@
                     <h1 class="title">
                         <asp:Image runat="server" ID="Image3" ImageUrl="~/img/1.png" CssClass="shape" />
                         <asp:Label ID="label4" runat="server" Text="Emergecy Waiting Time" /></h1>
-                  
-                       <uc:emergency_timeUC ID="emrgency_wait" runat="server" />
-                    
+                     
+                       <uc:emergency_timeUC ID="emergency_wait" runat="server"  />
+                       
                     <%--<div class="chat">
                         <asp:Image runat="server" ID="Image4" ImageUrl="~/img/chat.png" />
                     </div>--%>
