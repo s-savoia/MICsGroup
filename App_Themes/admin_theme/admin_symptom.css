@@ -11,6 +11,10 @@ border-bottom:2px dotted #22BCB9;
     float: right;
 }
 
+.contentControlBtns {
+    padding: 0 16%;
+}
+
 /*.column-s {
 width: 5%;
 float: left;
