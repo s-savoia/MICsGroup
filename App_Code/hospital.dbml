@@ -254,6 +254,15 @@
       <Column Name="amount" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.mic_emergency_time" Member="mic_emergency_times">
+    <Type Name="mic_emergency_time">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="location" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="patients" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="time" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.mic_appointments_get_dates" Method="mic_appointments_get_dates">
     <ElementType Name="mic_appointments_get_datesResult">
       <Column Name="date_only" Type="System.DateTime" DbType="Date" CanBeNull="true" />

@@ -2,7 +2,7 @@
 
 <%@ Register TagName="news_events" TagPrefix="ne" Src="~/UCnews_events.ascx" %>
 <%@ Register TagName="alertUC" TagPrefix="aUC" Src="~/UC_alerts.ascx" %>
-
+<%@ Register TagPrefix="uc" TagName="emergency_timeUC" Src="~/emergency_time.ascx" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <%--CODE BY CLAUDIA--%>
@@ -196,9 +196,9 @@
                     <h1 class="title">
                         <asp:Image runat="server" ID="Image3" ImageUrl="~/img/1.png" CssClass="shape" />
                         <asp:Label ID="label4" runat="server" Text="Emergecy Waiting Time" /></h1>
-                    <asp:Literal ID="literal1" runat="server">
-                        WAITING FOR PRABJOT USER CONTROL
-                    </asp:Literal>
+                  
+                       <uc:emergency_timeUC ID="emrgency_wait" runat="server" />
+                    
                     <%--<div class="chat">
                         <asp:Image runat="server" ID="Image4" ImageUrl="~/img/chat.png" />
                     </div>--%>

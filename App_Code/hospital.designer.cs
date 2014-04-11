@@ -89,6 +89,9 @@ public partial class hospitalDataContext : System.Data.Linq.DataContext
   partial void Insertmic_pay_bill(mic_pay_bill instance);
   partial void Updatemic_pay_bill(mic_pay_bill instance);
   partial void Deletemic_pay_bill(mic_pay_bill instance);
+  partial void Insertmic_emergency_time(mic_emergency_time instance);
+  partial void Updatemic_emergency_time(mic_emergency_time instance);
+  partial void Deletemic_emergency_time(mic_emergency_time instance);
   #endregion
 	
 	public hospitalDataContext() : 
@@ -278,6 +281,14 @@ public partial class hospitalDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<mic_pay_bill>();
+		}
+	}
+	
+	public System.Data.Linq.Table<mic_emergency_time> mic_emergency_times
+	{
+		get
+		{
+			return this.GetTable<mic_emergency_time>();
 		}
 	}
 	
@@ -5207,6 +5218,164 @@ public partial class mic_pay_bill : INotifyPropertyChanging, INotifyPropertyChan
 				this._amount = value;
 				this.SendPropertyChanged("amount");
 				this.OnamountChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.mic_emergency_time")]
+public partial class mic_emergency_time : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _Id;
+	
+	private string _location;
+	
+	private int _patients;
+	
+	private System.DateTime _date;
+	
+	private string _time;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnlocationChanging(string value);
+    partial void OnlocationChanged();
+    partial void OnpatientsChanging(int value);
+    partial void OnpatientsChanged();
+    partial void OndateChanging(System.DateTime value);
+    partial void OndateChanged();
+    partial void OntimeChanging(string value);
+    partial void OntimeChanged();
+    #endregion
+	
+	public mic_emergency_time()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int Id
+	{
+		get
+		{
+			return this._Id;
+		}
+		set
+		{
+			if ((this._Id != value))
+			{
+				this.OnIdChanging(value);
+				this.SendPropertyChanging();
+				this._Id = value;
+				this.SendPropertyChanged("Id");
+				this.OnIdChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_location", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+	public string location
+	{
+		get
+		{
+			return this._location;
+		}
+		set
+		{
+			if ((this._location != value))
+			{
+				this.OnlocationChanging(value);
+				this.SendPropertyChanging();
+				this._location = value;
+				this.SendPropertyChanged("location");
+				this.OnlocationChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_patients", DbType="Int NOT NULL")]
+	public int patients
+	{
+		get
+		{
+			return this._patients;
+		}
+		set
+		{
+			if ((this._patients != value))
+			{
+				this.OnpatientsChanging(value);
+				this.SendPropertyChanging();
+				this._patients = value;
+				this.SendPropertyChanged("patients");
+				this.OnpatientsChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date", DbType="DateTime NOT NULL")]
+	public System.DateTime date
+	{
+		get
+		{
+			return this._date;
+		}
+		set
+		{
+			if ((this._date != value))
+			{
+				this.OndateChanging(value);
+				this.SendPropertyChanging();
+				this._date = value;
+				this.SendPropertyChanged("date");
+				this.OndateChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_time", DbType="VarChar(20)")]
+	public string time
+	{
+		get
+		{
+			return this._time;
+		}
+		set
+		{
+			if ((this._time != value))
+			{
+				this.OntimeChanging(value);
+				this.SendPropertyChanging();
+				this._time = value;
+				this.SendPropertyChanged("time");
+				this.OntimeChanged();
 			}
 		}
 	}

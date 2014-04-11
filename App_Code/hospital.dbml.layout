@@ -122,5 +122,11 @@
         <elementListCompartment Id="ae5e97cd-4852-4be7-9c8a-a09007ee6d3d" absoluteBounds="4.39, 9.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="87899ca7-04cf-48d2-bbbd-6901a887b79c" absoluteBounds="7.25, 11, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/hospitalDataContext/mic_emergency_time" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d2335057-648f-4af7-a757-dce13115b262" absoluteBounds="7.265, 11.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

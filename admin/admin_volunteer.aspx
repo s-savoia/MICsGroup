@@ -21,7 +21,7 @@
                             </td>
                             <td><asp:Label ID="lbl_vlocation" runat="server" Text='<%#Eval("location") %>' /></td>
                             <td><asp:Label ID="lbl_career" runat="server" Text='<%#Eval("education_level") %>' /></td>
-                            <td><asp:Button ID="btn_viewdetails" runat="server" Text="View Details" CommandName="View" CommandArgument='<%#Eval("id") %>' />
+                            <td><asp:Button ID="btn_viewdetails" runat="server" Text="View Details" CommandName="View" CommandArgume nt='<%#Eval("id") %>' />
                                 <asp:Button ID="btn_delete" runat="server" Text="Delete" CommandName="Delete" CommandArgument='<%#Eval("id") %>'  />
                             </td>
                             
