@@ -12,17 +12,20 @@
     </asp:ContentPlaceHolder>
 </head>
     <body>
- <form id="form1" runat="server">
-
+    <form id="form1" runat="server">
+        <%-- wrapper --%>
         <div class="wraper">
             <%-- Header --%>
             <header>
+                <%-- logo --%>
                 <div class="logo">
                     <asp:Image CssClass="img" runat="server" ID="logo" ImageUrl="~/img/logo.png" />
                     <h1>
                         <asp:Label ID="labl_hospital" runat="server">
                         MICs Group of Health Services
-                        </asp:Label></h1>
+                        </asp:Label>
+
+                    </h1>
                     <p>
                         <asp:Label ID="lbl_group" runat="server">
                             Bingham Memorial Hospital
@@ -34,37 +37,40 @@
                     </p>
                 </div>
 
+                <%-- header right --%>
                 <div class="box_head">
+
+                    <%-- login --%>
                     <div class="log">
                         <asp:LinkButton ID="btn" Text="Log in" runat="server"  DescriptionUrl="~/home.aspx" />
                     </div>
-
+                    <%-- register --%>
                     <div class="reg">
                         <asp:LinkButton ID="btn_reg" Text="Register" runat="server"  DescriptionUrl="~/home.aspx" />
                     </div>
 
-                    <div class="access">
-                        <asp:Image ImageUrl="~/img/access.png" runat="server" ID="img_acc" CssClass="a_img" />
+                    <br /><br />
+                    <%-- accessibility --%>
+                    <div class="access">                     
                         <asp:LinkButton ID="btn_access" Text="Accessibility" DescriptionUrl="~/home.aspx" runat="server" />
+                        <asp:Image ImageUrl="~/img/access.png" runat="server" ID="img_acc" CssClass="a_img" />
                     </div>
-
+                    <br /><br />
+                    <%-- donate --%>
                     <div class="donate">
-
-                        <asp:LinkButton ID="btn_donate" Text="Donate Now" DescriptionUrl="~/home.aspx" runat="server" />
+                        <asp:LinkButton ID="btn_donate" Text="Donate Now" DescriptionUrl="~/donation.aspx" runat="server" CssClass="donate_btn" />
                     </div>
-                </div>
-            </header>
+                </div><%-- box_head end --%>
+            </header><%-- Header ends --%>
+
+            <%-- navigation --%>
 
             <nav>
                 <asp:SiteMapDataSource ID="sds_menu" runat="server" />
-                <asp:Menu ID="menu_nav" DataSourceID="sds_menu" StaticDisplayLevels="2" Orientation="Horizontal" runat="server"  DynamicMenuItemStyle-BackColor="#8cc63f" DisappearAfter="500" DynamicVerticalOffset="5" StaticEnableDefaultPopOutImage="false" DynamicHoverStyle-CssClass="DynamicHoverStyle" CssClass="menu">
 
-
-
+                <asp:Menu ID="menu_nav" DataSourceID="sds_menu" StaticDisplayLevels="2" Orientation="Horizontal" runat="server" DynamicMenuItemStyle-BackColor="#8cc63f" DisappearAfter="500" DynamicVerticalOffset="5" StaticEnableDefaultPopOutImage="false" DynamicHoverStyle-CssClass="dynamic" DynamicMenuItemStyle-CssClass="dropdown" CssClass="menu">
                     <StaticMenuItemStyle ItemSpacing="100" />
-
                     <Items>
-
                         <asp:MenuItem Text="Home" NavigateUrl="~/home.aspx" ToolTip="Home" Target="_self" />
                         <asp:MenuItem Text="Patients & Families" NavigateUrl="~/patients.aspx" ToolTip="Patients &amp; Families" />
                         <asp:MenuItem Text="Services & Programs " NavigateUrl="~/services.aspx" ToolTip="Services &amp; Programs" />
@@ -73,44 +79,49 @@
                     </Items>
                 </asp:Menu>
             </nav>
+
+        <%-- main --%>
         <div class="container">
-
+            <%-- left nav --%>
             <div class="left">
-               
-              <div class="box">
-                  <div class="subcontent">
+                <%-- feature box --%>            
+                <div class="box">
+                <%--nav features--%>
+                <div class="subcontent">
+                    <%--find a doctor--%>
                     <div class="btn">
-                        <asp:Image ID="Image10" runat="server" ImageUrl="~/img/swash.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink19" runat="server" Text="" />
+                        <asp:Image ID="img_search" runat="server" ImageUrl="~/img/search.png" CssClass="icon" />
+                        <asp:HyperLink ID="hpl_dr" runat="server" Text="Find a Doctor" />
                     </div>
+                    <%--locations--%>
+                    <div class="btn">
+                        <asp:Image ID="Image5" runat="server" ImageUrl="~/img/search.png" CssClass="icon" />
+                        <asp:HyperLink ID="HyperLink1" runat="server" Text="Locations" />
+                    </div>
+                    <%--pay bill--%>
+                    <div class="btn">
+                        <asp:Image ID="Image6" runat="server" ImageUrl="~/img/money.png" CssClass="icon" />
+                        <asp:HyperLink ID="HyperLink2" runat="server" Text="Pay your Bill" />
+                    </div>
+                    <%--symptom checker--%>
+                    <div class="btn">
+                        <asp:Image ID="Image7" runat="server" ImageUrl="~/img/cruz.png" CssClass="icon" />
+                        <asp:HyperLink ID="HyperLink3" runat="server" Text="Symptom Checker" />
+                    </div>
+                    <%--contact us--%>
+                    <div class="btn">
+                        <asp:Image ID="Image8" runat="server" ImageUrl="~/img/phone.png" CssClass="icon" />
+                        <asp:HyperLink ID="HyperLink4" runat="server" Text="Contact Us" />
+                    </div>
+                    <%--career--%>
+                    <div class="btn">
+                        <asp:Image ID="Image9" runat="server" ImageUrl="~/img/pen.png" CssClass="icon" />
+                        <asp:HyperLink ID="HyperLink5" runat="server" Text="Careers" />
+                    </div>
+                </div>                
+            </div><%--end features--%>
 
-                    <div class="btn">
-                        <asp:Image ID="Image11" runat="server" ImageUrl="~/img/swash.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink20" runat="server" Text="" />
-                    </div>
-
-                    <div class="btn">
-                        <asp:Image ID="Image12" runat="server" ImageUrl="~/img/swash.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink21" runat="server" Text="" />
-                    </div>
-
-                    <div class="btn">
-                        <asp:Image ID="Image13" runat="server" ImageUrl="~/img/swash.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink22" runat="server" Text="" />
-                    </div>
-
-                    <div class="btn">
-                        <asp:Image ID="Image14" runat="server" ImageUrl="~/img/swash.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink23" runat="server" Text="" />
-                    </div>
-
-                    <div class="btn">
-                        <asp:Image ID="Image15" runat="server" ImageUrl="~/img/swash.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink24" runat="server" Text="" />
-                    </div>
-                  </div>
-              
-            </div>
+                <%-- news and event box --%>
                 <div class="box">
                     <h1 class="title">
                         <asp:Image runat="server" ID="img_news" ImageUrl="~/img/1.png" CssClass="shape" />
@@ -119,55 +130,16 @@
                         Rfhfhfha fjhkzjfhfhhf f fhfhfh fhf fh fhf fhf hjkhk.
                     </asp:Literal>
                 </div>
+            </div><%-- left ends --%>
 
+            <%-- content --%>
+            <div class="content">
+                <asp:ContentPlaceHolder id="content_main" runat="server" />
             </div>
-             <div class="content">
-                 <asp:ContentPlaceHolder id="content_main" runat="server" />
-                
 
-            </div>
+            <%-- right nav --%>
             <div class="right">
-                <%--nav features--%>
-                
-                <div class="box">
-                    <div class="subcontent">
-                    <div class="btn">
-                        <asp:Image ID="img_search" runat="server" ImageUrl="~/img/search.png" CssClass="icon" />
-                        <asp:HyperLink ID="hpl_dr" runat="server" Text="Find a Doctor" />
-                    </div>
-
-                    <div class="btn">
-                        <asp:Image ID="Image5" runat="server" ImageUrl="~/img/search.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink1" runat="server" Text="Locations" />
-                    </div>
-
-                    <div class="btn">
-                        <asp:Image ID="Image6" runat="server" ImageUrl="~/img/money.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink2" runat="server" Text="Pay your Bill" />
-                    </div>
-
-                    <div class="btn">
-                        <asp:Image ID="Image7" runat="server" ImageUrl="~/img/cruz.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink3" runat="server" Text="Symptom Checker" />
-                    </div>
-
-                    <div class="btn">
-                        <asp:Image ID="Image8" runat="server" ImageUrl="~/img/phone.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink4" runat="server" Text="Contact Us" />
-                    </div>
-
-                    <div class="btn">
-                        <asp:Image ID="Image9" runat="server" ImageUrl="~/img/pen.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink5" runat="server" Text="Careers" />
-                    </div>
-
-              </div>
-                <%--end features--%>
-            </div>
-                       
-
-            
-
+                <%-- book an appointment --%>
                 <div class="box">
                     <h1 class="title">
                         <asp:Image runat="server" ID="img_appointment" ImageUrl="~/img/1.png" CssClass="shape" />
@@ -175,9 +147,9 @@
                     <asp:Literal ID="appointment" runat="server">
                         Rfhfhfha fjhkzjfhfhhf f fhfhfh fhf fh fhf fhf hjkhk.
                     </asp:Literal>
-
                 </div>
 
+                <%-- chat with an advisor --%>
                 <div class="box">
                     <h1 class="title">
                         <asp:Image runat="server" ID="img_chat" ImageUrl="~/img/1.png" CssClass="shape" />
@@ -188,32 +160,28 @@
                     <div class="chat">
                         <asp:Image runat="server" ID="img_chaticon" ImageUrl="~/img/chat.png" />
                     </div>
-                </div>
-               
-                
+                </div><%--div box end--%>
+            </div><%--right nav end--%>     
+        </div><%-- container ends --%>
 
-
-            </div>
-            <%--end div box--%>
-
-           
-</div>
+            <%--footer starts--%>
             <div class="footer">
+                <%--right icons--%>
                 <div class="box_l">
-
                     <p>
                         <asp:ImageButton ID="btn_fb" runat="server" ImageUrl="~/img/L2.png" />
                         <asp:ImageButton ID="btn_li" runat="server" ImageUrl="~/img/L3.png" />
                         <asp:ImageButton ID="btn_tw" runat="server" ImageUrl="~/img/L4.png" />
                         <asp:ImageButton ID="btn_you" runat="server" ImageUrl="~/img/L5.png" />
                     </p>
+                </div><%--right icons end--%>
 
-                </div>
-
+                <%--middle partner dov--%>
                 <div class="box_c">
-                    <p><strong>
-                        <asp:Literal runat="server" ID="literal" Text="PARTNERS" /></strong></p>                      
-                            <p><asp:HyperLink ID="HyperLink9" Text="Health Canada" runat="server" />
+                    <p><strong><asp:Literal runat="server" ID="literal" Text="PARTNERS" /></strong>
+
+                    </p>                      
+                    <p><asp:HyperLink ID="HyperLink9" Text="Health Canada" runat="server" />
                     </p>
                     <p>
                         <asp:HyperLink ID="HyperLink10" Text="Ontario College of Physicians and Surgeons" runat="server" />
@@ -243,20 +211,17 @@
                     <p>
                         <asp:HyperLink ID="HyperLink18" Text="Town of Matheson" runat="server" />
                     </p>
-
                 </div>
 
+                <%--legal issues--%>
                 <div class="box_r">
                     <p><asp:HyperLink ID="HyperLink7" Text="Site map" runat="server" /></p>
                     <p><asp:HyperLink ID="HyperLink6" Text="Privacy &amp; Confidentiality" runat="server" /></p>
                     <p><asp:HyperLink ID="HyperLink8" Text="Copyright &amp; terms of use" runat="server" /></p>
                 </div>
-            </div>
-
-        </div>
-        <%--end wraper--%>
+            </div><%--footer end--%>         
+        </div><%--end wraper--%>      
     </form>
 </body>
-
 
 </html>
