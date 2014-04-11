@@ -22,20 +22,18 @@
                     <asp:HyperLink ID="link_logo" runat="server" NavigateUrl="~/home.aspx">
                     <asp:Image CssClass="img" runat="server" ID="logo" ImageUrl="~/img/logo.png" />
                     <h1>
-                        <asp:Label ID="labl_hospital" runat="server">
+                        <asp:Label ID="labl_hospital" runat="server" CssClass="hospital_name">
                         MICs Group of Health Services
-                        </asp:Label>
+                        </asp:Label></h1>
 
-                    </h1>
-                    <p>
-                        <asp:Label ID="lbl_group" runat="server">
+                        <asp:Label ID="lbl_group" runat="server" CssClass="hospital_group">
                             Bingham Memorial Hospital
                             <br />
                             Anson General Hospital
                             <br />
                             Lady Minto Hospital
                         </asp:Label>
-                    </p>
+
                     </asp:HyperLink>
                 </div>
 
@@ -44,33 +42,29 @@
 
                     <%-- login --%>
                     <div class="log">
-                        <asp:LinkButton ID="btn" Text="Log in" runat="server"  DescriptionUrl="~/home.aspx" />
+                        <%--Login Status--%>
+                        <asp:LoginStatus ID="lgs_main" runat="server" ForeColor="White" />
+                        <asp:Image ImageUrl="~/img/lock.png" runat="server" ID="img_log" CssClass="a_img" />    
                     </div>
-                    <%-- register --%>
-                    <div class="reg">
-                        <asp:LinkButton ID="btn_reg" Text="Register" runat="server"  DescriptionUrl="~/home.aspx" />
-                    </div>
-
                     <br /><br />
                     <%-- accessibility --%>
-                    <div class="access">                     
-                        <asp:LinkButton ID="btn_access" Text="Accessibility" DescriptionUrl="~/home.aspx" runat="server" />
-                        <asp:Image ImageUrl="~/img/access.png" runat="server" ID="img_acc" CssClass="a_img" />
+                    <div class="access">                    
+                        <asp:LinkButton ID="btn_access" Text="Accessibility" DescriptionUrl="~/about.aspx" runat="server" ForeColor="White" Font-Size="Large" />
+                        <asp:Image ImageUrl="~/img/access.png" runat="server" ID="img_acc" CssClass="a_img" />    
                     </div>
+                    
                     <br /><br />
                     <%-- donate --%>
                     <div class="donate">
-                        <asp:LinkButton ID="btn_donate" Text="Donate Now" DescriptionUrl="~/donation.aspx" runat="server" CssClass="donate_btn" />
+                        <asp:LinkButton ID="btn_donate" Text="Donate Now" DescriptionUrl="~/donation.aspx" runat="server" />
                     </div>
                 </div><%-- box_head end --%>
             </header><%-- Header ends --%>
 
             <%-- navigation --%>
-
             <nav>
                 <asp:SiteMapDataSource ID="sds_menu" runat="server" />
-
-                <asp:Menu ID="menu_nav" DataSourceID="sds_menu" StaticDisplayLevels="2" Orientation="Horizontal" runat="server" DynamicMenuItemStyle-BackColor="#8cc63f" DisappearAfter="500" DynamicVerticalOffset="5" StaticEnableDefaultPopOutImage="false" DynamicHoverStyle-CssClass="dynamic" DynamicMenuItemStyle-CssClass="dropdown" CssClass="menu">
+                <asp:Menu ID="menu_nav" DataSourceID="sds_menu" StaticDisplayLevels="2" Orientation="Horizontal" runat="server" DynamicMenuStyle-HorizontalPadding="10px" DisappearAfter="500" DynamicVerticalOffset="5" StaticEnableDefaultPopOutImage="false" DynamicMenuItemStyle-CssClass="dynamic" CssClass="menu">
                     <StaticMenuItemStyle ItemSpacing="100" />
                     <Items>
                         <asp:MenuItem Text="Home" NavigateUrl="~/home.aspx" ToolTip="Home" Target="_self" />
@@ -83,6 +77,7 @@
             </nav>
 
         <%-- main --%>
+        <div class="clearfix">
         <div class="container">
             <%-- left nav --%>
             <div class="left">
@@ -93,32 +88,32 @@
                     <%--find a doctor--%>
                     <div class="btn">
                         <asp:Image ID="img_search" runat="server" ImageUrl="~/img/search.png" CssClass="icon" />
-                        <asp:HyperLink ID="hpl_dr" runat="server" Text="Find a Doctor" />
+                        <asp:HyperLink ID="hpl_dr" runat="server" Text="Find a Doctor" NavigateUrl="#" />
                     </div>
                     <%--locations--%>
                     <div class="btn">
                         <asp:Image ID="Image5" runat="server" ImageUrl="~/img/search.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink1" runat="server" Text="Locations" />
+                        <asp:HyperLink ID="HyperLink1" runat="server" Text="Locations" NavigateUrl="~/location.aspx" />
                     </div>
                     <%--pay bill--%>
                     <div class="btn">
                         <asp:Image ID="Image6" runat="server" ImageUrl="~/img/money.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink2" runat="server" Text="Pay your Bill" />
+                        <asp:HyperLink ID="HyperLink2" runat="server" Text="Pay your Bill" NavigateUrl="~/bill.aspx" />
                     </div>
                     <%--symptom checker--%>
                     <div class="btn">
                         <asp:Image ID="Image7" runat="server" ImageUrl="~/img/cruz.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink3" runat="server" Text="Symptom Checker" />
+                        <asp:HyperLink ID="HyperLink3" runat="server" Text="Symptom Checker" NavigateUrl="~/symptom.aspx" />
                     </div>
                     <%--contact us--%>
                     <div class="btn">
                         <asp:Image ID="Image8" runat="server" ImageUrl="~/img/phone.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink4" runat="server" Text="Contact Us" />
+                        <asp:HyperLink ID="HyperLink4" runat="server" Text="Contact Us" NavigateUrl="~/contact.aspx" />
                     </div>
                     <%--career--%>
                     <div class="btn">
                         <asp:Image ID="Image9" runat="server" ImageUrl="~/img/pen.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink5" runat="server" Text="Careers" />
+                        <asp:HyperLink ID="HyperLink5" runat="server" Text="Careers" NavigateUrl="~/career_application.aspx" />
                     </div>
                 </div>                
             </div><%--end features--%>
@@ -165,6 +160,7 @@
                 </div><%--div box end--%>
             </div><%--right nav end--%>     
         </div><%-- container ends --%>
+        </div>
 
             <%--footer starts--%>
             <div class="footer">

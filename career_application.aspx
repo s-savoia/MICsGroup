@@ -9,7 +9,7 @@
         <%--Header and subheader--%>
         <asp:Label ID="lbl_careerhead" runat="server" Text="Job Application" CssClass="careerhead" />
         <br />
-        <asp:Label ID="lbl_careersubhead" runat="server" Text="Please fill out the on-line application form below. (* denotes mandatory fields)" />
+        <%--<asp:Label ID="lbl_careersubhead" runat="server" Text="Please fill out the on-line application form below. (* denotes mandatory fields)" />--%>
         <br /><br />         
 
         <%--First Name--%>
