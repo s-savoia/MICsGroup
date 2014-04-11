@@ -13,10 +13,13 @@
         <h1>News and Events</h1>
 
         <asp:DataList ID="dtl_main" runat="server" DataKeyField="Id" RepeatColumns="1" GridLines="Horizontal">
-
-
             <ItemTemplate>
                 <div class="content1">
+
+                    <div class="categ">
+                        <asp:Label ID="Label5" runat="server" Text='<%#Eval("category") %>' />
+                    </div>
+
                     <div class="date1">
                         <asp:Label ID="Label1" runat="server" Text='<%#Eval("date") %>' />
                     </div>
@@ -24,9 +27,9 @@
                         <asp:Label ID="Label2" runat="server" Text='<%#Eval("title") %>' />
                     </div>
 
-                    <div class="img">
+                    <%--<div class="img">
                         <asp:Label ID="Label3" runat="server" Text='<%#Eval("img") %>' />
-                    </div>
+                    </div>--%>
 
                     <div class="long">
                         <p>

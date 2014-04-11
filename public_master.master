@@ -19,6 +19,7 @@
             <header>
                 <%-- logo --%>
                 <div class="logo">
+                    <asp:HyperLink ID="link_logo" runat="server" NavigateUrl="~/home.aspx">
                     <asp:Image CssClass="img" runat="server" ID="logo" ImageUrl="~/img/logo.png" />
                     <h1>
                         <asp:Label ID="labl_hospital" runat="server">
@@ -35,6 +36,7 @@
                             Lady Minto Hospital
                         </asp:Label>
                     </p>
+                    </asp:HyperLink>
                 </div>
 
                 <%-- header right --%>

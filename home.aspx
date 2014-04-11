@@ -30,6 +30,7 @@
             <%--***** HEADER *****--%>
             <header>
                 <div class="logo">
+                    <asp:HyperLink ID="link_logo" runat="server" NavigateUrl="~/home.aspx">
                     <asp:Image CssClass="img" runat="server" ID="logo" ImageUrl="~/img/logo.png" />
                     <h1>
                         <asp:Label ID="labl_hospital" runat="server">
@@ -44,27 +45,24 @@
                             Lady Minto Hospital
                         </asp:Label>
                     </p>
+                    </asp:HyperLink>
                 </div>
 
-                <div class="box_head">
-                    <div class="log">
-                        <asp:LinkButton ID="btn" Text="Log in" runat="server" Target="_self" DescriptionUrl="~/home.aspx" />
+               <div  class="btn_header">
+                <ul>
+                    <li>
+                        <asp:HyperLink ID="HyperLink19" Text="Log in" runat="server" 
+                            Target="_self"  NavigateUrl="admin/admin_login.aspx"/>
+                    </li>
+                    <li>
+                        <asp:Image ImageUrl="~/img/access.png" runat="server" ID="Image4" width="20" />
+                        <asp:HyperLink ID="HyperLink20" Text="Accessibility" NavigateUrl="~/about.aspx" runat="server" ForeColor="#08659f" />
+                    </li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink21" Text="Donate Now"  runat="server" NavigateUrl="~/donation.aspx" CssClass="donate" />
+                    </li>
+                </ul>
                     </div>
-
-                    <div class="reg">
-                        <asp:LinkButton ID="btn_reg" Text="Register" runat="server" Target="_self" DescriptionUrl="~/home.aspx" />
-                    </div>
-
-                    <div class="access">
-                        <asp:Image ImageUrl="~/img/access.png" runat="server" ID="img_acc" CssClass="a_img" />
-                        <asp:LinkButton ID="btn_access" Text="Accessibility" DescriptionUrl="~/home.aspx" runat="server" />
-                    </div>
-
-                    <div class="donate">
-
-                        <asp:LinkButton ID="btn_donate" Text="Donate Now" DescriptionUrl="~/home.aspx" runat="server" />
-                    </div>
-                </div>
             </header>
 
 
@@ -91,10 +89,7 @@
 
                 <div id="photo">
 
-                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-
-
-                    <%--******** SLIDE-SHOW CON JQUERY SLIDE ********--%>
+                  <%--******** SLIDE-SHOW CON JQUERY SLIDE ********--%>
 
                     <div id="columnas1">
                         <asp:Repeater ID="rpt_images" runat="server">
@@ -119,40 +114,43 @@
                     </div>
 
                 </div>
-                <asp:DragPanelExtender ID="DragPanelExtender1" runat="server" TargetControlID="pnl_feature"></asp:DragPanelExtender>
 
 
-                <%--***** BOX WITH FEATURES ****--%>
+
+                 <%--***** BOX WITH FEATURES ****--%>
+                <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+                <asp:DragPanelExtender ID="DragPanelExtender1" runat="server" TargetControlID="pnl_feature" DragHandleID=""></asp:DragPanelExtender>
 
                 <asp:Panel runat="server" ID="pnl_feature" CssClass="features">
                     <div class="btn">
                         <asp:Image ID="img_search" runat="server" ImageUrl="~/img/search.png" CssClass="icon" />
-                        <asp:HyperLink ID="hpl_dr" runat="server" Text="Find a Doctor" NavigateUrl="#" />
+                        <asp:HyperLink ID="hpl_dr" runat="server" Text="Find a Doctor" NavigateUrl="#" ForeColor="#29b5b3" />
                     </div>
 
                     <div class="btn">
                         <asp:Image ID="Image5" runat="server" ImageUrl="~/img/search.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink1" runat="server" Text="Locations" />
+                        <asp:HyperLink ID="HyperLink1" runat="server" Text="Locations" NavigateUrl="~/location.aspx" ForeColor="#29b5b3" />
                     </div>
 
                     <div class="btn">
                         <asp:Image ID="Image6" runat="server" ImageUrl="~/img/money.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink2" runat="server" Text="Pay your Bill" />
+                        <asp:HyperLink ID="HyperLink2" runat="server" Text="Pay your Bill" NavigateUrl="~/bill.aspx" ForeColor="#29b5b3" />
                     </div>
 
                     <div class="btn">
                         <asp:Image ID="Image7" runat="server" ImageUrl="~/img/cruz.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink3" runat="server" Text="Symptom Checker" />
+                        <asp:HyperLink ID="HyperLink3" runat="server" Text="Symptom Checker" NavigateUrl="~/symptom.aspx" ForeColor="#29b5b3" />
                     </div>
 
                     <div class="btn">
                         <asp:Image ID="Image8" runat="server" ImageUrl="~/img/phone.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink4" runat="server" Text="Contact Us" />
+                        <asp:HyperLink ID="HyperLink4" runat="server" Text="Contact Us" NavigateUrl="~/contact.aspx" ForeColor="#29b5b3" />
                     </div>
 
                     <div class="btn">
                         <asp:Image ID="Image9" runat="server" ImageUrl="~/img/pen.png" CssClass="icon" />
-                        <asp:HyperLink ID="HyperLink5" runat="server" Text="Careers" />
+                        <asp:HyperLink ID="HyperLink5" runat="server" Text="Careers" NavigateUrl="~/careers1.aspx" ForeColor="#29b5b3" />
                     </div>
 
                 </asp:Panel>

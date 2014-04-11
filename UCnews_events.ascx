@@ -36,7 +36,7 @@
                                     <asp:Label ID="Label1" runat="server" Text='<%#Eval("date") %>' />
                                 </div>
                                 <div class="title1">
-                                    <asp:HyperLink runat="server" ID="lnk_alert" NavigateUrl="~/alert_list.aspx">
+                                    <asp:HyperLink runat="server" ID="lnk_alert" NavigateUrl="~/news_events.aspx">
                                         <asp:Label ID="Label2" runat="server" Text='<%#Eval("title") %>' />
                                     </asp:HyperLink>
                                     
@@ -48,18 +48,13 @@
 
                                 <div class="long">
                                     <p>
-                                        <asp:Label ID="Label4" runat="server" Text='<%#Eval("shorT_cont") %>' />
+                                        <asp:Label ID="Label4" runat="server" Text='<%#Eval("short_cont") %>' />
                                     </p>
                                 </div>
-                           
-
-                   
                 </ItemTemplate>
-
             </asp:DataList>
                                  </li>
                         </ul>
 
                  </div>
         </div>
-</asp:Content>
