@@ -30,7 +30,8 @@
           <siteMapNode url="admin/admin_appointment.aspx" title="Book An Appointment"  description="Book an appointment" />
           <siteMapNode url="admin/admin_doctor.aspx" title="Find A Doctor"  description="Find a doctor" />
           <siteMapNode url="admin/admin_find.aspx" title="Find A Service"  description="Find a service" />
-          <siteMapNode url="admin/admin_specialty.aspx" title="Specialty Services "  description="Bill Payment" />        
+          <siteMapNode url="admin/admin_specialty.aspx" title="Specialty Services "  description="Bill Payment" /> 
+        <siteMapNode url="admin/admin_department.aspx" title="Department"  description="Department" />
         </siteMapNode>
       
         <!--Career--> 

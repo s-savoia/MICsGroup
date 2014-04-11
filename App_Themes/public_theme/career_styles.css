@@ -1,0 +1,150 @@
+﻿body {
+    line-height:24px;
+}
+.clearfix{
+	display:block;
+}
+#content_main_lbl_careerhead
+{
+    color:#29b5b3;
+    font-weight: 800;
+    font-size:24px;
+    margin-bottom:20px;
+}
+
+.btn_career {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color:#8cc63f;
+    color:#FFF;
+    Width: 80px; 
+    Height: 35px;
+    border:none;
+    font-size:18px;
+    margin-right:8px;
+}
+.txt_career
+{
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border:1px solid #29b5b3;
+    width:200px;
+    height:25px;
+    
+}
+.txt_multiline
+{
+    width:400px;
+    height:100px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border:1px solid #29b5b3;
+}
+#career_application
+{
+    background-color:#C7ECEF;
+    /*border:1px solid #29b5b3;*/
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding:20px 30px;
+}
+.ddl_career
+{
+    width:200px;
+    height:35px;
+    font-size:16px;
+    border:1px solid #29b5b3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    color:#29b5b3;
+}
+.ddl_careershort
+{
+    width:80px;
+    height:35px;
+    font-size:16px;
+    border:1px solid #29b5b3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    color:#29b5b3;
+}
+.ddl_careerlong
+{
+    width:350px;
+    height:35px;
+    font-size:16px;
+    border:1px solid #29b5b3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    color:#29b5b3;
+}
+.floatButton
+{
+    width:150px;
+    height:35px;
+    border:none;
+    background-color:#8cc63f;
+    color:white;
+    font-size:18px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.floatL
+{
+    float:left;
+}
+.floatR
+{
+    float:right;
+}
+.nurseimg
+{
+    float:left;
+    margin-right:15px;
+    margin-bottom:15px;
+}
+.careericon
+{
+    margin-right:15px;
+    margin-bottom:25px;
+    float:left;
+}
+.verticalAlign
+{
+    vertical-align:central;
+    padding-top:10px;
+}
+.newsform
+{
+    margin-top:10px;
+}
+#career_application
+{
+    background-color:#C7ECEF;
+    /*border:1px solid #29b5b3;*/
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding:20px 30px;
+    width:90%;
+}
+input#content_main_rbl_status_0, #content_main_rbl_status_1, #content_main_rbl_crime_0, #content_main_rbl_crime_1
+{
+    width:20px;
+    height:20px;
+    vertical-align:middle;
+}
+input#content_main_ckb_consent_0, #content_main_ckb_consent_1
+{
+    width:20px;
+    height:20px;
+    vertical-align:middle;
+}
