@@ -8,18 +8,16 @@
       <siteMapNode url="~/about.aspx" title="About Us">
         <siteMapNode url="~/news_events.aspx" title="News &amp; Events " />
         <siteMapNode url="~/newsletters.aspx" title="Newsletters" />
+        <siteMapNode url="~/location.aspx" title="Location" />
         <!--<siteMapNode url="~/vision.aspx" title="Vision" />-->
         <!--<siteMapNode url="~/about.aspx" title="Strategy &amp; Plans" />
         <siteMapNode url="~/about.aspx" title="Board of Directors" />
         <siteMapNode url="~/about.aspx" title="Quality &amp; Risk Management" />-->
       </siteMapNode>
 
-        <!--<siteMapNode url="~/about.aspx" title="Patients &amp; Families" >-->
       <siteMapNode url="~/symptom.aspx" title="Symtom Checker" >
-      <siteMapNode url="~/emergency.aspx" title="Emergency Wait" />
-          
-          <!--<siteMapNode url="~/rights.aspx" title="Patients Rights &amp; Responsibility" />-->
-        </siteMapNode>
+        <siteMapNode url="~/emergency.aspx" title="Emergency Wait" />
+       </siteMapNode>
 
       <siteMapNode title="Services" url="#"  description="Sevices">
         <siteMapNode url="~/bill.aspx" title="Bill Payment" />

@@ -1,5 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="public_master.master.cs" Inherits="public_master" %>
 
+<meta name="viewport" content="width=device-width,initial-scale=1.0" /> <%--added by claudia to make it responsive--%>
+
 <!DOCTYPE html>
 
 <%-- This page is coded by Prabhjot Mand--%>

@@ -35,7 +35,7 @@ footer, header, hgroup, menu, nav, section {
 /* reset5 Â© 2011 opensource.736cs.com MIT */
 
 body {
-    font-family: Tahoma,Arial,sans-serif;
+    font-family: Tahoma,Arial,Verdana,Sans-Serif;
     font-size: 1em;
     color: #6d6d6e;
     letter-spacing: 0.5%;
@@ -55,6 +55,10 @@ body {
     position: relative;
     /*agregando pos:rel*/
     max-width: 1366px;
+}
+
+#txt_hospital {
+    display: none;
 }
 
 
@@ -92,7 +96,7 @@ header {
     .logo h1 {
         text-align: left;
         padding: 1% 0 0 20%;
-        font-family: 'Franklin Gothic Book','Bell MT','Bookman Old Style', Cambria;
+        font-family: 'Franklin Gothic Book','Bell MT','Bookman Old Style', Cambria,Tahoma,Arial,Verdana,Sans-Serif;
         color: #a5a0a0;
         font-size: 1.8em;
         letter-spacing: -1px;
@@ -127,7 +131,7 @@ header {
 
 /*modificado viernes 14 marzo*/
 .alert {
-    width: 90%;
+    width: 88%;
     margin: 1% auto 1% auto;
     padding: 0.5% 1.5% 0.5% 1%;
     background-color: #ff8149;
@@ -166,8 +170,8 @@ header {
 }
 
 .box_left {
-    width: 30%;
-    min-width: 290px;
+    width: 25%;
+    min-width: 250px;
     margin: 0 0 3% 0;
     border: thin solid #29b5b3;
     float: left;
@@ -187,10 +191,10 @@ header {
 }
 
 .box_centre {
-    width: 36.5%;
+    width: 45.5%;
     min-width: 290px;
     border: thin solid #29b5b3;
-    margin: 0 1% 3% 1%;
+    margin: 0 1% 3% 1.5%;
     float: left;
     font-size: 90%;
     background-color: #fff;
@@ -208,8 +212,8 @@ header {
 }
 
 .box_right {
-    width: 30%;
-    min-width: 290px;
+    width: 25%;
+    min-width: 250px;
     margin: 0 0.5% 3% 0%;
     border: thin solid #29b5b3;
     float: right;
@@ -535,6 +539,17 @@ a#HiperLink5 {
             text-decoration: underline;
         }
 
+#txt_hospital {
+    color: #fff;
+    display: none;
+}
+
+#txt_hospital1 {
+    color: #fff;
+    display: none;
+}
+
+
 /********************************************************/
 /*                  MEDIA QUERIES                       */
 /********************************************************/
@@ -552,6 +567,16 @@ a#HiperLink5 {
         position: relative;
         /*agregando pos:rel*/
         max-width: 1366px;
+    }
+
+    #txt_hospital1 {
+        display: none;
+    }
+
+
+    #txt_hospital {
+        color: #fff;
+        display: none;
     }
 
     header {
@@ -587,11 +612,11 @@ a#HiperLink5 {
         .logo h1 {
             text-align: left;
             padding: 1% 0 0 20%;
-            font-family: 'Franklin Gothic Book','Bell MT','Bookman Old Style', Cambria;
+            font-family: 'Franklin Gothic Book','Bell MT','Bookman Old Style', Cambria,Tahoma,Arial,Verdana,Sans-Serif;
             color: #a5a0a0;
             font-size: 1.7em;
             letter-spacing: -1px;
-            margin:9px 0 0 0;
+            margin: 9px 0 0 0;
         }
 
         .logo p {
@@ -630,7 +655,7 @@ a#HiperLink5 {
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
-        height:30px
+        height: 30px;
     }
 
     #alert_UC_alert1 {
@@ -653,7 +678,7 @@ a#HiperLink5 {
 
 
     .box {
-        width: 90%;
+        width: 93%;
         /*border: dotted thin green;*/
         margin: 0 auto 0 auto;
         height: auto;
@@ -663,8 +688,8 @@ a#HiperLink5 {
     }
 
     .box_left {
-        width: 29%;
-        min-width: 290px;
+        width: 25%;
+        min-width: 250px;
         margin: 0 0 3% 0;
         border: thin solid #29b5b3;
         float: left;
@@ -684,10 +709,10 @@ a#HiperLink5 {
     }
 
     .box_centre {
-        width: 33%;
+        width: 41%;
         min-width: 290px;
         border: thin solid #29b5b3;
-        margin: 0 1% 3% 1%;
+        margin: 0 1% 3% 1.7%;
         float: left;
         font-size: 90%;
         background-color: #fff;
@@ -705,8 +730,8 @@ a#HiperLink5 {
     }
 
     .box_right {
-        width: 29%;
-        min-width: 290px;
+        width: 25%;
+        min-width: 250px;
         margin: 0 0.5% 3% 0%;
         border: thin solid #29b5b3;
         float: right;
@@ -818,7 +843,7 @@ a#HiperLink5 {
 
     /*------  SLIDER - FEATURES -------*/
     .slider {
-        width: 90%;
+        width: 88%;
         margin: 1% auto 1% auto;
         height: 250px;
         min-width: 300px;
@@ -837,7 +862,7 @@ a#HiperLink5 {
 
     .photo {
         z-index: 2;
-        width:90%;
+        width: 90%;
         position: absolute;
         height: 250px;
         left: 0%;
@@ -849,7 +874,7 @@ a#HiperLink5 {
     .shape1 {
         z-index: 3;
         position: absolute;
-        left: 39%;
+        left: 37%;
         /*height:250px;*/
         width: 410px;
         -webkit-border-radius: 7px;
@@ -867,8 +892,8 @@ a#HiperLink5 {
 
     div#pnl_feature.features {
         position: absolute;
-        left: 847px;
-        top: -155px;
+        left: 600px;
+        top: -130px;
     }
 
     a#hpl_dr {
@@ -897,7 +922,7 @@ a#HiperLink5 {
 
 
     .features {
-        width: 18%;
+        width: 20%;
         background-color: #fff; /*#c7ecef*/
         height: auto;
         z-index: 4; /*was2*/
@@ -1038,7 +1063,7 @@ a#HiperLink5 {
 /********* TABLET 768 PX *************/
 
 @media screen and (max-width:768px) {
-     .wraper {
+    .wraper {
         width: 100%;
         margin-left: auto;
         margin-right: auto;
@@ -1048,6 +1073,8 @@ a#HiperLink5 {
         /*agregando pos:rel*/
         max-width: 1366px;
     }
+
+
 
     header {
         width: 90%;
@@ -1072,6 +1099,32 @@ a#HiperLink5 {
         border-radius: 7px;
     }
 
+
+    #txt_hospital1 {
+        display: block;
+        float: right;
+        color: #ff8149;
+        font-size: 1.2em;
+        width: 260px;
+        z-index: 50;
+        text-align: right;
+        line-height: 1.5em;
+        font-style: italic;
+        margin: 3% 3% 0 0%;
+    }
+
+    #txt_hospital {
+        display: block;
+        float: left;
+        color: #fff;
+        font-size: 1.5em;
+        width: 260px;
+        z-index: 40;
+        text-align: left;
+        font-style: italic;
+        margin: 10% 0 0 4%;
+    }
+
     .logo {
         width: 40%;
         margin: 0 0 0 4%;
@@ -1082,10 +1135,10 @@ a#HiperLink5 {
         .logo h1 {
             text-align: left;
             padding: 1% 0 0 20%;
-            font-family: 'Franklin Gothic Book','Bell MT','Bookman Old Style', Cambria;
+            font-family: 'Franklin Gothic Book','Bell MT','Bookman Old Style', Cambria,Tahoma,Arial,Verdana,Sans-Serif;
             color: #a5a0a0;
             font-size: 1.6em;
-            margin:20px 0 0 0;
+            margin: 20px 0 0 0;
             letter-spacing: -1px;
         }
 
@@ -1112,14 +1165,14 @@ a#HiperLink5 {
 
     /*modificado viernes 14 marzo*/
     .alert {
-        width: 90%;
+        width: 88%;
         margin: 1% auto 1% auto;
         padding: 0.5% 1.5% 0.5% 1%;
         background-color: #ff8149;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
-        height:30px;
+        height: 30px;
     }
 
     #alert_UC_alert1 {
@@ -1326,13 +1379,14 @@ a#HiperLink5 {
 
     .photo {
         z-index: 2;
-        width:90%;
+        width: 90%;
         position: absolute;
         height: 250px;
         left: 0%;
         -webkit-border-radius: 7px;
         -moz-border-radius: 7px;
         border-radius: 7px;
+        display: none;
     }
 
     .shape1 {
@@ -1356,8 +1410,8 @@ a#HiperLink5 {
 
     div#pnl_feature.features {
         position: absolute;
-        left: 500px;
-        top: -155px;
+        left: 400px;
+        top: -130px;
     }
 
     a#hpl_dr {
@@ -1386,7 +1440,7 @@ a#HiperLink5 {
 
 
     .features {
-        width: 30%;
+        width: 25%;
         background-color: #fff; /*#c7ecef*/
         height: auto;
         z-index: 4; /*was2*/
@@ -1532,6 +1586,16 @@ a#HiperLink5 {
         position: relative;
     }
 
+    #txt_hospital {
+    color: #fff;
+    display: none;
+}
+
+#txt_hospital1 {
+    color: #fff;
+    display: none;
+}
+
     header {
         width: 100%;
         margin-left: auto;
@@ -1539,7 +1603,6 @@ a#HiperLink5 {
         height: 86px;
         float: none;
         position: relative;
-
         background: #f0f9ff; /* Old browsers */
         background: -moz-linear-gradient(left, #f0f9ff 0%, #cbebff 47%, #a1dbff 100%); /* FF3.6+ */
         background: -webkit-gradient(linear, left top, right top, color-stop(0%,#f0f9ff), color-stop(47%,#cbebff), color-stop(100%,#a1dbff)); /* Chrome,Safari4+ */
@@ -1559,11 +1622,10 @@ a#HiperLink5 {
     }
 
         .logo h1 {
-
             width: 100%;
             padding: 5px;
             margin: 0 auto 5px auto;
-            font-family: 'Franklin Gothic Book','Bell MT','Bookman Old Style', Cambria;
+            font-family: 'Franklin Gothic Book','Bell MT','Bookman Old Style', Cambria,Tahoma,Arial,Verdana,Sans-Serif;
             color: #29b5b3;
             font-size: 190%;
             float: none;
@@ -1576,7 +1638,7 @@ a#HiperLink5 {
         }
 
     .img {
-        display:none;
+        display: none;
         width: 20%;
         float: none;
         height: auto;
@@ -1597,7 +1659,7 @@ a#HiperLink5 {
         border-radius: 0;
         height: 30px;
         overflow: hidden;
-        z-index:20;
+        z-index: 20;
     }
 
     .box {
@@ -1716,8 +1778,8 @@ a#HiperLink5 {
         width: 100%;
         /*float: right;*/
         margin: -1.6% auto 0 auto;
-        background-color:aliceblue;
-        height:40px;
+        background-color: aliceblue;
+        height: 40px;
     }
 
         .btn_header ul {
@@ -1778,8 +1840,8 @@ a#HiperLink5 {
                     }
 
     /*------  SLIDER - FEATURES -------*/
-        .shape1 {
-        display:none;
+    .shape1 {
+        display: none;
         z-index: 3;
         position: absolute;
         left: 39%;
@@ -1805,8 +1867,7 @@ a#HiperLink5 {
     }
 
     .features {
-
-        display:none;
+        display: none;
         /*width: 15%;*/
         background-color: #fff; /*#c7ecef*/
         min-width: 185px;
@@ -1952,6 +2013,16 @@ a#HiperLink5 {
         position: relative;
     }
 
+    #txt_hospital {
+    color: #fff;
+    display: none;
+}
+
+#txt_hospital1 {
+    color: #fff;
+    display: none;
+}
+
     header {
         width: 100%;
         margin-left: auto;
@@ -1972,8 +2043,8 @@ a#HiperLink5 {
             width: 100%;
             padding: 5px 20px 3px 0;
             margin: 0 auto 3px auto;
-            font-family: 'Franklin Gothic Book','Bell MT','Bookman Old Style', Cambria;
-            color:#29b5b3;
+            font-family: 'Franklin Gothic Book','Bell MT','Bookman Old Style', Cambria,Tahoma,Arial,Verdana,Sans-Serif;
+            color: #29b5b3;
             font-size: 125%;
             /*float: none;*/
             /*letter-spacing: .1px;*/
@@ -2018,8 +2089,8 @@ a#HiperLink5 {
     }
 
     .box_left {
-        width: 90%;
-        min-width: 290px;
+        width: 85%;
+        min-width: 250px;
         margin: 0 auto 3% auto;
         border: thin solid #29b5b3;
         float: none;
@@ -2039,8 +2110,8 @@ a#HiperLink5 {
     }
 
     .box_centre {
-        width: 90%;
-        min-width: 290px;
+        width: 85%;
+        min-width: 250px;
         border: thin solid #29b5b3;
         margin: 0 auto 3% auto;
         float: none;
@@ -2060,8 +2131,8 @@ a#HiperLink5 {
     }
 
     .box_right {
-        width: 90%;
-        min-width: 290px;
+        width: 85%;
+        min-width: 250px;
         margin: 0 auto 3% auto;
         border: thin solid #29b5b3;
         float: none;
@@ -2084,7 +2155,7 @@ a#HiperLink5 {
     /*TOP NAVIGATION*/
 
 
-      .donate {
+    .donate {
         width: 100px;
         background-color: #ff8a3d;
         color: #fff;
@@ -2111,26 +2182,27 @@ a#HiperLink5 {
         width: 100%;
         /*float: right;*/
         margin: 2% auto 0 auto;
-        background-color:aliceblue;
-        height:30px;
-        padding:0 33px 5px 0;
+        background-color: aliceblue;
+        height: 30px;
+        padding: 0 33px 5px 0;
     }
 
-    .btn_header ul li img {
-        display:none;
-    }
+        .btn_header ul li img {
+            display: none;
+        }
 
         .btn_header ul {
             text-decoration: none;
-            margin:5px;
+            margin: 5px;
         }
 
             .btn_header ul li {
                 display: inline;
                 margin: 0 5px 0 auto;
             }
+
     #HiperLink21 a {
-        margin-right:14px;
+        margin-right: 14px;
     }
 
     /*---- MAIN NAVEGATION ----*/
@@ -2214,8 +2286,8 @@ a#HiperLink5 {
         box-shadow: 0px 4px 8px 0px rgba(50, 50, 50, 0.29);
     }
 
-        .shape1 {
-        display:none;
+    .shape1 {
+        display: none;
         z-index: 3;
         position: absolute;
         left: 39%;

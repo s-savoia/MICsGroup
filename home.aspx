@@ -5,6 +5,8 @@
 <%@ Register TagPrefix="uc" TagName="emergency_timeUC" Src="~/emergency_time.ascx" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
 <%--CODE BY CLAUDIA--%>
 
 <!DOCTYPE html>
@@ -86,6 +88,7 @@
 
             <%--******** SLIDER SHOW *********--%>
             <div class="slider">
+                <asp:Label ID="txt_hospital" runat="server">Improving Care for our Community</asp:Label>
 
                 <div id="photo">
 
@@ -195,12 +198,10 @@
                         <asp:Image runat="server" ID="Image3" ImageUrl="~/img/1.png" CssClass="shape" />
                         <asp:Label ID="label4" runat="server" Text="Emergecy Waiting Time" /></h1>
                      
-                       <uc:emergency_timeUC ID="emergency_wait" runat="server"  />
-                       
-                    <%--<div class="chat">
-                        <asp:Image runat="server" ID="Image4" ImageUrl="~/img/chat.png" />
-                    </div>--%>
+                       <uc:emergency_timeUC ID="emergency_wait" runat="server"  />                
                 </div>
+
+                <asp:Label ID="txt_hospital1" runat="server">The MICs Group of Health Services consists of three hospitals and their associated long-term care facilities located in the Northern Ontario communities of Matheson, Iroquois Falls and Cochrane.</asp:Label>
 
 
             </div>

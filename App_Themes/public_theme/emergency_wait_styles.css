@@ -1,9 +1,26 @@
-﻿body {
+﻿.wraper1 {
+    width:85%;
+    margin:10px auto 5px auto;
+    font-size:1.1em;
+        color:#808080;
 }
 
 .location {
     text-align:center;
-    font-size:medium;
-    color:black;
-    font-weight:700;
+    margin:2%;
+}
+
+.time {
+    text-align:center;
+    font-size:1.5em;
+    color:#ff8149;
+    /*background-color:#ede8e8;*/
+        -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    padding:2px;
+        margin:2% auto 0 auto;
+        width:90%;
+        border-bottom:dashed thin #ff8149;
+
 }

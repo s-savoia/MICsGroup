@@ -2,7 +2,7 @@
 <link href="App_Themes/public_theme/news_styles.css" rel="stylesheet" />
 
 <%--**** CODE BY CLAUDIA ****--%>
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
  <script src="js/jquery-latest.pack.js" type="text/javascript"></script>
 
     <script src="js/jcarousellite_1.0.1c4.js" type="text/javascript"></script>
