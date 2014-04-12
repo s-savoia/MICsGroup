@@ -37,6 +37,7 @@ CREATE TABLE [dbo].[mic_advice] (
 DROP TABLE [dbo].[mic_symptoms];
 DROP TABLE [dbo].[mic_advice];
 
+-- -----------------------------------------------------------------------------
 
 -- created new symptoms table
 CREATE TABLE [dbo].[mic_symptoms] (    

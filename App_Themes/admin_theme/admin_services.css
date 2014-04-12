@@ -1,24 +1,38 @@
-﻿.clear-both {
+﻿ /*= = = CODED BY: JAMES HONG = = = */
+
+ /*FIND A SERVICE (ADMIN PAGE) STYLESHEET*/
+
+ /*clear both left and right float*/
+.clear-both {
     clear: both;
 }
 
+/*small margin right offset*/
 .margin-right-s {
     margin-right: 2%;
 }
-
+/*medium margin left offset*/
+.margin-left-m {
+    margin-right: 5%;
+}
+/*medium margin right offset*/
 .margin-right-m {
     margin-right: 5%;
 }
-
+/*small margin bottom offset*/
 .margin-bottom-s {
     margin-bottom: 2%;
 }
-
+/*medium margin right offset*/
 .margin-bottom-m {
     margin-bottom: 5%;
 }
-
+/*small overall padding*/
 .padding-s {
     padding: 2%;
+}
+/*medium overall padding*/
+.padding-left-m {
+    padding-left: 5%;
 }
 

@@ -6,7 +6,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <%--STYLESHEET--%>
-    <link rel="stylesheet" href="../App_Themes/admin_theme/admin_job_postings_styles.css" />
+    <link rel="stylesheet" href="../App_Themes/admin_theme/admin_job_postings.css" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content_main" runat="Server">

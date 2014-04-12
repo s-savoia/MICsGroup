@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;   
 using System.Web;
 
+// = = = CODED BY: JAMES HONG
 
+// SYMPTOMS CLASS
 public class symptomsClass
 {
     // = = = SYMPTOMS = = = 

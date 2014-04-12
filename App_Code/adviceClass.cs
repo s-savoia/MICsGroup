@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;   
 using System.Web;
 
+// = = = CODED BY: JAMES HONG = = = 
 
+// ADVICE CLASS
 public class adviceClass
 {
     public IQueryable<mic_advice> getAdvice() // GET all advice
@@ -13,7 +15,7 @@ public class adviceClass
         return allAdvice;
     }
 
-    public IQueryable<mic_advice> getAdviceByLevel(int _level)
+    public IQueryable<mic_advice> getAdviceByLevel(int _level) // GET advice by level
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         var allAdvice = objHospital.mic_advices.Where(x => x.level ==_level).Select(x => x);

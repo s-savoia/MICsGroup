@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/admin_master.master" AutoEventWireup="true" CodeFile="admin_symptom.aspx.cs" Inherits="admin_symptom" %>
 
+<%--= = = CODED BY: JAMES HONG = = =--%>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <%--STYLESHEETS--%>
     <link rel="stylesheet" href="../App_Themes/admin_theme/admin_services.css" />
     <link rel="stylesheet" href="../App_Themes/admin_theme/admin_symptom.css" />
 </asp:Content>
@@ -14,14 +17,12 @@
         <%--= = = CONTENT TEMPLATE = = =--%>
         <ContentTemplate>
 
-            <%--MAIN CONTROL BUTTONS--%>
-
+            <%--MAIN CONTROL BUTTONS (manage the type of content: symptoms/advice)--%>
             <asp:Panel ID="pnl_controlPanel" runat="server" Visible="false">
 
                 <asp:Button ID="btn_manageSymptoms" runat="server" Text="Manage Symptoms" OnCommand="sub_adminOther" CommandName="manageSymptoms" />
                 <br />
                 <br />
-
 
                 <asp:Button ID="btn_manageAdvice" runat="server" Text="Manage advice" OnCommand="sub_adminOther" CommandName="manageAdvice" />
                 <br />
@@ -31,13 +32,10 @@
                 <br />
             </asp:Panel>
 
-            <%-- = = = INSERT SYMPTOM PANEL = = = --%>
+            <%-- = = = INSERT SYMPTOM PANEL (symptom name)= = = --%>
             <asp:Panel ID="pnl_insertSymptom" runat="server" Visible="false">
 
                 <div style="float: left;">
-                    <h1>
-                        <asp:Label ID="lbl_viewModeInsertSymptom" runat="server" Text="Add a symptom" />
-                    </h1>
 
                     <br />
                     <br />
@@ -60,6 +58,7 @@
 
                 <div style="float: right; padding-right: 5%;">
                     <h4>
+                        <%--REQUIRED FIELD LEGEND--%>
                         <asp:Label ID="lbl_requiredNoteSymp" runat="server" Text="* Required field" CssClass="requiredColour" />
                     </h4>
                 </div>
@@ -67,17 +66,14 @@
             </asp:Panel>
 
             <%--MANAGE SYMPTOMS PANEL--%>
-
             <asp:Panel ID="pnl_symptomControl" runat="server" Visible="false" CssClass="contentControlBtns">
-                <%--floatR--%>
 
                 <br />
                 <hr />
 
-                <%--ADD A SYMPTOM--%>
+                <%--BUTTONS (add a symptom, view symptoms)--%>
                 <asp:Button ID="btn_viewInsert" runat="server" Text="Add new symptom" OnCommand="sub_adminOther" CommandName="viewInsertSymp" CssClass="margin-right-m" />
 
-                <%--VIEW SYMPTOMS--%>
                 <asp:Button ID="btn_viewSymptoms" runat="server" Text="View symptoms" OnCommand="sub_adminOther" CommandName="viewSymptoms" CssClass="margin-right-m" />
 
                 <hr />
@@ -85,30 +81,27 @@
 
             </asp:Panel>
 
-            <%-- VIEW/EDIT SYMPTOMS --%>
+            <%-- VIEW/EDIT SYMPTOMS PANEL --%>
             <asp:Panel ID="pnl_viewEditSymptom" runat="server" Visible="false">
 
-                <h1>
-                    <asp:Label ID="lbl_viewModeVEsymp" runat="server" Text="View/Edit symptoms" />
-                </h1>
-
                 <br />
                 <br />
-
+                <%--HEADINGS--%>
                 <div style="float: left; margin-right: 3%;">
                     <h3>
+                        <%--SYMPTOM ID--%>
                         <asp:Label ID="lbl_headingIdVE" runat="server" Text="Id" />
                     </h3>
                 </div>
 
                 <div style="float: left;">
                     <h3>
+                        <%--SYMPTOM NAME--%>
                         <asp:Label ID="lbl_headingSymptomVE" runat="server" Text="Symptom" />
                     </h3>
                 </div>
 
                 <%--GRIDVIEW (SYMPTOMS) --%>
-
                 <div style="float: left;">
                     <%--border: 1px dashed red;--%>
                     <asp:GridView ID="grd_symptomsTable" runat="server" AutoGenerateColumns="false" DataKeyNames="id">
@@ -118,7 +111,7 @@
                             <%--ITEM TEMPLATE--%>
                             <asp:TemplateField>
                                 <ItemTemplate>
-                                    <div style="padding: 2%;">
+                                    <div style="padding: 2%; margin-right: 3%;">
                                         <div style="width: 5%; float: left; padding-top: 2%;">
 
                                             <%--ID--%>
@@ -137,12 +130,38 @@
 
                                         <%--EDIT BUTTON--%>
                                         <div style="width: 10%; float: right; padding-top: 2%;">
-                                            <asp:Button ID="btn_editSymp" runat="server" Text="Edit" OnCommand="sub_admin" CommandName="editSymp" />
+                                            <asp:Button ID="btn_editSymp" runat="server" Text="Edit" OnCommand="sub_admin" CommandName="editSymp" CommandArgument='<%#Eval ("id") %>' />
                                         </div>
 
                                         <div style="border-bottom: 2px dotted #22BCB9;" />
                                     </div>
                                 </ItemTemplate>
+                            </asp:TemplateField>
+
+                            <%--EDIT ITEM TEMPLATE--%>
+                            <asp:TemplateField>
+                                <EditItemTemplate>
+                                    <div style="padding: 2%;">
+                                        <div style="width: 5%; float: left; padding-top: 2%;">
+
+                                            <%--ID--%>
+                                            <asp:Label ID="lbl_idE" runat="server" Text='<%# Eval("id") %>' />
+                                        </div>
+
+                                        <%--SYMPTOM--%>
+                                        <div style="width: 45%; float: left; padding-top: 2%;">
+                                            <asp:Label ID="lbl_symptomE" runat="server" Text='<%#Eval ("symptom") %>' />
+                                            <br />                                            
+                                        </div>
+                                        
+                                        <%--UPDATE BUTTON--%>
+                                        <div style="width: 10%; float: right; padding-top: 2%;">
+                                            <asp:Button ID="btn_updateSymp" runat="server" Text="Update" OnCommand="sub_admin" CommandName="updateSymp" />
+                                        </div>
+
+                                        <div style="border-bottom: 2px dotted #22BCB9;" />
+                                    </div>
+                                </EditItemTemplate>
                             </asp:TemplateField>
 
                         </Columns>
@@ -154,19 +173,16 @@
             </asp:Panel>
 
 
-            <%-- = = = INSERT ADVICE PANEL = = = --%>
+            <%-- = = = INSERT ADVICE PANEL (advice content)= = = --%>
             <asp:Panel ID="pnl_insertAdvice" runat="server" Visible="false">
 
                 <div style="float: left;">
-                    <h1>
-                        <asp:Label ID="lbl_viewModeInsertAdvice" runat="server" Text="Add advice" />
-                    </h1>
 
                     <br />
                     <br />
 
                     <asp:Label ID="lbl_adviceI" runat="server" Text="Advice" AssociatedControlID="txt_adviceI" />
-
+                    <%--ADVICE--%>
                     <asp:TextBox ID="txt_adviceI" runat="server" ValidationGroup="insert" Columns="50" />
 
                     <asp:RequiredFieldValidator ID="rfv_adviceI" runat="server" ControlToValidate="txt_adviceI" Text="*" ValidationGroup="insert" CssClass="requiredColour" ToolTip="Please fill in this field" />
@@ -179,7 +195,7 @@
                     <%--CANCEL BUTTON--%>
                     <asp:Button ID="btn_cancelInsertAdv" runat="server" Text="Cancel" OnCommand="sub_adminOther" CommandName="cancelAdv" CausesValidation="false" ValidationGroup="insert" />
                 </div>
-
+                <%--REQUIRED FIELD LEGEND--%>
                 <div style="float: right; padding-right: 5%;">
                     <h4>
                         <asp:Label ID="lbl_requiredNoteAdv" runat="server" Text="* Required field" CssClass="requiredColour" />
@@ -189,15 +205,13 @@
             </asp:Panel>
 
             <%--MANAGE ADVICE PANEL--%>
-
             <asp:Panel ID="pnl_adviceControl" runat="server" Visible="false" CssClass="contentControlBtns">
                 <br />
                 <hr />
 
-                <%--ADD ADVICE--%>
+                <%--BUTTONS (add/view advice)--%>
                 <asp:Button ID="btn_viewInsertA" runat="server" Text="Add new advice" OnCommand="sub_adminOther" CommandName="viewInsertAdv" CssClass="margin-right-m" />
 
-                <%--VIEW ADVICE--%>
                 <asp:Button ID="btn_viewAdviceA" runat="server" Text="View advice" OnCommand="sub_adminOther" CommandName="viewAdvice" CssClass="margin-right-m" />
 
                 <hr />
@@ -205,47 +219,42 @@
 
             </asp:Panel>
 
-            <%--VIEW/EDIT ADVICE--%>
+            <%--VIEW/EDIT ADVICE PANEL (level of severity, advice content)--%>
             <asp:Panel ID="pnl_viewEditAdvice" runat="server" Visible="false">
 
-                <h1>
-                    <asp:Label ID="lbl_viewModeVEadv" runat="server" Text="View/Edit Advice" />
-                </h1>
-
                 <br />
                 <br />
-
+                <%--HEADINGS--%>
                 <div style="float: left; margin-right: 3%;">
                     <h3>
+                        <%--LEVEL OF SEVERITY--%>
                         <asp:Label ID="lbl_headingLevelVE" runat="server" Text="Level" />
                     </h3>
                 </div>
 
                 <div style="float: left;">
                     <h3>
+                        <%--ADVICE--%>
                         <asp:Label ID="lbl_headingAdviceVE" runat="server" Text="Advice" />
                     </h3>
                 </div>
 
                 <%--GRIDVIEW (ADVICE) --%>
-
                 <div style="float: left;">
-                    <%--border: 1px dashed red;--%>
                     <asp:GridView ID="grd_adviceTable" runat="server" AutoGenerateColumns="false" DataKeyNames="level">
 
                         <Columns>
-
                             <%--ITEM TEMPLATE--%>
                             <asp:TemplateField>
                                 <ItemTemplate>
                                     <div style="padding: 2%;">
                                         <div style="width: 5%; float: left; padding-top: 2%;">
 
-                                            <%--LEVEL--%>
+                                            <%--LEVEL OF SEVERITY--%>
                                             <asp:Label ID="lbl_levelE" runat="server" Text='<%# Eval("level") %>' />
                                         </div>
 
-                                        <%--ADVICE--%>
+                                        <%--ADVICE CONTENT--%>
                                         <div style="width: 45%; float: left; padding-top: 2%;">
                                             <asp:Label ID="lbl_adviceE" runat="server" Text='<%#Eval ("advice") %>' />
                                         </div>
@@ -257,12 +266,39 @@
 
                                         <%--EDIT BUTTON--%>
                                         <div style="width: 10%; float: right; padding-top: 2%;">
-                                            <asp:Button ID="btn_edit" runat="server" Text="Edit" OnCommand="sub_admin" CommandName="editAdv" />
+                                            <asp:Button ID="btn_edit" runat="server" Text="Edit" OnCommand="sub_admin" CommandName="editAdv" CommandArgument='<%#Eval ("level") %>' />
                                         </div>
 
                                         <div style="border-bottom: 2px dotted #22BCB9;" />
                                     </div>
                                 </ItemTemplate>
+                            </asp:TemplateField>
+
+                            <%--EDIT ITEM TEMPLATE--%>
+                            <asp:TemplateField>
+                                <EditItemTemplate>
+                                    <%--<asp:Panel ID="pnl_editAdvice" runat="server" Visible="false">--%>
+                                        <div style="padding: 2%;">
+                                            <div style="width: 5%; float: left; padding-top: 2%;">
+
+                                                <%--LEVEL OF SEVERITY--%>
+                                                <asp:Label ID="lbl_levelE" runat="server" Text='<%# Eval("level") %>' />
+                                            </div>
+
+                                            <%--ADVICE CONTENT--%>
+                                            <div style="width: 45%; float: left; padding-top: 2%;">
+                                                <asp:Label ID="lbl_adviceE" runat="server" Text='<%#Eval ("advice") %>' />
+                                            </div>                                            
+
+                                            <%--UPDATE BUTTON--%>
+                                            <div style="width: 10%; float: right; padding-top: 2%;">
+                                                <asp:Button ID="btn_updateAdvE" runat="server" Text="Update" OnCommand="sub_admin" CommandName="updateAdv" />
+                                            </div>
+
+                                            <div style="border-bottom: 2px dotted #22BCB9;" />
+                                        </div>
+                                    <%--</asp:Panel>--%>
+                                </EditItemTemplate>
                             </asp:TemplateField>
 
                         </Columns>

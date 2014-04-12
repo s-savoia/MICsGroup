@@ -3,24 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
+// = = = CODED BY: JAMES HONG = = =
 
+// JOB POSTINGS CLASS
 public class jobPostingsClass
 {
-    public IQueryable<mic_job_posting> getJobPostings()  // GET all job postings
+    // GET all job postings
+    public IQueryable<mic_job_posting> getJobPostings()  
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         var allJobPostings = objHospital.mic_job_postings.Select(x => x);
         return allJobPostings;
     }
-
-    public IQueryable<mic_job_posting> getJobPostingById(int _id)  // GET a single job posting by Id
+    // GET a single job posting by Id
+    public IQueryable<mic_job_posting> getJobPostingById(int _id)  
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         var allJobPostings = objHospital.mic_job_postings.Where(x => x.Id == _id).Select(x => x);
         return allJobPostings;
     }
-
-    public bool commitInsert(string _postion, string _location, string _details)   //  INSERT a job posting into the database
+    //  INSERT a job posting into the database
+    public bool commitInsert(string _postion, string _location, string _details)   
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         using (objHospital)
@@ -34,8 +37,8 @@ public class jobPostingsClass
             return true;
         }
     }
-
-    public bool commitUpdate(int _id, string _position, string _location, string _details)   // UPDATE a job posting
+    // UPDATE a job posting
+    public bool commitUpdate(int _id, string _position, string _location, string _details)   
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         using (objHospital)
@@ -48,8 +51,8 @@ public class jobPostingsClass
             return true;
         }
     }
-
-    public bool commitDelete(int _id)  // DELETE a job posting
+    // DELETE a job posting
+    public bool commitDelete(int _id)  
     {
         hospitalDataContext objHospital = new hospitalDataContext();
         using (objHospital)

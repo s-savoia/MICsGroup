@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;   
 using System.Web;
 
+// = = = CODED BY: JAMES HONG = = = 
 
+// SERVICES CLASS
 public class servicesClass
 {
     public IQueryable<mic_services_bingham> getServicesBingham()  // GET all Bingham services
@@ -47,14 +49,6 @@ public class servicesClass
         var serviceLadyMinto = objHospital.mic_services_lady_mintos.Where(x => x.id == _id).Select(x => x);
         return serviceLadyMinto;
     }
-
-
-    ////public IQueryable<product> getProductByName(string _name)
-    ////{
-    ////    productsDataContext objProd = new productsDataContext();
-    ////    var allProducts = objProd.products.Where(x => x.Name == _name).Select(x => x);
-    ////    return allProducts;
-    ////}
 
     public bool commitInsertBingham(string _service, string _unique, string _location, string _details)   //  INSERT new Bingham service
     {
