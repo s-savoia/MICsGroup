@@ -1,0 +1,102 @@
+﻿body {
+    line-height:24px;
+}
+.donation_application
+{
+    background-color:#C7ECEF;
+    /*border:1px solid #29b5b3;*/
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding:20px 30px;
+    width:90%;
+    margin-bottom:15px;
+}
+#donation_confirm
+{
+    background-color:#C7ECEF;
+    /*border:1px solid #29b5b3;*/
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding:20px 30px;
+    width:90%;
+    margin-bottom:15px;
+}
+.donationhead
+{
+    color:#29b5b3;
+    font-weight: 800;
+    font-size:24px;
+    margin-bottom:20px;
+}
+.txt_donation
+{
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border:1px solid #29b5b3;
+    width:200px;
+    height:25px;
+    
+}
+.txt_multiline
+{
+    width:400px;
+    height:100px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border:1px solid #29b5b3;
+}
+.ddl_donation
+{
+    width:200px;
+    height:35px;
+    font-size:16px;
+    border:1px solid #29b5b3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    color:#29b5b3;
+}
+.ddl_donationshort
+{
+    width:80px;
+    height:35px;
+    font-size:16px;
+    border:1px solid #29b5b3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    color:#29b5b3;
+}
+.ddl_donationlong
+{
+    width:350px;
+    height:35px;
+    font-size:16px;
+    border:1px solid #29b5b3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    color:#29b5b3;
+}
+input#content_main_rbl_type_0, #content_main_rbl_type_1, #content_main_rbl_type_2, #content_main_rbl_type_3
+{
+    width:20px;
+    height:20px;
+    vertical-align:middle;
+}
+.btn_donation {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color:#8cc63f;
+    color:#FFF;
+    Width: 80px; 
+    Height: 35px;
+    border:none;
+    font-size:18px;
+    margin-right:8px;
+}

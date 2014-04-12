@@ -2,7 +2,7 @@
 <%-- This page was coded by HIDEMI NAWATA --%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <link href="App_Themes/public_theme/newsletter.css" rel="stylesheet" media="all" />
+    <link href="App_Themes/public_theme/newsletter_styles.css" rel="stylesheet" media="all" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content_main" Runat="Server">
     <div id="newsletter_application">

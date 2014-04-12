@@ -135,6 +135,7 @@
     border-radius: 4px;
     padding:20px 30px;
     width:90%;
+    margin-bottom:15px;
 }
 input#content_main_rbl_status_0, #content_main_rbl_status_1, #content_main_rbl_crime_0, #content_main_rbl_crime_1
 {
