@@ -95,16 +95,15 @@ header {
 }
 
 .container { 
-    width: 85%;
-    margin: 1% auto;
+    width: 80%;
+    margin: 1% 10%;
     min-width: 300px;   
     position: relative;
     z-index: 1;
-    overflow:auto;
 }
 
 .logo {
-    width: 40%;
+    width: 50%;
     margin: 1% 0 0 2%;
     height: auto;
     float: left;
@@ -112,11 +111,11 @@ header {
 
     .hospital_name {
         text-align: left;
-        padding: 1% 0 0 20%;
+        /*padding: 1% 0 0 20%;*/
         font-family: 'Franklin Gothic Book','Bell MT','Bookman Old Style', Cambria;
         color: #a5a0a0;
-        font-size: 1.8em;
-        letter-spacing: -1px;
+        font-size: 28px;
+        /*letter-spacing: -1px;*/
     }
 
     .hospital_group {
@@ -124,13 +123,13 @@ header {
         /*padding: 0 0 0 20%;*/
         font-family: 'Franklin Gothic Book','Bell MT','Bookman Old Style', Cambria;
         color: #a5a0a0;
-        font-size: 1em;
-        letter-spacing: 1%;
+        font-size: 14px;
+        /*letter-spacing: 1%;*/
     }
 
 
 .img {
-    width: 20%;
+    width: 15%;
     float: left;
     margin-right: 2%;
     height: auto;
@@ -138,7 +137,7 @@ header {
 }
 
 .box_head {
-    width: 50%;
+    width: 30%;
     height:auto;
     float: right;
     margin-top:15px;
@@ -323,12 +322,11 @@ nav {
 }
 
 .content {  
-    width: 55%;   
+    width: 50%;   
     float: left;
     text-align:left;    
     /*height: auto;*/
     margin: 1% 2%;
-    overflow:hidden;
     
 }
 .btn {
@@ -461,25 +459,4 @@ nav {
             text-decoration: underline;
         }
 
-@media screen and (max-width:1400px) {
-    .content {
-        width:65%;
-    }
-    .right {
-        display: none;
-    }
-}
 
-@media screen and (max-width:955px) {
-    .content {
-        display:block;
-        min-width:initial;
-        width:100%;
-        clear:none;
-        margin-left:0;
-        margin-right:0;
-    }
-    .left {
-        display: none;
-    }
-}
