@@ -65,13 +65,13 @@ public class emergency
             var objUpTime = objemergency.mic_emergency_times.Single(x => x.Id == _id);
             if (objUpTime.date > DateTime.Now)
             {
-
                 objUpTime.time = (Convert.ToString(objUpTime.date - DateTime.Now)).Remove(8, 8);
                 objemergency.SubmitChanges();
             }
             else
             {
                 objUpTime.time = "00:00:00";
+                objemergency.SubmitChanges();
             }
 
             return true;
