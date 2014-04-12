@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+// = = = Coded by: JAMES HONG = = =
+
 public partial class admin_Default : System.Web.UI.Page
 {
     // a new object of the linq class is created
@@ -12,41 +14,41 @@ public partial class admin_Default : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        // if the page is being requested for the first time, send the insert panel to the panel control and call the subRebind function
+        // if the page is being requested for the first time, call the subRebind() and PanelControl() functions
         if (!Page.IsPostBack)
         {
             _PanelControl(pnl_edit);
             ddl_locationsC.Visible = true;
             ddl_mode.SelectedIndex = 2;
 
-            //choose a location on the view/edit page
+            //set the locations drop-down list on the view/edit services page
             ddl_locationsC.DataSourceID = "sds_locations";
             ddl_locationsC.DataTextField = "name";
             ddl_locationsC.DataValueField = "name";
             ddl_locationsC.DataBind();
 
-            // choose a location in on the add a service page
+            // set the locations drop-down list on the add a service page
             ddl_locationsI.DataSourceID = "sds_locations";
             ddl_locationsI.DataTextField = "name";
             ddl_locationsI.DataValueField = "name";
             ddl_locationsI.DataBind();
             
-            //default is Bingham services
+            // page loads with managing services for Bingham 
             setMode("pnl_edit");
             showServicesByHospital("Bingham Memorial");
         }
     }
-
+    // control subroutine for services DataList
     protected void subAdmin(object sender, DataListCommandEventArgs e)
     {
         switch (e.CommandName)
         {
+            // if the 'edit' button was clicked, open the EditItemTemplate for a specific service
             case "EditC":
                 dlt_main.EditItemIndex = e.Item.ItemIndex;
-                lbl_message.Text = ddl_locationsC.SelectedValue;
-                //DropDownList ddlLocationSet = (DropDownList)e.Item.FindControl("ddl_locationsE");
-                //ddlLocationSet.SelectedValue = ddl_locationsC.SelectedValue;
+                lbl_message.Text = ddl_locationsC.SelectedValue;                
                 break;
+            // if the 'update' button was clicked, find the form fields to update a service
             case "UpdateC":
                 Label lblID = (Label)e.Item.FindControl("lbl_id2E");
                 TextBox txtService = (TextBox)e.Item.FindControl("txt_serviceE");
@@ -55,7 +57,7 @@ public partial class admin_Default : System.Web.UI.Page
                 TextBox txtDetails = (TextBox)e.Item.FindControl("txt_detailsE");
                 int jobID = int.Parse(lblID.Text.ToString());
                 
-
+                // depending on which hospital's content is being managed, commit an update to a hospital's table in the database and exit edit mode
                 switch (ddl_locationsC.SelectedValue)
                 {
                     case "Bingham Memorial":
@@ -71,10 +73,12 @@ public partial class admin_Default : System.Web.UI.Page
                 }
                                
                 break;
+                // if the 'delete' button was clicked, find the ID of the service
             case "DeleteC":
                 HiddenField hdfID = (HiddenField)e.Item.FindControl("hdf_id");
                 int _id = int.Parse(hdfID.Value.ToString());
 
+                // depending on which hospital's content is being managed, commit an delete to a hospital's table in the database, exit edit mode and display services for the current hospital
                 switch (ddl_locationsC.SelectedValue.ToString())
                 {
                     case "Bingham Memorial":
@@ -90,6 +94,7 @@ public partial class admin_Default : System.Web.UI.Page
                 setMode("pnl_edit");
                 showServicesByHospital(ddl_locationsC.SelectedValue);
                 break;
+            // if a 'cancel' button was clicked, exit edit mode and display services for the current hospital 
             case "CancelC":
                 dlt_main.EditItemIndex = -1;
                 setMode("pnl_edit");
@@ -97,7 +102,7 @@ public partial class admin_Default : System.Web.UI.Page
                 break;
         }
     }
-
+    // display the result of an action (add/update/delete a service)
     private void _strMessage(bool flag, string str)
     {
         if (flag)
@@ -109,16 +114,17 @@ public partial class admin_Default : System.Web.UI.Page
             lbl_message.Text = "Sorry, unable to " + str + " service";
         }
     }
-
+    // event called when the 'add' button is clicked whihle adding a service
     protected void subInsert(object sender, CommandEventArgs e)
     {        
-
+        // if a 'cancel' button was clicked, display the view/edit services panel
         if (e.CommandName == "CancelC")
         {
             setMode("pnl_edit");
         }
         else
         {
+            // else, depending on the chosen hospital, commit an insert to the current hospital's table in the database and display a message for the result
             switch (ddl_locationsI.SelectedValue.ToString())
             {
                 case "Bingham Memorial":
@@ -132,14 +138,14 @@ public partial class admin_Default : System.Web.UI.Page
                     break;
             }
         }
-
+        // display services for the chosen hospital, clear fields in the 'add a service' panel, and display the view/edit services panel
         string chosenHospital = ddl_locationsI.SelectedValue.ToString();
         showServicesByHospital(chosenHospital);
         _subClearFields();
         _PanelControl(pnl_edit);
 
     }
-
+    // clear the fields in the 'add a service' panel, unsert the mode and the hospital location (whatever was chosen becomes unselected)
     private void _subClearFields()
     {
         txt_serviceI.Text = string.Empty;
@@ -147,11 +153,9 @@ public partial class admin_Default : System.Web.UI.Page
         ddl_uniqueI.SelectedIndex = 0;
         txt_detailsI.Text = string.Empty;
         ddl_mode.SelectedIndex = 0;
-        ddl_locationsC.SelectedIndex = 0;
-        //lbl_message.Text = string.Empty;
-
+        ddl_locationsC.SelectedIndex = 0;        
     }
-
+    // depending on which mode was chosen (add/edit a service, set that mode)
     protected void subDDLMode(object sender, EventArgs e)
     {
         string chosenMode = ddl_mode.SelectedValue.ToString();
@@ -168,7 +172,7 @@ public partial class admin_Default : System.Web.UI.Page
         string pickedHospital = ddl_locationsC.SelectedValue.ToString();
         showServicesByHospital(pickedHospital);
     }
-
+    // set the mode (add or view/edit services)
     private void setMode(string selectedMode)
     {
         // display the right panel (insert or edit)
@@ -184,7 +188,7 @@ public partial class admin_Default : System.Web.UI.Page
         }
 
     }
-
+    // display one panel while hiding the other panels
     private void _PanelControl(Panel pnl)
     {
         pnl_insert.Visible = false;
@@ -203,7 +207,7 @@ public partial class admin_Default : System.Web.UI.Page
 
         pnl.Visible = true;
     }
-
+    // depending on the chosen hospital, display the services for a chosen hospital by getting the data source for a hospital and binding it to that hospital's DataList control
     private void showServicesByHospital(string selectedHospital)
     {
         switch (selectedHospital)

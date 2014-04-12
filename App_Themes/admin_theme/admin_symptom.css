@@ -1,31 +1,21 @@
-﻿.requiredColour {
+﻿ /*= = = CODED BY: JAMES HONG = = = */
+
+ /*SYMPTOM CHECKER (ADMIN PAGE) STYLESHEET*/
+
+ /*make the text colour an orange-red colour*/
+.requiredColour {
 color:orangered;
 }
-
+/*make the bottom border a light-blue dotted line*/
 .border-bottom {
 border-bottom:2px dotted #22BCB9;
 }
-
+/*float right*/
 .floatR
 {
     float: right;
 }
-
+/*in the control panel for a content type (symptoms, advice), set an overall padding*/
 .contentControlBtns {
     padding: 0 16%;
 }
-
-/*.column-s {
-width: 5%;
-float: left;
-}
-
-.column-m {
-width: 10%;
-float: left;
-}
-
-.column-xl {
-width: 25%;
-float: left;
-}*/
