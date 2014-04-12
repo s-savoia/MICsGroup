@@ -138,7 +138,7 @@ header {
 }
 
 .box_head {
-    width: 175px;
+    width: 200px;
     height:auto;
     float: right;
     margin-top:15px;
@@ -506,7 +506,7 @@ nav {
     }
     .logo h1 span {
         font-size:0.8em;
-        line-height:0.5em;
+        line-height:0.9em;
     }
 
     .box_head {

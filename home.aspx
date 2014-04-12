@@ -53,8 +53,7 @@
                <div  class="btn_header">
                 <ul>
                     <li>
-                        <asp:HyperLink ID="HyperLink19" Text="Log in" runat="server" 
-                            Target="_self"  NavigateUrl="admin/admin_login.aspx"/>
+                        <asp:LoginStatus ID="lgs_main" runat="server" ForeColor="White" />
                     </li>
                     <li>
                         <asp:Image ImageUrl="~/img/access.png" runat="server" ID="Image4" width="20" />
