@@ -24,7 +24,7 @@
       <siteMapNode title="Services" url="#"  description="Sevices">
         <siteMapNode url="~/bill.aspx" title="Bill Payment" />
         <siteMapNode url="~/appointment.aspx" title="Book an Appointment" />
-        <!--<siteMapNode url="~/fservice.aspx" title="Find a Service"/>-->
+        <siteMapNode url="~/fservice.aspx" title="Find a Service"/>
         <!--<siteMapNode url="~/sservice.aspx" title="Specialty Services" />-->
       </siteMapNode>
 

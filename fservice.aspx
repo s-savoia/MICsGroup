@@ -1,36 +1,37 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/public_master.master" AutoEventWireup="true" CodeFile="fservice.aspx.cs" Inherits="Default2" MaintainScrollPositionOnPostback="true" %>
 
+<%--= = = CODED BY: JAMES HONG = = =--%>
+
+<%--This feature displays the services at the three hospitals of MICs Group. Users can page through the services of each hospital.--%>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content_main" runat="Server">
-
-    <%--= = = CODED BY: JAMES HONG = = =--%>
-
+    
+    <%--PAGE TITLE--%>
     <h3>
         <asp:Literal ID="ltl_title" runat="server" Text="Services" />
     </h3>
 
+    <%--INSTRUCTIONS--%>
     <p>
         <asp:Label ID="lbl_note" runat="server">
-        Here are thre three hospitals of MICs Group. <br /><br />You can either click on the picture or name of a hospital to jump to see the services at that location,
-        or you can scroll to view a hospital and its services. <br /><br />Simply click on either the Prev or Next buttons to browse through the services.<br /><br />
-        We are currently renovating this page, so more functionality is scheduled in the near future.
+        Below are links to the three hospitals of MICs Group. <br /><br />You can either click on the name of a hospital to see the services at that location,
+        or you can scroll to view a hospital and its services. <br /><br />Simply click on either the Prev or Next buttons to browse through the services.<br /><br />        
         </asp:Label>
     </p>
 
+    <%--HYPERLINKS TABLE (redirect to a certain hospital)--%>
     <table>
         <tr>
-            <td>
-                <asp:HyperLink ID="hpl_bingham" runat="server" ImageUrl="~/img/locations_bingham.png" href="#content_main_lbl_bingham">Bingham</asp:HyperLink>
+            <td>                
                 <asp:HyperLink ID="hpl_bingham2" runat="server" href="#content_main_lbl_bingham">Bingham Memorial Hospital</asp:HyperLink>
             </td>
-            <td>
-                <asp:HyperLink ID="hpl_anson" runat="server" ImageUrl="~/img/locations_anson.png" href="#content_main_lbl_anson">Anson</asp:HyperLink>
+            <td>                
                 <asp:HyperLink ID="hpl_anson2" runat="server" href="#content_main_lbl_anson">Anson General Hospital</asp:HyperLink>
             </td>
-            <td>
-                <asp:HyperLink ID="hpl_ladyMinto" runat="server" ImageUrl="~/img/locations_minto.png" href="#content_main_lbl_lady_minto">Lady Minto</asp:HyperLink>
+            <td>               
                 <asp:HyperLink ID="hpl_ladyMinto2" runat="server" href="#content_main_lbl_lady_minto">Lady Minto Hospital</asp:HyperLink>
             </td>
         </tr>
@@ -39,11 +40,14 @@
     <br />
     <br />
 
-    <%--<asp:Panel ID="pnl_bingham" runat="server">--%>
-    <h2>
-        <asp:Label ID="lbl_bingham" runat="server" Text="Bingham Memorial Hospital" /></h2>
+    <%--BINGHAM MEMORIAL HOSPITAL--%>
+    <h2><asp:Label ID="lbl_bingham" runat="server" Text="Bingham Memorial Hospital" /></h2>
+
     <br />
+    <%--DETAILSVIEW FOR BINGHAM--%>
     <asp:DetailsView ID="dtv_bingham" runat="server" AllowPaging="true" DataKeyNames="Id" AutoGenerateRows="false" OnItemCommand="subAdmin" OnDataBound="dtv_bingham_DataBound">
+        
+        <%--TEMPLATE FIELDS (service name, hospital name, unique service?, service details. These represent the columns in the mic_services_bingham table.)--%>
         <Fields>
             <asp:TemplateField HeaderText="Service">
                 <ItemTemplate>
@@ -70,8 +74,10 @@
             </asp:TemplateField>
         </Fields>
 
+        <%--PAGER STYLE--%>
         <PagerStyle VerticalAlign="Bottom" />
 
+        <%--PAGER TEMPLATE (previous & next buttons [prev, next] )--%>
         <PagerTemplate>
 
             <table style="width: 100%;">
@@ -88,6 +94,7 @@
                             CommandArgument="Next"
                             runat="Server" />
                     </td>
+                    <%--display the current page and the total number of pages--%>
                     <td style="text-align: right;">Page
                             <asp:Label ID="lbl_pageNumber" runat="server" />
                         of
@@ -97,18 +104,17 @@
             </table>
         </PagerTemplate>
     </asp:DetailsView>
-
-    <%--<asp:Label ID="test" runat="server" />--%>
-    <%--</asp:Panel>--%>
-
+   
     <br />
     <br />
 
-    <%--<asp:Panel ID="pnl_anson" runat="server">--%>
+    <%--ANSON GENERAL HOSPITAL--%>    
     <h2>
         <asp:Label ID="lbl_anson" runat="server" Text="Anson General Hospital" /></h2>
     <br />
+    <%--DETAILSVIEW FOR ANSON--%>
     <asp:DetailsView ID="dtv_anson" runat="server" AllowPaging="true" DataKeyNames="Id" AutoGenerateRows="false" OnItemCommand="subAdmin" OnDataBound="dtv_anson_DataBound">
+        <%--TEMPLATE FIELDS--%>
         <Fields>
             <asp:TemplateField HeaderText="Service">
                 <ItemTemplate>
@@ -137,6 +143,7 @@
 
         <PagerStyle VerticalAlign="Bottom" />
 
+        <%--PAGER TEMPLATE--%>
         <PagerTemplate>
 
             <table style="width: 100%;">
@@ -162,16 +169,16 @@
             </table>
         </PagerTemplate>
 
-    </asp:DetailsView>
-    <%--</asp:Panel>--%>
+    </asp:DetailsView>    
 
     <br />
     <br />
 
-    <%--<asp:Panel ID="pnl_lady_minto" runat="server">--%>
+    <%--LADY MINTO HOSPITAL--%>   
     <h2>
         <asp:Label ID="lbl_lady_minto" runat="server" Text="Lady Minto Hospital" /></h2>
     <br />
+    <%--DETAILSVIEW FOR LADY MINTO--%> 
     <asp:DetailsView ID="dtv_lady_minto" runat="server" AllowPaging="true" DataKeyNames="Id" AutoGenerateRows="false" OnItemCommand="subAdmin" OnDataBound="dtv_lady_minto_DataBound">
         <Fields>
             <asp:TemplateField HeaderText="Service">
@@ -227,6 +234,6 @@
         </PagerTemplate>
 
     </asp:DetailsView>
-    <%--</asp:Panel>--%>
+    
 </asp:Content>
 

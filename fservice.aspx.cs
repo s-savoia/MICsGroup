@@ -5,14 +5,18 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+// = = = CODED BY: JAMES HONG = = =
+
 public partial class Default2 : System.Web.UI.Page
 {
+    // instace of a class
     servicesClass objService = new servicesClass();
 
+    // when a row in the bingdam DetailsView control is bound (same process for when a row in the Anson and Lady Minto DetailsView control is bound)
     protected void dtv_bingham_DataBound(object sender, EventArgs e)
     {
 
-        // This is a pager row.
+        // This is a pager row
         DetailsViewRow pagerRow = dtv_bingham.BottomPagerRow;
 
 
@@ -20,17 +24,19 @@ public partial class Default2 : System.Web.UI.Page
         Label pageNum = (Label)pagerRow.Cells[0].FindControl("lbl_pageNumber");
         Label totalNum = (Label)pagerRow.Cells[0].FindControl("lbl_totalPages");
 
+        // If there are pages (for services)
         if ((pageNum != null) && (totalNum != null))
         {
-            // Page number and total number of pages
+            // Page number (page) and total number of pages (count)
             int page = dtv_bingham.DataItemIndex + 1;
             int count = dtv_bingham.DataItemCount;
 
+            // labels for Bingham pager
             pageNum.Text = page.ToString();
             totalNum.Text = count.ToString();
         }
     }
-
+    // same process as Bingham
     protected void dtv_anson_DataBound(object sender, EventArgs e)
     {
 
@@ -53,6 +59,7 @@ public partial class Default2 : System.Web.UI.Page
         }
     }
 
+    // same process as Bingham
     protected void dtv_lady_minto_DataBound(object sender, EventArgs e)
     {
 
@@ -77,16 +84,11 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        // call this function
         _subRebind();
-
-        //if (!Page.IsPostBack)
-        //{
-        //    dtv_bingham.PageIndex = 1;
-        //    dtv_anson.PageIndex = 1;
-        //    dtv_lady_minto.PageIndex = 1;
-        //}
     }
 
+    // bind the data sources to the hospital DetailsView controls
     private void _subRebind()
     {
         dtv_bingham.DataSource = objService.getServicesBingham();
@@ -100,23 +102,24 @@ public partial class Default2 : System.Web.UI.Page
         dtv_lady_minto.DataBind();
         
     }
-
+    // control subroutine for changing pages
     public void subAdmin(object sender, CommandEventArgs e)
     {
         switch (e.CommandName)
         {
+            // start the change page process for Bingham
             case "changePageB":
 
                 changePage(e.CommandName, e.CommandArgument.ToString());
 
                 break;
-
+            // start the change page process for Anson
             case "changePageA":
 
                 changePage(e.CommandName, e.CommandArgument.ToString());
 
                 break;
-
+            // start the change page process for Lady Minto
             case "changePageLM":
 
                 changePage(e.CommandName, e.CommandArgument.ToString());
@@ -125,6 +128,7 @@ public partial class Default2 : System.Web.UI.Page
         }
     }
 
+    // pass control to set the direction of the changing page process (previous page or next page)
     private void changePage(string commandName, string direction)
     {
         switch (commandName)
@@ -143,7 +147,7 @@ public partial class Default2 : System.Web.UI.Page
         }
 
     }
-
+    // pass control to set the page of a certain hospital's DetailsView control
     private void setDirection(string commandName, string direction)
     {
 
@@ -165,6 +169,7 @@ public partial class Default2 : System.Web.UI.Page
                 break;
         }
     }
+    // depending on the hospital that is changing pages, set the current page (page_, where _ = B, A, or LM) and total page numbers (count_, where _ = B, A, or LM)
     private void setDetailsView(string direction, string commandName)
     {
         switch (commandName)
@@ -190,11 +195,13 @@ public partial class Default2 : System.Web.UI.Page
         }
     }
 
+    // set the page to be displayed
     private void setPage(string direction, int page, int count, DetailsView dtv)
     {
         switch (direction)
         {
             case "Prev":
+                // if changing to the previous page of page 1, display the last page
                 if (page == 0)
                 {
                     page = count - 1;
@@ -203,13 +210,14 @@ public partial class Default2 : System.Web.UI.Page
                 }
                 else
                 {
+                    // display the previous page
                     dtv.PageIndex--;
                 }
                 
                 break;
 
             case "Next":
-
+                // if changing to the next page of the last page, display the first page
                 if (page == count - 1)
                 {
                     page = 0;
@@ -218,6 +226,7 @@ public partial class Default2 : System.Web.UI.Page
                 }
                 else
                 {
+                    // display the next page
                     dtv.PageIndex++;
                 }
                 break;

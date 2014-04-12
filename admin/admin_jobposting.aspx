@@ -1,8 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/admin_master.master" AutoEventWireup="true" CodeFile="admin_jobposting.aspx.cs" Inherits="admin_Default" %>
 
-<%--This page is coded by: JAMES HONG--%>
+<%--= = = Coded by: JAMES HONG = = = --%>
+
+<%--This is the administrative side for managing job postings content.--%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <%--STYLESHEET--%>
     <link rel="stylesheet" href="../App_Themes/admin_theme/admin_job_postings_styles.css" />
 </asp:Content>
 
@@ -15,20 +18,19 @@
 
     <br />
 
+    <%--VALIDATION SUMMARIES (insert, update)--%>
     <asp:ValidationSummary ID="vds_insert" runat="server" DisplayMode="List" ValidationGroup="insert" ShowMessageBox="true" ShowSummary="false" />
 
     <asp:ValidationSummary ID="vds_update" runat="server" DisplayMode="List" ValidationGroup="update" ShowMessageBox="true" ShowSummary="false" />
 
 
-    <%--CONTENT MANAGEMENT BUTTONS--%>
-
+    <%--CONTENT MANAGEMENT BUTTONS (add a job posting, manage job postings--%>
     <asp:Button ID="btn_add" runat="server" Text="Add a job posting" OnCommand="subAdmin" CommandName="add" />
     <asp:Button ID="btn_manage" runat="server" Text="Manage job postings" OnCommand="subAdmin" CommandName="manage" />
 
     <br /><br />
 
-    <%--= = = ADD A JOB  = = =--%>
-
+    <%--= = = ADD A JOB PANEL (fields: position name, hospital name, job details) = = =--%>
     <asp:Panel ID="pnl_insert" runat="server" Visible="false">
         <table>
             <tr>
@@ -63,11 +65,13 @@
             </tr>
             <tr>
                 <td colspan="2">
+                    <%--(the input entered in this textbox will need to sanitized. I tried using an HTMLEditorExtender, but I had runtime errors, so currently this textbox is unprotected against XSS)--%>
                     <asp:TextBox ID="txt_detailsI" runat="server" TextMode="MultiLine" CssClass="adm-textArea" ValidationGroup="insert" Columns="80" Rows="10" />
                 </td>                
             </tr>
             <tr>
                 <td>
+                    <%--BUTTONS (insert, cancel)--%>
                     <asp:Button ID="btn_insertI" runat="server" Text="Insert" CommandName="InsertC" OnCommand="subAdmin" ValidationGroup="insert" />
                     <asp:Button ID="btn_cancelI" runat="server" Text="Cancel" CommandName="CancelC" OnCommand="subAdmin" CausesValidation="false" />
 
@@ -77,8 +81,10 @@
 
     </asp:Panel>
 
+    <%--MAIN PANEL--%>
     <asp:Panel ID="pnl_main" runat="server" Visible="false">
-        <%--= = = LISTVIEW = = =--%>
+
+        <%--= = = JOB POSTINGS LISTVIEW (display the id,, position name, and hospital name for each job posting)= = =--%>
         <asp:ListView ID="ltv_main" runat="server" DataKeyNames="Id" OnItemCommand="subControl">
 
             <LayoutTemplate>
@@ -120,6 +126,7 @@
                         <asp:Label ID="lbl_location" runat="server" Text='<%#Eval("location") %>' />
                     </td>
                     <td>
+                        <%--BUTTONS (edit, delete)--%>
                         <asp:Button ID="btn_edit" runat="server" Text="Edit" CommandName="EditC" CommandArgument='<%#Eval("Id") %>' />
                         <asp:Button ID="btn_delete" runat="server" Text="Delete" CommandName="DeleteC" OnClientClick='confirm("Are you sure you want to delete this?");' />
                     </td>
@@ -168,6 +175,7 @@
                 </tr>
                 <tr>
                     <td>
+                        <%--BUTTONS (update, cancel)--%>
                         <asp:Button ID="btn_updateE" runat="server" Text="Update" CommandName="UpdateC" ValidationGroup="update" />
                         <asp:Button ID="btn_cancelE" runat="server" Text="Cancel" CommandName="CancelC" CausesValidation="false" />
 

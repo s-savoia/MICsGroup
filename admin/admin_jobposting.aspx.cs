@@ -5,14 +5,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+// = = = Coded by: JAMES HONG = = = 
+
 public partial class admin_Default : System.Web.UI.Page
 {
-
+    // create an instance of the jobPostings class
     jobPostingsClass objJob = new jobPostingsClass();
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        // when the page loads for the first time, call the subRebind() function and the panel control function
         if (!Page.IsPostBack)
         {
             _subRebind();
@@ -21,7 +23,7 @@ public partial class admin_Default : System.Web.UI.Page
               
     }
 
-
+    // display a message if an action was successful or not (actions: add, update, delete)
     private void _strMessage(bool flag, string str)
     {
         if (flag)
@@ -33,25 +35,26 @@ public partial class admin_Default : System.Web.UI.Page
             lbl_message.Text = "Sorry, unable to " + str + " job";
         }
     }
-
+    // control subroutine for the job postings ListView
     protected void subAdmin(object sender, CommandEventArgs e)
     {
         switch (e.CommandName)
         {
+            // call the subroutine for inserting a row into the database table (mic_job_postings)
             case "InsertC":
                 subInsert();
                 break;
-
+            // rebind the data source and display the main job postings panel
             case "CancelC":
                 _subRebind();
                 _pnlControl(pnl_main);
                 break;
-            
+            // display a message telling the user that the current mode is 'add' for adding a new job posting
             case "add":
                 lbl_message.Text = "Mode: add <br /><br />(You can add a new job posting)";
                 _pnlControl(pnl_insert);
                 break;
-
+            // display a message telling the user that the current mode is 'manage' for viewing/editing job postings
             case "manage":
                 lbl_message.Text = "Mode: manage <br /><br />(You can view/edit job posting(s) ";
                 _subRebind();
@@ -59,7 +62,7 @@ public partial class admin_Default : System.Web.UI.Page
                 break;
         }
     }
-
+    // subroutine for inserting a row into the database table
     private void subInsert()
     {
         lbl_message.Text = "Mode: insert";
@@ -68,19 +71,19 @@ public partial class admin_Default : System.Web.UI.Page
         _pnlControl(pnl_main);
 
     }
-
+    // control subroutine while editing in the EditItemTemplate
     protected void subControl(object sender, ListViewCommandEventArgs e)
     {
         switch (e.CommandName)
         {
-            case "EditC":
-                
+                // set the edit index for one item in the ListView and display the current mode (edit)
+            case "EditC":                
                 int editIndex = Int32.Parse(e.CommandArgument.ToString());
                 ltv_main.EditIndex = editIndex;
                 lbl_message.Text = "Mode: edit, Editing job id: " + e.CommandArgument; // + ", edit index: " + editIndex
                 _subRebind();
                 break;
-
+                // update a row in the database table based on the input fields in the EditItemTemplate of the job postings ListView
             case "UpdateC":
                 lbl_message.Text = "Mode: Update";
                 Label lblID2 = (Label)e.Item.FindControl("lbl_id2E");
@@ -94,18 +97,16 @@ public partial class admin_Default : System.Web.UI.Page
                 _pnlControl(pnl_main);
                 
                 break;
-
+                // delete a row in the database table
             case "DeleteC":
                 lbl_message.Text = "Mode: delete";
                 Label lblID = (Label)e.Item.FindControl("lbl_id");
                 int _id = int.Parse(lblID.Text.ToString());
-                _strMessage(objJob.commitDelete(_id), "delete");
-                //ltv_main.EditIndex = -1;
+                _strMessage(objJob.commitDelete(_id), "delete");                
                 _subRebind();
                 break;
-
-                case "CancelC":
-                //lbl_message.Text = "Mode: cancel";
+                // display the ItemTemplate for the job postings ListView
+                case "CancelC":                
                 ltv_main.EditIndex = -1;
                 _subRebind();
                 break;
@@ -113,7 +114,7 @@ public partial class admin_Default : System.Web.UI.Page
 
 
     }
-
+    // clear the fields in the panel for adding a job posting, and rebind the data source for the job postings ListView
     private void _subRebind()
     {
         TextBox TxtPositionI = (TextBox)this.pnl_insert.FindControl("txt_positionI");
@@ -127,13 +128,14 @@ public partial class admin_Default : System.Web.UI.Page
         ltv_main.DataBind();
         //lbl_message.Text = "Manage Job Postings";
     }
-
+    // display one panel while hiding the other panels
     protected void _pnlControl(Panel pnl) 
     {
         pnl_insert.Visible = false;
         pnl_main.Visible = false;
         pnl.Visible = true;
 
+        // depending on the mode (add or manage) enable one button while disabling the other 
         if (pnl == pnl_main)
         {
 

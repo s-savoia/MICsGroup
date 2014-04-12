@@ -6,29 +6,32 @@
 
 <%--= = = CODED BY: JAMES HONG = = =--%>
 
+<%--This feature displays job postings at the three hospitals of MICs Group. Users can click on a view details button to view the details of a job posting.--%>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content_main" runat="Server">
 
-    <h3>
+    <%--PAGE TITLE--%>
+    <h3> 
         <asp:Literal ID="ltl_title" runat="server" Text="Job Postings" />
     </h3>
 
+    <%--JOB POSTINGS PANEL--%>
     <asp:Panel ID="pnl_all" runat="server">
 
+        <%--INSTRUCTIONS FOR USING THIS FEATURE--%>
         <asp:CheckBoxList ID="cbl_instructions" runat="server">
             <asp:ListItem Text="Listed below are current job postings that are available at MICs Group hospitals." Selected="True" />
             <asp:ListItem Text="The basic information for each job posting is displayed. If you require more details about a posting, you can click on the 'view details' button for a particular posting." Selected="True" />
         </asp:CheckBoxList>
         <br />
         <br />
-        <asp:Image ID="img_nurse" runat="server" ImageUrl="~/img/symptom-checker/nurse1.gif" />
-        <asp:Image ID="img_secretary" runat="server" ImageUrl="~/img/symptom-checker/secretary.gif" />
-
-        <br />
-        <br />
-
+        
+        <%--JOB POSTINGS REPEATER--%>
         <asp:Repeater ID="rpt_data" runat="server">
+
+            <%--HEADER TEMPLATE--%>
             <HeaderTemplate>
                 <table>
                     <tr>
@@ -43,6 +46,7 @@
                     </tr>
             </HeaderTemplate>
 
+            <%--ITEM TEMPLATE--%>
             <ItemTemplate>
                 <tr>
                     <td><%# Eval("Id") %></td>
@@ -54,6 +58,7 @@
                 </tr>
             </ItemTemplate>
 
+            <%--FOOTER TEMPLATE--%>
             <FooterTemplate>
                 </table>
             </FooterTemplate>
@@ -61,6 +66,7 @@
         </asp:Repeater>
     </asp:Panel>
 
+    <%--JOB DETAILS PANEL--%>
     <asp:Panel ID="pnl_viewDetails" runat="server">
 
         <%--= = = PANEL FOR VIEW DETAILS BUTTON = = =--%>
@@ -74,6 +80,8 @@
             <%--= = =  REPEATER INSIDE PANEL = = =--%>
 
             <asp:Repeater ID="rpt_popup" runat="server">
+
+                <%--HEADER TEMPLATE--%>
                 <HeaderTemplate>
                     <table>
                         <tr>
@@ -86,6 +94,7 @@
                         </tr>
                 </HeaderTemplate>
 
+                <%--ITEM TEMPLATE--%>
                 <ItemTemplate>
                     <tr>
                         <td><%# Eval("Id") %></td>
@@ -102,6 +111,8 @@
                     </tr>
                     <tr>
                         <td colspan="5">
+
+                            <%--REDIRECTION INSTRUCTIONS--%>
                             <p>
                                 <hr />
                                 If you want to apply for a career/volunteer postion, click one of the two buttons below.
@@ -113,13 +124,14 @@
                     </tr>
                 </ItemTemplate>
 
+                <%--FOOTER TEMPLATE--%>
                 <FooterTemplate>
                     </table>
                 </FooterTemplate>
 
             </asp:Repeater>
 
-            <%--= = = BUTTONS  = = =--%>
+            <%--BUTTONS  (go to career/volunteer application feature page or back to job postings panel--%>
             <asp:Button ID="lnk_careerApp" runat="server" PostBackUrl="~/career_application.aspx" Text="Go to career application page" />
 
 
@@ -129,13 +141,10 @@
 
         </div>
 
-
     </asp:Panel>
 
     <br />
     <br />
-
-    <asp:Image ID="img_ad1" runat="server" ImageUrl="~/img/symptom-checker/jobs1.PNG" />
-
+    
 </asp:Content>
 
