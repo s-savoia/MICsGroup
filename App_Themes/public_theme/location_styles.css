@@ -7,6 +7,7 @@
     display:block;
     margin:0 auto;
     border: 3px #22BCB9 solid;
+    width:90%;
 }
 
 .location_public_content {
@@ -16,7 +17,7 @@
 
 .locations_hospital_info {
     padding:5px;
-    width:210px;
+    width:31%;
     float:left;
 }
 
@@ -36,7 +37,21 @@
 
 .hospital_info_text {
     text-align:center;
-    width: 160px;
+    width: 90%;
     margin: 0 auto;
 }
 
+@media screen and (max-width:635px) {
+    .locations_hospital_info {
+        display:block;
+        width:90%;
+        margin:0 auto;
+    }
+    .locations_image {
+        width:200px;
+    }
+
+    .hospital_info_text {
+        font-size:0.9em;
+    }
+}

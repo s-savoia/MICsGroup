@@ -95,11 +95,12 @@ header {
 }
 
 .container { 
-    width: 80%;
-    margin: 1% 10%;
+    width: 85%;
+    margin: 1% auto;
     min-width: 300px;   
     position: relative;
     z-index: 1;
+    overflow:auto;
 }
 
 .logo {
@@ -322,11 +323,12 @@ nav {
 }
 
 .content {  
-    width: 50%;   
+    width: 55%;   
     float: left;
     text-align:left;    
     /*height: auto;*/
     margin: 1% 2%;
+    overflow:hidden;
     
 }
 .btn {
@@ -459,4 +461,25 @@ nav {
             text-decoration: underline;
         }
 
+@media screen and (max-width:1400px) {
+    .content {
+        width:65%;
+    }
+    .right {
+        display: none;
+    }
+}
 
+@media screen and (max-width:955px) {
+    .content {
+        display:block;
+        min-width:initial;
+        width:100%;
+        clear:none;
+        margin-left:0;
+        margin-right:0;
+    }
+    .left {
+        display: none;
+    }
+}
