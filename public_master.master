@@ -46,14 +46,14 @@
                         <asp:LoginStatus ID="lgs_main" runat="server" ForeColor="White" />
                         <asp:Image ImageUrl="~/img/lock.png" runat="server" ID="img_log" CssClass="a_img" />    
                     </div>
-                    <br /><br />
+
                     <%-- accessibility --%>
                     <div class="access">                    
                         <asp:LinkButton ID="btn_access" Text="Accessibility" DescriptionUrl="~/about.aspx" runat="server" ForeColor="White" Font-Size="Large" />
                         <asp:Image ImageUrl="~/img/access.png" runat="server" ID="img_acc" CssClass="a_img" />    
                     </div>
                     
-                    <br /><br />
+
                     <%-- donate --%>
                     <div class="donate">
                         <asp:LinkButton ID="btn_donate" Text="Donate Now" DescriptionUrl="~/donation.aspx" runat="server" />

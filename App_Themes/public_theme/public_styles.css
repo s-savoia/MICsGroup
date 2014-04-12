@@ -92,11 +92,12 @@ header {
     -moz-border-radius: 7px;
     border-radius: 7px;
     padding:10px 10px 20px 0;
+    overflow:hidden;
 }
 
 .container { 
-    width: 80%;
-    margin: 1% 10%;
+    width: 85%;
+    margin: 1% auto;
     min-width: 300px;   
     position: relative;
     z-index: 1;
@@ -321,8 +322,9 @@ nav {
     float: left;
 }
 
-.content {  
-    width: 50%;   
+.content { 
+    overflow: hidden;
+    width: 55%;   
     float: left;
     text-align:left;    
     /*height: auto;*/
@@ -458,5 +460,107 @@ nav {
             color: #29b5b3;
             text-decoration: underline;
         }
+    .access {
+        margin: 10px 0;
+    }
 
+@media screen and (max-width:1400px) {
+    .content {
+        width:65%;
+    }
+    .right {
+        display: none;
+    }
+}
 
+@media screen and (max-width:955px) {
+    .content {
+        display:block;
+        min-width:initial;
+        width:100%;
+        clear:none;
+        margin-left:0;
+        margin-right:0;
+    }
+    .left {
+        display: none;
+    }
+}
+
+@media screen and (max-width:855px) {
+    nav {
+        font-size:0.9em;
+    }
+
+    .menu .static {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width:760px) {
+    .hospital_group {
+        display: none;
+    }
+    .logo {
+        width:80%;
+    }
+    .logo h1 span {
+        font-size:0.8em;
+        line-height:0.5em;
+    }
+
+    .box_head {
+        display: block;
+    }
+
+    .box_head {
+        margin-top:0;
+        width:99%;
+        display: inline-block;
+        text-align:right;
+    }
+
+    .box_head div {
+        float: none;
+        display:inline-block;
+        margin:0;
+        padding:0 8px;
+    }
+
+    .box_head div a {
+        font-size: 14px !important;
+    }
+
+    .log a, .access a {
+        color: #a5a0a0 !important;
+    }
+
+    .logo img {
+        max-width:81px;
+        max-height:110px;
+    }
+
+    .menu>ul>li{
+        display:inline-block;
+        float:none !important;
+    }
+    #menu_nav a {
+        display:inline-block;
+    }
+    .menu {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:460px) {
+    .logo {
+        width:90%;
+    }
+    .logo h1 span {
+        font-size:0.7em;
+    }
+    .footer div {
+        margin:0 auto;
+        width:80%;
+    }
+}
