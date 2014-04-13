@@ -17,7 +17,22 @@
     </asp:Panel>
 
     <br class="clear" />
+    
+    <%--ABOUT STEPHEN--%>
+    <asp:Panel ID="pnl_introStephen" runat="server">
+        <asp:Panel ID="pnl_imgStephen" runat="server" CssClass="">
+            <%--IMAGE OF STEPHEN--%>
+            <asp:Image ID="img_stephen" runat="server" ImageUrl="~/img/about/stephen.png" AlternateText="Stephen Savoia- Web Developer" Width="30%" />
+        </asp:Panel>
         
+        <asp:Panel ID="pnl_aboutStephen" runat="server" CssClass="line-height-m link">
+            <%--JAMES' BIO--%>
+            <asp:Literal ID="Literal1" runat="server" Mode="PassThrough" Text="Stephen Savoia<br />Web Developer<br /><br />Stephen graduated from the University of Toronto with a degree in psychology in 2012 and from Humber College's web development program in 2014. He loves bringing creativity and innovation to web development projects and is particularly interested in looking at the internet through the lenses of psychology and communication studies. You can find out more about him at his website: <a href='http://www.stephensavoia.com'>stephensavoia.com</a>." />
+        </asp:Panel>
+    </asp:Panel>
+
+    <br class="clear" />
+
         <%--Write about yourself....--%>
     <asp:Panel ID="pnl_introYourName" runat="server">
         <asp:Panel ID="pnl_imgYourName" runat="server" CssClass="">
