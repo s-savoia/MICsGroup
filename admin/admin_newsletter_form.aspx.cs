@@ -23,7 +23,6 @@ public partial class admin_newsletter_form : System.Web.UI.Page
 
     protected void subClick(object sender, EventArgs e)
     {
-
         var allEmails = objEmail.getNewsletter();
         MailMessage message = new MailMessage();
         foreach (var eachEmail in allEmails)
@@ -31,7 +30,7 @@ public partial class admin_newsletter_form : System.Web.UI.Page
             message.To.Add(eachEmail.email);
         }
 
-        message.From = new MailAddress ("micsnewsletter@gmail.com", "newsletter");
+        message.From = new MailAddress ("micsnewsletter@imedatawan.com", "micsnewsletter!");
         
         //save images
         if (ful_attach.HasFile)
@@ -58,11 +57,11 @@ public partial class admin_newsletter_form : System.Web.UI.Page
         //message.Attachments.Add(data);
 
         //send a newsletter
-        SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+        SmtpClient client = new SmtpClient();
+        client.Host = "relay-hosting.secureserver.net";
         client.DeliveryMethod = SmtpDeliveryMethod.Network;
-        client.EnableSsl = true;
         client.UseDefaultCredentials = false;
-        client.Credentials = new System.Net.NetworkCredential("micsnewsletter@gmail.com", "micsnewsletter!");
+        client.Credentials = new System.Net.NetworkCredential("micsnewsletter@imedatawan.com", "micsnewsletter!");
 
         try
         {
