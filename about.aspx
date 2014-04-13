@@ -26,12 +26,15 @@
 
     <br class="clear" />
         
+        <%--Write about yourself....--%>
     <asp:Panel ID="pnl_introYourName" runat="server">
         <asp:Panel ID="pnl_imgYourName" runat="server" CssClass="">
+            <%--Your picture--%>
             <asp:Image ID="img_YourName" runat="server" ImageUrl="~/" AlternateText="" Width="30%" Height="30%" />
         </asp:Panel>
         
         <asp:Panel ID="pnl_aboutYourName" runat="server" CssClass="line-height-m link">
+            <%--Your bio--%>
             <asp:Literal ID="ltl_about_YourName" runat="server" Mode="PassThrough" Text="About you..." />
         </asp:Panel>
     </asp:Panel>
