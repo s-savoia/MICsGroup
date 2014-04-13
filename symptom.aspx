@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/public_master.master" AutoEventWireup="true" CodeFile="symptom.aspx.cs" Inherits="symptom" %>
 
+<%@ MasterType VirtualPath="~/public_master.master" %>
+
 <%--= = = CODED BY: JAMES HONG = = =--%>
 
 <%--This feature allows a user to select symptoms for common colds and receive basic advice depending on the number of symptoms selected.--%>

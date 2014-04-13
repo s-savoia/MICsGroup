@@ -1,0 +1,14 @@
+﻿ /*= = = CODED BY: JAMES HONG = = = */
+
+ /*JOB POSTINGS (ADMIN PAGE) STYLESHEET*/
+
+/*make the text red*/
+.required {
+    color:#f00; /* red */
+}
+
+/*set the size of a textbox (job details)*/
+.adm-textArea {
+    width: 100%;
+    height: 20%;
+}

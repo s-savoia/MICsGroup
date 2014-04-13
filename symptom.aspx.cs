@@ -13,6 +13,12 @@ public partial class symptom : System.Web.UI.Page
     symptomsClass objSymptoms = new symptomsClass();
     adviceClass objAdvice = new adviceClass();
 
+    // when the page load completely, set this page's title
+    protected void Page_LoadComplete(object sender, EventArgs e)
+    {
+        Master.pp_masterTitle = "Humber MICs Group | Symptom Checker";
+    }
+
     protected void Page_Load(object sender, EventArgs e)
     {
         // when the page first loads, get all the symptoms data from the mic_symptoms table and bind it to the symptoms checkbox list

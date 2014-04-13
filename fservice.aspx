@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/public_master.master" AutoEventWireup="true" CodeFile="fservice.aspx.cs" Inherits="Default2" MaintainScrollPositionOnPostback="true" %>
 
+<%@ MasterType VirtualPath="~/public_master.master" %>
+
 <%--= = = CODED BY: JAMES HONG = = =--%>
 
 <%--This feature displays the services at the three hospitals of MICs Group. Users can page through the services of each hospital.--%>

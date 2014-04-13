@@ -1,8 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/public_master.master" AutoEventWireup="true" CodeFile="careers1.aspx.cs" Inherits="Default2" EnableEventValidation="false" %>
 
-<%----%>
-
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ MasterType VirtualPath="~/public_master.master" %>
 
 <%--= = = CODED BY: JAMES HONG = = =--%>
 

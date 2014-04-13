@@ -23,6 +23,12 @@ public partial class admin_Default : System.Web.UI.Page
               
     }
 
+    // when the page finishes loading completely, set this page's title
+    protected void Page_LoadComplete(object sender, EventArgs e)
+    {
+        Master.pp_adminMasterTitle = "Humber MICs Group | CMS - Job Postings";
+    }
+
     // display a message if an action was successful or not (actions: add, update, delete)
     private void _strMessage(bool flag, string str)
     {
