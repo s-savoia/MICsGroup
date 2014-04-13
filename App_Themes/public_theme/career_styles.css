@@ -1,28 +1,39 @@
 ﻿body {
-    line-height:24px;
+    line-height:160%;
+    font-size:1em;
 }
 .clearfix{
 	display:block;
+}
+#career_application
+{
+    background-color:#C7ECEF;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding:5%;
+    width:90%;
+    margin-bottom:15px;
 }
 #content_main_lbl_careerhead
 {
     color:#29b5b3;
     font-weight: 800;
-    font-size:24px;
-    margin-bottom:20px;
+    font-size:1.6em;
+    margin-bottom:20%;
 }
-
-.btn_career {
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    background-color:#8cc63f;
+.btn_career { 
     color:#FFF;
-    Width: 80px; 
-    Height: 35px;
+    margin-right:2%;
+    width:15%;
+    height:35px;
     border:none;
-    font-size:18px;
-    margin-right:8px;
+    background-color:#8cc63f;
+    font-size:1.2em;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    cursor:pointer;
 }
 .txt_career
 {
@@ -30,33 +41,25 @@
     -moz-border-radius: 4px;
     border-radius: 4px;
     border:1px solid #29b5b3;
-    width:200px;
-    height:25px;
+    width:45%;
+    height:6%;
     
 }
 .txt_multiline
 {
-    width:400px;
-    height:100px;
+    width:60%;
+    height:15%;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
     border:1px solid #29b5b3;
 }
-#career_application
-{
-    background-color:#C7ECEF;
-    /*border:1px solid #29b5b3;*/
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    padding:20px 30px;
-}
+
 .ddl_career
 {
-    width:200px;
-    height:35px;
-    font-size:16px;
+    width:20%;
+    height:6%;
+    font-size:1em;
     border:1px solid #29b5b3;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -65,9 +68,9 @@
 }
 .ddl_careershort
 {
-    width:80px;
-    height:35px;
-    font-size:16px;
+    width:10%;
+    height:6%;
+    font-size:1em;
     border:1px solid #29b5b3;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -76,26 +79,14 @@
 }
 .ddl_careerlong
 {
-    width:350px;
-    height:35px;
-    font-size:16px;
+    width:50%;
+    height:6%;
+    font-size:1em;
     border:1px solid #29b5b3;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
     color:#29b5b3;
-}
-.floatButton
-{
-    width:150px;
-    height:35px;
-    border:none;
-    background-color:#8cc63f;
-    color:white;
-    font-size:18px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
 }
 .floatL
 {
@@ -105,47 +96,227 @@
 {
     float:right;
 }
-.nurseimg
+
+input#content_main_rbl_status_0, #content_main_rbl_status_1, #content_main_rbl_crime_0, #content_main_rbl_crime_1, #content_main_ckb_consent_0, #content_main_ckb_consent_1
+    {
+        width:18px;
+        height:18px;
+        vertical-align:middle;
+    }
+
+
+/**********Tablet**********/
+
+@media screen and (max-width:768px)
 {
-    float:left;
-    margin-right:15px;
-    margin-bottom:15px;
+    body
+    {
+        line-height: 160%;
+        font-size: 0.9em;
+    }
+
+    #career_application
+    {
+        background-color: #C7ECEF;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        padding: 5%;
+        width: 88%;
+        margin-bottom: 15px;
+        /*border: 1px dotted red;*/
+    }
+
+    #content_main_lbl_careerhead
+    {
+        color: #29b5b3;
+        font-weight: 800;
+        font-size: 1.6em;
+        margin-bottom: 15%;
+    }
+
+    .btn_career
+    {
+        color: #FFF;
+        margin-right: 2%;
+        width: 20%;
+        height: 32px;
+        border: none;
+        background-color: #8cc63f;
+        font-size: 1.2em;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        cursor:pointer;
+    }
+
+    .txt_career
+    {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        border: 1px solid #29b5b3;
+        width: 45%;
+        height: 6%;
+    }
+
+    .txt_multiline
+    {
+        width: 55%;
+        height: 15%;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        border: 1px solid #29b5b3;
+    }
+
+    .ddl_career
+    {
+        width: 25%;
+        height: 7%;
+        font-size: 1em;
+        border: 1px solid #29b5b3;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        color: #29b5b3;
+        font-size: 0.9em;
+    }
+
+    .ddl_careershort
+    {
+        width: 10%;
+        height: 7%;
+        font-size: 1em;
+        border: 1px solid #29b5b3;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        color: #29b5b3;
+        font-size: 0.9em;
+    }
+
+    .ddl_careerlong
+    {
+        width: 55%;
+        height: 7%;
+        font-size: 1em;
+        border: 1px solid #29b5b3;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        color: #29b5b3;
+        font-size: 0.9em;
+    }
+    input#content_main_rbl_status_0, #content_main_rbl_status_1, #content_main_rbl_crime_0, #content_main_rbl_crime_1, #content_main_ckb_consent_0, #content_main_ckb_consent_1
+    {
+        width:15px;
+        height:15px;
+        vertical-align:middle;
+    }
 }
-.careericon
-{
-    margin-right:15px;
-    margin-bottom:25px;
-    float:left;
-}
-.verticalAlign
-{
-    vertical-align:central;
-    padding-top:10px;
-}
-.newsform
-{
-    margin-top:10px;
-}
-#career_application
-{
-    background-color:#C7ECEF;
-    /*border:1px solid #29b5b3;*/
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    padding:20px 30px;
-    width:90%;
-    margin-bottom:15px;
-}
-input#content_main_rbl_status_0, #content_main_rbl_status_1, #content_main_rbl_crime_0, #content_main_rbl_crime_1
-{
-    width:20px;
-    height:20px;
-    vertical-align:middle;
-}
-input#content_main_ckb_consent_0, #content_main_ckb_consent_1
-{
-    width:20px;
-    height:20px;
-    vertical-align:middle;
+
+/**********Mobile**********/
+
+@media screen and (max-width:480px) {
+    body {
+        line-height:160%;
+        font-size:0.9em;
+    }
+
+    #career_application
+    {
+        background-color:#C7ECEF;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        padding:5%;
+        width:88%;
+        margin-bottom:15px;
+        /*border:1px dotted green;*/
+    }
+    #content_main_lbl_careerhead
+    {
+        color:#29b5b3;
+        font-weight: 800;
+        font-size:1.6em;
+        margin-bottom:15%;
+    }
+    .btn_career { 
+        color:#FFF;
+        margin-right:2%;
+        width:30%;
+        height:32px;
+        border:none;
+        background-color:#8cc63f;
+        font-size:1.2em;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        cursor:pointer;
+
+    }
+    .txt_career
+    {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        border:1px solid #29b5b3;
+        width:65%;
+        height:6%;
+    
+    }
+    .txt_multiline
+    {
+        width:80%;
+        height:15%;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        border:1px solid #29b5b3;
+    }
+
+    .ddl_career
+    {
+        width:35%;
+        height:6%;
+        font-size:1em;
+        border:1px solid #29b5b3;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        color:#29b5b3;
+        font-size:0.9em;
+    }
+    .ddl_careershort
+    {
+        width:20%;
+        height:6%;
+        font-size:1em;
+        border:1px solid #29b5b3;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        color:#29b5b3;
+        font-size:0.9em;
+    }
+    .ddl_careerlong
+    {
+        width:70%;
+        height:6%;
+        font-size:1em;
+        border:1px solid #29b5b3;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        color:#29b5b3;
+        font-size:0.9em;
+    }
+    input#content_main_rbl_status_0, #content_main_rbl_status_1, #content_main_rbl_crime_0, #content_main_rbl_crime_1, #content_main_ckb_consent_0, #content_main_ckb_consent_1
+    {
+        width:13px;
+        height:13px;
+        vertical-align:middle;
+    }
+
 }
