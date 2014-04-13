@@ -14,6 +14,12 @@ public partial class admin_symptom : System.Web.UI.Page
 
     adviceClass objAdvice = new adviceClass();
 
+    // when the page finishes loading completely, set this page's title
+    protected void Page_LoadComplete(object sender, EventArgs e)
+    {
+        Master.pp_adminMasterTitle = "Humber MICs Group | CMS - Symptom Checker";
+    }
+
     protected void Page_Load(object sender, EventArgs e)
     {
         // when the page loads for the first time, display the panel to view/edit symptoms 

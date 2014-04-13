@@ -11,7 +11,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Admin Master Page</title>
+    <title><%= pp_adminMasterTitle %></title>
     <%-- for stylesheet --%>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -40,7 +40,7 @@
                     <%-- Leftside Header --%>
                     <div class="floatStatus">
                         <%--Login Status--%>
-                        <asp:LoginStatus ID="lgs_main" runat="server" ForeColor="White" />
+                        <asp:LoginStatus ID="lgs_main" runat="server" ForeColor="White" LogoutAction="Redirect" LogoutPageUrl="~/home.aspx" />
                     </div><%-- floatStatus --%>
                     <div class="floatView">                                                  
                         <%--Login View with role groups--%>

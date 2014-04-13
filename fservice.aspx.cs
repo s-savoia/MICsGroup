@@ -12,6 +12,12 @@ public partial class Default2 : System.Web.UI.Page
     // instace of a class
     servicesClass objService = new servicesClass();
 
+    // when the page load completely, set this page's title
+    protected void Page_LoadComplete(object sender, EventArgs e)
+    {
+        Master.pp_masterTitle = "Humber MICs Group | Find a Service";
+    }
+
     // when a row in the bingdam DetailsView control is bound (same process for when a row in the Anson and Lady Minto DetailsView control is bound)
     protected void dtv_bingham_DataBound(object sender, EventArgs e)
     {

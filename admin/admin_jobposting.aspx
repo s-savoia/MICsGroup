@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/admin_master.master" AutoEventWireup="true" CodeFile="admin_jobposting.aspx.cs" Inherits="admin_Default" %>
 
+<%@ MasterType VirtualPath="~/admin/admin_master.master" %>
+
 <%--= = = Coded by: JAMES HONG = = = --%>
 
 <%--This is the administrative side for managing job postings content.--%>

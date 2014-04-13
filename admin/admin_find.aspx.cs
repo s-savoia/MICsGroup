@@ -12,6 +12,12 @@ public partial class admin_Default : System.Web.UI.Page
     // a new object of the linq class is created
     servicesClass objService = new servicesClass();
 
+    // when the page finishes loading completely, set this page's title
+    protected void Page_LoadComplete(object sender, EventArgs e)
+    {
+        Master.pp_adminMasterTitle = "Humber MICs Group | CMS - Find a Service";
+    }
+
     protected void Page_Load(object sender, EventArgs e)
     {
         // if the page is being requested for the first time, call the subRebind() and PanelControl() functions

@@ -1,40 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
   <!--CODE BY CLAUDIA-->
-  
-    <siteMapNode url="" title=""  description="Main Navegation">
-        <siteMapNode url="~/home.aspx" title="Home"  description="Home"/>
 
-      <siteMapNode url="~/about.aspx" title="About Us">
-        <siteMapNode url="~/news_events.aspx" title="News &amp; Events " />
-        <siteMapNode url="~/newsletters.aspx" title="Newsletters" />
-        <siteMapNode url="~/location.aspx" title="Location" />
-        <!--<siteMapNode url="~/vision.aspx" title="Vision" />-->
-        <!--<siteMapNode url="~/about.aspx" title="Strategy &amp; Plans" />
+  <siteMapNode url="" title=""  description="Main Navigation">
+    <siteMapNode url="~/home.aspx" title="Home"  description="Home"/>
+
+    <siteMapNode url="~/about.aspx?id=1" title="About Us">
+      <siteMapNode url="~/news_events.aspx" title="News &amp; Events " />
+      <siteMapNode url="~/newsletters.aspx" title="Newsletters" />
+      <siteMapNode url="~/location.aspx" title="Location" />
+      <!--<siteMapNode url="~/vision.aspx" title="Vision" />-->
+      <!--<siteMapNode url="~/about.aspx" title="Strategy &amp; Plans" />
         <siteMapNode url="~/about.aspx" title="Board of Directors" />
         <siteMapNode url="~/about.aspx" title="Quality &amp; Risk Management" />-->
-      </siteMapNode>
-
-      <siteMapNode url="~/symptom.aspx" title="Symtom Checker" >
-        <siteMapNode url="~/emergency.aspx" title="Emergency Wait" />
-       </siteMapNode>
+    </siteMapNode>
 
       <siteMapNode title="Services" description="Sevices">
-        <siteMapNode url="~/bill.aspx" title="Bill Payment" />
+        <!--<siteMapNode url="~/bill.aspx" title="Bill Payment" />-->
         <siteMapNode url="~/appointment.aspx" title="Book an Appointment" />
         <siteMapNode url="~/fservice.aspx" title="Find a Service"/>
         <!--<siteMapNode url="~/sservice.aspx" title="Specialty Services" />-->
       </siteMapNode>
 
-      <siteMapNode url="~/careers.aspx" title="Careers" >
-        <siteMapNode url="~/careers1.aspx" title="Jobs Postings" />
-        <siteMapNode url="~/career_application.aspx" title="Careers Application" />
-        <siteMapNode url="~/careers3.aspx" title="Volunteer Application" />
-      </siteMapNode>
-
-      <siteMapNode url="~/contact.aspx" title="Contact Us" >
-      </siteMapNode> 
-
-       
+    <siteMapNode url="~/about.aspx?id=2" title="Patients and Familes">
+      <siteMapNode url="~/symptom.aspx" title="Symtom Checker" />
+      <siteMapNode url="~/emergency.aspx" title="Emergency Wait" />
     </siteMapNode>
+
+    <siteMapNode title="Services" url="about.aspx?id=3"  description="Sevices">
+      <siteMapNode url="~/bill.aspx" title="Bill Payment" />
+      <!--<siteMapNode url="~/appointment.aspx" title="Book an Appointment" />-->
+      <!--<siteMapNode url="~/fservice.aspx" title="Find a Service"/>-->
+      <!--<siteMapNode url="~/sservice.aspx" title="Specialty Services" />-->
+    </siteMapNode>
+
+    <siteMapNode url="~/about.aspx?id=4" title="Careers" >
+      <siteMapNode url="~/careers1.aspx" title="Jobs Postings" />
+      <siteMapNode url="~/career_application.aspx" title="Careers Application" />
+      <siteMapNode url="~/careers3.aspx" title="Volunteer Application" />
+    </siteMapNode>
+
+    <siteMapNode url="~/contact.aspx" title="Contact Us" >
+    </siteMapNode>
+
+
+  </siteMapNode>
 </siteMap>

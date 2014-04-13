@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/public_master.master" AutoEventWireup="true" CodeFile="location.aspx.cs" Inherits="Default2" %>
 
+<%@ MasterType VirtualPath="~/public_master.master" %>
+
 <%-- This page was coded by STEPHEN SAVOIA. --%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">

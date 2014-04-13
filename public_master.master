@@ -9,7 +9,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>MICs Hospital Group</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <title><%= pp_masterTitle %></title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -45,7 +46,7 @@
                     <%-- login --%>
                     <div class="log">
                         <%--Login Status--%>
-                        <asp:LoginStatus ID="lgs_main" runat="server" ForeColor="White" />
+                        <asp:HyperLink ID="login" Text="Login to CMS" NavigateUrl="~/admin/admin_appointment.aspx" runat="server" ForeColor="#ffffff" />
                         <asp:Image ImageUrl="~/img/lock.png" runat="server" ID="img_log" CssClass="a_img" />    
                     </div>
 
@@ -58,7 +59,7 @@
 
                     <%-- donate --%>
                     <div class="donate">
-                        <asp:LinkButton ID="btn_donate" Text="Donate Now" DescriptionUrl="~/donation.aspx" runat="server" />
+                        <asp:LinkButton ID="btn_donate" Text="Donate" DescriptionUrl="~/donation.aspx" runat="server" />
                     </div>
                 </div><%-- box_head end --%>
             </header><%-- Header ends --%>
@@ -143,9 +144,7 @@
                     <h1 class="title">
                         <asp:Image runat="server" ID="img_appointment" ImageUrl="~/img/1.png" CssClass="shape" />
                         <asp:Label ID="lbl_appointment" runat="server" Text="Book an Appointment" /></h1>
-                    <asp:Literal ID="appointment" runat="server">
-                        Rfhfhfha fjhkzjfhfhhf f fhfhfh fhf fh fhf fhf hjkhk.
-                    </asp:Literal>
+                    <asp:LinkButton ID="appointment" runat="server" PostBackUrl="~/appointment.aspx" Text="Book an Appointment Today!" />
                 </div>
 
                 <%-- chat with an advisor --%>

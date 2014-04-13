@@ -1,0 +1,28 @@
+﻿/*= = = CODED BY: JAMES HONG = = =*/ 
+
+/*PUBLIC, ADMIN ABOUT PAGE STYLESHEET*/
+
+/*medium margin bottom*/
+.margin-bottom-m {
+    margin-bottom: 5%;
+}
+
+/*clear both floats*/
+.clear {
+    clear:both;
+}
+
+/*small line height*/
+.line-height-m {
+    line-height:1.5em;
+}
+
+/*hyperlink colour that has not been visited*/
+.link a:link {
+    color: #29B5B3;
+}
+
+/*hyperlink colour that has been visited*/
+.link a:visited {
+    color: #f5f5f5;
+}

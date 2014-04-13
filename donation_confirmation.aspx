@@ -8,6 +8,7 @@
         <%--Header and subheader--%>
         <asp:Label ID="lbl_donationhead" runat="server" Text="THANKS YOU FOR YOUR GIFT!" CssClass="donationhead" />
         <br />
+        <%--message--%>
         <asp:Label ID="lbl_message" runat="server" />
     </div>
 </asp:Content>

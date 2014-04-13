@@ -232,6 +232,19 @@ header {
     text-align: left;
 }
 
+#appointment {
+    margin:50px auto;
+    text-align: center;
+    display: block;
+    font-weight: bold;
+    color:#29b5b3;
+}
+
+#appointment:hover {
+    color: #8cc63f;
+    text-decoration:underline;
+}
+
 
 /*TOP NAVIGATION*/
 

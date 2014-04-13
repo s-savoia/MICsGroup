@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/admin_master.master" AutoEventWireup="true" CodeFile="admin_symptom.aspx.cs" Inherits="admin_symptom" %>
 
+<%@ MasterType VirtualPath="~/admin/admin_master.master" %>
+
 <%--= = = CODED BY: JAMES HONG = = =--%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
@@ -20,6 +22,8 @@
             <%--MAIN CONTROL BUTTONS (manage the type of content: symptoms/advice)--%>
             <asp:Panel ID="pnl_controlPanel" runat="server" Visible="false">
 
+                <asp:Label ID="lbl_starting_instructions" runat="server" Text="Please choose a content type to begin managing content." /> 
+                <br /><br />
                 <asp:Button ID="btn_manageSymptoms" runat="server" Text="Manage Symptoms" OnCommand="sub_adminOther" CommandName="manageSymptoms" />
                 <br />
                 <br />

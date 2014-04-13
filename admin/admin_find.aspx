@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/admin_master.master" AutoEventWireup="true" CodeFile="admin_find.aspx.cs" Inherits="admin_Default" %>
 
+<%@ MasterType VirtualPath="~/admin/admin_master.master" %>
+
 <%--= = = Coded by: JAMES HONG = = =--%>
 
 <%--This feature manages content for the various services at MICs Group. Currently there are three hospitals (Bingham, Anson, and Lady Minto).--%>

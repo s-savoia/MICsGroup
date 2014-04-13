@@ -16,6 +16,12 @@ public partial class Default2 : System.Web.UI.Page
         }
     }
 
+    // when the page load completely, set this page's title
+    protected void Page_LoadComplete(object sender, EventArgs e)
+    {
+        Master.pp_masterTitle = "Humber MICs Group | Locations";
+    }
+
     locationsClass objLinq = new locationsClass();
 
     // Resets the values of the insert input fields and updates the database fields.

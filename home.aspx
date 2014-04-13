@@ -53,8 +53,7 @@
                <div  class="btn_header">
                 <ul>
                     <li>
-                        <asp:HyperLink ID="HyperLink19" Text="Log in" runat="server" 
-                            Target="_self"  NavigateUrl="admin/admin_login.aspx"/>
+                        <asp:HyperLink ID="login" Text="Login to CMS" NavigateUrl="~/admin/admin_appointment.aspx" runat="server" ForeColor="#08659f" />
                     </li>
                     <li>
                         <asp:Image ImageUrl="~/img/access.png" runat="server" ID="Image4" width="20" />
@@ -92,7 +91,7 @@
 
                 <div id="photo">
 
-                  <%--******** SLIDE-SHOW CON JQUERY SLIDE ********--%>
+                  <%--******** SLIDE-SHOW  JQUERY SLIDE ********--%>
 
                     <div id="columnas1">
                         <asp:Repeater ID="rpt_images" runat="server">
@@ -176,8 +175,7 @@
                     <h1 class="title">
                         <asp:Image runat="server" ID="Image1" ImageUrl="~/img/1.png" CssClass="shape" />
                         <asp:Label ID="label2" runat="server" Text="Book an Appointment" /></h1>
-                    <asp:Literal ID="literal3" runat="server">
-                    </asp:Literal>
+                    <asp:LinkButton ID="appointment" runat="server" PostBackUrl="~/appointment.aspx" Text="Book an Appointment Today!" />
                     <asp:Label ID="ImagePath" runat="server"></asp:Label>
 
                 </div>

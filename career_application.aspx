@@ -9,8 +9,8 @@
         <%--Header and subheader--%>
         <asp:Label ID="lbl_careerhead" runat="server" Text="Job Application" CssClass="careerhead" />
         <br />
-        <%--<asp:Label ID="lbl_careersubhead" runat="server" Text="Please fill out the on-line application form below. (* denotes mandatory fields)" />--%>
-        <br /><br />         
+        <asp:Label ID="lbl_careersubhead" runat="server" Text="Please fill out the on-line application form below. (* denotes mandatory fields)" CssClass="careersubhead" />
+        <br /><br />     
 
         <%--First Name--%>
         <asp:Label ID="lbl_fname" runat="server" Text="First Name:*" AssociatedControlID="txt_fname" />
@@ -124,7 +124,7 @@
         <%--skill year--%>
         <asp:Label ID="lbl_experience" runat="server" Text="How many years of experience do you have in nursing?" />
         <br />
-        <asp:Dropdownlist ID="ddl_experience" runat="server" CausesValidation="false" SelectedValue='<%#Bind("skill_experience")%>' CssClass="ddl_careershort">
+        <asp:Dropdownlist ID="ddl_experience" runat="server" CausesValidation="false" SelectedValue='<%#Bind("skill_experience")%>' CssClass="ddl_career">
             <asp:ListItem Value="1" Text="N/A" Selected="True" />
             <asp:ListItem Value="2" Text="Less than 1 yr" />
             <asp:ListItem Value="3" Text="1-2 yr" />
@@ -137,13 +137,13 @@
         <%--resume upload--%>
         <asp:Label ID="lbl_resume" runat="server" Text="Please upload your resume." />
         <br />
-        <asp:FileUpload ID="ful_resume" runat="server" FileName='<%#Bind("resume") %>' Width="250px" Height="35px" BorderStyle="None" Font-Size="Medium" />
+        <asp:FileUpload ID="ful_resume" runat="server" FileName='<%#Bind("resume") %>' Width="250px" Height="35px" BorderStyle="None" Font-Size="Small" />
         <br /><br />
 
         <%--coverletter upload--%>
         <asp:Label ID="lbl_cover" runat="server" Text="Please upload your cover letter." />
         <br />
-        <asp:FileUpload ID="ful_cover" runat="server" FileName='<%#Bind("coverletter") %>' Width="250px" Height="35px" BorderStyle="None" Font-Size="Medium" />
+        <asp:FileUpload ID="ful_cover" runat="server" FileName='<%#Bind("coverletter") %>' Width="250px" Height="35px" BorderStyle="None" Font-Size="Small" />
         <br /><br />
 
         <%--reason--%>
@@ -162,10 +162,12 @@
 
         <%--consent--%>
         <asp:Label ID="lbl_consent" runat="server" Text="I certify that the information I've provided through this application process is correct." />
+        <div class="consent">
         <asp:CheckBoxList ID="ckb_consent" runat="server"  SelectedValue='<%#Bind("consent")%>'>
             <asp:ListItem Value="1" Text="yes" Selected="True" />
             <asp:ListItem Value="2" Text="no" />
         </asp:CheckBoxList>
+        </div>
         <br />
 
         <%--send button--%>
