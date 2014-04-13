@@ -35,7 +35,7 @@
 
                 <%--city--%>
                 <asp:Label ID="lbl_city" runat="server" Text="City:*" AssociatedControlID="txt_city" />
-                <asp:TextBox ID="txt_city" runat="server" Text='<%#Bind("city")%>' CssClass="txt_donation" />
+                <asp:TextBox ID="txt_city" runat="server" Text='<%#Bind("city")%>' CssClass="txt_donationS" />
                 <asp:RequiredFieldValidator ID="rfv_city" runat="server" Text="*Required" ControlToValidate="txt_city" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter a city" ValidationGroup="donation1" />
                 <br /><br />
 
@@ -67,7 +67,7 @@
 
                 <%--postal code--%>
                 <asp:Label ID="lbl_zip" runat="server" Text="Postal Code:*" AssociatedControlID="txt_zip" />
-                <asp:TextBox ID="txt_zip" runat="server" Text='<%#Bind("zip")%>' CssClass="txt_donation" />
+                <asp:TextBox ID="txt_zip" runat="server" Text='<%#Bind("zip")%>' CssClass="txt_donationS" />
                 <asp:RequiredFieldValidator ID="rfv_zip" runat="server" Text="*Required" ControlToValidate="txt_zip" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter an postal code" ValidationGroup="donation1" />
                 <asp:RegularExpressionValidator ID="rev_zip" runat="server" Text="*Invalid postal code: uppercase letters required" ControlToValidate="txt_zip" Display="Dynamic" SetFocusOnError="true" ValidationExpression="^([ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVWXYZ])\ {0,1}(\d[ABCEGHJKLMNPRSTVWXYZ]\d)$" ValidationGroup="donation1" ErrorMessage="Your postal code is invalid" />
                 <br /><br />
@@ -138,7 +138,7 @@
                 <%--security number--%>
                 <asp:Label ID="lbl_security" runat="server" Text="Security Code:" AssociatedControlID="txt_security" />
                 <br />
-                <asp:TextBox ID="txt_security" runat="server" Text='<%#Bind("security_number")%>' CssClass="txt_donation" />
+                <asp:TextBox ID="txt_security" runat="server" Text='<%#Bind("security_number")%>' CssClass="txt_donationS" />
                 <asp:RequiredFieldValidator ID="rfv_security" runat="server" Text="*Required" ControlToValidate="txt_security" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter the security number." ValidationGroup="donation2" />
                 <asp:RegularExpressionValidator ID="rfv_securityE" runat="server" Text='*Your security code is either 3 or 4-digit number.' ControlToValidate="txt_security" Display="Dynamic" SetFocusOnError="true" ValidationExpression="^\d{3}$|^\d{4}$" ValidationGroup="donation2" ErrorMessage='Your security code is either 3 or 4-digit number.' />
                 <br /><br />
@@ -153,7 +153,7 @@
                 <%--card expiration--%>
                 <asp:Label ID="lbl_expiration" runat="server" Text="Credit Card Expiration:" />
                 <br />
-                <asp:Dropdownlist ID="ddl_expirationM" runat="server" CausesValidation="false" SelectedItem='<%#Bind("expiration_month")%>' CssClass="ddl_donationshort">
+                <asp:Dropdownlist ID="ddl_expirationM" runat="server" CausesValidation="false" SelectedItem='<%#Bind("expiration_month")%>' CssClass="ddl_donation">
                     <asp:ListItem Value="1" Text="Please select one:" Selected="True" />
                     <asp:ListItem Value="2" Text="01" />
                     <asp:ListItem Value="3" Text="02" />
@@ -168,7 +168,7 @@
                     <asp:ListItem Value="12" Text="11" />
                     <asp:ListItem Value="13" Text="12" />
                 </asp:Dropdownlist>
-                <asp:Dropdownlist ID="ddl_expirationY" runat="server" CausesValidation="false" SelectedItem='<%#Bind("expiration_year")%>' CssClass="ddl_donationshort">
+                <asp:Dropdownlist ID="ddl_expirationY" runat="server" CausesValidation="false" SelectedItem='<%#Bind("expiration_year")%>' CssClass="ddl_donation">
                     <asp:ListItem Value="1" Text="Please select one:" Selected="True" />
                     <asp:ListItem Value="2" Text="14" />
                     <asp:ListItem Value="3" Text="15" />
@@ -187,7 +187,7 @@
                 <%--amount--%>
                 <asp:Label ID="lbl_amount" runat="server" Text="Donation Amount:" AssociatedControlID="payment_amt" />
                 <br />
-                <asp:TextBox ID="payment_amt" runat="server" Text='' CssClass="txt_donation" />
+                <asp:TextBox ID="payment_amt" runat="server" Text='' CssClass="txt_donationS" />
                 <asp:RequiredFieldValidator ID="rfv_amount" runat="server" Text="*Required" ControlToValidate="payment_amt" Display="Dynamic" SetFocusOnError="true" ErrorMessage="Please enter the amount." ValidationGroup="donation2" />
                 <br /><br />
                 

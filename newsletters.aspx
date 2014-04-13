@@ -7,16 +7,16 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="content_main" Runat="Server">
     <div id="newsletter_application">
         <div class="floatL">
-        <%-- newsletter image --%>
-        <asp:Image ID="img_icon" runat="server" ImageUrl="~/img/newsicon.png" class="newsicon" />
-        <div class="verticalAlign">
-            <%-- header --%>
-            <asp:Label ID="lbl_header" runat="server" Text="SUBSCRIBE NEWSLETTER" Font-Bold="true" CssClass="newshead" />
-            <%-- header --%>
-            <asp:Label ID="lbl_subheader" runat="server" Text="Please fill in a form to apply for our newsletter." class="floatL" />
+            <%-- newsletter image --%>
+            <asp:Image ID="img_icon" runat="server" ImageUrl="~/img/newsicon.png" class="newsicon" />
+            <div class="verticalAlign">
+                <%-- header --%>
+                <asp:Label ID="lbl_header" runat="server" Text="SUBSCRIBE NEWSLETTER" Font-Bold="true" CssClass="newshead" />
+                <%-- header --%>
+                <asp:Label ID="lbl_subheader" runat="server" Text="Please fill in a form to apply for our newsletter." class="subhead" />
+            </div>
         </div>
-    </div>
-    
+   
     <div class="newsform">
         <%-- name --%>
         <asp:Label ID="lbl_name" runat="server" Text="Name:*" AssociatedControlID="txt_name" CssClass="floatClear" />

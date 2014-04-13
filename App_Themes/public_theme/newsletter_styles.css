@@ -1,8 +1,15 @@
-﻿body {
+﻿body
+{
+    font-size:1em;
 }
 .floatL
 {
     float:left;
+}
+.subhead
+{
+    float:left;
+    margin-bottom:20px;
 }
 .floatClear
 {
@@ -10,35 +17,37 @@
 }
 .newsicon
 {
-    margin-right:15px;
-    margin-bottom:25px;
+    margin-right:2%;
+    margin-bottom:3%;
     float:left;
+    width:80px;  
 }
 .newshead
 {
     color:#29b5b3;
     font-weight: 800;
-    font-size:24px;
+    font-size:1.5em;
     float:left;
 }
 .verticalAlign
 {
     vertical-align:central;
-    padding-top:10px;
+    padding-top:2.5%;
 }
 .newsform
 {
-    margin-top:10px;
+    clear:both;
 }
 #newsletter_application
 {
     background-color:#C7ECEF;
     /*border:1px solid #29b5b3;*/
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    padding:20px 30px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding:2.5% 3.75%;
     width:90%;
+    min-width: 310px;
 }
 .txt_news
 {
@@ -46,19 +55,139 @@
     -moz-border-radius: 4px;
     border-radius: 4px;
     border:1px solid #29b5b3;
-    width:250px;
-    height:25px;    
+    width:45%;
+    height:30px;    
 }
 .floatButton
 {
     float:right;
-    width:80px;
+    width:15%;
     height:35px;
     border:none;
     background-color:#8cc63f;
     color:white;
-    font-size:18px;
+    font-size:1.2em;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
+    cursor:pointer;
+}
+/**********Tablet**********/
+
+@media screen and (max-width:768px) {
+    body
+    {
+        font-size:0.9em;
+    }
+    .newsicon
+    {
+        margin-right:2%;
+        margin-bottom:3%;
+        float:left;
+        width:70px;
+    }
+    .newshead
+    {
+        color:#29b5b3;
+        font-weight: 800;
+        font-size:1.4em;
+        float:left;
+    }
+    .floatButton
+    {
+        float:left;
+        width:20%;
+        height:32px;
+        border:none;
+        background-color:#8cc63f;
+        color:white;
+        font-size:1.2em;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        margin-right:2%;
+        margin-bottom:3%;
+        cursor:pointer;
+        
+    }
+    #newsletter_application
+    {
+        background-color:#C7ECEF;
+        /*border:1px solid #29b5b3;*/
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        padding:2.25% 3.5%;
+        width:100%;
+        min-width: 310px;
+    }
+
+
+
+
+}
+
+
+
+/**********Mobile**********/
+
+@media screen and (max-width:480px) {
+    body
+    {
+        font-size:0.8em;
+    }
+    .newsicon
+    {
+        margin-right:3%;
+        margin-bottom:3%;
+        float:left;
+        width:60px;
+    }
+    .newshead
+    {
+        color:#29b5b3;
+        font-weight: 800;
+        font-size:1.5em;
+        float:left;
+    }
+    .floatButton
+    {
+        float:left;
+        width:20%;
+        height:32px;
+        border:none;
+        background-color:#8cc63f;
+        color:white;
+        font-size:1.2em;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        margin-right:2%;
+        margin-bottom:3%;
+        cursor:pointer;
+        
+    }
+    #newsletter_application
+    {
+        background-color:#C7ECEF;
+        /*border:1px solid #29b5b3;*/
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        padding:5% 6%;
+        width:92%;
+        min-width: 310px;
+    }
+    .txt_news
+    {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        border:1px solid #29b5b3;
+        width:60%;
+        height:25px;
+        margin-bottom:-1%; 
+    }
+
+
 }
