@@ -16,6 +16,12 @@ public partial class admin_Default : System.Web.UI.Page
         }
     }
 
+    // when the page finishes loading completely, set this page's title
+    protected void Page_LoadComplete(object sender, EventArgs e)
+    {
+        Master.pp_adminMasterTitle = "Humber MICs Group | CMS - Book an Appointment";
+    }
+
     protected void subShowView(object sender, EventArgs e)
     {
         pnl_appointment_create.Visible = false;
@@ -93,7 +99,6 @@ public partial class admin_Default : System.Web.UI.Page
                 break;
         }
     }
-
 
     protected void subChangeEdited(object sender, EventArgs e)
     {

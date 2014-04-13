@@ -16,8 +16,15 @@ public partial class Default2 : System.Web.UI.Page
         
     }
 
+    // when the page load completely, set this page's title
+    protected void Page_LoadComplete(object sender, EventArgs e)
+    {
+        Master.pp_masterTitle = "Humber MICs Group | Book an Appointment";
+    }
+
     bookAppointmentClass objLinq = new bookAppointmentClass();
 
+    // when the ddl changes, load the rbl with the correct data for the selected date
     protected void subChangeEdited(object sender, EventArgs e)
     {
         rbl_appointments.DataSource = objLinq.getAppointmentsByDateNotBooked(DateTime.Parse(ddl_view_appointments.SelectedValue.ToString()));
@@ -29,12 +36,14 @@ public partial class Default2 : System.Web.UI.Page
 
     private void _subRebind()
     {
+        // load dates with appointments to the dropdown list
         ddl_view_appointments.DataSource = objLinq.getAppointmentDatesNotBooked();
         ddl_view_appointments.DataTextField = "date_only";
         ddl_view_appointments.DataTextFormatString = "{0:D}";
         ddl_view_appointments.DataValueField = "date_only";
         ddl_view_appointments.DataBind();
 
+        // load the rbl with the correct data for the selected date
         rbl_appointments.DataSource = objLinq.getAppointmentsByDateNotBooked(DateTime.Parse(ddl_view_appointments.SelectedValue.ToString()));
         rbl_appointments.DataTextField = "date";
         rbl_appointments.DataTextFormatString = "{0:h:mm tt}";

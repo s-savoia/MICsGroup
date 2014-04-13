@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/admin_master.master" AutoEventWireup="true" CodeFile="admin_contact.aspx.cs" Inherits="admin_Default" %>
 
+<%@ MasterType VirtualPath="~/admin/admin_master.master" %>
+
 <%-- This page was coded by STEPHEN SAVOIA. --%>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="head" Runat="Server">
