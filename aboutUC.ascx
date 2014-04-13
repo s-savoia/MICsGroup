@@ -26,7 +26,7 @@
         </asp:Panel>
         
         <asp:Panel ID="pnl_aboutStephen" runat="server" CssClass="line-height-m link">
-            <%--JAMES' BIO--%>
+            <%--STEPHEN'S BIO--%>
             <asp:Literal ID="Literal1" runat="server" Mode="PassThrough" Text="Stephen Savoia<br />Web Developer<br /><br />Stephen graduated from the University of Toronto with a degree in psychology in 2012 and from Humber College's web development program in 2014. He loves bringing creativity and innovation to web development projects and is particularly interested in looking at the internet through the lenses of psychology and communication studies. You can find out more about him at his website: <a href='http://www.stephensavoia.com'>stephensavoia.com</a>." />
         </asp:Panel>
     </asp:Panel>
