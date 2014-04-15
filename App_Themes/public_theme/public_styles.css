@@ -138,7 +138,7 @@ header {
 }
 
 .box_head {
-    width: 30%;
+    width: 175px;
     height:auto;
     float: right;
     margin-top:15px;
@@ -527,17 +527,10 @@ nav {
         padding:0 8px;
     }
 
-    .box_head div a {
-        font-size: 14px !important;
-    }
-
-    .log a, .access a {
-        color: #a5a0a0 !important;
-    }
-
-    .logo img {
-        max-width:81px;
-        max-height:110px;
+    .img {
+        min-width:81px;
+        width:81px; /* you can use % */
+        height: auto;
     }
 
     .menu>ul>li{
@@ -549,6 +542,10 @@ nav {
     }
     .menu {
         text-align: center;
+    }
+
+    .log a, .access a {
+        color: #a5a0a0 !important;
     }
 }
 
@@ -562,5 +559,8 @@ nav {
     .footer div {
         margin:0 auto;
         width:80%;
+    }
+        .box_head div a {
+        font-size: 14px !important;
     }
 }
