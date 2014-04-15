@@ -20,17 +20,14 @@ public class paypal
         //
     }
 
-    public static string getAmount(string invoice_id, string _amt,string _return, string _cancel)
+    public static string getAmount(string invoice_id, string amt)
     {
-        decimal amount = Convert.ToDecimal(_amt);
+        decimal amount = Convert.ToDecimal(amt);
         string redirectUrl = "";
-        redirectUrl += "https://www.sandbox.paypal.com/cgi-bin/webscr?";
-        redirectUrl += "cmd=_xclick&business=pmand15-facilitator@gmail.com";
+        redirectUrl += "https://www.paypal.com/xclick/business=pmand15@gmail.com";
         redirectUrl += "&item_name=" + invoice_id;
         redirectUrl += "&amount=" + amount;
-        redirectUrl += "&currency_code=CAD";
-        redirectUrl +="&return=" + _return;
-        redirectUrl +="&cancel_return="+_cancel;
+        redirectUrl += "&currency=CAD";
         return redirectUrl;
     }
 }
