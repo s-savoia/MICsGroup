@@ -18,11 +18,6 @@ public partial class Default2 : System.Web.UI.Page
         _subRebind();
     }
 
-    protected void Page_LoadComplete(object sender, EventArgs e)
-    {
-        Master.pp_masterTitle = "Humber MICs Group | Job Postings";        
-    }
-
     // rebind data source to data bound control. show job postings panel. 
     private void _subRebind()
     {

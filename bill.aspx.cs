@@ -16,7 +16,7 @@ public partial class bill : System.Web.UI.Page
     {
         string amt = txt_amount.Text;
         string invoice_id = txt_invoiceId.Text;
-        string redirectUrl = paypal.getAmount(invoice_id, amt);
+        string redirectUrl = paypal.getAmount(invoice_id, amt, "http://localhost:60588/MICsGroup/bill_success.aspx", "http://localhost:60588/MICsGroup/bill_failure.aspx");
         Response.Redirect(redirectUrl);
     }
 }

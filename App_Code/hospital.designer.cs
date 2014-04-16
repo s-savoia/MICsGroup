@@ -92,6 +92,12 @@ public partial class hospitalDataContext : System.Data.Linq.DataContext
   partial void Insertmic_emergency_time(mic_emergency_time instance);
   partial void Updatemic_emergency_time(mic_emergency_time instance);
   partial void Deletemic_emergency_time(mic_emergency_time instance);
+  partial void Insertmic_specialization(mic_specialization instance);
+  partial void Updatemic_specialization(mic_specialization instance);
+  partial void Deletemic_specialization(mic_specialization instance);
+  partial void Insertmic_doctorInformation(mic_doctorInformation instance);
+  partial void Updatemic_doctorInformation(mic_doctorInformation instance);
+  partial void Deletemic_doctorInformation(mic_doctorInformation instance);
   #endregion
 	
 	public hospitalDataContext() : 
@@ -289,6 +295,22 @@ public partial class hospitalDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<mic_emergency_time>();
+		}
+	}
+	
+	public System.Data.Linq.Table<mic_specialization> mic_specializations
+	{
+		get
+		{
+			return this.GetTable<mic_specialization>();
+		}
+	}
+	
+	public System.Data.Linq.Table<mic_doctorInformation> mic_doctorInformations
+	{
+		get
+		{
+			return this.GetTable<mic_doctorInformation>();
 		}
 	}
 	
@@ -5376,6 +5398,298 @@ public partial class mic_emergency_time : INotifyPropertyChanging, INotifyProper
 				this._time = value;
 				this.SendPropertyChanged("time");
 				this.OntimeChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.mic_specialization")]
+public partial class mic_specialization : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _Id;
+	
+	private string _specialization;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnspecializationChanging(string value);
+    partial void OnspecializationChanged();
+    #endregion
+	
+	public mic_specialization()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int Id
+	{
+		get
+		{
+			return this._Id;
+		}
+		set
+		{
+			if ((this._Id != value))
+			{
+				this.OnIdChanging(value);
+				this.SendPropertyChanging();
+				this._Id = value;
+				this.SendPropertyChanged("Id");
+				this.OnIdChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_specialization", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string specialization
+	{
+		get
+		{
+			return this._specialization;
+		}
+		set
+		{
+			if ((this._specialization != value))
+			{
+				this.OnspecializationChanging(value);
+				this.SendPropertyChanging();
+				this._specialization = value;
+				this.SendPropertyChanged("specialization");
+				this.OnspecializationChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.mic_doctorInformation")]
+public partial class mic_doctorInformation : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _Id;
+	
+	private string _first_name;
+	
+	private string _last_name;
+	
+	private string _location;
+	
+	private string _specialization;
+	
+	private string _contact;
+	
+	private string _email;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void Onfirst_nameChanging(string value);
+    partial void Onfirst_nameChanged();
+    partial void Onlast_nameChanging(string value);
+    partial void Onlast_nameChanged();
+    partial void OnlocationChanging(string value);
+    partial void OnlocationChanged();
+    partial void OnspecializationChanging(string value);
+    partial void OnspecializationChanged();
+    partial void OncontactChanging(string value);
+    partial void OncontactChanged();
+    partial void OnemailChanging(string value);
+    partial void OnemailChanged();
+    #endregion
+	
+	public mic_doctorInformation()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int Id
+	{
+		get
+		{
+			return this._Id;
+		}
+		set
+		{
+			if ((this._Id != value))
+			{
+				this.OnIdChanging(value);
+				this.SendPropertyChanging();
+				this._Id = value;
+				this.SendPropertyChanged("Id");
+				this.OnIdChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_first_name", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+	public string first_name
+	{
+		get
+		{
+			return this._first_name;
+		}
+		set
+		{
+			if ((this._first_name != value))
+			{
+				this.Onfirst_nameChanging(value);
+				this.SendPropertyChanging();
+				this._first_name = value;
+				this.SendPropertyChanged("first_name");
+				this.Onfirst_nameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_last_name", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+	public string last_name
+	{
+		get
+		{
+			return this._last_name;
+		}
+		set
+		{
+			if ((this._last_name != value))
+			{
+				this.Onlast_nameChanging(value);
+				this.SendPropertyChanging();
+				this._last_name = value;
+				this.SendPropertyChanged("last_name");
+				this.Onlast_nameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_location", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+	public string location
+	{
+		get
+		{
+			return this._location;
+		}
+		set
+		{
+			if ((this._location != value))
+			{
+				this.OnlocationChanging(value);
+				this.SendPropertyChanging();
+				this._location = value;
+				this.SendPropertyChanged("location");
+				this.OnlocationChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_specialization", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+	public string specialization
+	{
+		get
+		{
+			return this._specialization;
+		}
+		set
+		{
+			if ((this._specialization != value))
+			{
+				this.OnspecializationChanging(value);
+				this.SendPropertyChanging();
+				this._specialization = value;
+				this.SendPropertyChanged("specialization");
+				this.OnspecializationChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contact", DbType="VarChar(12) NOT NULL", CanBeNull=false)]
+	public string contact
+	{
+		get
+		{
+			return this._contact;
+		}
+		set
+		{
+			if ((this._contact != value))
+			{
+				this.OncontactChanging(value);
+				this.SendPropertyChanging();
+				this._contact = value;
+				this.SendPropertyChanged("contact");
+				this.OncontactChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+	public string email
+	{
+		get
+		{
+			return this._email;
+		}
+		set
+		{
+			if ((this._email != value))
+			{
+				this.OnemailChanging(value);
+				this.SendPropertyChanging();
+				this._email = value;
+				this.SendPropertyChanged("email");
+				this.OnemailChanged();
 			}
 		}
 	}
