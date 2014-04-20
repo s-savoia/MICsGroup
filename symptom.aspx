@@ -7,6 +7,7 @@
 <%--This feature allows a user to select symptoms for common colds and receive basic advice depending on the number of symptoms selected.--%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <link rel="Stylesheet" href="App_Themes/public_theme/find-service.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content_main" runat="Server">
 
@@ -34,7 +35,7 @@
     <br />
 
     <%--LINK TO BOOK AN APPOINTMENT FEATURE--%>
-    <asp:LinkButton ID="lkb_appointment" runat="server" Text="Book an appointment" PostBackUrl="~/appointment.aspx" />
+    <asp:LinkButton ID="lkb_appointment" runat="server" Text="Book an appointment" PostBackUrl="~/appointment.aspx" CssClass="link" />
 
     <br />
     <br />
@@ -98,7 +99,7 @@
                 <br />
 
                 <%--LINK TO BOOK AN APPOINTMENT FEATURE--%>
-                <asp:LinkButton ID="lkb_appointmentPnl" runat="server" Text="Book an appointment" PostBackUrl="~/appointment.aspx" />
+                <asp:LinkButton ID="lkb_appointmentPnl" runat="server" Text="Book an appointment" PostBackUrl="~/appointment.aspx" CssClass="link" />
             </asp:Panel>
 
         </ContentTemplate>

@@ -77,7 +77,8 @@ public partial class admin_symptom : System.Web.UI.Page
                 grd_symptomsTable.Columns[1].Visible = false;
                 _pnlControl(pnl_viewEditSymptom);
                 break;
-
+           
+            // exits insert panel and switches from insert mode to view/edit mode
             case "cancelSymp":
                 lbl_message.Text = "Mode: view/edit symptoms";
                 _pnlControl(pnl_viewEditSymptom);
@@ -134,6 +135,10 @@ public partial class admin_symptom : System.Web.UI.Page
                 int _id = Int16.Parse(e.CommandArgument.ToString());
                 _strMessage("symptom", objSymptoms.commitDeleteSymptom(_id), "Delete");
                 _subRebind("pnl_viewEditSymptom");
+                break;
+
+            case "updateSymp":
+                lbl_message.Text = "Mode: updating...";
                 break;
 
                 // ADVICE

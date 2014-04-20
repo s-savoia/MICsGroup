@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/public_master.master" AutoEventWireup="true" CodeFile="careers1.aspx.cs" Inherits="Default2" EnableEventValidation="false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/public_master.master" AutoEventWireup="true" CodeFile="careers1.aspx.cs" Inherits="jobPostings" EnableEventValidation="false" %>
 
 <%@ MasterType VirtualPath="~/public_master.master" %>
 
@@ -69,7 +69,7 @@
 
         <%--= = = PANEL FOR VIEW DETAILS BUTTON = = =--%>
 
-        <div style="background-color: #c3c3c3;">
+        <div style="background-color: #bcd1d0;">
             <h3>
                 <asp:Label ID="lbl_title" runat="server" Text="View Details" />
             </h3>

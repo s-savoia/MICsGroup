@@ -31,6 +31,7 @@
                 <asp:Button ID="btn_manageAdvice" runat="server" Text="Manage advice" OnCommand="sub_adminOther" CommandName="manageAdvice" />
                 <br />
                 <br />
+                <%--MESSAGE--%>
                 <asp:Label ID="lbl_message" runat="server" Text="message" Visible="true" />
                 <br />
                 <br />
@@ -146,17 +147,17 @@
                             <asp:TemplateField>
                                 <EditItemTemplate>
                                     <div style="padding: 2%;">
-                                        <div style="width: 5%; float: left; padding-top: 2%;">
+                                        <div style="width: 5%; float: left; padding-top: 2%; margin-top:1%;">
 
                                             <%--ID--%>
-                                            <asp:Label ID="lbl_idE" runat="server" Text='<%# Eval("id") %>' />
+                                            <asp:Label ID="lbl_idE" runat="server" Text='<%# Eval("id") %>' />                                            
                                         </div>
 
                                         <%--SYMPTOM--%>
-                                        <div style="width: 45%; float: left; padding-top: 2%;">
-                                            <asp:Label ID="lbl_symptomE" runat="server" Text='<%#Eval ("symptom") %>' />
-                                            <br />                                            
+                                        <div style="width: 45%; float: left; padding-top: 2%; border: 1px solid gray; margin-top:1%; vertical-align:central; padding-left:2%;">
+                                            <asp:Label ID="lbl_symptomE" runat="server" Text='<%#Eval ("symptom") %>' />                                                                                                                          
                                         </div>
+                                        
                                         
                                         <%--UPDATE BUTTON--%>
                                         <div style="width: 10%; float: right; padding-top: 2%;">
@@ -283,15 +284,15 @@
                                 <EditItemTemplate>
                                     <%--<asp:Panel ID="pnl_editAdvice" runat="server" Visible="false">--%>
                                         <div style="padding: 2%;">
-                                            <div style="width: 5%; float: left; padding-top: 2%;">
+                                            <div style="width: 5%; float: left; padding-top: 2%; margin-top:1%; ">
 
                                                 <%--LEVEL OF SEVERITY--%>
                                                 <asp:Label ID="lbl_levelE" runat="server" Text='<%# Eval("level") %>' />
                                             </div>
 
                                             <%--ADVICE CONTENT--%>
-                                            <div style="width: 45%; float: left; padding-top: 2%;">
-                                                <asp:Label ID="lbl_adviceE" runat="server" Text='<%#Eval ("advice") %>' />
+                                            <div style="width: 45%; float: left; padding-top: 2%; border: 1px solid gray; margin-top:1%; vertical-align:central; padding-left:2%;">
+                                                <asp:Label ID="lbl_adviceE" runat="server" Text='<%#Eval ("advice") %>' />                                                
                                             </div>                                            
 
                                             <%--UPDATE BUTTON--%>

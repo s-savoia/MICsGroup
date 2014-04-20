@@ -7,6 +7,7 @@
 <%--This feature displays the services at the three hospitals of MICs Group. Users can page through the services of each hospital.--%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <link rel="Stylesheet" href="App_Themes/public_theme/find-service.css" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content_main" runat="Server">
@@ -25,10 +26,10 @@
     </p>
 
     <%--HYPERLINKS TABLE (redirect to a certain hospital)--%>
-    <table>
+    <table class="hospital">
         <tr>
             <td>                
-                <asp:HyperLink ID="hpl_bingham2" runat="server" href="#content_main_lbl_bingham">Bingham Memorial Hospital</asp:HyperLink>
+                <asp:HyperLink ID="hpl_bingham2" runat="server" href="#content_main_lbl_bingham" >Bingham Memorial Hospital</asp:HyperLink>
             </td>
             <td>                
                 <asp:HyperLink ID="hpl_anson2" runat="server" href="#content_main_lbl_anson">Anson General Hospital</asp:HyperLink>
@@ -82,7 +83,7 @@
         <%--PAGER TEMPLATE (previous & next buttons [prev, next] )--%>
         <PagerTemplate>
 
-            <table style="width: 100%;">
+            <table class="page-link" style="width: 100%;">
                 <tr>
                     <td>
                         <asp:LinkButton ID="lkb_previousButton"
@@ -148,7 +149,7 @@
         <%--PAGER TEMPLATE--%>
         <PagerTemplate>
 
-            <table style="width: 100%;">
+            <table class="page-link" style="width: 100%;">
                 <tr>
                     <td>
                         <asp:LinkButton ID="lkb_previousButton"
@@ -212,7 +213,7 @@
 
         <PagerTemplate>
 
-            <table style="width: 100%;">
+            <table class="page-link" style="width: 100%;">
                 <tr>
                     <td>
                         <asp:LinkButton ID="lkb_previousButton"

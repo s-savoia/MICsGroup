@@ -1,0 +1,21 @@
+﻿/* hospital hyperlinks */
+.hospital td {
+    padding-right: 2%;
+    text-align:center;
+}
+
+.hospital a:link, .page-link a:link {
+    color: #1b706f; /* teal */    
+}
+
+.hospital a:visited, .page-link a:visited {
+    color: #29B5B3; /* turquoise */
+}
+
+.link a {
+    color:orange;
+}
+
+.link a:visited{
+    color:darkgoldenrod;
+}

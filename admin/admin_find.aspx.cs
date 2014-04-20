@@ -81,8 +81,8 @@ public partial class admin_Default : System.Web.UI.Page
                 break;
                 // if the 'delete' button was clicked, find the ID of the service
             case "DeleteC":
-                HiddenField hdfID = (HiddenField)e.Item.FindControl("hdf_id");
-                int _id = int.Parse(hdfID.Value.ToString());
+                Label ID = (Label)e.Item.FindControl("lbl_id2E");
+                int _id = int.Parse(ID.Text.ToString());
 
                 // depending on which hospital's content is being managed, commit an delete to a hospital's table in the database, exit edit mode and display services for the current hospital
                 switch (ddl_locationsC.SelectedValue.ToString())

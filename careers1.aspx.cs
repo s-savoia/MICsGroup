@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 // = = = CODED BY: JAMES HONG = = =
 
-public partial class Default2 : System.Web.UI.Page
+public partial class jobPostings : System.Web.UI.Page
 {
     // new instance
     jobPostingsClass objJobPosting = new jobPostingsClass();
