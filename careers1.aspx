@@ -7,6 +7,7 @@
 <%--This feature displays job postings at the three hospitals of MICs Group. Users can click on a view details button to view the details of a job posting.--%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <link rel="Stylesheet" href="App_Themes/public_theme/job_postings_style.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content_main" runat="Server">
 
@@ -51,7 +52,7 @@
                     <td colspan="3"><%# Eval("position") %></td>
                     <td colspan="3"><%# Eval("location") %></td>
                     <td colspan="2">
-                        <asp:Button ID="btn_viewDetails" runat="server" Text="view details" OnCommand="subAdmin" CommandName="ViewDetails" CommandArgument='<%# Eval("Id") %>' />
+                        <asp:Button ID="btn_viewDetails" runat="server" Text="view details" OnCommand="subAdmin" CommandName="ViewDetails" CommandArgument='<%# Eval("Id") + "," + Eval("position") %>'  />
                     </td>
                 </tr>
             </ItemTemplate>
@@ -69,7 +70,7 @@
 
         <%--= = = PANEL FOR VIEW DETAILS BUTTON = = =--%>
 
-        <div style="background-color: #bcd1d0;">
+        <div class="detailsInfo">
             <h3>
                 <asp:Label ID="lbl_title" runat="server" Text="View Details" />
             </h3>
@@ -81,7 +82,7 @@
 
                 <%--HEADER TEMPLATE--%>
                 <HeaderTemplate>
-                    <table>
+                    <table class="detailsPanel">
                         <tr>
                             <th>
                                 <asp:Label ID="lbl_idI" runat="server" Text="Id" /></th>
@@ -95,14 +96,14 @@
                 <%--ITEM TEMPLATE--%>
                 <ItemTemplate>
                     <tr>
-                        <td><%# Eval("Id") %></td>
-                        <td colspan="3"><%# Eval("position") %></td>
-                        <td colspan="3"><%# Eval("location") %></td>
+                        <td class="mainInfo"><%# Eval("Id") %></td>
+                        <td class="mainInfo" colspan="3"><%# Eval("position") %></td>
+                        <td class="mainInfo" colspan="3"><%# Eval("location") %></td>
                     </tr>
                     <tr>
-                        <th colspan="2" style="text-decoration:underline;">
+                        <td class="tableHeading" id="detailsLabel" colspan="1">
                             <asp:Label ID="lbl_details" runat="server" Text="Details" />
-                        </th>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="4"><%# Eval("details") %></td>

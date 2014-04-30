@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/admin_master.master" AutoEventWireup="true" CodeFile="admin_jobposting.aspx.cs" Inherits="admin_Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/admin_master.master" AutoEventWireup="true" CodeFile="admin_jobposting.aspx.cs" Inherits="admin_jobposting" %>
 
 <%@ MasterType VirtualPath="~/admin/admin_master.master" %>
 
@@ -12,7 +12,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content_main" runat="Server">
-       
+
     <%--Here is a message saying if an action (insert/update/delete) was successful or not.--%>
     <h3>
         <asp:Label ID="lbl_message" runat="server" /><br />
@@ -30,7 +30,8 @@
     <asp:Button ID="btn_add" runat="server" Text="Add a job posting" OnCommand="subAdmin" CommandName="add" />
     <asp:Button ID="btn_manage" runat="server" Text="Manage job postings" OnCommand="subAdmin" CommandName="manage" />
 
-    <br /><br />
+    <br />
+    <br />
 
     <%--= = = ADD A JOB PANEL (fields: position name, hospital name, job details) = = =--%>
     <asp:Panel ID="pnl_insert" runat="server" Visible="false">
@@ -40,7 +41,9 @@
                     <asp:Label ID="lbl_instruction" runat="server" Text="Add a job to the database" Font-Underline="true" />
                 </td>
             </tr>
-            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
             <tr>
                 <td>
                     <asp:Label ID="lbl_positionI" runat="server" Text="Position" />
@@ -69,7 +72,7 @@
                 <td colspan="2">
                     <%--(the input entered in this textbox will need to sanitized. I tried using an HTMLEditorExtender, but I had runtime errors, so currently this textbox is unprotected against XSS)--%>
                     <asp:TextBox ID="txt_detailsI" runat="server" TextMode="MultiLine" CssClass="adm-textArea" ValidationGroup="insert" Columns="80" Rows="10" />
-                </td>                
+                </td>
             </tr>
             <tr>
                 <td>
@@ -92,20 +95,22 @@
             <LayoutTemplate>
                 <table>
                     <thead>
-                        <table>
-                            <tr>
-                                <th>
-                                    <asp:Label ID="lbl_headingId" runat="server" Text="Id" />
-                                </th>
-                                <th>
-                                    <asp:Label ID="lbl_headingPosition" runat="server" Text="Position" />
-                                </th>
-                                <th>
-                                    <asp:Label ID="lbl_headingLocation" runat="server" Text="Location" />
-                                </th>
-                                <th>Options
-                                </th>
-                            </tr>
+                        <asp:Panel ID="pnl_itemHeadings" runat="server">
+                            <table>
+                                <tr>
+                                    <th>
+                                        <asp:Label ID="lbl_headingId" runat="server" Text="Id" />
+                                    </th>
+                                    <th>
+                                        <asp:Label ID="lbl_headingPosition" runat="server" Text="Position" />
+                                    </th>
+                                    <th>
+                                        <asp:Label ID="lbl_headingLocation" runat="server" Text="Location" />
+                                    </th>
+                                    <th>Options
+                                    </th>
+                                </tr>
+                        </asp:Panel>
                     </thead>
                     <tbody>
                         <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
@@ -129,7 +134,7 @@
                     </td>
                     <td>
                         <%--BUTTONS (edit, delete)--%>
-                        <asp:Button ID="btn_edit" runat="server" Text="Edit" CommandName="EditC" CommandArgument='<%#Eval("Id") %>' />
+                        <asp:Button ID="btn_edit" runat="server" Text="Edit" CommandName="EditC" CommandArgument='<%#Eval("Id") + "," + Eval("position")  %>' />
                         <asp:Button ID="btn_delete" runat="server" Text="Delete" CommandName="DeleteC" OnClientClick='confirm("Are you sure you want to delete this?");' />
                     </td>
                 </tr>
@@ -173,7 +178,7 @@
                 <tr>
                     <td>
                         <asp:TextBox ID="txt_detailsE" runat="server" TextMode="MultiLine" Rows="10" Columns="80" Text='<%#Eval("details") %>' ValidationGroup="update" CssClass="" />
-                    </td>                    
+                    </td>
                 </tr>
                 <tr>
                     <td>

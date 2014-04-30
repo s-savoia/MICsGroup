@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 // = = = Coded by: JAMES HONG = = = 
 
-public partial class admin_Default : System.Web.UI.Page
+public partial class admin_jobposting : System.Web.UI.Page
 {
     // create an instance of the jobPostings class
     jobPostingsClass objJob = new jobPostingsClass();
@@ -19,8 +19,9 @@ public partial class admin_Default : System.Web.UI.Page
         {
             _subRebind();
             _pnlControl(pnl_main);
+
         }
-              
+
     }
 
     // when the page finishes loading completely, set this page's title
@@ -64,7 +65,7 @@ public partial class admin_Default : System.Web.UI.Page
             case "manage":
                 lbl_message.Text = "Mode: manage <br /><br />(You can view/edit job posting(s) ";
                 _subRebind();
-                _pnlControl(pnl_main);                
+                _pnlControl(pnl_main);
                 break;
         }
     }
@@ -82,14 +83,25 @@ public partial class admin_Default : System.Web.UI.Page
     {
         switch (e.CommandName)
         {
-                // set the edit index for one item in the ListView and display the current mode (edit)
-            case "EditC":                
-                int editIndex = Int32.Parse(e.CommandArgument.ToString());
-                ltv_main.EditIndex = editIndex;
-                lbl_message.Text = "Mode: edit, Editing job id: " + e.CommandArgument; // + ", edit index: " + editIndex
-                _subRebind();
+            // set the edit index for one item in the ListView and display the current mode (edit)
+            case "EditC":
+                int itemDisplayIndex = e.Item.DisplayIndex;
+                string[] commandArgs = e.CommandArgument.ToString().Split(new char[] { ',' });
+                string id = commandArgs[0];
+                string position = commandArgs[1];
+                int integerId = Int16.Parse(id);
+
+                Panel pnlItemHeadings = (Panel)this.pnl_main.FindControl("ltv_main").FindControl("pnl_itemHeadings");
+                pnlItemHeadings.Visible = false;
+
+                ltv_main.EditIndex = 0; //itemDisplayIndex; 
+                ltv_main.DataSource = objJob.getJobPostingById(integerId);
+                ltv_main.DataBind();
+
+                lbl_message.Text = "Mode: edit";
+
                 break;
-                // update a row in the database table based on the input fields in the EditItemTemplate of the job postings ListView
+            // update a row in the database table based on the input fields in the EditItemTemplate of the job postings ListView
             case "UpdateC":
                 lbl_message.Text = "Mode: Update";
                 Label lblID2 = (Label)e.Item.FindControl("lbl_id2E");
@@ -101,20 +113,21 @@ public partial class admin_Default : System.Web.UI.Page
                 ltv_main.EditIndex = -1;
                 _subRebind();
                 _pnlControl(pnl_main);
-                
+
                 break;
-                // delete a row in the database table
+            // delete a row in the database table
             case "DeleteC":
                 lbl_message.Text = "Mode: delete";
                 Label lblID = (Label)e.Item.FindControl("lbl_id");
                 int _id = int.Parse(lblID.Text.ToString());
-                _strMessage(objJob.commitDelete(_id), "delete");                
+                _strMessage(objJob.commitDelete(_id), "delete");
                 _subRebind();
                 break;
-                // display the ItemTemplate for the job postings ListView
-                case "CancelC":                
+            // display the ItemTemplate for the job postings ListView
+            case "CancelC":
                 ltv_main.EditIndex = -1;
                 _subRebind();
+                _pnlControl(pnl_main);
                 break;
         }
 
@@ -135,7 +148,7 @@ public partial class admin_Default : System.Web.UI.Page
         //lbl_message.Text = "Manage Job Postings";
     }
     // display one panel while hiding the other panels
-    protected void _pnlControl(Panel pnl) 
+    protected void _pnlControl(Panel pnl)
     {
         pnl_insert.Visible = false;
         pnl_main.Visible = false;
@@ -147,6 +160,7 @@ public partial class admin_Default : System.Web.UI.Page
 
             btn_add.Enabled = true;
             btn_manage.Enabled = false;
+            lbl_message.Text = "Mode: View/edit job postings";
         }
         else
         {

@@ -1,0 +1,40 @@
+.detailsPanel th, .tableHeading span {
+    text-align: center;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.detailsInfo {
+    padding: 3%;
+    background-color: #bcd1d0;
+    -webkit-border-radius: 8%;
+    -o-border-radius: 8%;
+    -moz-border-radius: 8%;
+    border-radius: 8%;
+    margin-top: 4%;
+}
+    
+    .mainInfo {
+        text-align:center;    
+    }
+
+    .detailsInfo #detailsLabel {
+        padding-top: 5%;   
+    }
+
+.detailsInfo input[type="submit"], #content_main_pnl_all input[type="submit"] {
+    background-color: #42a2f3;
+    color: white;
+    padding: 2%;
+    font-size: 1em;
+    cursor: pointer;
+    
+    -webkit-border-radius: 8%;
+    -o-border-radius: 8%;
+    -moz-border-radius: 8%;
+    border-radius: 10%;
+}
+
+#content_main_pnl_all input[type="submit"] {
+    padding: 10%;    
+}

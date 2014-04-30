@@ -34,17 +34,22 @@ public partial class jobPostings : System.Web.UI.Page
     // control subroutine for job postings repeater
     public void subAdmin(object sender, CommandEventArgs e)
     {
+        string[] commandArgs = e.CommandArgument.ToString().Split(new char[] { ',' });
+        string id = commandArgs[0];
+        string position = commandArgs[1];
+
         switch (e.CommandName)
         {
             case "ViewDetails":
                 // page title changes
-                ltl_title.Text = "Job posting ID: " + e.CommandArgument.ToString();
+                ltl_title.Text = "Job posting for: " + position;
                 //call this function
-                _showUpdate(e.CommandArgument.ToString());
+                _showUpdate(id);
                 break;
 
         }
     }
+
         // display job details panel. bind data source (one job posting) to databound control
         private void _showUpdate(string id)
     {
@@ -59,6 +64,11 @@ public partial class jobPostings : System.Web.UI.Page
         pnl_all.Visible = false;
         pnl_viewDetails.Visible = false;
         pnl.Visible = true;
+
+        if (pnl == pnl_all)
+        {
+            ltl_title.Text = "Job Postings";
+        }
     }
 
 
